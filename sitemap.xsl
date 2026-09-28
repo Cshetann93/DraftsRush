@@ -23,7 +23,7 @@
             margin: 0 auto;
           }
           .header-box {
-            background-color: #FFE600;
+            background-color: #F8D000;
             border: 4px solid #000000;
             box-shadow: 6px 6px 0px #000000;
             padding: 24px;

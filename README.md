@@ -44,7 +44,7 @@ Live site: [draftsrush.com](https://www.draftsrush.com)
 * **Architecture:** Static HTML5 enhanced with client-side JavaScript and Schema.org semantic metadata.
 
 
-* **Styling:** Neo-brutalist UI system featuring high-contrast borders (`border-4 border-black`), offset hard drop shadows (`.brutal-box`), and canary yellow accents (`#FFE600`).
+* **Styling:** Neo-brutalist UI system featuring high-contrast borders (`border-4 border-black`), offset hard drop shadows (`.brutal-box`), and canary yellow accents (`#F8D000`).
 
 
 * **Typography:**
