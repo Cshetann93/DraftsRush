@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFBGQ8WX');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Script Breakdown Sheet & Eighths Calculator | DraftsRush</title>
+  <meta name="description" content="Free interactive script breakdown sheet for filmmakers and producers. Tag cast, props, wardrobe, SFX, and calculate page eighths using industry color standards.">
+  <meta name="keywords" content="script breakdown sheet, scene breakdown sheet, film production breakdown, script breakdown template, eighths of a page calculator, 1st AD breakdown tool">
+  <link rel="canonical" href="https://www.draftsrush.com/tools/script-breakdown-sheet">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="/favicon.png?v=4">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .brutal-box { box-shadow: 4px 4px 0px #111317; }
+    .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+    .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
+  </style>
+
+  <!-- Schema Markup: WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DraftsRush Interactive Script Breakdown Sheet",
+    "url": "https://www.draftsrush.com/tools/script-breakdown-sheet",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Interactive screenplay breakdown tool to log cast, props, SFX, wardrobe, and page eighths for film production scheduling."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a script breakdown sheet in film production?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A script breakdown sheet is a production document created by a 1st Assistant Director or Line Producer that catalogs every physical element required to shoot a scene: speaking actors, props, wardrobe, visual effects, vehicles, and stunts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the eighths of a page rule work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In professional filmmaking, script pages are divided into eighths of an inch (1 page = 8/8). A scene taking up half a page is logged as 4/8, while a brief 2-line transition is 1/8. This allows production managers to budget shooting schedules accurately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the standard script breakdown highlighter colors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The industry standard colors are: Red/Rose for Speaking Cast, Purple/Violet for Props, Orange for Wardrobe/Costumes, Blue for Visual Effects (VFX), Green for Background Extras, and Yellow for Diegetic Sound/Music."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Universal Header -->
+  <header class="border-b-4 border-black bg-[#F8D000] sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+        />
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden md:flex items-center gap-3 font-bold text-xs tracking-wider brand-font">
+        <a href="/script-editor" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="bg-[#F8D000] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          SERVICES
+        </a>
+        <a href="/about" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          ABOUT
+        </a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden md:flex items-center">
+        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>ORDER DRAFT</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button 
+        aria-label="Toggle Navigation Menu" 
+        onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
+        class="md:hidden border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden md:hidden border-t-2 border-black bg-[#F0F2F5] p-6 space-y-4 font-bold brand-font text-sm">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a>
+      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">
+        ORDER DRAFT
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
+    <!-- Interactive Tool Container -->
+    <div class="border-4 border-black bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Film Production Utility</span>
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-1 mb-2">
+        Interactive Script Breakdown Sheet
+      </h1>
+      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+        Break down scenes for shooting schedules. Log scene headings, calculate page eighths, and categorize production elements (Cast, Props, Wardrobe, SFX) using industry-standard color codes.
+      </p>
+
+      <!-- Scene Header Inputs -->
+      <div class="border-2 border-black bg-white p-5 brutal-box mb-6 space-y-4">
+        <div class="flex items-center justify-between border-b border-gray-300 pb-2">
+          <label class="block font-black text-xs uppercase tracking-wider">Scene Header Metadata</label>
+          <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
+            ⚡ Load Sample Scene
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-[11px] font-mono font-bold uppercase text-gray-600 mb-1">Scene #</label>
+            <input id="scene-num" type="text" value="14" class="w-full border-2 border-black p-2 font-mono text-sm bg-[#FAF9F5]">
+          </div>
+          <div>
+            <label class="block text-[11px] font-mono font-bold uppercase text-gray-600 mb-1">INT / EXT</label>
+            <select id="scene-env" class="w-full border-2 border-black p-2 font-mono text-sm bg-[#FAF9F5]">
+              <option value="INT." selected>INT.</option>
+              <option value="EXT.">EXT.</option>
+              <option value="INT./EXT.">INT./EXT.</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-mono font-bold uppercase text-gray-600 mb-1">DAY / NIGHT</label>
+            <select id="scene-time" class="w-full border-2 border-black p-2 font-mono text-sm bg-[#FAF9F5]">
+              <option value="NIGHT" selected>NIGHT</option>
+              <option value="DAY">DAY</option>
+              <option value="DUSK">DUSK</option>
+              <option value="DAWN">DAWN</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-mono font-bold uppercase text-gray-600 mb-1">Page Eighths</label>
+            <select id="scene-eighths" class="w-full border-2 border-black p-2 font-mono text-sm bg-[#FAF9F5]">
+              <option value="1/8">1/8 Page</option>
+              <option value="2/8">2/8 (1/4 Page)</option>
+              <option value="3/8" selected>3/8 Page</option>
+              <option value="4/8">4/8 (1/2 Page)</option>
+              <option value="5/8">5/8 Page</option>
+              <option value="6/8">6/8 (3/4 Page)</option>
+              <option value="7/8">7/8 Page</option>
+              <option value="1 0/8">1 Full Page</option>
+              <option value="1 4/8">1.5 Pages</option>
+              <option value="2 0/8">2 Full Pages</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-mono font-bold uppercase text-gray-600 mb-1">Location & Setting</label>
+          <input id="scene-loc" type="text" value="BASEMENT ARCHIVE - BOB VAUGHN'S HOUSE" class="w-full border-2 border-black p-2 font-mono text-sm bg-[#FAF9F5]">
+        </div>
+      </div>
+
+      <!-- Color Coded Production Categories -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <!-- Cast (Red) -->
+        <div class="border-2 border-black bg-rose-50 p-4 brutal-box border-l-8 border-l-rose-500">
+          <label class="block font-black text-xs uppercase tracking-wider text-rose-900 mb-1">
+            🔴 Speaking Cast (Red)
+          </label>
+          <input id="cat-cast" type="text" value="DETECTIVE LOCKE, BOB VAUGHN" class="w-full border border-black p-2 text-xs font-mono bg-white">
+        </div>
+
+        <!-- Props (Purple) -->
+        <div class="border-2 border-black bg-purple-50 p-4 brutal-box border-l-8 border-l-purple-500">
+          <label class="block font-black text-xs uppercase tracking-wider text-purple-900 mb-1">
+            🟣 Props (Violet / Purple)
+          </label>
+          <input id="cat-props" type="text" value="Brass key ring, projector slide carousel, vintage flashlight" class="w-full border border-black p-2 text-xs font-mono bg-white">
+        </div>
+
+        <!-- Wardrobe (Orange) -->
+        <div class="border-2 border-black bg-amber-50 p-4 brutal-box border-l-8 border-l-amber-500">
+          <label class="block font-black text-xs uppercase tracking-wider text-amber-900 mb-1">
+            🟠 Wardrobe & Costumes (Orange)
+          </label>
+          <input id="cat-wardrobe" type="text" value="Locke's soaked trench coat, Vaughn's wool cardigan" class="w-full border border-black p-2 text-xs font-mono bg-white">
+        </div>
+
+        <!-- SFX & Sound (Yellow / Blue) -->
+        <div class="border-2 border-black bg-sky-50 p-4 brutal-box border-l-8 border-l-sky-500">
+          <label class="block font-black text-xs uppercase tracking-wider text-sky-900 mb-1">
+            🔵 VFX / Practical Effects (Blue)
+          </label>
+          <input id="cat-sfx" type="text" value="Heavy window rain rig, flickering incandescent bulb" class="w-full border border-black p-2 text-xs font-mono bg-white">
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="mb-6">
+        <button id="render-sheet-btn" type="button" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-2 border-black brutal-box brutal-btn tracking-wider">
+          Generate Formatted Breakdown Sheet →
+        </button>
+      </div>
+
+      <!-- Formatted Output Card -->
+      <div class="border-2 border-black bg-white p-6 brutal-box space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b-2 border-black pb-3">
+          <div>
+            <span id="sheet-badge" class="font-mono text-xs font-black uppercase bg-black text-white px-2 py-0.5">SCENE 14 • 3/8 PAGE</span>
+            <h2 id="sheet-title" class="text-xl md:text-2xl font-black brand-font mt-1">INT. BASEMENT ARCHIVE - BOB VAUGHN'S HOUSE - NIGHT</h2>
+          </div>
+          <button id="copy-sheet-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
+            📋 Copy Breakdown
+          </button>
+        </div>
+
+        <div id="sheet-content" class="font-mono text-xs text-gray-800 space-y-2 bg-[#FAF9F5] p-4 border border-gray-300">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Craft Section: The 8ths of a Page Rule -->
+    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+      <div class="border-b-2 border-black pb-3">
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Manual</span>
+        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">How 1st ADs & Line Producers Break Down a Script</h2>
+      </div>
+
+      <div class="text-sm font-medium text-gray-700 leading-relaxed space-y-4">
+        <p>
+          Before a single camera rolls, the screenplay must be transformed into physical logistics. An assistant director reads the script with colored highlighters, tagging every physical item that costs money or requires crew setup.
+        </p>
+        <p>
+          The most critical metric is <strong>Page Eighths</strong>. In Hollywood, a standard 8.5 x 11-inch screenplay page is divided into eight one-inch segments. An experienced crew shoots roughly 4 to 5 pages per day on an indie film (or 2 pages on a big-budget studio project). Counting eighths ensures you never over-schedule a shooting day.
+        </p>
+      </div>
+
+      <!-- Color Code Standards Table -->
+      <div class="overflow-x-auto border-2 border-black">
+        <table class="w-full text-left text-xs font-medium">
+          <thead class="bg-black text-white font-mono uppercase">
+            <tr>
+              <th class="p-3 border-r border-gray-700">Category</th>
+              <th class="p-3 border-r border-gray-700">Standard Color</th>
+              <th class="p-3">Department Head</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">Speaking Cast</td>
+              <td class="p-3 border-r-2 border-black font-mono text-rose-700">Red / Rose</td>
+              <td class="p-3">Casting / Line Producer</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">Props (Handled by Actors)</td>
+              <td class="p-3 border-r-2 border-black font-mono text-purple-700">Violet / Purple</td>
+              <td class="p-3">Prop Master</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">Wardrobe / Costumes</td>
+              <td class="p-3 border-r-2 border-black font-mono text-amber-700">Orange / Amber</td>
+              <td class="p-3">Costume Designer</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">Visual & Practical Effects</td>
+              <td class="p-3 border-r-2 border-black font-mono text-sky-700">Blue</td>
+              <td class="p-3">SFX Supervisor / VFX Coordinator</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">Vehicles & Animals</td>
+              <td class="p-3 border-r-2 border-black font-mono text-emerald-700">Pink / Green</td>
+              <td class="p-3">Picture Car Coordinator / Wrangler</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Search Intent FAQ Section -->
+    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-4">
+      <div class="border-b-2 border-black pb-2">
+        <span class="bg-[#F8D000] border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Direct Search FAQ</span>
+        <h3 class="text-xl md:text-2xl font-black brand-font mt-2">Frequently Asked Questions: Script Breakdown</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-medium">
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">What is the difference between set dressing and a prop?</h4>
+          <p class="leading-relaxed">
+            If an actor touches or physically interacts with an object (like picking up a vintage telephone), it is classified as a <strong>Prop</strong>. If the telephone sits untouched on an office desk in the background, it is classified as <strong>Set Dressing</strong>.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">How many eighths can you schedule in one production day?</h4>
+          <p class="leading-relaxed">
+            Standard indie film productions schedule between <strong>24/8 and 36/8 (3 to 4.5 pages)</strong> per 12-hour shooting day. Dialogue-heavy single-location scenes can move faster, while complex action sequences with practical squibs or stunts may only cover 1 full page (8/8) per day.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">Can I copy these breakdown notes into Google Sheets?</h4>
+          <p class="leading-relaxed">
+            Yes. Click "Copy Breakdown" to paste plain text metadata directly into your production spreadsheets, stripboards, or call sheets.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">Where can I read a complete breakdown tutorial?</h4>
+          <p class="leading-relaxed">
+            Explore our comprehensive editorial guide on <a href="/script-breakdown-sheet" class="font-bold underline text-black hover:text-[#D32F2F]">how to break down a script for production</a> in the Writer's Room.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Production Tools Strip -->
+    <div class="border-4 border-black bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+      <div class="flex items-center justify-between border-b-2 border-black pb-2">
+        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Pre-Production & Directing Suite</h3>
+        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+      </div>
+      <p class="text-xs font-medium text-gray-800 leading-relaxed">
+        Transition your breakdown directly into shooting formats:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a href="/tools/broll-generator" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>🎬 B-Roll Shotlist Generator</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Extract camera framing and detail inserts directly from your script →</span>
+        </a>
+        <a href="/tools/screenplay-calculator" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>⏱ Screenplay Runtime Calculator</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Convert page eighths into estimated final cut minutes →</span>
+        </a>
+        <a href="/script-editor" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>✍ Online Script Editor</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Edit scene headings and dialogue blocks in native Courier 12pt →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial CTA Strip -->
+    <div class="border-4 border-black bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+      <div>
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Production-Ready Scripts Written?</h2>
+        <p class="text-sm font-medium text-black max-w-xl">
+          We write research-backed video essays, short-form packs, and narrative screenplays formatted with dual-column AV cues and structured scene breaks.
+        </p>
+      </div>
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+        Explore Script Packs →
+      </a>
+    </div>
+
+    <!-- Bottom Return Button -->
+    <div class="mt-8">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+        ← Back to Free Tools
+      </a>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+        <div>
+          <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
+            <img 
+              src="/drlogo.png" 
+              alt="DraftsRush" 
+              width="190" 
+              height="50" 
+              class="h-8 sm:h-9 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+            />
+          </a>
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+            100% Free Client-Side Tools
+          </span>
+          <div class="flex items-center gap-1.5">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono">NEW</span></a></li>
+            <li><a href="/tools/script-breakdown-sheet" class="hover:underline font-bold text-black">Script Breakdown Sheet</a></li>
+            <li><a href="/tools/broll-generator" class="hover:underline">B-Roll Shotlist Generator</a></li>
+            <li><a href="/tools/screenplay-calculator" class="hover:underline">Screenplay Calculator</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All Tools Directory →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-breakdown-sheet" class="hover:underline font-bold text-black">Breakdown Guide & Eighths</a></li>
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-many-acts-are-in-a-movie-three-act-structure" class="hover:underline">Three-Act Structure</a></li>
+            <li><a href="/parts-of-a-story-freytags-pyramid" class="hover:underline">Parts of a Story</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors">
+              care@draftsrush.com
+            </a>
+            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+              Direct response desk for creator briefs, custom quotes, and agency inquiries.
+            </p>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Breakdown Logic -->
+  <script>
+    const sceneNum = document.getElementById('scene-num');
+    const sceneEnv = document.getElementById('scene-env');
+    const sceneTime = document.getElementById('scene-time');
+    const sceneEighths = document.getElementById('scene-eighths');
+    const sceneLoc = document.getElementById('scene-loc');
+
+    const catCast = document.getElementById('cat-cast');
+    const catProps = document.getElementById('cat-props');
+    const catWardrobe = document.getElementById('cat-wardrobe');
+    const catSfx = document.getElementById('cat-sfx');
+
+    const renderBtn = document.getElementById('render-sheet-btn');
+    const copyBtn = document.getElementById('copy-sheet-btn');
+    const sheetBadge = document.getElementById('sheet-badge');
+    const sheetTitle = document.getElementById('sheet-title');
+    const sheetContent = document.getElementById('sheet-content');
+    const sampleBtn = document.getElementById('sample-btn');
+
+    if (sampleBtn) {
+      sampleBtn.addEventListener('click', () => {
+        sceneNum.value = "22";
+        sceneEnv.value = "INT.";
+        sceneTime.value = "NIGHT";
+        sceneEighths.value = "4/8";
+        sceneLoc.value = "COUNTY MORGUE - AUTOPSY BAY B";
+        catCast.value = "DR. ABELLO, DETECTIVE MOSS";
+        catProps.value = "Digital dictaphone, stainless steel scalpel tray, teeth x-rays";
+        catWardrobe.value = "Abello's fluid-resistant apron, Moss's unbuttoned collar";
+        catSfx.value = "Fluorescent light flicker, ventilation hum SFX";
+        renderBreakdown();
+      });
+    }
+
+    function renderBreakdown() {
+      const num = sceneNum.value.trim() || "1";
+      const env = sceneEnv.value;
+      const time = sceneTime.value;
+      const eighths = sceneEighths.value;
+      const loc = (sceneLoc.value.trim() || "LOCATION").toUpperCase();
+
+      sheetBadge.innerText = `SCENE ${num} • ${eighths} PAGE`;
+      sheetTitle.innerText = `${env} ${loc} - ${time}`;
+
+      sheetContent.innerHTML = `
+        <div class="border-b border-gray-300 pb-1.5"><strong class="text-rose-700">🔴 SPEAKING CAST (RED):</strong> ${catCast.value || "None"}</div>
+        <div class="border-b border-gray-300 pb-1.5"><strong class="text-purple-700">🟣 PROPS (PURPLE):</strong> ${catProps.value || "None"}</div>
+        <div class="border-b border-gray-300 pb-1.5"><strong class="text-amber-700">🟠 WARDROBE (ORANGE):</strong> ${catWardrobe.value || "None"}</div>
+        <div class="pt-0.5"><strong class="text-sky-700">🔵 VFX / SPECIAL EFFECTS (BLUE):</strong> ${catSfx.value || "None"}</div>
+      `;
+    }
+
+    renderBtn.addEventListener('click', renderBreakdown);
+
+    copyBtn.addEventListener('click', async () => {
+      const textToCopy = `BREAKDOWN SHEET: ${sheetTitle.innerText}
+PAGE FRACTION: ${sheetBadge.innerText}
+----------------------------------------
+CAST: ${catCast.value}
+PROPS: ${catProps.value}
+WARDROBE: ${catWardrobe.value}
+SFX/VFX: ${catSfx.value}`;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        const orig = copyBtn.innerText;
+        copyBtn.innerText = "✓ Copied Breakdown!";
+        setTimeout(() => { copyBtn.innerText = orig; }, 1800);
+      } catch (err) {
+        console.error("Clipboard copy failed", err);
+      }
+    });
+
+    // Initial render
+    renderBreakdown();
+  </script>
+</body>
+</html>
