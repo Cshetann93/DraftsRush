@@ -8,18 +8,19 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KFBGQ8WX');</script>
   <!-- End Google Tag Manager -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Script Timer & Speaking Pace Calculator | DraftsRush</title>
-  <meta name="description" content="How long is my script? Calculate the exact speaking duration of your YouTube Shorts, Reels, or TikTok video. Calibrate across 130 to 175 WPM and audit hook speed.">
+  <title>Script Timer: How Long is My Script? (Video Read Time Calculator) | DraftsRush</title>
+  <meta name="description" content="Calculate exactly how long your video script will take to speak. Free script timer for YouTube, Shorts, voiceover, and video essays calibrated to 130-160 WPM.">
+  <meta name="keywords" content="script timer, video script timer, how long is my script, script reading time calculator, words to minutes script, youtube script length">
   <link rel="canonical" href="https://www.draftsrush.com/tools/script-timer">
 
   <!-- Favicon References -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
-  <link rel="apple-touch-icon" href="/favicon.png?v=4">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
-  <!-- Instant Dark Mode Initializer (Zero Flash) -->
+  <!-- Instant Dark Mode Initializer -->
   <script>
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -30,16 +31,17 @@
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
-    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    h1, h2, h3, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
     .brutal-box { box-shadow: 4px 4px 0px #111317; }
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+    .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
 
-    /* Pill Toggle Switch */
+    /* Pill Toggle Switch Design */
     .theme-toggle {
       position: relative;
       width: 62px;
@@ -103,7 +105,7 @@
       background-color: #1F232B !important;
     }
     body.dark header nav a[href="/tools"] {
-      background-color: #F8D000 !important;
+      background-color: #FFE600 !important;
       color: #111317 !important;
       border-color: #111317 !important;
     }
@@ -122,33 +124,23 @@
       color: #FFFFFF !important;
       box-shadow: 4px 4px 0px #000000 !important;
     }
-    body.dark select,
     body.dark textarea#script-input {
       background-color: #1F232B !important;
       color: #FFFFFF !important;
       border-color: #2A2F3A !important;
+    }
+    body.dark #time-display {
+      color: #FFE600 !important;
     }
     body.dark .text-gray-700, 
     body.dark .text-gray-600,
     body.dark .text-gray-500 {
       color: #9CA3AF !important;
     }
-    body.dark #metric-words,
-    body.dark #metric-hook-words {
+    body.dark .bg-\[\#FFF6CF\] {
+      background-color: #1B1E26 !important;
+      border-color: #2A2F3A !important;
       color: #FFFFFF !important;
-    }
-    body.dark table th {
-      border-color: #2A2F3A !important;
-    }
-    body.dark table td {
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark table tbody tr {
-      background-color: #16181E !important;
-    }
-    body.dark table tbody tr:hover {
-      background-color: #1F232B !important;
     }
 
     /* Footer Dark Mode */
@@ -162,7 +154,7 @@
     body.dark footer h4 {
       color: #E2E4E9 !important;
     }
-    body.dark footer span.bg-\[\#F8D000\] {
+    body.dark footer span.bg-\[\#FFE600\] {
       color: #111317 !important;
     }
     body.dark footer .text-gray-800,
@@ -183,25 +175,73 @@
       fill: #FFFFFF !important;
     }
   </style>
+
+  <!-- Schema Markup: WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DraftsRush Script Pacing Timer & Duration Calculator",
+    "url": "https://www.draftsrush.com/tools/script-timer",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate spoken runtime and reading duration for video scripts based on calibrated speaking cadence (WPM)."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is my script in minutes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At a standard speaking pace of 140 to 150 Words Per Minute (WPM), divide your total word count by 140. A 750-word script takes roughly 5 minutes to deliver, while a 1,500-word video essay takes approximately 10 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average speaking rate for YouTube videos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most conversational YouTube creators speak between 140 and 160 WPM. Narrative and documentary video essays use a slower pace of 125 to 135 WPM, while TikTok, Reels, and Shorts creators speak at 160 to 180 WPM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many words is a 60-second video script?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 60-second video script typically contains between 130 and 150 words. Leaving room for visual B-roll cuts and pauses, keeping your script around 140 words ensures you don't rush through the delivery."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+<body class="text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#FFE600] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Universal Header -->
-  <header class="border-b-4 border-black bg-[#F8D000] sticky top-0 z-50">
+  <header class="border-b-4 border-black bg-[#FFE600] sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
-      
-      <!-- Brand Logo -->
       <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
         <img 
           src="/drlogo.png" 
           alt="DraftsRush" 
           width="240" 
           height="64" 
-          class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+          class="h-12 sm:h-14 md:h-16 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
         />
       </a>
 
@@ -214,7 +254,7 @@
         <a href="/writers-room" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
           WRITER'S ROOM
         </a>
-        <a href="/tools" style="background-color: #F8D000;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+        <a href="/tools" style="background-color: #FFE600;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
           FREE TOOLS
         </a>
         <a href="/scripts" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
@@ -249,9 +289,8 @@
           <span class="theme-toggle-thumb"></span>
         </button>
 
-        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]">
-          <span class="w-2 h-2 rounded-full bg-black"></span>
-          <span>ORDER DRAFT</span>
+        <a href="/contact" class="bg-black text-white border-2 border-black px-4 py-1.5 font-bold text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap">
+          ORDER DRAFT
         </a>
       </div>
 
@@ -288,14 +327,13 @@
           </svg>
         </button>
       </div>
-
     </div>
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav" class="hidden md:hidden border-t-2 border-black bg-[#F0F2F5] p-6 space-y-4 font-bold brand-font text-sm">
       <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black">
         <span>SCRIPT EDITOR</span>
-        <span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
+        <span class="bg-[#FFE600] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
       </a>
       <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a>
       <a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a>
@@ -309,140 +347,166 @@
   </header>
 
   <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
-    <div class="border-4 border-black bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
-      <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
-        Utility: Script Calculator
+    <!-- Interactive Tool Container -->
+    <div class="border-4 border-black bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Pacing Stopwatch</span>
+        <span class="bg-[#FFE600] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
       </div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">
-        Video Script Timer & Speaking Pace Calculator
+      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-1 mb-2">
+        Script Timer: How Long is My Script?
       </h1>
       <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
-        Paste your voiceover text below. The calculator estimates speaking duration across calibrated reading speeds (130–175 WPM) and audits your opening hook to ensure it executes before second 00:03.
+        Paste your script to calculate exact spoken read time. Calibrate speaking speed from measured documentary voiceover (130 WPM) to rapid-fire short-form videos (160+ WPM).
       </p>
 
-      <!-- Settings Bar -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div>
-          <label class="block font-black text-xs uppercase tracking-wider mb-2">Speaking Pace</label>
-          <select id="pace-select" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors">
-            <option value="130">Documentary / Measured (130 WPM)</option>
-            <option value="150" selected>Standard Shorts / Explainers (150 WPM)</option>
-            <option value="175">Fast-Paced TikTok / Dynamic (175 WPM)</option>
-          </select>
-        </div>
-        <div>
-          <label class="block font-black text-xs uppercase tracking-wider mb-2">Target Platform Constraint</label>
-          <select id="platform-select" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors">
-            <option value="30">30-Second Micro Reel</option>
-            <option value="60" selected>60-Second Short (Optimal Retention)</option>
-            <option value="90">90-Second Extended Video</option>
-          </select>
+      <!-- Input Controls Header -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <label class="block font-black text-xs uppercase tracking-wider">Paste Script Text</label>
+        <div class="flex items-center gap-3">
+          <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+            ⚡ Try an Example
+          </button>
+          <button id="clear-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-red-600 transition-colors">
+            Clear
+          </button>
         </div>
       </div>
 
-      <!-- Text Input -->
+      <textarea id="script-input" rows="8" placeholder="Paste your script, narration, or dialogue lines here..." class="w-full border-2 border-black p-4 font-mono text-sm bg-white focus:bg-[#FFFDE6] mb-4"></textarea>
+
+      <!-- Pace Selector Options -->
       <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <label class="block font-black text-xs uppercase tracking-wider">Paste Voiceover / Spoken Lines Only</label>
-          <div class="flex items-center gap-3">
-            <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              ⚡ Try an Example
-            </button>
-            <button id="copy-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              📋 Copy Script
-            </button>
-          </div>
-        </div>
-        <textarea id="script-input" rows="8" placeholder="Paste your script text here. Do not include visual directions (e.g. [B-Roll cut])..." class="w-full border-2 border-black p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]"></textarea>
-      </div>
-
-      <!-- Metrics Display -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
-        <div class="border-2 border-black bg-white p-3 brutal-box">
-          <div id="metric-words" class="text-3xl font-black brand-font">0</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Words</p>
-        </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
-          <div id="metric-seconds" class="text-3xl font-black brand-font text-blue-700">0.0s</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Est. Duration</p>
-        </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
-          <div id="metric-hook-words" class="text-3xl font-black brand-font">0</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Hook Words</p>
-        </div>
-        <div class="border-2 border-black bg-[#F8D000] p-3 brutal-box">
-          <div id="metric-fit" class="text-lg font-black brand-font mt-1 text-black">Ready</div>
-          <p class="text-xs font-bold text-black uppercase">Fit Status</p>
+        <label class="block font-black text-xs uppercase tracking-wider mb-2">Speaking Cadence</label>
+        <div class="grid grid-cols-3 gap-3">
+          <button type="button" data-wpm="130" class="pace-btn border-2 border-black p-2.5 font-bold text-xs uppercase bg-white hover:bg-[#FFE600] transition-colors brutal-box">
+            Slow / Documentaries (130 WPM)
+          </button>
+          <button type="button" data-wpm="145" class="pace-btn border-2 border-black p-2.5 font-bold text-xs uppercase bg-[#FFE600] text-black transition-colors brutal-box">
+            Conversational / YouTube (145 WPM)
+          </button>
+          <button type="button" data-wpm="165" class="pace-btn border-2 border-black p-2.5 font-bold text-xs uppercase bg-white hover:bg-[#FFE600] transition-colors brutal-box">
+            Fast / Shorts & Reels (165 WPM)
+          </button>
         </div>
       </div>
 
-      <!-- Live Hook Feedback Box -->
-      <div id="hook-alert" class="border-2 border-black p-4 bg-white brutal-box">
-        <div class="font-black text-xs brand-font uppercase mb-1">Hook Speed Audit</div>
-        <p id="hook-alert-text" class="text-sm font-medium text-gray-700">
-          Paste your script above to audit whether your opening sentence hooks the viewer before second 00:03.
-        </p>
+      <!-- Real-Time Metrics Output Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div class="border-2 border-black bg-white p-4 brutal-box">
+          <div id="time-display" class="text-3xl md:text-4xl font-black brand-font text-black">0:00</div>
+          <p class="text-xs font-bold text-gray-600 uppercase mt-1">Estimated Spoken Time</p>
+        </div>
+        <div class="border-2 border-black bg-white p-4 brutal-box">
+          <div id="word-count" class="text-3xl md:text-4xl font-black brand-font">0</div>
+          <p class="text-xs font-bold text-gray-600 uppercase mt-1">Total Words</p>
+        </div>
+        <div class="border-2 border-black bg-white p-4 brutal-box">
+          <div id="char-count" class="text-3xl md:text-4xl font-black brand-font">0</div>
+          <p class="text-xs font-bold text-gray-600 uppercase mt-1">Total Characters</p>
+        </div>
       </div>
     </div>
 
-    <!-- Search Intent & Benchmarks: How Long is My Script? -->
+    <!-- Speaking Pace & Duration Benchmark Guide -->
     <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
       <div class="border-b-2 border-black pb-3">
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Pacing Formulas</span>
-        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">How long is my script? Speaking pace standards</h2>
+        <span class="bg-[#FFE600] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Pacing Benchmarks</span>
+        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Script Duration Reference Table</h2>
       </div>
 
-      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed">
-        The average video presenter speaks between <strong>130 and 160 words per minute (WPM)</strong>. Use this reference breakdown to match your word count to your target video length:
+      <p class="text-sm font-medium text-gray-700 leading-relaxed">
+        Use these standardized spoken runtime benchmarks when budgeting video essay outlines, voiceover recordings, and short-form pacing:
       </p>
 
       <div class="overflow-x-auto border-2 border-black">
         <table class="w-full text-left text-xs font-medium">
           <thead class="bg-black text-white font-mono uppercase">
             <tr>
-              <th class="p-3 border-r border-gray-700">Video Target</th>
-              <th class="p-3 border-r border-gray-700">Measured (130 WPM)</th>
-              <th class="p-3 border-r border-gray-700">Standard (150 WPM)</th>
-              <th class="p-3">Fast-Paced (175 WPM)</th>
+              <th class="p-3 border-r border-gray-700">Target Duration</th>
+              <th class="p-3 border-r border-gray-700">Shorts / Reels (165 WPM)</th>
+              <th class="p-3 border-r border-gray-700">Standard YouTube (145 WPM)</th>
+              <th class="p-3">Doc / Essay (130 WPM)</th>
             </tr>
           </thead>
           <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
             <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">30s Micro Reel</td>
-              <td class="p-3 border-r-2 border-black">65 words</td>
-              <td class="p-3 border-r-2 border-black font-bold">75 words</td>
-              <td class="p-3">85 words</td>
+              <td class="p-3 border-r-2 border-black font-bold">30 Seconds</td>
+              <td class="p-3 border-r-2 border-black">~80 words</td>
+              <td class="p-3 border-r-2 border-black">~70 words</td>
+              <td class="p-3">~65 words</td>
             </tr>
             <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">60s Short (Optimal)</td>
-              <td class="p-3 border-r-2 border-black">130 words</td>
-              <td class="p-3 border-r-2 border-black font-bold">150 words</td>
-              <td class="p-3">175 words</td>
+              <td class="p-3 border-r-2 border-black font-bold">60 Seconds</td>
+              <td class="p-3 border-r-2 border-black">~165 words</td>
+              <td class="p-3 border-r-2 border-black">~145 words</td>
+              <td class="p-3">~130 words</td>
             </tr>
             <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">90s Deep Dive</td>
-              <td class="p-3 border-r-2 border-black">195 words</td>
-              <td class="p-3 border-r-2 border-black font-bold">225 words</td>
-              <td class="p-3">260 words</td>
+              <td class="p-3 border-r-2 border-black font-bold">5 Minutes</td>
+              <td class="p-3 border-r-2 border-black">~825 words</td>
+              <td class="p-3 border-r-2 border-black">~725 words</td>
+              <td class="p-3">~650 words</td>
             </tr>
             <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">5-Min Video Essay</td>
-              <td class="p-3 border-r-2 border-black">650 words</td>
-              <td class="p-3 border-r-2 border-black font-bold">750 words</td>
-              <td class="p-3">875 words</td>
+              <td class="p-3 border-r-2 border-black font-bold">10 Minutes</td>
+              <td class="p-3 border-r-2 border-black">~1,650 words</td>
+              <td class="p-3 border-r-2 border-black">~1,450 words</td>
+              <td class="p-3">~1,300 words</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <!-- FAQ Accordion / Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm font-medium text-gray-700">
+        <div>
+          <h3 class="font-black brand-font text-base text-black mb-1">How many words is a 10-minute video?</h3>
+          <p class="leading-relaxed">
+            At a comfortable conversational speed of 145 WPM, a 10-minute video script requires roughly <strong>1,450 words</strong>. If your video includes complex visuals, diagrams, or B-roll pauses, target 1,300 words to give the edit room to breathe.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-black brand-font text-base text-black mb-1">Does speech pace change between YouTube and TikTok?</h3>
+          <p class="leading-relaxed">
+            Yes. Short-form viewers expect zero dead space, pushing typical speeds to <strong>160–180 WPM</strong>. Long-form video essays benefit from lower pacing (130 WPM), allowing viewers time to absorb complex arguments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contextual Interlink Strip (Production & Delivery Workflow) -->
+    <div class="border-4 border-black bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+      <div class="flex items-center justify-between border-b-2 border-black pb-2">
+        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Production & Delivery Workflow</h3>
+        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+      </div>
+      <p class="text-xs font-medium text-gray-800 leading-relaxed">
+        Transition your timed script into shooting and formatting tools:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a href="/tools/av-teleprompter" class="p-3 bg-white border-2 border-black hover:bg-[#FFE600] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>📜 AV Teleprompter Runner</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Roll your script on-camera matching your exact calculated WPM →</span>
+        </a>
+        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-2 border-black hover:bg-[#FFE600] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>✂ Dialogue Word Pruner</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Prune wordy sentences to shave minutes off your total run time →</span>
+        </a>
+        <a href="/tools/format-converter" class="p-3 bg-white border-2 border-black hover:bg-[#FFE600] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>📋 Dual-Column AV Converter</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Convert timed narration into editor-ready two-column production notes →</span>
+        </a>
+      </div>
     </div>
 
     <!-- Commercial CTA Strip -->
-    <div class="border-4 border-black bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="border-4 border-black bg-[#FFE600] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
       <div>
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Need It Written For You?</span>
-        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Get Retention-Optimized Scripts</h2>
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Research-Heavy Video Scripts?</h2>
         <p class="text-sm font-medium text-black max-w-xl">
-          We write scripts engineered to retain viewers past second 30, complete with visual cues for your video editor. Flexible budgets welcomed.
+          We write retention-tested documentary screenplays, explainer video scripts, and video essays calibrated for exact target runtimes.
         </p>
       </div>
       <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
@@ -451,8 +515,8 @@
     </div>
 
     <!-- Bottom Return Button -->
-    <div class="mt-12">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+    <div class="mt-8">
+      <a href="/tools" class="inline-block bg-[#FFE600] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
         ← Back to Free Tools
       </a>
     </div>
@@ -461,8 +525,6 @@
   <!-- Universal Footer -->
   <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
     <div class="max-w-6xl mx-auto px-6">
-      
-      <!-- Top Branding & Value Bar -->
       <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
@@ -471,7 +533,7 @@
               alt="DraftsRush" 
               width="190" 
               height="50" 
-              class="h-8 sm:h-9 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+              class="h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
             />
           </a>
           <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
@@ -480,24 +542,21 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+          <span style="color: #111317 !important;" class="inline-block bg-[#FFE600] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
             ⚡ 100% Free Client-Side Tools
           </span>
           <div class="flex items-center gap-1.5">
-            <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#FFE600] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#FFE600] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#FFE600] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -506,26 +565,22 @@
         </div>
       </div>
 
-      <!-- 4-Column Structured Link Directory -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
-        
-        <!-- Col 1: Interactive Tools & Apps -->
         <div>
           <div class="flex items-center gap-1.5 mb-3">
             <span class="w-2 h-2 bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
           <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
-            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#FFE600] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
+            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline font-bold text-black">Script Pacing Timer</a></li>
             <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
             <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
-            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
             <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
-        <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
           <div class="flex items-center gap-1.5 mb-3">
             <span class="w-2 h-2 bg-black"></span>
@@ -541,7 +596,6 @@
           </ul>
         </div>
 
-        <!-- Col 3: Commission Services & Templates -->
         <div>
           <div class="flex items-center gap-1.5 mb-3">
             <span class="w-2 h-2 bg-black"></span>
@@ -557,14 +611,13 @@
           </ul>
         </div>
 
-        <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
           <div class="flex items-center gap-1.5 mb-3">
             <span class="w-2 h-2 bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#FFE600] transition-colors text-black">
               ✉ care@draftsrush.com
             </a>
             <p class="text-[11px] font-medium text-gray-700 leading-tight">
@@ -576,10 +629,8 @@
             </ul>
           </div>
         </div>
-
       </div>
 
-      <!-- Bottom Legal & Copyright Bar -->
       <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
@@ -589,48 +640,73 @@
           <a href="/contact" class="hover:underline">Support Desk</a>
         </div>
       </div>
-
     </div>
   </footer>
 
+  <!-- Script Pacing Calculator Logic -->
   <script>
-    const scriptInput = document.getElementById('script-input');
-    const paceSelect = document.getElementById('pace-select');
-    const platformSelect = document.getElementById('platform-select');
-
-    const metricWords = document.getElementById('metric-words');
-    const metricSeconds = document.getElementById('metric-seconds');
-    const metricHookWords = document.getElementById('metric-hook-words');
-    const metricFit = document.getElementById('metric-fit');
-    const hookAlert = document.getElementById('hook-alert');
-    const hookAlertText = document.getElementById('hook-alert-text');
-
+    const textarea = document.getElementById('script-input');
+    const timeDisplay = document.getElementById('time-display');
+    const wordCountDisplay = document.getElementById('word-count');
+    const charCountDisplay = document.getElementById('char-count');
+    const paceBtns = document.querySelectorAll('.pace-btn');
     const sampleBtn = document.getElementById('sample-btn');
-    const copyBtn = document.getElementById('copy-btn');
+    const clearBtn = document.getElementById('clear-btn');
 
-    // Populate Sample Script
+    let currentWPM = 145;
+
+    const sampleScript = `In 2007, David Fincher released Zodiac—a movie that completely broke Hollywood's rules for crime thrillers. Most crime stories build toward a cathartic conclusion: the detective corners the killer, bullets fly, and order is restored. But Zodiac doesn't do that. Instead, Fincher engineers a slow-burn procedural about an unsolved serial murder spree that stretches over three decades. The horror in Zodiac doesn't come from jump scares or gore. It comes from obsessive paranoia, silent basements, and the terrifying realization that some questions will never have an answer.`;
+
     if (sampleBtn) {
       sampleBtn.addEventListener('click', () => {
-        scriptInput.value = "Why do 99% of movies use this exact color trick? Look closely at any Hollywood blockbuster from the last twenty years. The shadows are pushed into cold teals, while the actors' skin tones are pushed into warm amber oranges. This is complementary color contrast. Orange and blue sit directly opposite each other on the color wheel, creating immediate depth without the eye working hard. But modern streaming algorithms are forcing editors to exaggerate it even further to keep viewers from scrolling past previews.";
+        textarea.value = sampleScript;
         calculate();
       });
     }
 
-    // One-Click Copy
-    if (copyBtn) {
-      copyBtn.addEventListener('click', async () => {
-        const text = scriptInput.value.trim();
-        if (!text) return;
-        try {
-          await navigator.clipboard.writeText(text);
-          const orig = copyBtn.innerText;
-          copyBtn.innerText = "✓ Copied!";
-          setTimeout(() => { copyBtn.innerText = orig; }, 1500);
-        } catch (err) {
-          console.error("Clipboard copy failed", err);
-        }
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        textarea.value = '';
+        calculate();
       });
     }
+
+    paceBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        paceBtns.forEach(b => {
+          b.classList.remove('bg-[#FFE600]', 'text-black');
+          b.classList.add('bg-white');
+        });
+        btn.classList.remove('bg-white');
+        btn.classList.add('bg-[#FFE600]', 'text-black');
+        currentWPM = parseInt(btn.getAttribute('data-wpm'), 10);
+        calculate();
+      });
+    });
+
+    function calculate() {
+      const text = textarea.value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      const chars = text.length;
+
+      wordCountDisplay.innerText = words;
+      charCountDisplay.innerText = chars;
+
+      if (words === 0) {
+        timeDisplay.innerText = "0:00";
+        return;
+      }
+
+      const totalSeconds = Math.round((words / currentWPM) * 60);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      timeDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+
+    textarea.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
 
     // Dark Mode Toggle Logic
     const toggleBtns = [
@@ -650,61 +726,6 @@
         }
       });
     });
-
-    function calculate() {
-      const text = scriptInput.value.trim();
-      if (!text) {
-        metricWords.innerText = '0';
-        metricSeconds.innerText = '0.0s';
-        metricHookWords.innerText = '0';
-        metricFit.innerText = 'Ready';
-        metricFit.className = 'text-lg font-black brand-font mt-1';
-        hookAlert.className = 'border-2 border-black p-4 bg-white brutal-box';
-        hookAlertText.innerText = 'Paste your script above to audit whether your opening sentence hooks the viewer before second 00:03.';
-        return;
-      }
-
-      // Word count
-      const words = text.match(/\b\S+\b/g) || [];
-      const wordCount = words.length;
-      metricWords.innerText = wordCount;
-
-      // Seconds calculation
-      const wpm = parseFloat(paceSelect.value);
-      const totalSeconds = (wordCount / wpm) * 60;
-      metricSeconds.innerText = totalSeconds.toFixed(1) + 's';
-
-      // First sentence (hook)
-      const firstSentenceMatch = text.match(/[^.!?]+[.!?]*/);
-      const firstSentence = firstSentenceMatch ? firstSentenceMatch[0].trim() : '';
-      const hookWords = (firstSentence.match(/\b\S+\b/g) || []).length;
-      metricHookWords.innerText = hookWords;
-
-      const hookSeconds = (hookWords / wpm) * 60;
-
-      // Hook Pacing Audit
-      if (hookSeconds > 3.5) {
-        hookAlert.className = 'border-2 border-black p-4 bg-[#FFB4B4] text-black brutal-box';
-        hookAlertText.innerHTML = `<strong>⚠️ Hook Too Long (${hookSeconds.toFixed(1)}s):</strong> Your first sentence has ${hookWords} words. At ${wpm} WPM, viewers will reach second 00:03 before you deliver your premise. Cut filler to keep it under 8 words.`;
-      } else {
-        hookAlert.className = 'border-2 border-black p-4 bg-[#C2F0C2] text-black brutal-box';
-        hookAlertText.innerHTML = `<strong>✓ Hook Pacing Good (${hookSeconds.toFixed(1)}s):</strong> Delivers the opening premise in under 3.5 seconds before mobile users swipe away.`;
-      }
-
-      // Target fit check
-      const targetMax = parseFloat(platformSelect.value);
-      if (totalSeconds > targetMax) {
-        metricFit.innerText = `+${(totalSeconds - targetMax).toFixed(0)}s Over`;
-        metricFit.className = 'text-lg font-black brand-font mt-1 text-red-700';
-      } else {
-        metricFit.innerText = `${(targetMax - totalSeconds).toFixed(0)}s Left`;
-        metricFit.className = 'text-lg font-black brand-font mt-1 text-emerald-800';
-      }
-    }
-
-    scriptInput.addEventListener('input', calculate);
-    paceSelect.addEventListener('change', calculate);
-    platformSelect.addEventListener('change', calculate);
   </script>
 </body>
 </html>
