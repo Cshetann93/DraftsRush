@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFBGQ8WX');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenplay Character Name & Bio Generator | DraftsRush</title>
+  <meta name="description" content="Free character name and bio generator for screenwriters. Generate multi-dimensional character profiles, psychological flaws, internal needs, and wants by genre.">
+  <meta name="keywords" content="character name generator, screenplay character name generator, character bio generator, character profile generator, character flaws screenwriting, character archetypes">
+  <link rel="canonical" href="https://www.draftsrush.com/tools/character-name-generator">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="/favicon.png?v=4">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .brutal-box { box-shadow: 4px 4px 0px #111317; }
+    .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+    .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
+  </style>
+
+  <!-- Schema Markup: WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DraftsRush Screenplay Character Name & Bio Generator",
+    "url": "https://www.draftsrush.com/tools/character-name-generator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free character generator for screenwriters that crafts genre-tailored names, fatal flaws, internal needs, and narrative arcs in one click."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you name a screenplay character effectively?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Effective character naming avoids phonetic confusion with other characters in the script, matches the genre's world, reflects the character's social background, and conveys subtext without feeling cartoonish or cliché."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a character's want and need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A character's Want is their visible, conscious external goal (e.g., winning the trial, stealing the money). Their Need is the unacknowledged internal moral or emotional change required to heal their emotional wound (e.g., accepting vulnerability, forgiving family)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes a character profile ready for a screenplay draft?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A production-ready screenplay character profile requires an external goal, an internal flaw that creates conflict, distinctive speech patterns, and clear relationship stakes with the antagonist."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Universal Header -->
+  <header class="border-b-4 border-black bg-[#F8D000] sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+        />
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden md:flex items-center gap-3 font-bold text-xs tracking-wider brand-font">
+        <a href="/script-editor" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="bg-[#F8D000] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          SERVICES
+        </a>
+        <a href="/about" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          ABOUT
+        </a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden md:flex items-center">
+        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>ORDER DRAFT</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button 
+        aria-label="Toggle Navigation Menu" 
+        onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
+        class="md:hidden border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden md:hidden border-t-2 border-black bg-[#F0F2F5] p-6 space-y-4 font-bold brand-font text-sm">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a>
+      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">
+        ORDER DRAFT
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
+    <!-- Interactive Tool Container -->
+    <div class="border-4 border-black bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Character Engine</span>
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-1 mb-2">
+        Character Name & Bio Generator for Screenwriters
+      </h1>
+      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+        Generate three-dimensional screenplay characters in one click. Pair grounded names with dramatic character bios, subconscious psychological flaws, external wants, and internal moral needs.
+      </p>
+
+      <!-- Generator Filters Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div>
+          <label class="block font-black text-xs uppercase tracking-wider mb-2">Narrative Genre</label>
+          <select id="genre-select" class="w-full border-2 border-black p-3 font-bold bg-white text-sm focus:bg-[#FFFDE6]">
+            <option value="noir">Neo-Noir & Crime Thriller</option>
+            <option value="scifi">Sci-Fi & Cyberpunk</option>
+            <option value="psychological" selected>Psychological Thriller</option>
+            <option value="drama">Prestige Drama & Family Sagas</option>
+            <option value="horror">Psychological Horror & Mystery</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-black text-xs uppercase tracking-wider mb-2">Character Archetype</label>
+          <select id="archetype-select" class="w-full border-2 border-black p-3 font-bold bg-white text-sm focus:bg-[#FFFDE6]">
+            <option value="all">Any Archetype</option>
+            <option value="protagonist" selected>The Reluctant Protagonist</option>
+            <option value="antagonist">The Ideological Antagonist</option>
+            <option value="shadow">The Shadow / Anti-Hero</option>
+            <option value="mentor">The Corrupted Mentor</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="mb-6">
+        <button id="generate-btn" type="button" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-2 border-black brutal-box brutal-btn tracking-wider">
+          Generate Screenplay Character Profile →
+        </button>
+      </div>
+
+      <!-- Live Generated Character Card -->
+      <div id="character-output" class="border-2 border-black bg-white p-6 brutal-box space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-3">
+          <div>
+            <span id="card-badge" class="bg-black text-white font-mono text-xs font-bold px-2 py-0.5 uppercase tracking-wider">Psychological Thriller • Protagonist</span>
+            <h2 id="card-name" class="text-2xl md:text-3xl font-black brand-font mt-1">Elena Vance</h2>
+          </div>
+          <button id="copy-card-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-red-600 transition-colors">
+            📋 Copy Profile
+          </button>
+        </div>
+
+        <div class="space-y-3 text-xs md:text-sm text-gray-800 font-medium leading-relaxed">
+          <p><strong class="font-black text-black uppercase font-mono text-xs">Role & Logline:</strong> <span id="card-logline">A forensic audio engineer hired to digitize wiretap reels from an unsolved corporate blackmail case.</span></p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="border border-gray-300 bg-[#F0F2F5] p-3">
+              <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">External Want (The Goal)</span>
+              <strong id="card-want" class="text-black block mt-0.5">Prove the missing master tape was altered before trial.</strong>
+            </div>
+            <div class="border border-gray-300 bg-[#F0F2F5] p-3">
+              <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">Internal Need (The Moral Arc)</span>
+              <strong id="card-need" class="text-black block mt-0.5">Stop using obsessive technical precision to avoid facing her sister's death.</strong>
+            </div>
+          </div>
+          <div class="border-t border-gray-200 pt-2">
+            <span class="font-mono text-[11px] font-bold text-red-600 uppercase block">Fatal Flaw / Blindspot</span>
+            <span id="card-flaw" class="text-gray-700 italic">Refuses to trust eyewitness testimony over mechanical recordings, making her blind to emotional manipulation.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Craft Section: How Character Profiles Drive Scripts -->
+    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+      <div class="border-b-2 border-black pb-3">
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Screenplay Craft</span>
+        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">How Great Screenplay Characters Are Built</h2>
+      </div>
+
+      <div class="text-sm font-medium text-gray-700 leading-relaxed space-y-4">
+        <p>
+          Amateur screenplays collapse when characters are merely passive cameras witnessing plot events. A character is not their hair color, leather jacket, or quirky habit; <strong>a screenplay character is defined by the friction between what they want and what they need</strong>.
+        </p>
+        <p>
+          In classic drama, characters start the script with a protective delusion—a lie they tell themselves to survive an old trauma. The plot exists as a hostile laboratory specifically designed by the writer to strip away their defense mechanisms until they are forced to make an irreversible moral choice at the climax.
+        </p>
+      </div>
+
+      <!-- The 3 Anatomy Pillars Table -->
+      <div class="overflow-x-auto border-2 border-black">
+        <table class="w-full text-left text-xs font-medium">
+          <thead class="bg-black text-white font-mono uppercase">
+            <tr>
+              <th class="p-3 border-r border-gray-700">Pillar</th>
+              <th class="p-3 border-r border-gray-700">Narrative Function</th>
+              <th class="p-3">Classic Film Example</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">The Want</td>
+              <td class="p-3 border-r-2 border-black">The conscious physical goal driving scenes in Act 1 & 2.</td>
+              <td class="p-3">Clarice Starling wants to catch Buffalo Bill and save Catherine.</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">The Need</td>
+              <td class="p-3 border-r-2 border-black">The subconscious moral growth required to complete the arc.</td>
+              <td class="p-3">Silence the screaming spring lambs of her childhood guilt.</td>
+            </tr>
+            <tr class="hover:bg-[#FFF6CF]">
+              <td class="p-3 border-r-2 border-black font-bold">The Flaw</td>
+              <td class="p-3 border-r-2 border-black">The psychological blindspot the antagonist weaponizes.</td>
+              <td class="p-3">Insecurity regarding her Appalachian working-class roots.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Search Intent FAQ Section -->
+    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-4">
+      <div class="border-b-2 border-black pb-2">
+        <span class="bg-[#F8D000] border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Direct Search FAQ</span>
+        <h3 class="text-xl md:text-2xl font-black brand-font mt-2">Frequently Asked Questions: Character Creation</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-medium">
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">How do I choose character names that don't sound generic?</h4>
+          <p class="leading-relaxed">
+            Avoid phonetically similar names within the same scene (e.g., John and Jack). Balance syllables, align the name with the character's generation and geographical origin, and test how easily the name reads in dialogue cues across Courier 12pt screenplay pages.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">What makes an antagonist memorable?</h4>
+          <p class="leading-relaxed">
+            The antagonist must believe they are the hero of their own story with justifiable, internally consistent logic. Study our deep-dive analysis on <a href="/how-to-write-a-villain" class="font-bold underline text-black hover:text-red-600">how to write a villain (5 antagonist archetypes)</a> to explore philosophical opposition and moral inversion.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">Can I write scenes directly with these profiles?</h4>
+          <p class="leading-relaxed">
+            Yes. Copy your generated character bio and paste their action beats directly into our free browser-based <a href="/script-editor" class="font-bold underline text-black hover:text-red-600">online script editor</a> with automated margin and tab styling.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-black brand-font text-base text-black mb-1">How does character development impact pacing?</h4>
+          <p class="leading-relaxed">
+            When characters have distinct desires, scenes move faster with higher subtext. Check speech tempo and dialogue running times in our <a href="/tools/script-timer" class="font-bold underline text-black hover:text-red-600">script pacing timer</a> to ensure scenes don't drag.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Pre-Production & Character Tools Strip -->
+    <div class="border-4 border-black bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+      <div class="flex items-center justify-between border-b-2 border-black pb-2">
+        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Character & Screenplay Pre-Production Suite</h3>
+        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+      </div>
+      <p class="text-xs font-medium text-gray-800 leading-relaxed">
+        Move your newly generated characters into writing and drafting workflows:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a href="/script-editor" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>✍ Online Script Editor</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft formatted screenplay dialogue blocks in Courier 12pt →</span>
+        </a>
+        <a href="/how-to-write-a-villain" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>🦹 Antagonist Archetypes</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Craft compelling opposition forces using the 5 master models →</span>
+        </a>
+        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>✂ Dialogue Word Pruner</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Strip conversational throat-clearing fluff from dialogue lines →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial CTA Strip -->
+    <div class="border-4 border-black bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+      <div>
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Multi-Dimensional Scripts Written?</h2>
+        <p class="text-sm font-medium text-black max-w-xl">
+          We research, outline, and write character-driven video screenplays, commercial packs, and narrative essays calibrated for high retention and authentic dialogue.
+        </p>
+      </div>
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+        Explore Script Packs →
+      </a>
+    </div>
+
+    <!-- Bottom Return Button -->
+    <div class="mt-8">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+        ← Back to Free Tools
+      </a>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+        <div>
+          <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
+            <img 
+              src="/drlogo.png" 
+              alt="DraftsRush" 
+              width="190" 
+              height="50" 
+              class="h-8 sm:h-9 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+            />
+          </a>
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+            100% Free Client-Side Tools
+          </span>
+          <div class="flex items-center gap-1.5">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono">NEW</span></a></li>
+            <li><a href="/tools/character-name-generator" class="hover:underline font-bold text-black">Character Name Generator</a></li>
+            <li><a href="/tools/title-checker" class="hover:underline">YouTube Title Checker</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All Tools Directory →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline font-bold text-black">Antagonist Archetypes</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/story-structure-frameworks" class="hover:underline">Story Structure Models</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors">
+              care@draftsrush.com
+            </a>
+            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+              Direct response desk for creator briefs, custom quotes, and agency inquiries.
+            </p>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Generator Logic -->
+  <script>
+    const database = {
+      noir: [
+        {
+          name: "Det. Thomas Locke",
+          archetype: "protagonist",
+          genre: "Neo-Noir & Crime",
+          logline: "An insomniac detective auditing evidence lockers who discovers confiscated cartel ledger pages are quietly vanishing before arraignments.",
+          want: "Identify the mole inside the vice precinct before the state attorney's surprise audit.",
+          need: "Stop using investigative cynicism to justify staying emotionally numb since his divorce.",
+          flaw: "Refuses to delegate tasks, forcing him into solitary late-night sweeps that leave him vulnerable."
+        },
+        {
+          name: "Evelyn Kroll",
+          archetype: "antagonist",
+          genre: "Neo-Noir & Crime",
+          logline: "A corporate receiver liquidating bankrupt shipping ports who uses municipal zoning delays to launder offshore maritime bonds.",
+          want: "Finalize the terminal buyout before federal customs agents unseal the manifest vault.",
+          need: "Admit that accumulating leverage cannot protect her family from generational blackmail.",
+          flaw: "Believes every civil servant has a financial breaking point, blinding her to ideologically driven adversaries."
+        },
+        {
+          name: "Silas 'Vane' Calder",
+          archetype: "shadow",
+          genre: "Neo-Noir & Crime",
+          logline: "A former precinct ballistics tech turned unlicensed forensic consultant for high-profile defense attorneys.",
+          want: "Discredit state forensic evidence to secure a lucrative private retainer.",
+          need: "Confront his lingering guilt over tampering with bullet trajectory reports a decade ago.",
+          flaw: "Addicted to intellectual superiority; often provides unnecessary clues to mock prosecuting attorneys."
+        }
+      ],
+      scifi: [
+        {
+          name: "Kaelen Chen",
+          archetype: "protagonist",
+          genre: "Sci-Fi & Cyberpunk",
+          logline: "A deep-orbital communications technician who intercepts an unlogged synthetic distress beacon originating inside an automated defense platform.",
+          want: "Decode the telemetry frequency before automated station scrubbers purge the buffer.",
+          need: "Overcome fear of open space after surviving a catastrophic orbital depressurization incident.",
+          flaw: "Trusts automated network metrics far more than direct crew observations."
+        },
+        {
+          name: "Director Varek Holt",
+          archetype: "antagonist",
+          genre: "Sci-Fi & Cyberpunk",
+          logline: "The pragmatic chief administrator of an asteroid refinery willing to conceal radiation leaks to keep lunar supply lanes profitable.",
+          want: "Supplant the orbital labor union leadership with proprietary autonomous extraction drones.",
+          need: "Recognize that human biological ingenuity cannot be synthesized by predictive risk matrices.",
+          flaw: "Views human personnel purely as statistical wear-and-tear variables."
+        }
+      ],
+      psychological: [
+        {
+          name: "Dr. Arthur Pendelton",
+          archetype: "mentor",
+          genre: "Psychological Thriller",
+          logline: "A celebrated clinical psychiatrist whose groundbreaking memory-reconsolidation trials quietly rely on fabricated patient case studies.",
+          want: "Secure university endowment funding before an investigative journalist interviews discharged patients.",
+          need: "Acknowledge that his intellectual ambition has caused irreversible harm to vulnerable minds.",
+          flaw: "Narcissistic delusion that his clinical discoveries place him above standard medical ethics."
+        },
+        {
+          name: "Elena Vance",
+          archetype: "protagonist",
+          genre: "Psychological Thriller",
+          logline: "A forensic audio engineer hired to digitize wiretap reels from an unsolved corporate blackmail case.",
+          want: "Prove the missing master tape was altered before trial.",
+          need: "Stop using obsessive technical precision to avoid facing her sister's death.",
+          flaw: "Refuses to trust eyewitness testimony over mechanical recordings, making her blind to emotional manipulation."
+        },
+        {
+          name: "Julian Cross",
+          archetype: "shadow",
+          genre: "Psychological Thriller",
+          logline: "A disgraced handwriting analyst who manufactures plausible forensic doubt for wealthy defendants.",
+          want: "Expose Dr. Pendelton's fraudulent memory research on an international academic stage.",
+          need: "Accept that professional vindication will not repair his destroyed personal reputation.",
+          flaw: "Prone to obsessive paranoia, seeing complex conspiracies in routine administrative oversights."
+        }
+      ],
+      drama: [
+        {
+          name: "Claire Sterling",
+          archetype: "protagonist",
+          genre: "Prestige Drama",
+          logline: "A corporate compliance attorney tasked with settling a generational estate feud that threatens her family's textile manufacturing empire.",
+          want: "Force her estranged siblings into signing an equity trust agreement before the quarterly earnings call.",
+          need: "Stop substituting corporate governance for genuine familial reconciliation.",
+          flaw: "Treats interpersonal domestic conflicts like adversarial legal depositions."
+        },
+        {
+          name: "Marcus Ward",
+          archetype: "mentor",
+          genre: "Prestige Drama",
+          logline: "A legendary high-school debate coach whose relentless pursuit of state championships pushes students into academic burnout.",
+          want: "Coach his underdog team to an unprecedented fifth consecutive state title.",
+          need: "Realize that instilling empathy in young minds is vastly more valuable than teaching ruthless rhetorical dominance.",
+          flaw: "Equates competitive second-place finishes with utter moral failure."
+        }
+      ],
+      horror: [
+        {
+          name: "Father Malachi Thorne",
+          archetype: "protagonist",
+          genre: "Psychological Horror",
+          logline: "An archivist priest dispatched to an isolated coastal chapel to catalog centuries-old parish death ledgers before demolition.",
+          want: "Decipher the coded marginalia written by a missing predecessor before winter tides flood the crypt.",
+          need: "Reconcile his intellectual theology with his complete loss of personal spiritual faith.",
+          flaw: "Insists on rational, historical explanations for occurrences that defy physical laws."
+        },
+        {
+          name: "Sister Beatrice",
+          archetype: "antagonist",
+          genre: "Psychological Horror",
+          logline: "The taciturn caretaker of an abandoned sanatorium who quietly enforces strict silence rituals upon trespassers.",
+          want: "Preserve the physical isolation of the salt-marsh chapel from mainland encroachment.",
+          need: "Face the reality of the tragedy that occurred under her watch forty years prior.",
+          flaw: "Believes total auditory deprivation is the only divine safeguard against corruption."
+        }
+      ]
+    };
+
+    const genreSelect = document.getElementById('genre-select');
+    const archetypeSelect = document.getElementById('archetype-select');
+    const generateBtn = document.getElementById('generate-btn');
+    const copyBtn = document.getElementById('copy-card-btn');
+
+    const cardBadge = document.getElementById('card-badge');
+    const cardName = document.getElementById('card-name');
+    const cardLogline = document.getElementById('card-logline');
+    const cardWant = document.getElementById('card-want');
+    const cardNeed = document.getElementById('card-need');
+    const cardFlaw = document.getElementById('card-flaw');
+
+    function generateCharacter() {
+      const selectedGenre = genreSelect.value;
+      const selectedArchetype = archetypeSelect.value;
+
+      let pool = database[selectedGenre] || [];
+      if (selectedArchetype !== 'all') {
+        const filtered = pool.filter(c => c.archetype === selectedArchetype);
+        if (filtered.length > 0) pool = filtered;
+      }
+
+      if (pool.length === 0) {
+        // Fallback to any character in current genre
+        pool = database[selectedGenre] || database.noir;
+      }
+
+      const randomChar = pool[Math.floor(Math.random() * pool.length)];
+
+      cardBadge.innerText = `${randomChar.genre} • ${randomChar.archetype.toUpperCase()}`;
+      cardName.innerText = randomChar.name;
+      cardLogline.innerText = randomChar.logline;
+      cardWant.innerText = randomChar.want;
+      cardNeed.innerText = randomChar.need;
+      cardFlaw.innerText = randomChar.flaw;
+    }
+
+    generateBtn.addEventListener('click', generateCharacter);
+
+    copyBtn.addEventListener('click', async () => {
+      const textToCopy = `NAME: ${cardName.innerText}
+BADGE: ${cardBadge.innerText}
+ROLE & LOGLINE: ${cardLogline.innerText}
+EXTERNAL WANT: ${cardWant.innerText}
+INTERNAL NEED: ${cardNeed.innerText}
+FATAL FLAW: ${cardFlaw.innerText}`;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        const originalText = copyBtn.innerText;
+        copyBtn.innerText = "✓ Copied Profile!";
+        setTimeout(() => { copyBtn.innerText = originalText; }, 1800);
+      } catch (err) {
+        console.error("Clipboard copy failed", err);
+      }
+    });
+  </script>
+</body>
+</html>
