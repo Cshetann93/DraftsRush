@@ -684,7 +684,11 @@
         card.className = 'border-2 border-black p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
       }
 
-      feedback.innerHTML = notes.join('<br>');
+      feedback.replaceChildren();
+      notes.forEach((message, index) => {
+        if (index > 0) feedback.appendChild(document.createElement('br'));
+        feedback.appendChild(document.createTextNode(message));
+      });
     }
 
     input.addEventListener('input', auditCTA);
