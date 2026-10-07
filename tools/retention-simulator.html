@@ -644,6 +644,12 @@
     const presetViral = document.getElementById('preset-viral-btn');
     const presetChurn = document.getElementById('preset-churn-btn');
 
+    function renderFeedback(heading, message) {
+      const strong = document.createElement('strong');
+      strong.textContent = heading;
+      feedback.replaceChildren(strong, document.createTextNode(message));
+    }
+
     function simulate() {
       const hook = paramHook.value;
       const interrupt = paramInterrupt.value;
@@ -698,7 +704,7 @@
         metric30s.className = 'text-3xl font-black brand-font text-emerald-700';
         metricApv.className = 'text-3xl font-black brand-font text-emerald-700';
         card.className = 'border-2 border-black p-5 bg-[#C2F0C2] text-black brutal-box space-y-2';
-        feedback.innerHTML = `<strong>✓ High-Performing Retention Curve (${apv}% APV):</strong> Strong initial hook hold (&gt;${hold30}%), constant visual pattern interrupts, and a seamless outro handoff give this configuration priority browse and recommended feed distribution.`;
+        renderFeedback(`✓ High-Performing Retention Curve (${apv}% APV):`, ` Strong initial hook hold (>${hold30}%), constant visual pattern interrupts, and a seamless outro handoff give this configuration priority browse and recommended feed distribution.`);
       } else if (apv >= 40) {
         curveStatus.innerText = 'AVERAGE';
         curveStatus.className = 'font-mono text-xs font-bold bg-white text-black px-2 py-0.5 border border-black';
@@ -706,7 +712,7 @@
         metric30s.className = 'text-3xl font-black brand-font text-amber-700';
         metricApv.className = 'text-3xl font-black brand-font text-amber-700';
         card.className = 'border-2 border-black p-5 bg-[#FFF6CF] text-black brutal-box space-y-2';
-        feedback.innerHTML = `<strong>⚠️ Moderate Retention Curve (${apv}% APV):</strong> Your mid-video or outro parameters are losing viewers. Tighten the middle section with frequent B-roll and replace conventional closing remarks with a direct video handoff.`;
+        renderFeedback(`⚠️ Moderate Retention Curve (${apv}% APV):`, ' Your mid-video or outro parameters are losing viewers. Tighten the middle section with frequent B-roll and replace conventional closing remarks with a direct video handoff.');
       } else {
         curveStatus.innerText = 'CHURN RISK';
         curveStatus.className = 'font-mono text-xs font-bold bg-red-500 text-white px-2 py-0.5 border border-black';
@@ -714,7 +720,7 @@
         metric30s.className = 'text-3xl font-black brand-font text-red-700';
         metricApv.className = 'text-3xl font-black brand-font text-red-700';
         card.className = 'border-2 border-black p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
-        feedback.innerHTML = `<strong>⚠️ Critical Retention Drop-Off (${apv}% APV):</strong> Over half your audience leaves before second 00:30, and the outro triggers a severe cliff. Cut the introductory greeting and avoid saying 'in conclusion' at the end.`;
+        renderFeedback(`⚠️ Critical Retention Drop-Off (${apv}% APV):`, " Over half your audience leaves before second 00:30, and the outro triggers a severe cliff. Cut the introductory greeting and avoid saying 'in conclusion' at the end.");
       }
     }
 
