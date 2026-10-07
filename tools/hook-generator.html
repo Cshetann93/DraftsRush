@@ -476,29 +476,53 @@
       const angle = angleSelect.value;
       const filtered = formulas.filter(f => angle === 'all' || f.category === angle);
 
-      let html = '';
-      filtered.forEach((item, idx) => {
-        const text = item.template(topic);
-        const wordCount = text.split(/\s+/).length;
+      const fragment = document.createDocumentFragment();
+      filtered.forEach((item) => {
+        const hookText = item.template(topic);
+        const wordCount = hookText.split(/\s+/).length;
         const estSec = ((wordCount / 150) * 60).toFixed(1);
 
-        html += `
-          <div class="border-4 border-black bg-white p-5 brutal-box space-y-2">
-            <div class="flex items-center justify-between border-b border-gray-200 pb-2">
-              <div class="flex items-center gap-2">
-                <span class="bg-[#F8D000] text-black font-black font-mono text-[10px] px-2 py-0.5 border border-black uppercase">${item.badge}</span>
-                <span class="font-mono text-xs text-gray-500 font-bold">${wordCount} words (~${estSec}s)</span>
-              </div>
-              <button onclick="navigator.clipboard.writeText(this.getAttribute('data-text')); this.innerText = '✓ Copied!';" data-text="${text.replace(/"/g, '&quot;')}" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
-                📋 Copy Hook
-              </button>
-            </div>
-            <p class="font-bold text-sm text-gray-900 leading-snug">"${text}"</p>
-          </div>
-        `;
+        const card = document.createElement('div');
+        card.className = 'border-4 border-black bg-white p-5 brutal-box space-y-2';
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between border-b border-gray-200 pb-2';
+
+        const metadata = document.createElement('div');
+        metadata.className = 'flex items-center gap-2';
+
+        const badge = document.createElement('span');
+        badge.className = 'bg-[#F8D000] text-black font-black font-mono text-[10px] px-2 py-0.5 border border-black uppercase';
+        badge.textContent = item.badge;
+
+        const estimate = document.createElement('span');
+        estimate.className = 'font-mono text-xs text-gray-500 font-bold';
+        estimate.textContent = `${wordCount} words (~${estSec}s)`;
+        metadata.append(badge, estimate);
+
+        const copyButton = document.createElement('button');
+        copyButton.className = 'text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors';
+        copyButton.textContent = '📋 Copy Hook';
+        copyButton.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(hookText);
+            copyButton.textContent = '✓ Copied!';
+          } catch (error) {
+            copyButton.textContent = 'Copy failed';
+          }
+        });
+
+        header.append(metadata, copyButton);
+
+        const hook = document.createElement('p');
+        hook.className = 'font-bold text-sm text-gray-900 leading-snug';
+        hook.textContent = `"${hookText}"`;
+
+        card.append(header, hook);
+        fragment.appendChild(card);
       });
 
-      outputContainer.innerHTML = html;
+      outputContainer.replaceChildren(fragment);
     }
 
     generateBtn.addEventListener('click', renderHooks);
