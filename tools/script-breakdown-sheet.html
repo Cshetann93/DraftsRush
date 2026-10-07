@@ -583,15 +583,27 @@
       const eighths = sceneEighths.value;
       const loc = (sceneLoc.value.trim() || "LOCATION").toUpperCase();
 
-      sheetBadge.innerText = `SCENE ${num} • ${eighths} PAGE`;
-      sheetTitle.innerText = `${env} ${loc} - ${time}`;
+      sheetBadge.textContent = `SCENE ${num} • ${eighths} PAGE`;
+      sheetTitle.textContent = `${env} ${loc} - ${time}`;
 
-      sheetContent.innerHTML = `
-        <div class="border-b border-gray-300 pb-1.5"><strong class="text-rose-700">🔴 SPEAKING CAST (RED):</strong> ${catCast.value || "None"}</div>
-        <div class="border-b border-gray-300 pb-1.5"><strong class="text-purple-700">🟣 PROPS (PURPLE):</strong> ${catProps.value || "None"}</div>
-        <div class="border-b border-gray-300 pb-1.5"><strong class="text-amber-700">🟠 WARDROBE (ORANGE):</strong> ${catWardrobe.value || "None"}</div>
-        <div class="pt-0.5"><strong class="text-sky-700">🔵 VFX / SPECIAL EFFECTS (BLUE):</strong> ${catSfx.value || "None"}</div>
-      `;
+      const categories = [
+        { label: "🔴 SPEAKING CAST (RED):", value: catCast.value || "None", className: "border-b border-gray-300 pb-1.5", labelClass: "text-rose-700" },
+        { label: "🟣 PROPS (PURPLE):", value: catProps.value || "None", className: "border-b border-gray-300 pb-1.5", labelClass: "text-purple-700" },
+        { label: "🟠 WARDROBE (ORANGE):", value: catWardrobe.value || "None", className: "border-b border-gray-300 pb-1.5", labelClass: "text-amber-700" },
+        { label: "🔵 VFX / SPECIAL EFFECTS (BLUE):", value: catSfx.value || "None", className: "pt-0.5", labelClass: "text-sky-700" }
+      ];
+
+      const fragment = document.createDocumentFragment();
+      categories.forEach(category => {
+        const row = document.createElement('div');
+        row.className = category.className;
+        const label = document.createElement('strong');
+        label.className = category.labelClass;
+        label.textContent = category.label;
+        row.append(label, document.createTextNode(` ${category.value}`));
+        fragment.appendChild(row);
+      });
+      sheetContent.replaceChildren(fragment);
     }
 
     renderBtn.addEventListener('click', renderBreakdown);
