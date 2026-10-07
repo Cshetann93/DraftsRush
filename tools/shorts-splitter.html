@@ -580,6 +580,17 @@
     const sampleBtn = document.getElementById('sample-btn');
     const copyBtn = document.getElementById('copy-btn');
 
+    // Escape user-provided text before inserting it into HTML.
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[char]);
+    }
+
     // Sample Script Injector
     if (sampleBtn) {
       sampleBtn.addEventListener('click', () => {
@@ -622,11 +633,11 @@ Transformers, Mad Max Fury Road, and Blade Runner 2049 all pushed this contrast 
                 <span class="bg-[#F8D000] text-black font-black font-mono text-xs px-2.5 py-0.5 border border-black uppercase">PART ${idx + 1}</span>
                 <span class="font-mono text-xs font-bold text-gray-600">${chunkWords} words (~${estSeconds}s)</span>
               </div>
-              <button onclick="navigator.clipboard.writeText(this.getAttribute('data-text')); this.innerText = '✓ Copied';" data-text="${chunk.replace(/"/g, '&quot;')}" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F]">
+              <button onclick="navigator.clipboard.writeText(this.getAttribute('data-text')); this.innerText = '✓ Copied';" data-text="${escapeHtml(chunk)}" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F]">
                 Copy Part
               </button>
             </div>
-            <p class="font-medium text-sm text-gray-900 leading-relaxed font-mono whitespace-pre-wrap">${chunk}</p>
+            <p class="font-medium text-sm text-gray-900 leading-relaxed font-mono whitespace-pre-wrap">${escapeHtml(chunk)}</p>
           </div>
         `;
       });
