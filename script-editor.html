@@ -914,7 +914,15 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
       }
 
       const paragraphs = rawStory.split(/\n\s*\n/);
-      let scriptHtml = '';
+      const fragment = document.createDocumentFragment();
+
+      function appendScriptElement(type, value) {
+        const element = document.createElement('div');
+        element.setAttribute('style', FORMATS[type].style);
+        element.setAttribute('data-type', type);
+        element.textContent = value;
+        fragment.appendChild(element);
+      }
 
       paragraphs.forEach((p, idx) => {
         const text = p.trim();
@@ -927,26 +935,22 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
           const spokenLine = quoteMatch[2].trim();
           const speaker = rawSpeaker.split(' ').slice(-1)[0] || 'CHARACTER';
 
-          scriptHtml += `
-<div style="${FORMATS['character'].style}" data-type="character">${speaker}</div>
-<div style="${FORMATS['dialogue'].style}" data-type="dialogue">${spokenLine}</div>`;
+          appendScriptElement('character', speaker);
+          appendScriptElement('dialogue', spokenLine);
         } else {
           if (idx === 0 && !text.toUpperCase().startsWith('INT.') && !text.toUpperCase().startsWith('EXT.')) {
-            scriptHtml += `
-<div style="${FORMATS['scene-heading'].style}" data-type="scene-heading">EXT. SCENE START - DAY</div>`;
+            appendScriptElement('scene-heading', 'EXT. SCENE START - DAY');
           }
 
           if (text.toUpperCase().startsWith('INT.') || text.toUpperCase().startsWith('EXT.')) {
-            scriptHtml += `
-<div style="${FORMATS['scene-heading'].style}" data-type="scene-heading">${text.toUpperCase()}</div>`;
+            appendScriptElement('scene-heading', text.toUpperCase());
           } else {
-            scriptHtml += `
-<div style="${FORMATS['action'].style}" data-type="action">${text}</div>`;
+            appendScriptElement('action', text);
           }
         }
       });
 
-      workspace.innerHTML = scriptHtml;
+      workspace.replaceChildren(fragment);
       handleEditorInput();
       window.scrollTo({ top: workspace.offsetTop - 100, behavior: 'smooth' });
     }
