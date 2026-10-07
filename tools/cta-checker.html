@@ -186,47 +186,399 @@
   <header class="border-b-4 border-black bg-[#F8D000] sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
       <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
-        <img src="/drlogo.png" alt="DraftsRush" width="240" height="64" class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" />
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+        />
       </a>
+
+      <!-- Desktop Primary Navigation -->
       <nav class="hidden md:flex items-center gap-3 font-bold text-xs tracking-wider brand-font">
-        <a href="/script-editor" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-black"></span><span>SCRIPT EDITOR</span></a>
-        <a href="/writers-room" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">WRITER'S ROOM</a>
-        <a href="/tools" style="background-color: #F8D000;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">FREE TOOLS</a>
-        <a href="/scripts" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">SERVICES</a>
-        <a href="/about" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">ABOUT</a>
+        <a href="/script-editor" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" style="background-color: #F8D000;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          SERVICES
+        </a>
+        <a href="/about" style="background-color: #F0F2F5;" class="text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+          ABOUT
+        </a>
       </nav>
+
+      <!-- Desktop CTA Action & Theme Toggle -->
       <div class="hidden md:flex items-center gap-3">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" type="button"><span class="theme-toggle-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line></svg></span><span class="theme-toggle-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span><span class="theme-toggle-thumb"></span></button>
-        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]"><span class="w-2 h-2 rounded-full bg-black"></span><span>ORDER DRAFT</span></a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" type="button">
+          <span class="theme-toggle-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="12" y1="2" x2="12" y2="5"></line>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+              <line x1="2" y1="12" x2="5" y2="12"></line>
+              <line x1="19" y1="12" x2="22" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-thumb"></span>
+        </button>
+
+        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span>ORDER DRAFT</span>
+        </a>
       </div>
+
+      <!-- Mobile Controls -->
       <div class="flex items-center gap-2 md:hidden">
-        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle Dark Mode" type="button"><span class="theme-toggle-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line></svg></span><span class="theme-toggle-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span><span class="theme-toggle-thumb"></span></button>
-        <button aria-label="Toggle Navigation Menu" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle Dark Mode" type="button">
+          <span class="theme-toggle-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="12" y1="2" x2="12" y2="5"></line>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+              <line x1="2" y1="12" x2="5" y2="12"></line>
+              <line x1="19" y1="12" x2="22" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-thumb"></span>
+        </button>
+
+        <button 
+          aria-label="Toggle Navigation Menu" 
+          onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
+          class="border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Drawer -->
     <div id="mobile-nav" class="hidden md:hidden border-t-2 border-black bg-[#F0F2F5] p-6 space-y-4 font-bold brand-font text-sm">
-      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black"><span>SCRIPT EDITOR</span><span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span></a>
-      <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a><a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a><a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a><a href="/partner" class="block border-b border-gray-300 pb-2">PARTNER WITH US</a><a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a><a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">ORDER DRAFT</a>
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a>
+      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">
+        ORDER DRAFT
+      </a>
     </div>
   </header>
 
   <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
     <div class="border-4 border-black bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
-      <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">Utility: Outro & Conversion Optimization</div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">Call-to-Action (CTA) Auditor</h1>
-      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">Audit your video's closing lines. The engine scans for drop-off trigger words that announce the end prematurely, checks word count friction, and grades your conversion handoff.</p>
-      <div class="mb-6"><div class="flex items-center justify-between mb-2"><label class="block font-black text-xs uppercase tracking-wider">Paste Outro / CTA Script Lines</label><div class="flex items-center gap-3"><button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">⚡ Try an Example</button><button id="copy-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">📋 Copy CTA</button></div></div><textarea id="cta-input" rows="4" class="w-full border-2 border-black p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]" placeholder="Example: If you want to see how Christopher Nolan pulls off this exact lens trick in camera, click the breakdown on screen right now..."></textarea></div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center"><div class="border-2 border-black bg-white p-3 brutal-box"><div id="metric-words" class="text-3xl font-black brand-font">0</div><p class="text-xs font-bold text-gray-600 uppercase">Words</p></div><div class="border-2 border-black bg-white p-3 brutal-box"><div id="metric-time" class="text-3xl font-black brand-font text-blue-700">0.0s</div><p class="text-xs font-bold text-gray-600 uppercase">Estimated Delivery</p></div><div class="border-2 border-black bg-white p-3 brutal-box"><div id="metric-score" class="text-3xl font-black brand-font text-emerald-700">--</div><p class="text-xs font-bold text-gray-600 uppercase">Conversion Grade</p></div><div class="border-2 border-black bg-[#F8D000] p-3 brutal-box"><div id="metric-status" class="text-lg font-black brand-font mt-1 text-black">Awaiting Input</div><p class="text-xs font-bold text-black uppercase">Drop-Off Risk</p></div></div>
-      <div id="diagnostic-card" class="border-2 border-black p-5 bg-white brutal-box space-y-2"><div class="font-black text-xs brand-font uppercase">Audit Feedback & Flagged Triggers</div><p id="diagnostic-text" class="text-sm font-medium text-gray-700">Paste your outro lines above. We scan for fatal giveaway phrases ("in conclusion," "that's all for today," "hope you enjoyed"), word bloat, and verify clear next-action directives.</p></div>
+      <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
+        Utility: Outro & Conversion Optimization
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">
+        Call-to-Action (CTA) Auditor
+      </h1>
+      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+        Audit your video's closing lines. The engine scans for drop-off trigger words that announce the end prematurely, checks word count friction, and grades your conversion handoff.
+      </p>
+
+      <!-- Input Text Area with Action Bar -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <label class="block font-black text-xs uppercase tracking-wider">Paste Outro / CTA Script Lines</label>
+          <div class="flex items-center gap-3">
+            <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              ⚡ Try an Example
+            </button>
+            <button id="copy-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              📋 Copy CTA
+            </button>
+          </div>
+        </div>
+        <textarea id="cta-input" rows="4" class="w-full border-2 border-black p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]" placeholder="Example: If you want to see how Christopher Nolan pulls off this exact lens trick in camera, click the breakdown on screen right now..."></textarea>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
+        <div class="border-2 border-black bg-white p-3 brutal-box">
+          <div id="metric-words" class="text-3xl font-black brand-font">0</div>
+          <p class="text-xs font-bold text-gray-600 uppercase">Words</p>
+        </div>
+        <div class="border-2 border-black bg-white p-3 brutal-box">
+          <div id="metric-time" class="text-3xl font-black brand-font text-blue-700">0.0s</div>
+          <p class="text-xs font-bold text-gray-600 uppercase">Estimated Delivery</p>
+        </div>
+        <div class="border-2 border-black bg-white p-3 brutal-box">
+          <div id="metric-score" class="text-3xl font-black brand-font text-emerald-700">--</div>
+          <p class="text-xs font-bold text-gray-600 uppercase">Conversion Grade</p>
+        </div>
+        <div class="border-2 border-black bg-[#F8D000] p-3 brutal-box">
+          <div id="metric-status" class="text-lg font-black brand-font mt-1 text-black">Awaiting Input</div>
+          <p class="text-xs font-bold text-black uppercase">Drop-Off Risk</p>
+        </div>
+      </div>
+
+      <!-- Live Diagnosis Feedback Card -->
+      <div id="diagnostic-card" class="border-2 border-black p-5 bg-white brutal-box space-y-2">
+        <div class="font-black text-xs brand-font uppercase">Audit Feedback & Flagged Triggers</div>
+        <p id="diagnostic-text" class="text-sm font-medium text-gray-700">
+          Paste your outro lines above. We scan for fatal giveaway phrases ("in conclusion," "that's all for today," "hope you enjoyed"), word bloat, and verify clear next-action directives.
+        </p>
+      </div>
     </div>
-    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-6"><div class="border-b-2 border-black pb-3"><span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Retention Psychology</span><h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Why 90% of Viewers Abandon Videos During the Outro</h2></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium"><div class="space-y-3"><h3 class="font-black brand-font text-base text-black">The Fatal Outro Announcement</h3><p>Study the retention graph of nearly any YouTube video, and you will see a steep, cliff-like drop in the final twenty seconds. The moment a creator utters words like <em>"In conclusion,"</em> <em>"To wrap things up,"</em> <em>"That's going to be it for today,"</em> or <em>"I hope you enjoyed this video,"</em> the brain registers that the educational or narrative value has ended.</p><p>Viewers do not stay to hear your thank-yous. They click away immediately. That final plunge drags down your video's overall Average Percentage Viewed (APV), signaling to the recommendation algorithm that the viewer left unsatisfied.</p></div><div class="space-y-3"><h3 class="font-black brand-font text-base text-black">The Seamless Video-to-Video Handoff</h3><p>Top-tier creators never deliver an outro; they execute a <strong>retention bridge</strong>. Instead of summarizing what they just covered, they raise a brand-new curiosity gap that can only be answered by clicking the next video suggested on their end screen.</p><p>A high-converting CTA is framed around immediate viewer self-interest: <em>"Now that you understand spatial compression, watch this breakdown to see how sound designers mask the cut."</em> When your CTA points directly to an end-screen element without pausing for pleasantries, session watch time skyrockets.</p></div></div><div class="border-2 border-black bg-[#F0F2F5] p-5 space-y-3"><h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">The 3 Rules of Zero-Drop CTAs</h4><div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs"><div><strong class="text-black block mb-1">1. Ban "Outro Words"</strong><p class="text-gray-600">Never say "In conclusion," "To summarize," or "Thanks for watching." They trigger instant viewer exit bounces.</p></div><div><strong class="text-black block mb-1">2. Keep Under 18 Words</strong><p class="text-gray-600">A call-to-action should deliver in under 6 seconds. The longer your pitch drags, the fewer people click.</p></div><div><strong class="text-black block mb-1">3. One Single Command</strong><p class="text-gray-600">Don't ask viewers to like, subscribe, join Patreon, and follow Twitter in one breath. Pick one single next step.</p></div></div></div></div>
-    <div class="border-4 border-black bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4"><div class="flex items-center justify-between border-b-2 border-black pb-2"><h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Pre-Production & Pacing Tools</h3><span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span></div><p class="text-xs font-medium text-gray-800 leading-relaxed">Balance your closing call-to-action with your opening hooks and runtime constraints:</p><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs"><a href="/tools/hook-analyzer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between"><span>🎯 5-Sec Hook Analyzer</span><span class="text-[10px] text-gray-600 mt-1 font-sans">Audit your cold open to ensure your hook matches your closing conversion →</span></a><a href="/tools/script-timer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between"><span>⏱ Script Pacing Timer</span><span class="text-[10px] text-gray-600 mt-1 font-sans">Check where your CTA falls relative to total video spoken duration →</span></a><a href="/tools/format-converter" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between"><span>📄 Dual-Column AV Converter</span><span class="text-[10px] text-gray-600 mt-1 font-sans">Map end-screen graphics, card timings, and audio cutaways side by side →</span></a></div></div>
-    <div class="border-4 border-black bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8"><div><span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span><h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need High-Retention Script Packs?</h2><p class="text-sm font-medium text-black max-w-xl">We write research-backed video screenplays with seamless video-to-video handoffs, retention resets, and visual cues.</p></div><a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">Explore Script Packs →</a></div>
-    <div class="mt-8"><a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">← Back to Free Tools</a></div>
+
+    <!-- Outro Retention & Handoff Theory (350+ Words SEO Card) -->
+    <div class="border-4 border-black bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+      <div class="border-b-2 border-black pb-3">
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Retention Psychology</span>
+        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Why 90% of Viewers Abandon Videos During the Outro</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
+        <div class="space-y-3">
+          <h3 class="font-black brand-font text-base text-black">The Fatal Outro Announcement</h3>
+          <p>
+            Study the retention graph of nearly any YouTube video, and you will see a steep, cliff-like drop in the final twenty seconds. The moment a creator utters words like <em>"In conclusion,"</em> <em>"To wrap things up,"</em> <em>"That's going to be it for today,"</em> or <em>"I hope you enjoyed this video,"</em> the brain registers that the educational or narrative value has ended.
+          </p>
+          <p>
+            Viewers do not stay to hear your thank-yous. They click away immediately. That final plunge drags down your video's overall Average Percentage Viewed (APV), signaling to the recommendation algorithm that the viewer left unsatisfied.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-black brand-font text-base text-black">The Seamless Video-to-Video Handoff</h3>
+          <p>
+            Top-tier creators never deliver an outro; they execute a <strong>retention bridge</strong>. Instead of summarizing what they just covered, they raise a brand-new curiosity gap that can only be answered by clicking the next video suggested on their end screen.
+          </p>
+          <p>
+            A high-converting CTA is framed around immediate viewer self-interest: <em>"Now that you understand spatial compression, watch this breakdown to see how sound designers mask the cut."</em> When your CTA points directly to an end-screen element without pausing for pleasantries, session watch time skyrockets.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA Formula Matrix -->
+      <div class="border-2 border-black bg-[#F0F2F5] p-5 space-y-3">
+        <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">The 3 Rules of Zero-Drop CTAs</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+          <div>
+            <strong class="text-black block mb-1">1. Ban "Outro Words"</strong>
+            <p class="text-gray-600">Never say "In conclusion," "To summarize," or "Thanks for watching." They trigger instant viewer exit bounces.</p>
+          </div>
+          <div>
+            <strong class="text-black block mb-1">2. Keep Under 18 Words</strong>
+            <p class="text-gray-600">A call-to-action should deliver in under 6 seconds. The longer your pitch drags, the fewer people click.</p>
+          </div>
+          <div>
+            <strong class="text-black block mb-1">3. One Single Command</strong>
+            <p class="text-gray-600">Don't ask viewers to like, subscribe, join Patreon, and follow Twitter in one breath. Pick one single next step.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Production Tools (Workflow-Specific Interlinking) -->
+    <div class="border-4 border-black bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+      <div class="flex items-center justify-between border-b-2 border-black pb-2">
+        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Pre-Production & Pacing Tools</h3>
+        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+      </div>
+      <p class="text-xs font-medium text-gray-800 leading-relaxed">
+        Balance your closing call-to-action with your opening hooks and runtime constraints:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a href="/tools/hook-analyzer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>🎯 5-Sec Hook Analyzer</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Audit your cold open to ensure your hook matches your closing conversion →</span>
+        </a>
+        <a href="/tools/script-timer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>⏱ Script Pacing Timer</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Check where your CTA falls relative to total video spoken duration →</span>
+        </a>
+        <a href="/tools/format-converter" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>📄 Dual-Column AV Converter</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Map end-screen graphics, card timings, and audio cutaways side by side →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial CTA Strip -->
+    <div class="border-4 border-black bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+      <div>
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need High-Retention Script Packs?</h2>
+        <p class="text-sm font-medium text-black max-w-xl">
+          We write research-backed video screenplays with seamless video-to-video handoffs, retention resets, and visual cues.
+        </p>
+      </div>
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+        Explore Script Packs →
+      </a>
+    </div>
+
+    <!-- Bottom Return Button -->
+    <div class="mt-8">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+        ← Back to Free Tools
+      </a>
+    </div>
   </main>
 
-  <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]"><div class="max-w-6xl mx-auto px-6"><div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6"><div><a href="/" class="inline-block mb-3" aria-label="DraftsRush Home"><img src="/drlogo.png" alt="DraftsRush" width="190" height="50" class="h-8 sm:h-9 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" /></a><p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-3"><span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">⚡ 100% Free Client-Side Tools</span><div class="flex items-center gap-1.5"><a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors"><svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors"><svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors"><svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div></div></div><div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10"><div><div class="flex items-center gap-1.5 mb-3"><span class="w-2 h-2 bg-black"></span><h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4></div><ul class="space-y-2 text-xs font-semibold text-gray-800"><li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li><li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li><li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li><li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li><li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li><li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li></ul></div><div><div class="flex items-center gap-1.5 mb-3"><span class="w-2 h-2 bg-black"></span><h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4></div><ul class="space-y-2 text-xs font-semibold text-gray-800"><li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li><li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li><li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li><li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li><li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li><li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li></ul></div><div><div class="flex items-center gap-1.5 mb-3"><span class="w-2 h-2 bg-black"></span><h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4></div><ul class="space-y-2 text-xs font-semibold text-gray-800"><li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li><li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li><li><a href="/templates" class="hover:underline">Production Script Templates</a></li><li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li><li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li><li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li></ul></div><div><div class="flex items-center gap-1.5 mb-3"><span class="w-2 h-2 bg-black"></span><h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4></div><div class="space-y-3"><a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">✉ care@draftsrush.com</a><p class="text-[11px] font-medium text-gray-700 leading-tight">Direct response desk for creator briefs, custom quotes, and agency inquiries.</p><ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1"><li><a href="/about" class="hover:underline">About & Methodology</a></li><li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li></ul></div></div></div><div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700"><p>© 2026 DraftsRush. All rights reserved.</p><div class="flex flex-wrap gap-6"><a href="/sitemap" class="hover:underline">Sitemap</a><a href="/privacy" class="hover:underline">Privacy Policy</a><a href="/terms" class="hover:underline">Terms of Service</a><a href="/contact" class="hover:underline">Support Desk</a></div></div></div></footer>
+  <!-- Universal Footer -->
+  <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Top Branding & Value Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+        <div>
+          <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
+            <img 
+              src="/drlogo.png" 
+              alt="DraftsRush" 
+              width="190" 
+              height="50" 
+              class="h-8 sm:h-9 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+            />
+          </a>
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+          </p>
+        </div>
 
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+            ⚡ 100% Free Client-Side Tools
+          </span>
+          <div class="flex items-center gap-1.5">
+            <!-- X -->
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Column Structured Link Directory -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
+            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+              ✉ care@draftsrush.com
+            </a>
+            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+              Direct response desk for creator briefs, custom quotes, and agency inquiries.
+            </p>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audit Logic Engine -->
   <script>
     const input = document.getElementById('cta-input');
     const metricWords = document.getElementById('metric-words');
@@ -238,6 +590,7 @@
     const sampleBtn = document.getElementById('sample-btn');
     const copyBtn = document.getElementById('copy-btn');
 
+    // Sample CTA Loader
     if (sampleBtn) {
       sampleBtn.addEventListener('click', () => {
         input.value = "To see how Christopher Nolan executes this camera trick in camera, click the breakdown right on your screen.";
@@ -245,6 +598,7 @@
       });
     }
 
+    // Copy Button Handler
     if (copyBtn) {
       copyBtn.addEventListener('click', async () => {
         const text = input.value.trim();
@@ -276,6 +630,7 @@
       const words = text.match(/\b\S+\b/g) || [];
       const wordCount = words.length;
       metricWords.innerText = wordCount;
+
       const seconds = (wordCount / 150) * 60;
       metricTime.innerText = seconds.toFixed(1) + 's';
 
@@ -286,22 +641,26 @@
 
       let score = 90;
       let notes = [];
+
       if (hasGiveaway) {
         score -= 35;
         notes.push("⚠️ Fatal Outro Cliché Detected: Phrases like 'in conclusion' or 'thanks for watching' trigger immediate audience drop-off.");
       } else {
         notes.push("✓ No premature outro announcement detected.");
       }
+
       if (wordCount > 24) {
         score -= 25;
         notes.push(`⚠️ Word Bloat (${wordCount} words): Your CTA takes ${seconds.toFixed(1)}s. Keep it under 18 words so viewers click before bouncing.`);
       } else {
         notes.push("✓ Word economy is sharp and concise.");
       }
+
       if (hasMultipleCommands) {
         score -= 20;
         notes.push("⚠️ Friction Warning: Asking for multiple actions (like + subscribe + comment + bell) dilutes conversion. Choose one.");
       }
+
       if (hasDirectHandoff) {
         notes.push("✓ Strong next-step directive (routes attention to on-screen video or link).");
       } else {
@@ -310,6 +669,7 @@
       }
 
       metricScore.innerText = Math.max(20, score) + '/100';
+
       if (score >= 80) {
         metricScore.className = 'text-3xl font-black brand-font text-emerald-700';
         metricStatus.innerText = 'High Retention';
@@ -332,7 +692,13 @@
     }
 
     input.addEventListener('input', auditCTA);
-    const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')].filter(Boolean);
+
+    // Theme Toggle Logic
+    const toggleBtns = [
+      document.getElementById('theme-toggle'),
+      document.getElementById('theme-toggle-mobile')
+    ].filter(Boolean);
+
     toggleBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const isDark = document.body.classList.toggle('dark');
