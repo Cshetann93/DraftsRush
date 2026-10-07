@@ -619,18 +619,24 @@ When you master spatial compression, you don't need dialogue to create claustrop
     function generateShotlist() {
       const text = scriptInput.value.trim();
       if (!text) {
-        shotlistTbody.innerHTML = `
-          <tr>
-            <td class="p-4 border-r-2 border-black text-gray-500 font-mono italic">Awaiting script input above...</td>
-            <td class="p-4 border-r-2 border-black text-gray-500 font-mono italic">Click 'Generate B-Roll Shotlist' or try an example.</td>
-            <td class="p-4 text-gray-500 font-mono italic">--</td>
-          </tr>`;
+        const row = document.createElement('tr');
+        const firstCell = document.createElement('td');
+        firstCell.className = 'p-4 border-r-2 border-black text-gray-500 font-mono italic';
+        firstCell.textContent = 'Awaiting script input above...';
+        const secondCell = document.createElement('td');
+        secondCell.className = 'p-4 border-r-2 border-black text-gray-500 font-mono italic';
+        secondCell.textContent = "Click 'Generate B-Roll Shotlist' or try an example.";
+        const thirdCell = document.createElement('td');
+        thirdCell.className = 'p-4 text-gray-500 font-mono italic';
+        thirdCell.textContent = '--';
+        row.append(firstCell, secondCell, thirdCell);
+        shotlistTbody.replaceChildren(row);
         shotCount.innerText = '0 Shots Generated';
         return;
       }
 
-      const sentences = text.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 10);
-      let html = '';
+      const sentences = text.split(/(?<=[.!?])\\s+/).filter(s => s.trim().length > 10);
+      const fragment = document.createDocumentFragment();
 
       const shotTypes = [
         { type: "CLOSE-UP (CU)", label: "Tactile Detail", framing: "Tight focus on hands/controls with shallow depth of field. 50mm f/1.8 lens." },
@@ -641,32 +647,51 @@ When you master spatial compression, you don't need dialogue to create claustrop
 
       sentences.forEach((sentence, idx) => {
         const shot = shotTypes[idx % shotTypes.length];
-        
+
         // Extract basic search terms
-        const words = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").split(/\s+/).filter(w => w.length > 4);
+        const words = sentence.replace(/[.,\\/#!$%\\^&\\*;:{}=\\-_\x60~()]/g, "").split(/\\s+/).filter(w => w.length > 4);
         const searchKeywords = words.slice(0, 3).join(" ") || "cinematic archive";
 
-        html += `
-          <tr class="hover:bg-[#FFF6CF] transition-colors">
-            <td class="p-4 border-r-2 border-black font-mono">
-              <span class="inline-block bg-black text-white px-2 py-0.5 text-[9px] font-bold uppercase mb-1">SHOT ${idx + 1}</span><br>
-              <strong class="text-xs text-black block">${shot.type}</strong>
-              <span class="text-[10px] text-gray-500 uppercase font-bold">${shot.label}</span>
-            </td>
-            <td class="p-4 border-r-2 border-black text-xs font-medium text-gray-900 leading-relaxed">
-              <p class="font-bold text-black mb-1">${shot.framing}</p>
-              <p class="text-[11px] text-gray-600 font-mono italic">Cue: "${sentence.slice(0, 75)}${sentence.length > 75 ? '...' : ''}"</p>
-            </td>
-            <td class="p-4 font-mono text-xs">
-              <span class="bg-[#F0F2F5] border border-black px-2 py-1 inline-block text-[11px] font-bold text-gray-800">
-                "${searchKeywords} 4k cinematic"
-              </span>
-            </td>
-          </tr>
-        `;
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-[#FFF6CF] transition-colors';
+
+        const shotCell = document.createElement('td');
+        shotCell.className = 'p-4 border-r-2 border-black font-mono';
+        const shotNumber = document.createElement('span');
+        shotNumber.className = 'inline-block bg-black text-white px-2 py-0.5 text-[9px] font-bold uppercase mb-1';
+        shotNumber.textContent = `SHOT ${idx + 1}`;
+        shotCell.append(shotNumber, document.createElement('br'));
+
+        const shotType = document.createElement('strong');
+        shotType.className = 'text-xs text-black block';
+        shotType.textContent = shot.type;
+        const shotLabel = document.createElement('span');
+        shotLabel.className = 'text-[10px] text-gray-500 uppercase font-bold';
+        shotLabel.textContent = shot.label;
+        shotCell.append(shotType, shotLabel);
+
+        const directionCell = document.createElement('td');
+        directionCell.className = 'p-4 border-r-2 border-black text-xs font-medium text-gray-900 leading-relaxed';
+        const framing = document.createElement('p');
+        framing.className = 'font-bold text-black mb-1';
+        framing.textContent = shot.framing;
+        const cue = document.createElement('p');
+        cue.className = 'text-[11px] text-gray-600 font-mono italic';
+        cue.textContent = `Cue: "${sentence.slice(0, 75)}${sentence.length > 75 ? '...' : ''}"`;
+        directionCell.append(framing, cue);
+
+        const queryCell = document.createElement('td');
+        queryCell.className = 'p-4 font-mono text-xs';
+        const query = document.createElement('span');
+        query.className = 'bg-[#F0F2F5] border border-black px-2 py-1 inline-block text-[11px] font-bold text-gray-800';
+        query.textContent = `"${searchKeywords} 4k cinematic"`;
+        queryCell.appendChild(query);
+
+        row.append(shotCell, directionCell, queryCell);
+        fragment.appendChild(row);
       });
 
-      shotlistTbody.innerHTML = html;
+      shotlistTbody.replaceChildren(fragment);
       shotCount.innerText = `${sentences.length} Shots Generated`;
     }
 
