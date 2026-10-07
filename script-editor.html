@@ -233,20 +233,36 @@
       fill: #FFFFFF !important;
     }
 
-    /* Print / PDF generation rules */
+    /* Screenplay print layout */
+    @page {
+      size: letter;
+      margin: 1in;
+    }
     @media print {
-      body * { visibility: hidden; }
-      #script-workspace, #script-workspace * { visibility: visible; }
+      body * { visibility: hidden !important; }
+      #script-workspace, #script-workspace * { visibility: visible !important; }
       #script-workspace {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 6in !important;
+        min-height: 9in;
+        padding: 0 !important;
+        margin: 0 !important;
         border: none !important;
         box-shadow: none !important;
         color: #000000 !important;
-        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        font-family: "Courier New", Courier, monospace !important;
+        font-size: 12pt !important;
+        line-height: 1 !important;
+        overflow: visible !important;
       }
+      #script-workspace [data-type="scene-heading"] { margin-top: 1em !important; page-break-after: avoid; }
+      #script-workspace [data-type="character"] { margin-left: 2.2in !important; margin-top: 1em !important; page-break-after: avoid; }
+      #script-workspace [data-type="dialogue"] { margin-left: 1in !important; width: 3.5in !important; max-width: 3.5in !important; }
+      #script-workspace [data-type="parenthetical"] { margin-left: 1.5in !important; }
+      #script-workspace [data-type="transition"] { text-align: right !important; }
     }
   </style>
 </head>
@@ -424,8 +440,9 @@
 
             <!-- Action Controls -->
             <div class="flex items-center gap-2">
+              <span id="draft-save-status" role="status" aria-live="polite" class="font-mono text-[10px] font-bold uppercase text-black">Not saved</span>
               <button id="copy-script-btn" onclick="copyScreenplayText()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
-                📋 Copy
+                Copy
               </button>
               <button onclick="loadDemo()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
                 Demo
@@ -762,11 +779,56 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
       'transition': 'scene-heading'
     };
 
-    // Initial load
+    // Restore a local draft when available; scripts never leave this browser automatically.
+    const DRAFT_STORAGE_KEY = 'draftsrush-script-editor-draft-v1';
+    let saveStatusTimer;
+
     document.addEventListener('DOMContentLoaded', () => {
-      workspace.innerHTML = '<div style="margin-left: 0; text-transform: uppercase; font-weight: bold;" data-type="scene-heading"></div>';
+      let restored = false;
+      try {
+        const saved = localStorage.getItem(DRAFT_STORAGE_KEY);
+        if (saved) {
+          const draft = JSON.parse(saved);
+          if (draft && typeof draft.html === 'string' && draft.html.length < 2000000) {
+            workspace.innerHTML = draft.html;
+            restored = true;
+            setSaveStatus('Draft restored locally');
+          }
+        }
+      } catch (error) {
+        setSaveStatus('Local save unavailable');
+      }
+      if (!restored) {
+        workspace.innerHTML = '<div style="margin-left: 0; text-transform: uppercase; font-weight: bold;" data-type="scene-heading"></div>';
+      }
       handleEditorInput();
     });
+
+    function setSaveStatus(message) {
+      const status = document.getElementById('draft-save-status');
+      if (status) status.textContent = message;
+    }
+
+    function saveDraftLocally() {
+      try {
+        localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify({
+          html: workspace.innerHTML,
+          savedAt: new Date().toISOString()
+        }));
+        setSaveStatus('Saved in this browser');
+      } catch (error) {
+        setSaveStatus('Could not save locally');
+      }
+    }
+
+    function clearSavedDraft() {
+      try {
+        localStorage.removeItem(DRAFT_STORAGE_KEY);
+        setSaveStatus('Local draft removed');
+      } catch (error) {
+        setSaveStatus('Could not remove draft');
+      }
+    }
 
     // Dark Mode Toggle Logic
     const toggleBtns = [
@@ -829,9 +891,11 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
     }
 
     function clearEditor() {
-      if (confirm('Clear the current script canvas?')) {
+      if (confirm('Clear the current script canvas and remove its locally saved draft?')) {
         workspace.innerHTML = '<div style="margin-left: 0; text-transform: uppercase; font-weight: bold;" data-type="scene-heading">INT. NEW LOCATION - DAY</div>';
+        clearSavedDraft();
         handleEditorInput();
+        saveDraftLocally();
       }
     }
 
@@ -897,15 +961,18 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
       const text = workspace.innerText || '';
       const words = text.trim() ? text.trim().split(/\s+/).length : 0;
       const lines = text.split('\n').length;
-      
-      const estPages = Math.max(1, (lines / 52)).toFixed(1);
+      const estPages = (Math.max(1, lines) / 55).toFixed(1);
 
       document.getElementById('stat-words').innerText = words;
       document.getElementById('stat-lines').innerText = lines;
       document.getElementById('stat-pages').innerText = estPages;
+
+      clearTimeout(saveStatusTimer);
+      setSaveStatus('Unsaved changes');
+      saveStatusTimer = setTimeout(saveDraftLocally, 500);
     }
 
-    // Plain Text Story to Script Converter Engine
+    // Story-to-screenplay converter. This is a best-effort formatter, not an AI story interpreter.
     function convertStoryToScript() {
       const rawStory = document.getElementById('story-input').value.trim();
       if (!rawStory) {
@@ -915,6 +982,9 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
 
       const paragraphs = rawStory.split(/\n\s*\n/);
       const fragment = document.createDocumentFragment();
+      const scenePattern = /^(INT\.|EXT\.|INT\.\/EXT\.|I\/E\.)\s+/i;
+      const dialoguePattern = /\b(said|whispered|screamed|yelled|muttered|asked|replied|shouted|called|answered|murmured|warned|cried|laughed)\b\s*[:,]?\s*["“']([^"”']+)["”']/i;
+      const leadingDialoguePattern = /^([A-Z][A-Z0-9 .'-]{0,35})\s*:\s*["“']?(.+?)["”']?$/;
 
       function appendScriptElement(type, value) {
         const element = document.createElement('div');
@@ -924,34 +994,55 @@ Marcus picked up his crowbar and shouted, "Grab the solid state drives before th
         fragment.appendChild(element);
       }
 
-      paragraphs.forEach((p, idx) => {
-        const text = p.trim();
-        if (!text) return;
+      function appendNarrativeParagraph(text, paragraphIndex) {
+        if (scenePattern.test(text)) {
+          appendScriptElement('scene-heading', text.toUpperCase());
+          return;
+        }
 
-        const quoteMatch = text.match(/^([A-Za-z0-9\s]+?)\s+(?:said|whispered|screamed|yelled|muttered|asked|replied|shouted)[,:]?\s*["“]([^"”]+)["”]/i);
+        const leadingDialogue = text.match(leadingDialoguePattern);
+        if (leadingDialogue) {
+          appendScriptElement('character', leadingDialogue[1].trim().toUpperCase());
+          appendScriptElement('dialogue', leadingDialogue[2].trim().replace(/^["“']|["”']$/g, ''));
+          return;
+        }
 
-        if (quoteMatch) {
-          const rawSpeaker = quoteMatch[1].trim().toUpperCase();
-          const spokenLine = quoteMatch[2].trim();
-          const speaker = rawSpeaker.split(' ').slice(-1)[0] || 'CHARACTER';
+        // Detect quoted speech with a dialogue tag. Keep the surrounding narration as action.
+        const quote = text.match(dialoguePattern);
+        if (quote && quote.index !== undefined) {
+          const quoteStart = text.indexOf(quote[0]);
+          const prefix = text.slice(0, quoteStart).trim();
+          const speech = quote[2].trim();
+          const after = text.slice(quoteStart + quote[0].length).trim();
+          const speakerMatch = prefix.match(/([A-Z][a-zA-Z'-]*(?:\s+[A-Z][a-zA-Z'-]*)*)\s*$/);
+          const speaker = speakerMatch ? speakerMatch[1].trim().toUpperCase() : '';
+          const actionBefore = prefix.replace(/\b(said|whispered|screamed|yelled|muttered|asked|replied|shouted|called|answered|murmured|warned|cried|laughed)\b\s*[:,]?\s*$/i, '').trim();
 
-          appendScriptElement('character', speaker);
-          appendScriptElement('dialogue', spokenLine);
-        } else {
-          if (idx === 0 && !text.toUpperCase().startsWith('INT.') && !text.toUpperCase().startsWith('EXT.')) {
-            appendScriptElement('scene-heading', 'EXT. SCENE START - DAY');
-          }
-
-          if (text.toUpperCase().startsWith('INT.') || text.toUpperCase().startsWith('EXT.')) {
-            appendScriptElement('scene-heading', text.toUpperCase());
+          if (actionBefore) appendScriptElement('action', actionBefore);
+          if (speaker) {
+            appendScriptElement('character', speaker);
+            appendScriptElement('dialogue', speech);
           } else {
             appendScriptElement('action', text);
           }
+          if (after) appendScriptElement('action', after);
+          return;
         }
+
+        if (paragraphIndex === 0) {
+          appendScriptElement('scene-heading', 'INT. SCENE START - DAY');
+        }
+        appendScriptElement('action', text);
+      }
+
+      paragraphs.forEach((paragraph, index) => {
+        const text = paragraph.trim();
+        if (text) appendNarrativeParagraph(text, index);
       });
 
       workspace.replaceChildren(fragment);
       handleEditorInput();
+      saveDraftLocally();
       window.scrollTo({ top: workspace.offsetTop - 100, behavior: 'smooth' });
     }
 
