@@ -687,7 +687,11 @@
         diagnosticCard.className = 'border-2 border-black p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
       }
 
-      diagnosticText.innerHTML = feedback.join('<br>');
+      diagnosticText.replaceChildren();
+      feedback.forEach((message, index) => {
+        if (index > 0) diagnosticText.appendChild(document.createElement('br'));
+        diagnosticText.appendChild(document.createTextNode(message));
+      });
     }
 
     hookInput.addEventListener('input', auditHook);
