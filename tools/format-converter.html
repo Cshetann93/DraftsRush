@@ -596,6 +596,17 @@ When you master spatial compression, you don't need dialogue to create claustrop
       });
     }
 
+    // Escape user-provided text before inserting it into HTML.
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[char]);
+    }
+
     // Convert Prose to Dual-Column Rows
     function convertScript() {
       const text = scriptInput.value.trim();
@@ -634,7 +645,7 @@ When you master spatial compression, you don't need dialogue to create claustrop
             </td>
             <td class="p-4 text-sm font-medium text-gray-900 leading-relaxed">
               <span class="font-bold text-[10px] uppercase font-mono text-gray-500 block mb-1">VOICEOVER / HOST</span>
-              "${block}"
+              "${escapeHtml(block)}"
             </td>
           </tr>
         `;
