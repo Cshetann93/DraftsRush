@@ -26,5 +26,6 @@ jobs:
             echo "No template changes."
           else
             git commit -m "Add editable filmmaking template downloads"
-            git push
+            git pull --rebase origin main
+          git push
           fi
