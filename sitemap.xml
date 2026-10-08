@@ -203,6 +203,10 @@
        <priority>0.8500</priority>
   </url>
   <url>
+       <loc>https://www.draftsrush.com/tools/hook-generator</loc>
+       <priority>0.8500</priority>
+  </url>
+  <url>
        <loc>https://www.draftsrush.com/tools/hook-analyzer</loc>
        <lastmod>2026-09-29T10:13:10+00:00</lastmod>
        <priority>0.8500</priority>
