@@ -31,6 +31,9 @@
   }
   </script>
 
+  <!-- Prioritize the existing header logo and start the existing stylesheet request early. -->
+  <link rel="preload" as="image" href="/drlogo.png" fetchpriority="high">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
   <!-- Pre-compiled Tailwind CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 
@@ -91,6 +94,8 @@
           alt="DraftsRush" 
           width="240" 
           height="64" 
+          fetchpriority="high"
+          decoding="async"
           class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
         />
       </a>
@@ -353,7 +358,7 @@
         <div style="background-color: #FFF6CF;" class="border-4 border-black p-5 brutal-box flex flex-col justify-between">
           <div>
             <span class="font-mono text-xs font-bold text-gray-700 block mb-1">TOOL // 01</span>
-            <h4 class="text-lg font-black brand-font mb-2 text-black">Script Pacing Timer</h4>
+            <h3 class="text-lg font-black brand-font mb-2 text-black">Script Pacing Timer</h3>
             <p class="text-xs font-medium text-gray-800 leading-relaxed mb-4">
               Calculates spoken runtime against calibrated speaking speeds (130–160 WPM) for YouTube and Reels.
             </p>
