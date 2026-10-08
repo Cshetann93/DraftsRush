@@ -292,6 +292,11 @@
   <!-- 5. CRAFT MANUALS, FORMAT GUIDES & ARTICLES         -->
   <!-- =================================================== -->
   <url>
+       <loc>https://www.draftsrush.com/how-to-write-a-script</loc>
+       <lastmod>2026-10-08</lastmod>
+       <priority>0.8500</priority>
+  </url>
+  <url>
        <loc>https://www.draftsrush.com/screenplay-format-guide</loc>
        <lastmod>2026-09-29T10:13:10+00:00</lastmod>
        <priority>0.8000</priority>
