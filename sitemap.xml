@@ -21,6 +21,11 @@
        <priority>0.9000</priority>
   </url>
   <url>
+       <loc>https://www.draftsrush.com/scene-analysis-library</loc>
+       <lastmod>2026-10-08</lastmod>
+       <priority>0.8500</priority>
+  </url>
+  <url>
        <loc>https://www.draftsrush.com/tools</loc>
        <lastmod>2026-09-29T10:13:10+00:00</lastmod>
        <priority>0.9000</priority>
