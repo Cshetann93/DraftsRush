@@ -26,23 +26,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#111317;--paper:#E2E4E9;--yellow:#F8D000;--panel:#F0F2F5;--blue:#D6E4EE}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.7}
-    h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15}a{color:inherit} .wrap{width:min(960px,calc(100% - 32px));margin:auto}
-    header.site{background:var(--yellow);border-bottom:4px solid #000;position:sticky;top:0;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0}.logo{font-weight:900;font-size:1.35rem;text-decoration:none;letter-spacing:-1px}
-    header.site nav{display:flex;flex-wrap:wrap;gap:16px;font-size:.8rem;font-weight:800;text-transform:uppercase}header.site nav a{text-decoration:none}
-    .hero{margin:36px auto 28px;background:var(--yellow);border:4px solid #000;box-shadow:8px 8px 0 #111317;padding:clamp(24px,5vw,52px)}
-    .eyebrow{font:700 .75rem "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em}
-    h1{font-size:clamp(2.2rem,6vw,4.5rem);letter-spacing:-.045em;margin:18px 0}
-    .hero p{font-size:1.1rem;max-width:720px}.button{display:inline-block;background:#111317;color:#fff;text-decoration:none;padding:12px 16px;font-weight:800;border:2px solid #000;box-shadow:4px 4px 0 #111317;margin:8px 8px 0 0}
-    article{padding-bottom:60px}.section{background:var(--panel);border:3px solid #000;box-shadow:4px 4px 0 #111317;padding:clamp(20px,4vw,34px);margin:24px 0}
-    h2{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.03em;margin:0 0 16px}h3{font-size:1.25rem;margin:22px 0 8px}
-    li{margin:.55rem 0} .callout{background:var(--blue);border:2px solid #000;padding:16px;margin:18px 0}
-    table{width:100%;border-collapse:collapse;background:white}th,td{border:1px solid #777;padding:10px;text-align:left;vertical-align:top}th{background:var(--yellow)}
-    .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.links a{font-weight:800}
-    footer{border-top:4px solid #000;background:var(--yellow);padding:24px 0;font-size:.9rem}
-    @media(max-width:640px){.nav{align-items:flex-start;flex-direction:column}header.site nav{gap:10px}.hero{margin-top:20px}.hero p{font-size:1rem}table{font-size:.9rem}}
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; color: #111317; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .brutal-box { box-shadow: 4px 4px 0px #111317; }
+    .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    .brutal-btn { transition: transform .15s ease, box-shadow .15s ease; }
+    .brutal-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0px #111317; }
+    .brutal-btn:active { transform: translate(2px,2px); box-shadow: 2px 2px 0px #111317; }
+    .guide-hero { background:#F8D000; border:4px solid #000; box-shadow:8px 8px 0 #111317; padding:clamp(24px,5vw,52px); margin:36px auto 28px; }
+    .guide-eyebrow { font:700 .75rem 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.06em; }
+    .guide-hero h1 { font-size:clamp(2.2rem,6vw,4.5rem); line-height:1.08; letter-spacing:-.045em; margin:18px 0; font-weight:900; }
+    .guide-hero p { font-size:1.1rem; max-width:720px; line-height:1.7; }
+    .guide-button { display:inline-block; background:#111317; color:#fff; text-decoration:none; padding:12px 16px; font-weight:800; border:2px solid #000; box-shadow:4px 4px 0 #111317; margin:8px 8px 0 0; }
+    .guide-content { padding-bottom:60px; }
+    .guide-section { background:#F0F2F5; border:3px solid #000; box-shadow:4px 4px 0 #111317; padding:clamp(20px,4vw,34px); margin:24px 0; }
+    .guide-section h2 { font-size:clamp(1.7rem,4vw,2.5rem); line-height:1.15; letter-spacing:-.03em; margin:0 0 16px; font-weight:800; }
+    .guide-section h3 { font-size:1.25rem; line-height:1.2; margin:22px 0 8px; font-weight:700; }
+    .guide-section p, .guide-section li { line-height:1.75; }
+    .guide-section li { margin:.55rem 0; }
+    .guide-callout { background:#D6E4EE; border:2px solid #000; padding:16px; margin:18px 0; }
+    .guide-section table { width:100%; border-collapse:collapse; background:white; margin:16px 0; }
+    .guide-section th, .guide-section td { border:1px solid #777; padding:10px; text-align:left; vertical-align:top; }
+    .guide-section th { background:#F8D000; }
+    .guide-links { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .guide-links a { font-weight:800; }
+    @media(max-width:640px) { .guide-hero { margin-top:20px; } .guide-hero p { font-size:1rem; } .guide-section table { font-size:.9rem; } }
   </style>
   <script type="application/ld+json">
   {
@@ -131,15 +140,15 @@
       </a>
     </div>
   </header>
-<main class="wrap">
-  <section class="hero">
-    <div class="eyebrow">Production planning / Practical guide</div>
+<main class="wrap flex-grow">
+  <section class="guide-hero">
+    <div class="guide-eyebrow">Production planning / Practical guide</div>
     <h1>How to Break Down a Script for Film Production</h1>
     <p>A script breakdown turns a screenplay into a practical production plan. It identifies what each scene needs—cast, locations, props, wardrobe, vehicles, effects, and more—before the crew schedules and shoots it.</p>
-    <a class="button" href="/script-breakdown-sheet">Get the Free Script Breakdown Sheet →</a>
+    <a class="guide-button" href="/script-breakdown-sheet">Get the Free Script Breakdown Sheet →</a>
   </section>
-  <article>
-    <section class="section">
+  <article class="guide-content">
+    <section class="guide-section">
       <h2>What is a script breakdown?</h2>
       <p>A script breakdown is a scene-by-scene review of a screenplay that records the people, objects, locations, and special requirements needed to film each scene. It helps production teams estimate resources, spot logistical problems early, and prepare a workable shooting schedule.</p>
       <p>It is related to a scene breakdown, but the production breakdown focuses on what must be arranged to shoot the scene—not only how the scene works dramatically.</p>
@@ -155,7 +164,7 @@
         <li><strong>Check continuity and dependencies.</strong> Note costume changes, picture props, special makeup, child performers, animals, weather needs, safety concerns, and anything that affects availability or setup time.</li>
         <li><strong>Review with the production team.</strong> The assistant director and relevant department heads should verify the breakdown before it is used for scheduling and budgeting.</li>
       </ol>
-      <div class="callout"><strong>Practical rule:</strong> If the crew needs to provide, prepare, control, or coordinate something to capture the scene, record it. When uncertain, flag it for review rather than silently leaving it out.</div>
+      <div class="guide-callout"><strong>Practical rule:</strong> If the crew needs to provide, prepare, control, or coordinate something to capture the scene, record it. When uncertain, flag it for review rather than silently leaving it out.</div>
     </section>
     <section class="section">
       <h2>What should you mark in a script breakdown?</h2>
@@ -209,7 +218,7 @@
       <h2>Use a script breakdown sheet</h2>
       <p>Once you understand the categories, record them scene by scene on a breakdown sheet. A consistent sheet makes it easier to compare scenes, spot recurring requirements, and share the information with the production team.</p>
       <a class="button" href="/script-breakdown-sheet">Download the Free Script Breakdown Sheet →</a>
-      <div class="links"><a href="/free-filmmaking-templates">Browse free filmmaking templates</a><a href="/screenplay-format-guide">Read the screenplay format guide</a><a href="/writers-room">Explore the Writer's Room</a><a href="/tools">Explore free writing tools</a></div>
+      <div class="guide-links"><a href="/free-filmmaking-templates">Browse free filmmaking templates</a><a href="/screenplay-format-guide">Read the screenplay format guide</a><a href="/writers-room">Explore the Writer's Room</a><a href="/tools">Explore free writing tools</a></div>
     </section>
     <section class="section">
       <h2>Frequently asked questions</h2>
