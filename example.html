@@ -119,4 +119,1770 @@
       align-items: center;
       gap: 0.4rem;
       background: var(--bg-chassis);
-      padding:
+      padding: 0.3rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mode-btn {
+      background: transparent;
+      color: var(--text-secondary);
+      border: none;
+      padding: 0.45rem 0.85rem;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .mode-btn:hover {
+      color: var(--text-main);
+    }
+
+    .mode-btn.active {
+      background: var(--bg-elevated);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    /* Main Workspace Layout */
+    .workspace {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1120px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Camera Viewfinder Housing */
+    .camera-housing {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.25rem;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .camera-top-deck {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .scene-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .scene-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .scene-chip:hover {
+      border-color: var(--border-focus);
+      color: var(--text-main);
+    }
+
+    .scene-chip.active {
+      background: var(--accent-amber-soft);
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+    }
+
+    .camera-toggles {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .util-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .util-toggle.active {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Viewfinder Frame */
+    .viewfinder-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #050608;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    #viewfinderCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Shutter Flash Overlay */
+    .shutter-curtain {
+      position: absolute;
+      inset: 0;
+      background: #050507;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.06s ease;
+      z-index: 20;
+    }
+
+    /* Viewfinder HUD Overlays */
+    .vf-hud-top {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .vf-badge {
+      background: rgba(9, 10, 13, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .histogram-box {
+      background: rgba(9, 10, 13, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 6px 8px;
+      border-radius: 6px;
+      width: 124px;
+      height: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .histogram-label {
+      font-size: 0.6rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Focus Reticle */
+    .af-reticle {
+      position: absolute;
+      top: 52%;
+      left: 36%;
+      width: 56px;
+      height: 56px;
+      transform: translate(-50%, -50%);
+      border: 1.5px solid rgba(16, 185, 129, 0.8);
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 9;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+    }
+
+    .af-reticle::before, .af-reticle::after {
+      content: '';
+      position: absolute;
+      background: rgba(16, 185, 129, 0.8);
+    }
+    .af-reticle::before {
+      top: 50%; left: -6px; right: -6px; height: 1px;
+    }
+    .af-reticle::after {
+      left: 50%; top: -6px; bottom: -6px; width: 1px;
+    }
+
+    .af-tag {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      background: rgba(16, 185, 129, 0.9);
+      color: #04130D;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Bottom Telemetry Bar inside Viewfinder */
+    .vf-hud-bottom {
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      right: 16px;
+      background: rgba(9, 10, 13, 0.86);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      padding: 0.55rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      z-index: 10;
+    }
+
+    .vf-readouts {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .vf-metric {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .vf-metric-label {
+      font-size: 0.62rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .vf-metric-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* EV Meter Scale */
+    .ev-meter-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 190px;
+    }
+
+    .ev-scale-numbers {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      margin-bottom: 3px;
+    }
+
+    .ev-track {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .ev-center-tick {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--text-main);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .ev-indicator {
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      width: 12px;
+      border-radius: 3px;
+      background: var(--accent-green);
+      transform: translateX(-50%);
+      transition: left 0.15s ease, background-color 0.15s ease;
+    }
+
+    /* Live Diagnostic Impact Strip */
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 720px) {
+      .diagnostic-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diag-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+    }
+
+    .diag-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+
+    .diag-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    .diag-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-main);
+    }
+
+    .diag-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Right Column: Tactile Camera Control Deck */
+    .control-deck {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Mechanical Cutaway Visualizer */
+    .hardware-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 1.1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 1.1rem;
+      align-items: center;
+    }
+
+    .iris-box {
+      width: 92px;
+      height: 92px;
+      background: #08090C;
+      border-radius: 50%;
+      border: 2px solid #2A2E3D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.9);
+    }
+
+    .hardware-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .hw-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hw-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* Dial Cards */
+    .dial-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 1.15rem 1.25rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .dial-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .dial-card.locked {
+      opacity: 0.75;
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .dial-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.65rem;
+    }
+
+    .dial-name-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dial-number {
+      font-size: 0.7rem;
+      color: var(--accent-amber);
+      font-weight: 700;
+    }
+
+    .dial-name {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .dial-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+    }
+
+    /* Slider + Step Buttons */
+    .dial-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .step-btn:hover:not(:disabled) {
+      background: var(--bg-elevated);
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+    }
+
+    .step-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    input[type="range"].camera-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #08090C;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"].camera-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--text-main);
+      border: 3px solid var(--accent-amber);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      cursor: grab;
+      transition: transform 0.12s ease;
+    }
+
+    input[type="range"].camera-slider::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(1.12);
+    }
+
+    .dial-scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    /* Shutter Action Bar */
+    .shutter-bar {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .shutter-btn {
+      flex: 1;
+      background: linear-gradient(135deg, #EF4444, #DC2626);
+      color: #FFFFFF;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      box-shadow: 0 10px 24px rgba(239, 68, 68, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .shutter-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(239, 68, 68, 0.45);
+    }
+
+    .shutter-btn:active {
+      transform: translateY(1px) scale(0.99);
+    }
+
+    .shutter-ring {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+    }
+
+    .balance-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .balance-btn:hover {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+    }
+
+    /* Bottom Section: Missions & Contact Sheet */
+    .lower-studio {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .lower-studio {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .studio-section-box {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.35rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .missions-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .missions-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mission-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+      transition: all 0.2s ease;
+    }
+
+    .mission-card.done {
+      border-color: rgba(16, 185, 129, 0.5);
+      background: rgba(16, 185, 129, 0.07);
+    }
+
+    .mission-status {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mission-card.done .mission-status {
+      color: var(--accent-green);
+    }
+
+    .mission-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .mission-desc {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+    }
+
+    .filmstrip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 540px) {
+      .filmstrip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .shot-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .shot-img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #050608;
+    }
+
+    .shot-exif {
+      padding: 0.5rem 0.7rem;
+      font-size: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .empty-filmstrip {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2.2rem 1rem;
+      color: var(--text-dim);
+      font-size: 0.84rem;
+      border: 1px dashed var(--border-subtle);
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Studio Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-title display-font">OPTIX LAB // M1</div>
+          <div class="brand-sub mono">Interactive Exposure Triangle Simulator</div>
+        </div>
+      </div>
+
+      <!-- Camera Exposure Mode Switcher -->
+      <div class="mode-group" role="tablist" aria-label="Camera Shooting Modes">
+        <button class="mode-btn active" data-mode="M" onclick="setCameraMode('M')">M // Manual</button>
+        <button class="mode-btn" data-mode="Av" onclick="setCameraMode('Av')">Av // Aperture Priority</button>
+        <button class="mode-btn" data-mode="Tv" onclick="setCameraMode('Tv')">Tv // Shutter Priority</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Primary Interactive Studio -->
+  <main class="workspace">
+
+    <!-- Left Column: Live Optical Viewfinder & Diagnostics -->
+    <section class="camera-housing" aria-label="Optical Viewfinder">
+      <div class="camera-top-deck">
+        <div class="scene-selector">
+          <span class="mono" style="font-size: 0.72rem; color: var(--text-secondary); margin-right: 0.25rem;">AMBIENT LIGHT:</span>
+          <button class="scene-chip" data-scene="day" onclick="setScene('day')">Bright Waterfall (EV 14)</button>
+          <button class="scene-chip active" data-scene="dusk" onclick="setScene('dusk')">Golden Hour (EV 11)</button>
+          <button class="scene-chip" data-scene="night" onclick="setScene('night')">Neon Street (EV 7)</button>
+        </div>
+
+        <div class="camera-toggles">
+          <button id="tripodBtn" class="util-toggle" onclick="toggleTripod()">
+            <span>Tripod: OFF</span>
+          </button>
+          <button id="zebraBtn" class="util-toggle" onclick="toggleZebras()">
+            <span>Peak Warning: OFF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live 60FPS Optical Canvas -->
+      <div class="viewfinder-wrap">
+        <canvas id="viewfinderCanvas" width="960" height="600"></canvas>
+        <div id="shutterCurtain" class="shutter-curtain"></div>
+
+        <!-- Top Viewfinder HUD -->
+        <div class="vf-hud-top">
+          <div class="vf-badge mono">
+            <span id="hudModeBadge" style="color: var(--accent-amber); font-weight: 700;">[M] MANUAL</span>
+            <span>|</span>
+            <span id="hudSceneBadge">GOLDEN HOUR</span>
+          </div>
+
+          <div class="histogram-box">
+            <div class="histogram-label mono">
+              <span>SHADOW</span>
+              <span>MID</span>
+              <span>PEAK</span>
+            </div>
+            <canvas id="histogramCanvas" width="108" height="32"></canvas>
+          </div>
+        </div>
+
+        <!-- Focus Point Reticle on Subject -->
+        <div class="af-reticle">
+          <span class="af-tag mono">AF LOCKED</span>
+        </div>
+
+        <!-- Bottom Viewfinder Telemetry Bar -->
+        <div class="vf-hud-bottom mono">
+          <div class="vf-readouts">
+            <div class="vf-metric">
+              <span class="vf-metric-label">Aperture</span>
+              <span id="hudAperture" class="vf-metric-val">f/2.8</span>
+            </div>
+            <div class="vf-metric">
+              <span class="vf-metric-label">Shutter</span>
+              <span id="hudShutter" class="vf-metric-val">1/250s</span>
+            </div>
+            <div class="vf-metric">
+              <span class="vf-metric-label">Sensor ISO</span>
+              <span id="hudIso" class="vf-metric-val">ISO 400</span>
+            </div>
+          </div>
+
+          <!-- EV Light Meter -->
+          <div class="ev-meter-container">
+            <div class="ev-scale-numbers">
+              <span>-3</span>
+              <span>-2</span>
+              <span>-1</span>
+              <span style="color: var(--accent-amber); font-weight: 700;">0</span>
+              <span>+1</span>
+              <span>+2</span>
+              <span>+3</span>
+            </div>
+            <div class="ev-track">
+              <div class="ev-center-tick"></div>
+              <div id="evIndicator" class="ev-indicator" style="left: 50%;"></div>
+            </div>
+            <div id="evTextReadout" style="font-size: 0.68rem; margin-top: 4px; color: var(--accent-green); font-weight: 700;">
+              BALANCED EXPOSURE (0.0 EV)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-Time Optical Diagnostics -->
+      <div class="diagnostic-grid">
+        <div class="diag-card">
+          <div class="diag-header">
+            <span class="diag-title">Depth of Field</span>
+            <span id="dofBadge" class="diag-pill mono">Shallow</span>
+          </div>
+          <p id="dofExplain" class="diag-desc">
+            Wide aperture blurs distant city lights into soft bokeh orbs while keeping the foreground pinwheel sharp.
+          </p>
+        </div>
+
+        <div class="diag-card">
+          <div class="diag-header">
+            <span class="diag-title">Motion Capture</span>
+            <span id="motionBadge" class="diag-pill mono">Frozen</span>
+          </div>
+          <p id="motionExplain" class="diag-desc">
+            Fast shutter freezes spinning blades and water droplets cleanly with zero handheld shake.
+          </p>
+        </div>
+
+        <div class="diag-card">
+          <div class="diag-header">
+            <span class="diag-title">Sensor Signal</span>
+            <span id="noiseBadge" class="diag-pill mono">Clean</span>
+          </div>
+          <p id="noiseExplain" class="diag-desc">
+            Low amplification preserves smooth tonal gradients and deep shadow clarity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Physical Lens Cutaway & Three Exposure Dials -->
+    <aside class="control-deck" aria-label="Exposure Triangle Controls">
+
+      <!-- Live Mechanical Iris & Sensor Inspector -->
+      <div class="hardware-panel">
+        <div class="iris-box">
+          <canvas id="irisCanvas" width="88" height="88"></canvas>
+        </div>
+        <div class="hardware-stats">
+          <div class="hw-row">
+            <span style="color: var(--text-secondary);">Lens Iris Opening</span>
+            <span id="hwIrisVal" class="mono" style="font-weight: 700; color: var(--accent-amber);">35.7 mm wide</span>
+          </div>
+          <div class="hw-row">
+            <span style="color: var(--text-secondary);">Curtain Open Time</span>
+            <span id="hwShutterVal" class="mono" style="font-weight: 700;">4.0 milliseconds</span>
+          </div>
+          <div class="hw-row">
+            <span style="color: var(--text-secondary);">Sensor Gain Floor</span>
+            <span id="hwIsoVal" class="mono" style="font-weight: 700;">+6 dB low grain</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dial 1: Aperture -->
+      <div id="apertureCard" class="dial-card">
+        <div class="dial-top">
+          <div class="dial-name-wrap">
+            <span class="dial-number mono">01</span>
+            <h2 class="dial-name">Aperture (f/stop)</h2>
+          </div>
+          <span id="apertureValDisplay" class="dial-value mono">f/2.8</span>
+        </div>
+        <div class="dial-controls">
+          <button id="apMinus" class="step-btn mono" onclick="stepControl('aperture', -1)" aria-label="Wider Aperture">-</button>
+          <input id="apertureSlider" class="camera-slider" type="range" min="0" max="8" step="1" value="2" oninput="onSliderChange('aperture', this.value)">
+          <button id="apPlus" class="step-btn mono" onclick="stepControl('aperture', 1)" aria-label="Narrower Aperture">+</button>
+        </div>
+        <div class="dial-scale-labels mono">
+          <span>f/1.4 (More Light + Blur)</span>
+          <span>f/22 (Less Light + All Sharp)</span>
+        </div>
+      </div>
+
+      <!-- Dial 2: Shutter Speed -->
+      <div id="shutterCard" class="dial-card">
+        <div class="dial-top">
+          <div class="dial-name-wrap">
+            <span class="dial-number mono">02</span>
+            <h2 class="dial-name">Shutter Speed</h2>
+          </div>
+          <span id="shutterValDisplay" class="dial-value mono">1/250s</span>
+        </div>
+        <div class="dial-controls">
+          <button id="shMinus" class="step-btn mono" onclick="stepControl('shutter', -1)" aria-label="Faster Shutter">-</button>
+          <input id="shutterSlider" class="camera-slider" type="range" min="0" max="12" step="1" value="4" oninput="onSliderChange('shutter', this.value)">
+          <button id="shPlus" class="step-btn mono" onclick="stepControl('shutter', 1)" aria-label="Slower Shutter">+</button>
+        </div>
+        <div class="dial-scale-labels mono">
+          <span>1/4000s (Darker + Frozen)</span>
+          <span>1.0s (Brighter + Motion Blur)</span>
+        </div>
+      </div>
+
+      <!-- Dial 3: ISO Sensitivity -->
+      <div id="isoCard" class="dial-card">
+        <div class="dial-top">
+          <div class="dial-name-wrap">
+            <span class="dial-number mono">03</span>
+            <h2 class="dial-name">ISO Sensitivity</h2>
+          </div>
+          <span id="isoValDisplay" class="dial-value mono">ISO 400</span>
+        </div>
+        <div class="dial-controls">
+          <button id="isoMinus" class="step-btn mono" onclick="stepControl('iso', -1)" aria-label="Lower ISO">-</button>
+          <input id="isoSlider" class="camera-slider" type="range" min="0" max="8" step="1" value="2" oninput="onSliderChange('iso', this.value)">
+          <button id="isoPlus" class="step-btn mono" onclick="stepControl('iso', 1)" aria-label="Higher ISO">+</button>
+        </div>
+        <div class="dial-scale-labels mono">
+          <span>ISO 100 (Clean + Darker)</span>
+          <span>ISO 25600 (Grainy + Brighter)</span>
+        </div>
+      </div>
+
+      <!-- Shutter Release & Auto Balance Bar -->
+      <div class="shutter-bar">
+        <button class="shutter-btn display-font" onclick="triggerShutter()">
+          <span class="shutter-ring"></span>
+          <span>Capture Frame (Space)</span>
+        </button>
+        <button class="balance-btn mono" onclick="autoBalanceExposure()" title="Match settings to 0.0 EV">
+          Match 0.0 EV
+        </button>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- Lower Section: Field Challenges & Captured Contact Sheet -->
+  <section class="lower-studio">
+
+    <!-- Interactive Learning Challenges -->
+    <div class="studio-section-box">
+      <div class="section-head">
+        <div>
+          <h3 class="display-font" style="font-size: 1.1rem;">Interactive Field Missions</h3>
+          <p style="font-size: 0.78rem; color: var(--text-secondary);">Dial in the settings and press Capture Frame to verify each skill.</p>
+        </div>
+        <span id="missionCounter" class="mono" style="font-size: 0.78rem; color: var(--accent-amber); font-weight: 700;">0 / 4 COMPLETED</span>
+      </div>
+
+      <div class="missions-list">
+        <div id="mission-0" class="mission-card">
+          <div class="mission-status mono">
+            <span>MISSION 01</span>
+            <span id="mission-status-0">PENDING</span>
+          </div>
+          <div class="mission-title">Creamy Portrait Bokeh</div>
+          <p class="mission-desc">Set Aperture to f/1.4 or f/2.0 and capture a balanced photo (within 1 stop of 0.0 EV).</p>
+        </div>
+
+        <div id="mission-1" class="mission-card">
+          <div class="mission-status mono">
+            <span>MISSION 02</span>
+            <span id="mission-status-1">PENDING</span>
+          </div>
+          <div class="mission-title">Freeze the Action</div>
+          <p class="mission-desc">Set Shutter Speed to 1/1000s or faster to lock the spinning blades and droplets with balanced light.</p>
+        </div>
+
+        <div id="mission-2" class="mission-card">
+          <div class="mission-status mono">
+            <span>MISSION 03</span>
+            <span id="mission-status-2">PENDING</span>
+          </div>
+          <div class="mission-title">Silky Water & Light Trails</div>
+          <p class="mission-desc">Turn Tripod ON, set Shutter Speed to 1/4s or slower, and capture silky motion at balanced exposure.</p>
+        </div>
+
+        <div id="mission-3" class="mission-card">
+          <div class="mission-status mono">
+            <span>MISSION 04</span>
+            <span id="mission-status-3">PENDING</span>
+          </div>
+          <div class="mission-title">Clean Night Shot</div>
+          <p class="mission-desc">Switch to Neon Street, keep ISO at 800 or below, and capture a balanced night frame.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Captured Filmstrip Contact Sheet -->
+    <div class="studio-section-box">
+      <div class="section-head">
+        <div>
+          <h3 class="display-font" style="font-size: 1.1rem;">Captured Contact Sheet</h3>
+          <p style="font-size: 0.78rem; color: var(--text-secondary);">Compare how different combinations change your image side by side.</p>
+        </div>
+        <button class="util-toggle mono" onclick="clearFilmstrip()">Clear Strip</button>
+      </div>
+
+      <div id="filmstripGrid" class="filmstrip-grid">
+        <div class="empty-filmstrip mono">
+          Press "Capture Frame" to stamp your current exposure onto the comparison contact sheet.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    // Full-stop photographic scales
+    const APERTURES = [1.4, 2.0, 2.8, 4.0, 5.6, 8.0, 11.0, 16.0, 22.0];
+    const SHUTTERS = [
+      { label: '1/4000s', sec: 1/4000 },
+      { label: '1/2000s', sec: 1/2000 },
+      { label: '1/1000s', sec: 1/1000 },
+      { label: '1/500s',  sec: 1/500 },
+      { label: '1/250s',  sec: 1/250 },
+      { label: '1/125s',  sec: 1/125 },
+      { label: '1/60s',   sec: 1/60 },
+      { label: '1/30s',   sec: 1/30 },
+      { label: '1/15s',   sec: 1/15 },
+      { label: '1/8s',    sec: 1/8 },
+      { label: '1/4s',    sec: 1/4 },
+      { label: '1/2s',    sec: 1/2 },
+      { label: '1.0s',    sec: 1.0 }
+    ];
+    const ISOS = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600];
+
+    // Scene definitions (Target stop sum where EV offset = 0)
+    // Using index math:
+    // Wider aperture (lower index) = MORE light
+    // Slower shutter (higher index) = MORE light
+    // Higher ISO (higher index) = MORE light
+    // Light Score = (8 - apIdx) + shIdx + isoIdx
+    const SCENES = {
+      day:   { name: 'BRIGHT WATERFALL', targetScore: 9,  skyTop: '#1E3A5F', skyBot: '#60A5FA', ground: '#1E293B' },
+      dusk:  { name: 'GOLDEN HOUR',      targetScore: 12, skyTop: '#1E1B4B', skyBot: '#F59E0B', ground: '#171524' },
+      night: { name: 'NEON STREET',      targetScore: 16, skyTop: '#06070B', skyBot: '#111827', ground: '#090B10' }
+    };
+
+    const state = {
+      mode: 'M',
+      scene: 'dusk',
+      apIdx: 2,   // f/2.8
+      shIdx: 4,   // 1/250s
+      isoIdx: 2,  // ISO 400
+      tripod: false,
+      zebras: false,
+      missions: [false, false, false, false],
+      shots: []
+    };
+
+    // Scene animated particles
+    const bokehLights = [
+      { x: 140, y: 180, color: '#FBBF24', size: 14 },
+      { x: 260, y: 210, color: '#F43F5E', size: 11 },
+      { x: 450, y: 155, color: '#38BDF8', size: 16 },
+      { x: 590, y: 225, color: '#FBBF24', size: 13 },
+      { x: 710, y: 170, color: '#A855F7', size: 15 },
+      { x: 830, y: 205, color: '#F43F5E', size: 12 },
+      { x: 890, y: 145, color: '#38BDF8', size: 14 },
+      { x: 510, y: 240, color: '#10B981', size: 10 }
+    ];
+
+    const waterDrops = Array.from({ length: 55 }, (_, i) => ({
+      x: 640 + (i % 5) * 28 + Math.random() * 14,
+      y: 150 + Math.random() * 340,
+      speed: 2.2 + Math.random() * 1.6
+    }));
+
+    let wheelAngle = 0;
+    let trainX = 120;
+
+    const vfCanvas = document.getElementById('viewfinderCanvas');
+    const vfCtx = vfCanvas.getContext('2d');
+    const irisCanvas = document.getElementById('irisCanvas');
+    const irisCtx = irisCanvas.getContext('2d');
+    const histCanvas = document.getElementById('histogramCanvas');
+    const histCtx = histCanvas.getContext('2d');
+
+    // Calculate current Light Score and EV offset (-3 to +3+)
+    function getEvOffset() {
+      const lightScore = (8 - state.apIdx) + state.shIdx + state.isoIdx;
+      const target = SCENES[state.scene].targetScore;
+      return lightScore - target;
+    }
+
+    function setCameraMode(mode) {
+      state.mode = mode;
+      document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+      document.getElementById('hudModeBadge').textContent =
+        mode === 'M' ? '[M] MANUAL' : mode === 'Av' ? '[Av] APERTURE PRIORITY' : '[Tv] SHUTTER PRIORITY';
+
+      // Lock/unlock automated dials visually
+      const apCard = document.getElementById('apertureCard');
+      const shCard = document.getElementById('shutterCard');
+      apCard.classList.toggle('locked', mode === 'Tv');
+      shCard.classList.toggle('locked', mode === 'Av');
+
+      if (mode !== 'M') {
+        applyPriorityCompensation();
+      }
+      updateUI();
+    }
+
+    function setScene(sceneKey) {
+      state.scene = sceneKey;
+      document.querySelectorAll('.scene-chip').forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.scene === sceneKey);
+      });
+      document.getElementById('hudSceneBadge').textContent = SCENES[sceneKey].name;
+      if (state.mode !== 'M') {
+        applyPriorityCompensation();
+      }
+      updateUI();
+    }
+
+    function toggleTripod() {
+      state.tripod = !state.tripod;
+      const btn = document.getElementById('tripodBtn');
+      btn.classList.toggle('active', state.tripod);
+      btn.innerHTML = `<span>Tripod: ${state.tripod ? 'ON' : 'OFF'}</span>`;
+      updateUI();
+    }
+
+    function toggleZebras() {
+      state.zebras = !state.zebras;
+      const btn = document.getElementById('zebraBtn');
+      btn.classList.toggle('active', state.zebras);
+      btn.innerHTML = `<span>Peak Warning: ${state.zebras ? 'ON' : 'OFF'}</span>`;
+      updateUI();
+    }
+
+    function applyPriorityCompensation() {
+      const target = SCENES[state.scene].targetScore;
+      if (state.mode === 'Av') {
+        // Solve for shIdx: (8 - apIdx) + shIdx + isoIdx = target
+        let neededSh = target - (8 - state.apIdx) - state.isoIdx;
+        state.shIdx = Math.max(0, Math.min(SHUTTERS.length - 1, neededSh));
+      } else if (state.mode === 'Tv') {
+        // Solve for apIdx: 8 - apIdx = target - shIdx - isoIdx
+        let neededAp = 8 - (target - state.shIdx - state.isoIdx);
+        state.apIdx = Math.max(0, Math.min(APERTURES.length - 1, neededAp));
+      }
+    }
+
+    function onSliderChange(type, val) {
+      const idx = parseInt(val, 10);
+      if (type === 'aperture') {
+        if (state.mode === 'Tv') setCameraMode('Av');
+        state.apIdx = idx;
+      } else if (type === 'shutter') {
+        if (state.mode === 'Av') setCameraMode('Tv');
+        state.shIdx = idx;
+      } else if (type === 'iso') {
+        state.isoIdx = idx;
+      }
+
+      if (state.mode !== 'M') {
+        applyPriorityCompensation();
+      }
+      playTickSound();
+      updateUI();
+    }
+
+    function stepControl(type, delta) {
+      if (type === 'aperture') {
+        const next = Math.max(0, Math.min(APERTURES.length - 1, state.apIdx + delta));
+        onSliderChange('aperture', next);
+      } else if (type === 'shutter') {
+        const next = Math.max(0, Math.min(SHUTTERS.length - 1, state.shIdx + delta));
+        onSliderChange('shutter', next);
+      } else if (type === 'iso') {
+        const next = Math.max(0, Math.min(ISOS.length - 1, state.isoIdx + delta));
+        onSliderChange('iso', next);
+      }
+    }
+
+    function autoBalanceExposure() {
+      const target = SCENES[state.scene].targetScore;
+      let neededSh = target - (8 - state.apIdx) - state.isoIdx;
+      if (neededSh >= 0 && neededSh < SHUTTERS.length) {
+        state.shIdx = neededSh;
+      } else {
+        let remainder = neededSh < 0 ? neededSh : neededSh - (SHUTTERS.length - 1);
+        state.shIdx = Math.max(0, Math.min(SHUTTERS.length - 1, neededSh));
+        state.isoIdx = Math.max(0, Math.min(ISOS.length - 1, state.isoIdx + remainder));
+      }
+      playTickSound();
+      updateUI();
+    }
+
+    function updateUI() {
+      const ap = APERTURES[state.apIdx];
+      const sh = SHUTTERS[state.shIdx];
+      const iso = ISOS[state.isoIdx];
+      const ev = getEvOffset();
+
+      // Sync sliders
+      document.getElementById('apertureSlider').value = state.apIdx;
+      document.getElementById('shutterSlider').value = state.shIdx;
+      document.getElementById('isoSlider').value = state.isoIdx;
+
+      // Readouts
+      const apText = `f/${ap}`;
+      const shText = sh.label;
+      const isoText = `ISO ${iso}`;
+
+      document.getElementById('apertureValDisplay').textContent = apText;
+      document.getElementById('shutterValDisplay').textContent = shText;
+      document.getElementById('isoValDisplay').textContent = isoText;
+
+      document.getElementById('hudAperture').textContent = apText;
+      document.getElementById('hudShutter').textContent = shText;
+      document.getElementById('hudIso').textContent = isoText;
+
+      // Hardware Cutaway Metrics
+      const focalLength = 50;
+      const irisMm = (focalLength / ap).toFixed(1);
+      document.getElementById('hwIrisVal').textContent = `${irisMm} mm opening`;
+      const ms = sh.sec >= 0.1 ? `${sh.sec.toFixed(2)} sec` : `${(sh.sec * 1000).toFixed(2)} ms`;
+      document.getElementById('hwShutterVal').textContent = ms;
+      const dbGain = state.isoIdx * 6;
+      document.getElementById('hwIsoVal').textContent = `+${dbGain} dB gain`;
+
+      // EV Meter Bar
+      const clampedEv = Math.max(-3, Math.min(3, ev));
+      const pct = ((clampedEv + 3) / 6) * 100;
+      const evInd = document.getElementById('evIndicator');
+      const evTxt = document.getElementById('evTextReadout');
+      evInd.style.left = `${pct}%`;
+
+      const sign = ev > 0 ? '+' : '';
+      if (Math.abs(ev) <= 1) {
+        evInd.style.background = '#10B981';
+        evTxt.style.color = '#10B981';
+        evTxt.textContent = ev === 0 ? 'BALANCED EXPOSURE (0.0 EV)' : `GOOD EXPOSURE (${sign}${ev}.0 EV)`;
+      } else if (ev > 1) {
+        evInd.style.background = '#EF4444';
+        evTxt.style.color = '#EF4444';
+        evTxt.textContent = `OVEREXPOSED (${sign}${ev}.0 STOPS TOO BRIGHT)`;
+      } else {
+        evInd.style.background = '#38BDF8';
+        evTxt.style.color = '#38BDF8';
+        evTxt.textContent = `UNDEREXPOSED (${ev}.0 STOPS TOO DARK)`;
+      }
+
+      // Diagnostic Explanations
+      const dofBadge = document.getElementById('dofBadge');
+      const dofExplain = document.getElementById('dofExplain');
+      if (state.apIdx <= 2) {
+        dofBadge.textContent = 'Shallow Bokeh';
+        dofExplain.textContent = `${apText} opens the lens wide, melting distant lights into large bokeh orbs and isolating your subject.`;
+      } else if (state.apIdx <= 5) {
+        dofBadge.textContent = 'Balanced Focus';
+        dofExplain.textContent = `${apText} gives moderate background separation while keeping the whole subject plane crisp.`;
+      } else {
+        dofBadge.textContent = 'Deep Focus';
+        dofExplain.textContent = `${apText} narrows the iris to a small opening so foreground leaves and distant towers stay sharp.`;
+      }
+
+      const motionBadge = document.getElementById('motionBadge');
+      const motionExplain = document.getElementById('motionExplain');
+      if (state.shIdx <= 3) {
+        motionBadge.textContent = 'Frozen Solid';
+        motionExplain.textContent = `${shText} locks fast spinning blades and mid-air water drops with zero motion blur.`;
+      } else if (state.shIdx <= 6) {
+        motionBadge.textContent = 'Everyday Sharp';
+        motionExplain.textContent = `${shText} is safe for handheld shooting while showing slight natural movement on fast blades.`;
+      } else {
+        const shakeWarn = !state.tripod ? ' Enable Tripod to stop handheld camera shake.' : ' Tripod keeps static structures sharp.';
+        motionBadge.textContent = state.tripod ? 'Silky Trails' : 'Motion + Shake';
+        motionExplain.textContent = `${shText} turns falling water into smooth ribbons and stretches passing lights.${shakeWarn}`;
+      }
+
+      const noiseBadge = document.getElementById('noiseBadge');
+      const noiseExplain = document.getElementById('noiseExplain');
+      if (state.isoIdx <= 2) {
+        noiseBadge.textContent = 'Pure Signal';
+        noiseExplain.textContent = `${isoText} produces clean shadows and smooth tonal transitions with virtually invisible grain.`;
+      } else if (state.isoIdx <= 5) {
+        noiseBadge.textContent = 'Moderate Grain';
+        noiseExplain.textContent = `${isoText} boosts low light capability while introducing fine texture in darker areas.`;
+      } else {
+        noiseBadge.textContent = 'Heavy Grain';
+        noiseExplain.textContent = `${isoText} amplifies sensor voltage heavily, adding visible chroma specs and reducing contrast.`;
+      }
+
+      drawIrisDiagram();
+      drawHistogram(ev);
+    }
+
+    // Draw 9-blade physical aperture cutaway
+    function drawIrisDiagram() {
+      const w = irisCanvas.width;
+      const h = irisCanvas.height;
+      const cx = w / 2;
+      const cy = h / 2;
+      irisCtx.clearRect(0, 0, w, h);
+
+      // Outer lens barrel
+      const grad = irisCtx.createRadialGradient(cx, cy, 8, cx, cy, 42);
+      grad.addColorStop(0, '#1E293B');
+      grad.addColorStop(1, '#090A0F');
+      irisCtx.fillStyle = grad;
+      irisCtx.beginPath();
+      irisCtx.arc(cx, cy, 42, 0, Math.PI * 2);
+      irisCtx.fill();
+
+      // Calculate opening radius from apIdx (0 = widest, 8 = smallest)
+      const openRatio = 1 - (state.apIdx / 9.2);
+      const radius = 6 + openRatio * 30;
+
+      // Draw 9 polygon blades
+      const blades = 9;
+      irisCtx.fillStyle = '#0F1117';
+      irisCtx.strokeStyle = 'rgba(255,255,255,0.22)';
+      irisCtx.lineWidth = 1;
+
+      for (let i = 0; i < blades; i++) {
+        const angle1 = (i / blades) * Math.PI * 2;
+        const angle2 = ((i + 1) / blades) * Math.PI * 2;
+        irisCtx.beginPath();
+        irisCtx.arc(cx, cy, 42, angle1, angle2 + 0.35);
+        irisCtx.lineTo(cx + Math.cos(angle2) * radius, cy + Math.sin(angle2) * radius);
+        irisCtx.lineTo(cx + Math.cos(angle1) * radius, cy + Math.sin(angle1) * radius);
+        irisCtx.closePath();
+        irisCtx.fill();
+        irisCtx.stroke();
+      }
+
+      // Glowing glass center
+      const glassGrad = irisCtx.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, radius);
+      glassGrad.addColorStop(0, 'rgba(245, 158, 11, 0.45)');
+      glassGrad.addColorStop(0.6, 'rgba(56, 189, 248, 0.25)');
+      glassGrad.addColorStop(1, 'rgba(16, 185, 129, 0.1)');
+      irisCtx.fillStyle = glassGrad;
+      irisCtx.beginPath();
+      for (let i = 0; i < blades; i++) {
+        const a = (i / blades) * Math.PI * 2;
+        const px = cx + Math.cos(a) * radius;
+        const py = cy + Math.sin(a) * radius;
+        if (i === 0) irisCtx.moveTo(px, py);
+        else irisCtx.lineTo(px, py);
+      }
+      irisCtx.closePath();
+      irisCtx.fill();
+    }
+
+    // Draw Live Exposure Histogram
+    function drawHistogram(ev) {
+      const w = histCanvas.width;
+      const h = histCanvas.height;
+      histCtx.clearRect(0, 0, w, h);
+
+      const center = 0.5 + (ev / 7);
+      histCtx.fillStyle = 'rgba(245, 158, 11, 0.75)';
+      const bars = 24;
+      const barW = w / bars;
+
+      for (let i = 0; i < bars; i++) {
+        const normX = i / (bars - 1);
+        const dist = normX - center;
+        const val = Math.exp(-(dist * dist) / 0.08);
+        const noiseBoost = state.isoIdx * 0.025;
+        const barH = Math.min(h, Math.max(2, (val + noiseBoost) * (h - 2)));
+        histCtx.fillRect(i * barW + 1, h - barH, barW - 1.5, barH);
+      }
+    }
+
+    // Render 60FPS Multi-Plane Viewfinder Scene
+    function renderScene() {
+      const w = vfCanvas.width;
+      const h = vfCanvas.height;
+      const sc = SCENES[state.scene];
+      const ev = getEvOffset();
+      const shSec = SHUTTERS[state.shIdx].sec;
+
+      // Camera shake offset if handheld at slow shutter
+      let shakeX = 0;
+      let shakeY = 0;
+      if (!state.tripod && state.shIdx >= 7) {
+        const intensity = (state.shIdx - 6) * 2.4;
+        shakeX = Math.sin(performance.now() * 0.025) * intensity;
+        shakeY = Math.cos(performance.now() * 0.032) * intensity;
+      }
+
+      vfCtx.save();
+      vfCtx.translate(shakeX, shakeY);
+
+      // 1. BACKGROUND PLANE (Sky, Distant Towers, Bokeh Orbs)
+      const bgBlurPx = Math.max(0, (6 - state.apIdx) * 2.6);
+      vfCtx.filter = bgBlurPx > 0.3 ? `blur(${bgBlurPx.toFixed(1)}px)` : 'none';
+
+      const skyGrad = vfCtx.createLinearGradient(0, 0, 0, h * 0.72);
+      skyGrad.addColorStop(0, sc.skyTop);
+      skyGrad.addColorStop(1, sc.skyBot);
+      vfCtx.fillStyle = skyGrad;
+      vfCtx.fillRect(-20, -20, w + 40, h * 0.75);
+
+      // Distant mountain & skyline silhouettes
+      vfCtx.fillStyle = state.scene === 'day' ? '#1E293B' : '#0B0D14';
+      const towers = [
+        [40, 210, 75, 240], [130, 170, 90, 280], [240, 230, 70, 220],
+        [410, 150, 95, 300], [520, 195, 80, 255], [760, 160, 90, 290], [860, 215, 85, 235]
+      ];
+      towers.forEach(([tx, ty, tw, th]) => {
+        vfCtx.fillRect(tx, ty, tw, th);
+      });
+
+      // Optical Bokeh Orbs (Radius scales directly with wide aperture)
+      const bokehRadiusScale = 1 + Math.max(0, (7 - state.apIdx) * 0.55);
+      bokehLights.forEach(lt => {
+        const r = lt.size * bokehRadiusScale;
+        vfCtx.save();
+        vfCtx.globalAlpha = state.apIdx <= 3 ? 0.52 : 0.85;
+        vfCtx.fillStyle = lt.color;
+        vfCtx.beginPath();
+        vfCtx.arc(lt.x, lt.y, r, 0, Math.PI * 2);
+        vfCtx.fill();
+        vfCtx.restore();
+      });
+
+      // Passing background express light trail (shows Shutter Speed effect)
+      trainX = (trainX + 3.5) % (w + 200);
+      const trailLength = Math.min(340, Math.max(18, shSec * 520));
+      const trailGrad = vfCtx.createLinearGradient(trainX - trailLength, 365, trainX, 365);
+      trailGrad.addColorStop(0, 'rgba(244, 63, 94, 0)');
+      trailGrad.addColorStop(0.7, 'rgba(245, 158, 11, 0.75)');
+      trailGrad.addColorStop(1, '#FFFFFF');
+      vfCtx.fillStyle = trailGrad;
+      vfCtx.fillRect(trainX - trailLength, 362, trailLength, 8);
+
+      // Ground plane
+      vfCtx.fillStyle = sc.ground;
+      vfCtx.fillRect(-20, h * 0.68, w + 40, h * 0.35);
+
+      // 2. MIDGROUND FOCUS PLANE (Sharp Subject: Kinetic Pinwheel + Cascade Fountain)
+      vfCtx.filter = !state.tripod && state.shIdx >= 7 ? `blur(${(state.shIdx - 6) * 1.1}px)` : 'none';
+
+      // Cascading Waterfall / Fountain on Right
+      vfCtx.fillStyle = 'rgba(30, 41, 59, 0.85)';
+      vfCtx.fillRect(625, 140, 175, 340);
+
+      const dropStreak = Math.min(110, Math.max(4, shSec * 240));
+      vfCtx.strokeStyle = 'rgba(224, 242, 254, 0.78)';
+      vfCtx.lineWidth = state.shIdx >= 8 ? 5 : 2.5;
+      vfCtx.lineCap = 'round';
+
+      waterDrops.forEach(d => {
+        d.y += d.speed;
+        if (d.y > 465) d.y = 150;
+        vfCtx.beginPath();
+        vfCtx.moveTo(d.x, d.y);
+        vfCtx.lineTo(d.x, Math.min(475, d.y + dropStreak));
+        vfCtx.stroke();
+      });
+
+      // Kinetic Pinwheel Subject at AF Point (x: 345, y: 312)
+      const px = 345;
+      const py = 312;
+
+      // Stand Mast
+      vfCtx.fillStyle = '#475569';
+      vfCtx.fillRect(px - 6, py, 12, 210);
+
+      // Advance rotor angle
+      wheelAngle += 0.065;
+
+      // Motion blur ghosting passes based on shutter speed
+      const blurSteps = Math.min(28, Math.max(1, Math.floor(shSec * 85)));
+      const arcSpan = Math.min(Math.PI * 1.4, shSec * 3.8);
+
+      for (let s = 0; s < blurSteps; s++) {
+        const subAngle = wheelAngle - (s / blurSteps) * arcSpan;
+        vfCtx.save();
+        vfCtx.translate(px, py);
+        vfCtx.rotate(subAngle);
+        vfCtx.globalAlpha = blurSteps === 1 ? 1.0 : (1.5 / blurSteps);
+
+        const bladeColors = ['#F59E0B', '#EF4444', '#38BDF8', '#10B981', '#F59E0B', '#EF4444'];
+        for (let b = 0; b < 6; b++) {
+          vfCtx.save();
+          vfCtx.rotate((b * Math.PI) / 3);
+          vfCtx.fillStyle = bladeColors[b];
+          vfCtx.beginPath();
+          vfCtx.moveTo(0, 0);
+          vfCtx.lineTo(24, -115);
+          vfCtx.lineTo(-18, -115);
+          vfCtx.closePath();
+          vfCtx.fill();
+          vfCtx.restore();
+        }
+        vfCtx.restore();
+      }
+
+      // Pinwheel Center Hub
+      vfCtx.fillStyle = '#F8FAFC';
+      vfCtx.beginPath();
+      vfCtx.arc(px, py, 14, 0, Math.PI * 2);
+      vfCtx.fill();
+      vfCtx.fillStyle = '#0F172A';
+      vfCtx.beginPath();
+      vfCtx.arc(px, py, 6, 0, Math.PI * 2);
+      vfCtx.fill();
+
+      // 3. FOREGROUND FRAMING FOLIAGE (Left Corner, blurs at wide aperture)
+      const fgBlurPx = Math.max(0, (5 - state.apIdx) * 2.2);
+      vfCtx.filter = fgBlurPx > 0.3 ? `blur(${fgBlurPx.toFixed(1)}px)` : 'none';
+      vfCtx.fillStyle = '#064E3B';
+      vfCtx.beginPath();
+      vfCtx.ellipse(45, 520, 115, 65, -0.3, 0, Math.PI * 2);
+      vfCtx.fill();
+      vfCtx.fillStyle = '#047857';
+      vfCtx.beginPath();
+      vfCtx.ellipse(95, 560, 95, 50, -0.15, 0, Math.PI * 2);
+      vfCtx.fill();
+
+      vfCtx.restore();
+      vfCtx.filter = 'none';
+
+      // 4. EXPOSURE BRIGHTNESS / DARKNESS OVERLAY
+      if (ev < 0) {
+        const darkAlpha = Math.min(0.92, Math.abs(ev) * 0.23);
+        vfCtx.fillStyle = `rgba(3, 4, 7, ${darkAlpha})`;
+        vfCtx.fillRect(0, 0, w, h);
+      } else if (ev > 0) {
+        const brightAlpha = Math.min(0.92, ev * 0.22);
+        vfCtx.fillStyle = `rgba(255, 252, 245, ${brightAlpha})`;
+        vfCtx.fillRect(0, 0, w, h);
+      }
+
+      // 5. PEAK BRIGHTNESS WARNING STRIPES (Zebra Pattern when overexposed)
+      if (state.zebras && ev >= 1) {
+        vfCtx.save();
+        vfCtx.strokeStyle = 'rgba(239, 68, 68, 0.55)';
+        vfCtx.lineWidth = 2;
+        for (let z = -h; z < w; z += 14) {
+          vfCtx.beginPath();
+          vfCtx.moveTo(z, 0);
+          vfCtx.lineTo(z + h * 0.5, h * 0.5);
+          vfCtx.stroke();
+        }
+        vfCtx.restore();
+      }
+
+      // 6. SENSOR ISO GRAIN / NOISE FLOOR
+      if (state.isoIdx >= 2) {
+        const grainCount = (state.isoIdx - 1) * 380;
+        const alpha = Math.min(0.45, state.isoIdx * 0.048);
+        for (let g = 0; g < grainCount; g++) {
+          const gx = Math.random() * w;
+          const gy = Math.random() * h;
+          if (state.isoIdx >= 6 && g % 4 === 0) {
+            vfCtx.fillStyle = g % 8 === 0 ? `rgba(244, 63, 94, ${alpha})` : `rgba(56, 189, 248, ${alpha})`;
+          } else {
+            const lum = Math.random() > 0.5 ? 255 : 0;
+            vfCtx.fillStyle = `rgba(${lum}, ${lum}, ${lum}, ${alpha})`;
+          }
+          vfCtx.fillRect(gx, gy, 2.2, 2.2);
+        }
+      }
+
+      requestAnimationFrame(renderScene);
+    }
+
+    // Web Audio API Synthesizer for Tactile Dial Clicks & Mechanical Shutter
+    let audioCtx = null;
+    function getAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
+
+    function playTickSound() {
+      const ctx = getAudio();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(920, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(220, ctx.currentTime + 0.018);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.018);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.02);
+    }
+
+    function playShutterSound(durationSec) {
+      const ctx = getAudio();
+      if (!ctx) return;
+
+      const click = (time, freq) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, time);
+        osc.frequency.exponentialRampToValueAtTime(90, time + 0.035);
+        gain.gain.setValueAtTime(0.22, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.04);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(time);
+        osc.stop(time + 0.045);
+      };
+
+      const now = ctx.currentTime;
+      click(now, 1200); // First curtain open
+      const closeDelay = Math.max(0.045, Math.min(1.0, durationSec));
+      click(now + closeDelay, 850); // Second curtain close
+    }
+
+    // Trigger Shutter & Evaluate Challenges
+    function triggerShutter() {
+      const shSec = SHUTTERS[state.shIdx].sec;
+      playShutterSound(shSec);
+
+      // Visual shutter curtain actuation
+      const curtain = document.getElementById('shutterCurtain');
+      curtain.style.opacity = '0.92';
+      setTimeout(() => {
+        curtain.style.opacity = '0';
+      }, Math.max(60, Math.min(550, shSec * 500)));
+
+      // Snapshot current canvas to Contact Sheet
+      const dataUrl = vfCanvas.toDataURL('image/jpeg', 0.85);
+      const ev = getEvOffset();
+      const sign = ev > 0 ? '+' : '';
+      state.shots.unshift({
+        url: dataUrl,
+        ap: `f/${APERTURES[state.apIdx]}`,
+        sh: SHUTTERS[state.shIdx].label,
+        iso: `ISO ${ISOS[state.isoIdx]}`,
+        ev: `${sign}${ev}.0 EV`
+      });
+      if (state.shots.length > 4) state.shots.pop();
+      renderFilmstrip();
+
+      // Check Field Missions
+      const balanced = Math.abs(ev) <= 1;
+      if (state.apIdx <= 1 && balanced) state.missions[0] = true;
+      if (state.shIdx <= 2 && balanced) state.missions[1] = true;
+      if (state.tripod && state.shIdx >= 10 && balanced) state.missions[2] = true;
+      if (state.scene === 'night' && state.isoIdx <= 3 && balanced) state.missions[3] = true;
+
+      updateMissionsUI();
+    }
+
+    function renderFilmstrip() {
+      const grid = document.getElementById('filmstripGrid');
+      if (state.shots.length === 0) {
+        grid.innerHTML = `<div class="empty-filmstrip mono">Press "Capture Frame" to stamp your current exposure onto the comparison contact sheet.</div>`;
+        return;
+      }
+      grid.innerHTML = state.shots.map(s => `
+        <div class="shot-card">
+          <img class="shot-img" src="${s.url}" alt="Captured exposure frame">
+          <div class="shot-exif mono">
+            <span>${s.ap} · ${s.sh} · ${s.iso}</span>
+            <span style="color: var(--accent-amber); font-weight: 700;">${s.ev}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function clearFilmstrip() {
+      state.shots = [];
+      renderFilmstrip();
+    }
+
+    function updateMissionsUI() {
+      let doneCount = 0;
+      state.missions.forEach((done, idx) => {
+        const card = document.getElementById(`mission-${idx}`);
+        const badge = document.getElementById(`mission-status-${idx}`);
+        card.classList.toggle('done', done);
+        if (done) {
+          doneCount++;
+          badge.textContent = 'VERIFIED';
+        }
+      });
+      document.getElementById('missionCounter').textContent = `${doneCount} / 4 COMPLETED`;
+    }
+
+    // Spacebar shortcut to fire shutter
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+        e.preventDefault();
+        triggerShutter();
+      }
+    });
+
+    // Initialize Studio
+    updateUI();
+    requestAnimationFrame(renderScene);
+  </script>
+</body>
+</html>
