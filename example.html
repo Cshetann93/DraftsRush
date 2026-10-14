@@ -35,7 +35,7 @@
   <link rel="canonical" href="https://www.draftsrush.com/">
   <meta name="description" content="Learn how to write a screenplay, analyse movie scenes, download free filmmaking templates, and use free scriptwriting tools. Explore practical resources at DraftsRush.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="theme-color" content="#0A0A0C">
+  <meta name="theme-color" content="#F8D000">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DraftsRush">
   <meta property="og:title" content="Screenwriting Guides, Free Filmmaking Templates & Movie Analysis | DraftsRush">
@@ -64,12 +64,13 @@
   }
   </script>
 
-  <!-- Prioritize header logo and stylesheet -->
+  <!-- Prioritize the existing header logo and start the existing stylesheet request early. -->
   <link rel="preload" as="image" href="/drlogo.png" fetchpriority="high">
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <!-- Pre-compiled Tailwind CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 
-  <!-- Warm up connections -->
+  <!-- Warm up connections to critical third-party origins -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -77,27 +78,25 @@
   <!-- Non-blocking font load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
   </noscript>
 
+  <!-- Refined Studio Styles Maintaining Original Color Palette -->
   <style>
     :root {
-      --bg-primary: #FAFAFA;
-      --bg-surface: #FFFFFF;
-      --bg-subtle: #F4F4F6;
-      --bg-dark: #0A0B0E;
-      --bg-dark-card: #12141A;
-      --text-primary: #0A0B0E;
-      --text-secondary: #525560;
-      --text-muted: #7E8290;
-      --accent-gold: #F8D000;
-      --accent-gold-soft: rgba(248, 208, 0, 0.14);
-      --border-light: #E6E7EC;
-      --border-hover: #0A0B0E;
-      --border-dark: rgba(255, 255, 255, 0.1);
+      --bg-base: #E2E4E9;
+      --ink: #111317;
+      --brand-yellow: #F8D000;
+      --cta-yellow: #FFE600;
+      --surface-light: #F0F2F5;
+      --surface-blue: #D6E4EE;
+      --surface-cream: #FFF6CF;
+      --surface-mint: #E1F5E3;
+      --section-slate: #D4D7E1;
+      --section-steel: #CCD0DC;
     }
 
     html {
@@ -106,238 +105,198 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
+      background-color: var(--bg-base) !important;
+      color: var(--ink);
       letter-spacing: -0.011em;
-      overflow-x: hidden;
     }
 
     h1, h2, h3, h4, .brand-font {
       font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.028em;
     }
 
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
-      letter-spacing: -0.02em;
     }
 
-    /* Architectural Background Grid */
-    .studio-grid-bg {
-      background-image: 
-        linear-gradient(to right, rgba(10, 11, 14, 0.035) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(10, 11, 14, 0.035) 1px, transparent 1px);
-      background-size: 48px 48px;
+    /* Original Palette Utility Classes */
+    .bg-base { background-color: #E2E4E9 !important; }
+    .bg-brand-yellow { background-color: #F8D000 !important; }
+    .bg-cta-yellow { background-color: #FFE600 !important; }
+    .bg-surface-light { background-color: #F0F2F5 !important; }
+    .bg-surface-blue { background-color: #D6E4EE !important; }
+    .bg-surface-cream { background-color: #FFF6CF !important; }
+    .bg-surface-mint { background-color: #E1F5E3 !important; }
+    .bg-section-slate { background-color: #D4D7E1 !important; }
+    .bg-section-steel { background-color: #CCD0DC !important; }
+    .bg-ink { background-color: #111317 !important; }
+
+    /* High-End Header with Brand Yellow */
+    .studio-header {
+      background-color: rgba(248, 208, 0, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid rgba(17, 19, 23, 0.18);
+      box-shadow: 0 4px 20px -4px rgba(17, 19, 23, 0.06);
     }
 
-    .dark-grid-bg {
-      background-color: var(--bg-dark);
-      background-image: 
-        radial-gradient(circle at 80% 20%, rgba(248, 208, 0, 0.08), transparent 45%),
-        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      background-size: 100% 100%, 48px 48px, 48px 48px;
+    /* Refined Architectural Surfaces */
+    .studio-hero-box {
+      background-color: #F8D000;
+      border: 1.5px solid #111317;
+      border-radius: 24px;
+      box-shadow: 0 24px 48px -12px rgba(17, 19, 23, 0.14), 0 4px 12px -2px rgba(17, 19, 23, 0.08);
+      background-image: radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.35), transparent 45%);
     }
 
-    /* Glass Header */
-    .glass-header {
-      background: rgba(250, 250, 250, 0.86);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-light);
+    .studio-feature-box {
+      border: 1.5px solid #111317;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px -14px rgba(17, 19, 23, 0.1);
     }
 
-    /* High-End Surface Cards */
     .studio-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      box-shadow: 0 1px 2px rgba(10, 11, 14, 0.03);
+      border: 1.5px solid rgba(17, 19, 23, 0.85);
+      border-radius: 18px;
+      box-shadow: 0 6px 16px -4px rgba(17, 19, 23, 0.06);
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                   box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.25s ease;
+                  border-color 0.2s ease;
     }
 
     .studio-card:hover {
-      transform: translateY(-3px);
-      border-color: #C8CAD4;
-      box-shadow: 0 16px 32px -12px rgba(10, 11, 14, 0.08), 0 4px 8px -4px rgba(10, 11, 14, 0.04);
+      transform: translateY(-4px);
+      border-color: #111317;
+      box-shadow: 0 18px 34px -10px rgba(17, 19, 23, 0.14), 0 4px 10px -2px rgba(17, 19, 23, 0.06);
     }
 
-    .studio-card-dark {
-      background: var(--bg-dark-card);
-      border: 1px solid var(--border-dark);
-      border-radius: 16px;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.25s ease,
-                  box-shadow 0.25s ease;
-    }
-
-    .studio-card-dark:hover {
-      transform: translateY(-3px);
-      border-color: rgba(248, 208, 0, 0.45);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background-color: var(--text-primary);
-      color: #FFFFFF;
+    /* Refined Navigation Pills & Buttons */
+    .nav-pill {
+      background-color: #F0F2F5;
+      color: #111317;
+      border: 1.5px solid rgba(17, 19, 23, 0.85);
       border-radius: 10px;
-      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 2px 6px rgba(10, 11, 14, 0.12);
+      box-shadow: 0 2px 4px rgba(17, 19, 23, 0.06);
     }
 
-    .btn-primary:hover {
-      background-color: #1F222B;
+    .nav-pill:hover {
+      background-color: #111317 !important;
+      color: #F0F2F5 !important;
       transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(10, 11, 14, 0.18);
+      box-shadow: 0 6px 12px rgba(17, 19, 23, 0.14);
     }
 
-    .btn-gold {
-      background-color: var(--accent-gold);
-      color: var(--text-primary);
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    .nav-pill:hover .status-dot {
+      background-color: #F8D000;
     }
 
-    .btn-gold:hover {
-      background-color: #FFE01B;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(248, 208, 0, 0.28);
+    .studio-btn {
+      border: 1.5px solid #111317;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 10px -2px rgba(17, 19, 23, 0.1);
     }
 
-    .btn-secondary {
-      background-color: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.2s ease;
+    .studio-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
     }
 
-    .btn-secondary:hover {
-      background-color: var(--bg-subtle);
-      border-color: #B8BBC7;
+    .studio-btn:active {
+      transform: translateY(0);
     }
 
-    /* Navigation Links */
-    .nav-link {
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.875rem;
-      padding: 0.5rem 0.85rem;
-      border-radius: 8px;
-      transition: color 0.15s ease, background-color 0.15s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--text-primary);
-      background-color: rgba(10, 11, 14, 0.04);
-    }
-
-    /* Section Pill Badge */
-    .section-pill {
+    /* Badges */
+    .studio-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.85rem;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      color: var(--text-primary);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      border: 1.5px solid #111317;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
-    .pulse-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 9999px;
-      background-color: #10B981;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-    }
-
-    .gold-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 9999px;
-      background-color: var(--accent-gold);
-    }
-
-    /* Interactive Arrow Shift */
-    .arrow-link svg {
+    /* Interactive Link Arrow */
+    .arrow-shift svg {
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .arrow-link:hover svg {
+    .arrow-shift:hover svg {
       transform: translateX(4px);
     }
 
-    /* FAQ Accordion */
+    /* Native FAQ Accordion */
     details > summary {
       list-style: none;
     }
     details > summary::-webkit-details-marker {
       display: none;
     }
-    details[open] .faq-icon {
+    details[open] .faq-plus {
       transform: rotate(45deg);
     }
-    .faq-icon {
+    .faq-plus {
       transition: transform 0.2s ease;
     }
   </style>
   <script src="/cookie-consent.js"></script>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-yellow-300 selection:text-black">
+<body class="bg-base text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Universal Studio Header -->
-  <header class="glass-header sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+  <!-- Universal Header -->
+  <header class="studio-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
-      <a href="/" class="inline-flex items-center flex-shrink-0 focus:outline-none" aria-label="DraftsRush Home">
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
         <img 
           src="/drlogo.png" 
           alt="DraftsRush" 
-          width="200" 
-          height="52" 
+          width="240" 
+          height="64" 
           fetchpriority="high"
           decoding="async"
-          class="h-9 sm:h-10 w-auto object-contain rounded-md" 
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain rounded-lg border border-black/80 shadow-sm transition-transform hover:scale-[1.02]" 
         />
       </a>
 
       <!-- Desktop Primary Navigation -->
-      <nav class="hidden md:flex items-center gap-1" aria-label="Primary Navigation">
-        <a href="/script-editor" class="nav-link inline-flex items-center gap-2">
-          <span class="pulse-dot"></span>
-          <span>Script Editor</span>
+      <nav class="hidden md:flex items-center gap-2.5 brand-font" aria-label="Primary Navigation">
+        <a href="/script-editor" class="nav-pill uppercase flex items-center gap-2">
+          <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
+          <span>SCRIPT EDITOR</span>
         </a>
-        <a href="/writers-room" class="nav-link">Writer's Room</a>
-        <a href="/tools" class="nav-link">Free Tools</a>
-        <a href="/free-filmmaking-templates" class="nav-link">Templates</a>
-        <a href="/scripts" class="nav-link">Services</a>
-        <a href="/about" class="nav-link">About</a>
+        <a href="/writers-room" class="nav-pill uppercase">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="nav-pill uppercase">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="nav-pill uppercase">
+          SERVICES
+        </a>
+        <a href="/about" class="nav-pill uppercase">
+          ABOUT
+        </a>
       </nav>
 
       <!-- Desktop CTA Action -->
-      <div class="hidden md:flex items-center gap-3">
-        <a href="/script-editor" class="btn-secondary px-4 py-2.5 text-xs tracking-wide">
-          Launch Editor
-        </a>
-        <a href="/contact" class="btn-primary px-5 py-2.5 text-xs tracking-wide inline-flex items-center gap-2">
-          <span>Order Draft</span>
-          <svg class="w-3.5 h-3.5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
+      <div class="hidden md:flex items-center">
+        <a href="/contact" class="bg-cta-yellow text-black studio-btn px-4 py-2 font-black text-xs tracking-wider brand-font uppercase whitespace-nowrap flex items-center gap-2 hover:bg-black hover:text-[#FFE600]">
+          <span class="w-2 h-2 rounded-full bg-current"></span>
+          <span>ORDER DRAFT</span>
         </a>
       </div>
 
@@ -345,668 +304,541 @@
       <button 
         aria-label="Toggle Navigation Menu" 
         onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
-        class="md:hidden p-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 hover:bg-gray-50 focus:outline-none">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        class="md:hidden bg-surface-light border border-black rounded-lg p-2 shadow-sm">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
 
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-6 space-y-3 shadow-xl">
-      <a href="/script-editor" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-900 border-b border-gray-100">
-        <span class="flex items-center gap-2"><span class="pulse-dot"></span> Script Editor</span>
-        <span class="font-mono text-xs px-2 py-0.5 rounded bg-yellow-100 text-gray-900 font-semibold">STUDIO</span>
+    <div id="mobile-nav" class="hidden md:hidden bg-surface-light border-t border-black/20 p-6 space-y-3.5 font-bold brand-font text-sm shadow-xl">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2.5 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-brand-yellow border border-black rounded text-[10px] px-2 py-0.5 font-mono">NEW</span>
       </a>
-      <a href="/writers-room" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">Writer's Room</a>
-      <a href="/tools" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">Free Tools</a>
-      <a href="/free-filmmaking-templates" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">Filmmaking Templates</a>
-      <a href="/scripts" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">Services</a>
-      <a href="/partner" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">Partner With Us</a>
-      <a href="/about" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-black border-b border-gray-100">About</a>
-      <div class="pt-3 flex flex-col gap-2.5">
-        <a href="/contact" class="btn-primary w-full py-3 text-center text-xs uppercase tracking-wider">
-          Order Custom Draft
-        </a>
-      </div>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2.5">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2.5">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2.5">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2.5">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2.5">ABOUT</a>
+      <a href="/contact" class="block text-center bg-ink text-white py-3 rounded-xl border border-black uppercase tracking-wider text-xs shadow-md">
+        ORDER DRAFT
+      </a>
     </div>
   </header>
 
   <main class="flex-grow">
-
-    <!-- Hero Section -->
-    <section class="studio-grid-bg relative border-b border-gray-200 pt-12 pb-20 md:pt-20 md:pb-28">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          
-          <!-- Left Column: Primary Value Proposition -->
-          <div class="lg:col-span-7">
-            <div class="section-pill mb-6">
-              <span class="gold-dot"></span>
-              <span class="font-mono text-xs uppercase tracking-wider">Creative Workspace for Video Storytellers</span>
+    <!-- Homepage Hero: Signature #F8D000 Card Inside #E2E4E9 Base -->
+    <section class="max-w-6xl mx-auto px-6 pt-8 md:pt-14 pb-14">
+      <div class="studio-hero-box p-7 sm:p-10 md:p-14 relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-8">
+            <div class="studio-badge bg-surface-light mb-6 font-mono uppercase">
+              <span class="w-2 h-2 rounded-full bg-black"></span>
+              <span>A creative workspace for video storytellers</span>
             </div>
 
-            <h1 class="font-bold text-gray-900 tracking-tight leading-none text-4xl sm:text-6xl md:text-7xl mb-6">
+            <h1 class="font-black leading-none tracking-tight mb-6 text-4xl sm:text-5xl md:text-6xl text-[#111317]">
               <span class="block">Write better stories.</span>
-              <span class="block mt-1">Create your next script.</span>
-              <span class="block mt-1 text-gray-500">Learn from great films.</span>
+              <span class="block mt-1.5">Create your next script.</span>
+              <span class="block mt-1.5">Learn from great films.</span>
             </h1>
 
-            <p class="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mb-9 font-normal">
+            <p class="text-base md:text-lg font-medium leading-relaxed max-w-2xl mb-8 text-[#111317]/90">
               DraftsRush brings screenwriting guides, movie and scene analysis, free filmmaking templates, and practical creator tools together in one place. Learn the craft, plan your production, or get help writing your next script.
             </p>
 
-            <!-- Primary CTA Cluster -->
-            <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
-              <a href="/writers-room" class="btn-primary px-7 py-4 text-sm inline-flex items-center justify-center gap-2.5 arrow-link">
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3.5">
+              <a href="/writers-room" class="bg-ink text-white font-bold brand-font text-sm px-6 py-3.5 studio-btn uppercase tracking-wide text-center inline-flex items-center justify-center gap-2 arrow-shift">
                 <span>Explore the Writer's Room</span>
-                <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
+                <svg class="w-4 h-4 text-[#F8D000]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
-              <a href="/free-filmmaking-templates" class="btn-secondary px-6 py-4 text-sm inline-flex items-center justify-center gap-2">
-                <span>Get Free Templates</span>
+              <a href="/free-filmmaking-templates" class="bg-surface-light text-black font-bold brand-font text-sm px-6 py-3.5 studio-btn uppercase tracking-wide text-center">
+                Get Free Templates →
               </a>
-              <a href="/tools" class="btn-secondary px-6 py-4 text-sm inline-flex items-center justify-center gap-2">
-                <span>Use Free Tools</span>
+              <a href="/tools" class="bg-surface-blue text-black font-bold brand-font text-sm px-6 py-3.5 studio-btn uppercase tracking-wide text-center">
+                Use Free Tools →
               </a>
-            </div>
-
-            <!-- Pillar Strip -->
-            <div class="mt-12 pt-8 border-t border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-                <span class="font-mono text-xs font-medium text-gray-700 uppercase">Learn the craft</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-                <span class="font-mono text-xs font-medium text-gray-700 uppercase">Study the cinema</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-                <span class="font-mono text-xs font-medium text-gray-700 uppercase">Plan production</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-                <span class="font-mono text-xs font-medium text-gray-700 uppercase">Write the script</span>
-              </div>
             </div>
           </div>
 
-          <!-- Right Column: Architectural Studio Console Preview -->
-          <div class="lg:col-span-5">
-            <div class="dark-grid-bg rounded-2xl p-6 sm:p-7 text-white shadow-2xl border border-gray-800 relative overflow-hidden">
-              <!-- Console Top Bar -->
-              <div class="flex items-center justify-between pb-4 mb-5 border-b border-gray-800">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 opacity-80"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-green-500 opacity-80"></span>
-                  <span class="font-mono text-xs text-gray-400 ml-2">STUDIO_WORKSPACE.FDX</span>
+          <!-- Right Column Studio Spec Card using #F0F2F5 and #FFF6CF -->
+          <div class="lg:col-span-4">
+            <div class="bg-surface-light border border-black rounded-2xl p-5 shadow-lg">
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-black/15">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-black/40"></span>
+                  <span class="font-mono text-[11px] font-bold uppercase ml-1">DRAFT_SUITE.FDX</span>
                 </div>
-                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-yellow-400 text-black font-semibold">LIVE SUITE</span>
+                <span class="bg-surface-cream border border-black rounded px-2 py-0.5 font-mono text-[10px] font-bold">READY</span>
               </div>
 
-              <!-- Formatted Screenplay Preview Block -->
-              <div class="bg-gray-900 bg-opacity-90 rounded-xl p-5 border border-gray-800 font-mono text-xs space-y-3.5 mb-6">
-                <div class="text-yellow-400 font-semibold tracking-wide">INT. EDITING SUITE / NIGHT</div>
-                <p class="text-gray-300 leading-relaxed">
-                  A single monitor illuminates the desk. Timeline markers lock into place as the opening hook cuts to black at 00:04.
+              <div class="bg-surface-cream border border-black/30 rounded-xl p-4 font-mono text-xs space-y-2.5 mb-4">
+                <div class="font-bold text-black uppercase">INT. WRITER'S ROOM / DAY</div>
+                <p class="text-gray-800 text-[11px] leading-relaxed">
+                  Every scene beat, pacing timer, and production template organized inside your browser.
                 </p>
-                <div class="pl-8 sm:pl-12 pt-1">
-                  <div class="text-white font-semibold tracking-wider">NARRATOR (V.O.)</div>
-                  <p class="text-gray-400 mt-1 leading-relaxed">
-                    Every great scene controls exactly what the audience knows and when they know it.
-                  </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2.5 text-center font-mono text-xs mb-4">
+                <div class="bg-surface-blue border border-black/25 rounded-lg p-2.5">
+                  <div class="text-[10px] text-gray-700 font-bold">BROWSER TOOLS</div>
+                  <div class="font-bold text-sm text-black mt-0.5">12 Free</div>
+                </div>
+                <div class="bg-surface-mint border border-black/25 rounded-lg p-2.5">
+                  <div class="text-[10px] text-gray-700 font-bold">CLIENT SIDE</div>
+                  <div class="font-bold text-sm text-black mt-0.5">100% Fast</div>
                 </div>
               </div>
 
-              <!-- Quick Telemetry Metrics -->
-              <div class="grid grid-cols-3 gap-3 mb-6">
-                <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
-                  <div class="font-mono text-xs text-gray-400">PACING</div>
-                  <div class="font-bold text-sm text-white mt-0.5">145 WPM</div>
-                </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
-                  <div class="font-mono text-xs text-gray-400">HOOK WINDOW</div>
-                  <div class="font-bold text-sm text-yellow-400 mt-0.5">0.0s to 5.0s</div>
-                </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
-                  <div class="font-mono text-xs text-gray-400">TOOLS</div>
-                  <div class="font-bold text-sm text-white mt-0.5">12 Browser</div>
-                </div>
-              </div>
-
-              <!-- Console Action -->
-              <a href="/script-editor" class="btn-gold w-full py-3.5 text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2">
-                <span>Open Online Script Editor</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
+              <a href="/script-editor" class="block w-full text-center bg-ink text-white font-mono text-xs font-bold uppercase py-3 rounded-xl hover:opacity-95 transition-opacity">
+                Open Script Editor →
               </a>
             </div>
           </div>
-
         </div>
+
+        <div class="mt-9 pt-5 border-t border-black/25 flex flex-wrap items-center justify-between gap-4 text-xs font-mono font-bold uppercase">
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>Learn the craft</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>Study the cinema</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>Plan the production</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-black"></span>Write the script</span>
+          </div>
+          <span class="hidden sm:inline-block bg-surface-light border border-black px-2.5 py-0.5 rounded text-[11px]">STUDIO V2.6</span>
+        </div>
+
       </div>
     </section>
 
-    <!-- Three Clear Paths Section -->
-    <section class="max-w-7xl mx-auto px-6 py-20 md:py-24">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+    <!-- Three Clear Paths: #D6E4EE, #FFF6CF, #E1F5E3 -->
+    <section class="max-w-6xl mx-auto px-6 pb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-gray-500">01 / Core Architecture</span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-2">What are you here to make?</h2>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest text-gray-700">Choose your next step / 01</span>
+          <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-1.5">What are you here to make?</h2>
         </div>
-        <p class="text-sm md:text-base text-gray-600 max-w-md">
-          Select a workspace below to study narrative mechanics, structure your shoot, or format your screenplay.
-        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <article class="studio-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-gray-100 text-gray-800">01 / LEARN & ANALYSE</span>
-              <div class="w-10 h-10 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">The Writer's Room</h3>
-            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
-              Understand story structure, screenplay format, narrative techniques, movie endings, and the scenes that make stories work.
-            </p>
+        <!-- Card 1: #D6E4EE -->
+        <article class="bg-surface-blue studio-card p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-xs font-bold uppercase bg-surface-light border border-black px-2.5 py-1 rounded-md">01 / Learn & analyse</span>
+            <span class="w-9 h-9 rounded-xl bg-ink text-white flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </span>
           </div>
-          <a href="/writers-room" class="arrow-link inline-flex items-center justify-between w-full pt-5 border-t border-gray-100 text-sm font-semibold text-gray-900 hover:text-black">
-            <span>Explore Guides & Breakdowns</span>
-            <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <h3 class="text-2xl md:text-3xl font-black brand-font leading-tight mb-3">The Writer's Room</h3>
+          <p class="text-sm md:text-base font-medium text-gray-800 leading-relaxed mb-7">
+            Understand story structure, screenplay format, narrative techniques, movie endings, and the scenes that make stories work.
+          </p>
+          <a href="/writers-room" class="mt-auto bg-ink text-white font-bold brand-font text-xs px-4 py-3.5 studio-btn uppercase text-center">
+            Explore Guides & Movie Breakdowns →
           </a>
         </article>
 
-        <!-- Card 2 -->
-        <article class="studio-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-yellow-100 text-gray-900">02 / PLAN & PRODUCE</span>
-              <div class="w-10 h-10 rounded-xl bg-yellow-400 text-black flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Free Filmmaking Templates</h3>
-            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
-              Get practical templates to organise ideas, prepare scripts, and bring more structure to your video and filmmaking workflow.
-            </p>
+        <!-- Card 2: #FFF6CF -->
+        <article class="bg-surface-cream studio-card p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-xs font-bold uppercase bg-surface-light border border-black px-2.5 py-1 rounded-md">02 / Plan & produce</span>
+            <span class="w-9 h-9 rounded-xl bg-brand-yellow border border-black text-black flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </span>
           </div>
-          <a href="/free-filmmaking-templates" class="arrow-link inline-flex items-center justify-between w-full pt-5 border-t border-gray-100 text-sm font-semibold text-gray-900 hover:text-black">
-            <span>Browse Free Templates</span>
-            <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <h3 class="text-2xl md:text-3xl font-black brand-font leading-tight mb-3">Free Filmmaking Templates</h3>
+          <p class="text-sm md:text-base font-medium text-gray-800 leading-relaxed mb-7">
+            Get practical templates to organise ideas, prepare scripts, and bring more structure to your video and filmmaking workflow.
+          </p>
+          <a href="/free-filmmaking-templates" class="mt-auto bg-brand-yellow text-black font-bold brand-font text-xs px-4 py-3.5 studio-btn uppercase text-center">
+            Browse Free Templates →
           </a>
         </article>
 
-        <!-- Card 3 -->
-        <article class="studio-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-gray-100 text-gray-800">03 / WRITE & REFINE</span>
-              <div class="w-10 h-10 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Free Creator Tools</h3>
-            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
-              Format a screenplay, estimate runtime, test an opening hook, tighten dialogue, or convert a script into a production-friendly layout.
-            </p>
+        <!-- Card 3: #E1F5E3 -->
+        <article class="bg-surface-mint studio-card p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-xs font-bold uppercase bg-surface-light border border-black px-2.5 py-1 rounded-md">03 / Write & refine</span>
+            <span class="w-9 h-9 rounded-xl bg-ink text-white flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </span>
           </div>
-          <a href="/tools" class="arrow-link inline-flex items-center justify-between w-full pt-5 border-t border-gray-100 text-sm font-semibold text-gray-900 hover:text-black">
-            <span>Explore Browser Tools</span>
-            <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <h3 class="text-2xl md:text-3xl font-black brand-font leading-tight mb-3">Free Creator Tools</h3>
+          <p class="text-sm md:text-base font-medium text-gray-800 leading-relaxed mb-7">
+            Format a screenplay, estimate runtime, test an opening hook, tighten dialogue, or convert a script into a production-friendly layout.
+          </p>
+          <a href="/tools" class="mt-auto bg-ink text-white font-bold brand-font text-xs px-4 py-3.5 studio-btn uppercase text-center">
+            Explore Browser Tools →
           </a>
         </article>
       </div>
     </section>
 
-    <!-- The Writer's Room Section -->
-    <section class="bg-white border-y border-gray-200 py-20 md:py-24">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <!-- Writer's Room Section: #D4D7E1 Background with #F0F2F5, #FFF6CF, #D6E4EE, #E1F5E3 Cards -->
+    <section class="bg-section-slate border-y border-black/25 py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div>
-            <div class="section-pill mb-3">
-              <span class="gold-dot"></span>
-              <span class="font-mono text-xs uppercase">Learn on the Page and Screen</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">The Writer's Room</h2>
-            <p class="text-base text-gray-600 max-w-2xl mt-3 leading-relaxed">
+            <span class="inline-block bg-ink text-white px-3 py-1 rounded-full text-xs font-bold brand-font uppercase tracking-wider">Learn on the page and the screen</span>
+            <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-3">The Writer's Room</h2>
+            <p class="text-sm md:text-base font-medium text-gray-800 max-w-2xl mt-3 leading-relaxed">
               Practical screenwriting lessons alongside movie-ending explanations and scene breakdowns. Study the choices behind the story, then use what you learn in your own work.
             </p>
           </div>
-          <a href="/writers-room" class="btn-primary px-6 py-3.5 text-xs uppercase tracking-wider font-mono self-start md:self-auto inline-flex items-center gap-2 arrow-link">
-            <span>Enter the Writer's Room</span>
-            <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <a href="/writers-room" class="bg-brand-yellow text-black font-bold brand-font text-xs md:text-sm px-6 py-3.5 studio-btn uppercase whitespace-nowrap self-start">
+            Enter the Writer's Room →
           </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article class="studio-card p-7 sm:p-8 flex flex-col justify-between bg-gray-50">
+          <article class="bg-surface-light studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs font-semibold uppercase text-gray-500">Craft / Screenwriting</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-3">
+              <span class="font-mono text-xs font-bold uppercase text-gray-700">Craft / Screenwriting</span>
+              <h3 class="text-xl md:text-2xl font-black brand-font mt-2.5 mb-2.5">
                 <a href="/how-to-write-a-script" class="hover:underline">Learn How to Write a Script</a>
               </h3>
-              <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Build a story from premise to scenes, understand screenplay conventions, and develop a draft that is clear to read and produce.
               </p>
             </div>
-            <a href="/how-to-write-a-script" class="arrow-link inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/how-to-write-a-script" class="font-mono text-xs font-bold uppercase inline-flex items-center gap-1.5 arrow-shift pt-4 border-t border-black/10">
               <span>Start with the fundamentals</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-7 sm:p-8 flex flex-col justify-between bg-gray-50">
+          <article class="bg-surface-cream studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs font-semibold uppercase text-gray-500">Cinema / Story Analysis</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-3">
+              <span class="font-mono text-xs font-bold uppercase text-gray-700">Cinema / Story analysis</span>
+              <h3 class="text-xl md:text-2xl font-black brand-font mt-2.5 mb-2.5">
                 <a href="/scene-analysis-library" class="hover:underline">Explore Movie & Scene Breakdowns</a>
               </h3>
-              <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
-                Look closer at memorable scenes, narrative turns, character decisions, and endings to see how films control what the audience knows.
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
+                Look closer at memorable scenes, narrative turns, character decisions, and endings, and see how films control what the audience knows.
               </p>
             </div>
-            <a href="/scene-analysis-library" class="arrow-link inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/scene-analysis-library" class="font-mono text-xs font-bold uppercase inline-flex items-center gap-1.5 arrow-shift pt-4 border-t border-black/10">
               <span>Browse the analysis library</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-7 sm:p-8 flex flex-col justify-between bg-gray-50">
+          <article class="bg-surface-blue studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs font-semibold uppercase text-gray-500">Structure / Story Design</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-3">
+              <span class="font-mono text-xs font-bold uppercase text-gray-700">Structure / Story design</span>
+              <h3 class="text-xl md:text-2xl font-black brand-font mt-2.5 mb-2.5">
                 <a href="/story-structure-frameworks" class="hover:underline">Compare Story Structure Frameworks</a>
               </h3>
-              <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Explore different approaches to acts, turning points, character journeys, and dramatic progression.
               </p>
             </div>
-            <a href="/story-structure-frameworks" class="arrow-link inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/story-structure-frameworks" class="font-mono text-xs font-bold uppercase inline-flex items-center gap-1.5 arrow-shift pt-4 border-t border-black/10">
               <span>Compare the models</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-7 sm:p-8 flex flex-col justify-between bg-gray-50">
+          <article class="bg-surface-mint studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs font-semibold uppercase text-gray-500">Reference / Screenplay Format</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-3">
+              <span class="font-mono text-xs font-bold uppercase text-gray-700">Reference / Screenplay format</span>
+              <h3 class="text-xl md:text-2xl font-black brand-font mt-2.5 mb-2.5">
                 <a href="/screenplay-format-guide" class="hover:underline">Get Screenplay Formatting Right</a>
               </h3>
-              <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Use a clear reference for screenplay elements, page layout, and the conventions that make scripts easier to follow.
               </p>
             </div>
-            <a href="/screenplay-format-guide" class="arrow-link inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/screenplay-format-guide" class="font-mono text-xs font-bold uppercase inline-flex items-center gap-1.5 arrow-shift pt-4 border-t border-black/10">
               <span>Read the format guide</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Free Filmmaking Templates Showcase -->
-    <section class="max-w-7xl mx-auto px-6 py-20 md:py-24">
-      <div class="studio-card p-8 sm:p-12 lg:p-14 bg-white grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7">
-          <div class="section-pill mb-4">
-            <span class="gold-dot"></span>
-            <span class="font-mono text-xs uppercase">Free Resources / Download & Use</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            Less time setting up. More time making.
-          </h2>
-          <p class="text-base text-gray-600 leading-relaxed max-w-2xl mb-8">
+    <!-- Templates Feature: #FFF6CF Container with #F8D000 CTA -->
+    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <div class="bg-surface-cream studio-feature-box p-7 sm:p-10 md:p-12 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+        <div class="lg:col-span-3">
+          <span class="inline-block bg-ink text-white px-3 py-1 rounded-full text-xs font-bold brand-font uppercase tracking-wider">Free resources / Download & use</span>
+          <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-4 mb-4">Less time setting up. More time making.</h2>
+          <p class="text-sm md:text-base font-medium text-gray-800 leading-relaxed max-w-2xl mb-7">
             Start with a usable framework instead of a blank page. Explore the Free Filmmaking Templates collection for resources that help organise the work behind a video or film project.
           </p>
-          <a href="/free-filmmaking-templates" class="btn-gold px-7 py-4 text-sm inline-flex items-center gap-2.5 arrow-link">
-            <span>Explore Free Filmmaking Templates</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <a href="/free-filmmaking-templates" class="inline-block bg-brand-yellow text-black font-bold brand-font text-sm px-6 py-3.5 studio-btn uppercase">
+            Explore Free Filmmaking Templates →
           </a>
         </div>
 
-        <div class="lg:col-span-5 bg-gray-50 rounded-xl p-6 sm:p-8 border border-gray-200">
-          <div class="flex items-center justify-between pb-4 mb-5 border-b border-gray-200">
-            <span class="font-mono text-xs font-semibold uppercase text-gray-900">Production Blueprint Pack</span>
-            <span class="font-mono text-xs px-2 py-0.5 rounded bg-white border border-gray-200 text-gray-700">READY TO USE</span>
+        <div class="lg:col-span-2 bg-surface-light border border-black/80 rounded-2xl p-6 shadow-sm">
+          <div class="font-mono text-xs font-bold uppercase mb-4 flex items-center justify-between">
+            <span>A useful starting point</span>
+            <span class="w-2 h-2 rounded-full bg-black"></span>
           </div>
-          <ul class="space-y-4 text-sm font-medium text-gray-800">
-            <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-gray-900 text-yellow-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              </span>
-              <span>Plan and organise a project with structured pre-production sheets</span>
+          <ul class="space-y-3.5 text-sm font-bold">
+            <li class="border-b border-black/15 pb-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-xs">✓</span>
+              <span>Plan and organise a project</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-gray-900 text-yellow-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              </span>
-              <span>Keep script beats, shot lists, and production notes clear</span>
+            <li class="border-b border-black/15 pb-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-xs">✓</span>
+              <span>Keep script and production notes clear</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-gray-900 text-yellow-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              </span>
-              <span>Reuse a consistent workflow across every shoot</span>
+            <li class="border-b border-black/15 pb-3 flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-xs">✓</span>
+              <span>Reuse a consistent workflow</span>
             </li>
           </ul>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between font-mono text-xs text-gray-500">
-            <span>AVAILABLE FORMATS</span>
-            <span class="text-gray-900 font-semibold">PDF / DOC / SHEET</span>
-          </div>
+          <p class="font-mono text-[11px] text-gray-700 mt-4">OPEN THE COLLECTION TO SEE AVAILABLE FILES AND FORMATS.</p>
         </div>
       </div>
     </section>
 
-    <!-- In-Browser Creator Toolkit -->
-    <section class="bg-white border-t border-gray-200 py-20 md:py-24">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <!-- Free Tools Section: #F0F2F5 Background with #FFF6CF, #D6E4EE, #E1F5E3, #F8D000 Cards -->
+    <section class="bg-surface-light border-t border-black/25 py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-gray-500">Free / Client-Side Suite</span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-2">A practical toolkit for creators</h2>
-            <p class="text-base text-gray-600 mt-3 max-w-2xl">
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-gray-700">Free / In-browser</span>
+            <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-2">A practical toolkit for creators</h2>
+            <p class="text-sm md:text-base font-medium text-gray-800 mt-3 max-w-2xl">
               Small tools for common writing and production tasks. Open a tool, use it in your browser, and get back to the work.
             </p>
           </div>
-          <a href="/tools" class="btn-secondary px-6 py-3.5 text-xs uppercase tracking-wider font-mono self-start md:self-auto inline-flex items-center gap-2 arrow-link">
-            <span>Browse All 12 Tools</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <a href="/tools" class="bg-brand-yellow text-black font-bold brand-font text-xs md:text-sm px-6 py-3.5 studio-btn uppercase whitespace-nowrap self-start">
+            Browse All Tools →
           </a>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <article class="studio-card p-6 flex flex-col justify-between">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="bg-surface-cream studio-card p-6 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <span class="font-mono text-xs font-semibold text-gray-500">TOOL / 01</span>
-                <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-900">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Script Pacing Timer</h3>
-              <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              <span class="font-mono text-xs font-bold bg-surface-light border border-black/40 px-2 py-0.5 rounded">TOOL / 01</span>
+              <h3 class="text-lg font-black brand-font mt-4 mb-2">Script Pacing Timer</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Estimate spoken runtime from your script's word count.
               </p>
             </div>
-            <a href="/tools/script-timer" class="arrow-link inline-flex items-center justify-between pt-4 border-t border-gray-100 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/tools/script-timer" class="font-mono text-xs font-bold uppercase pt-3 border-t border-black/15 inline-flex items-center justify-between arrow-shift">
               <span>Try the timer</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-6 flex flex-col justify-between">
+          <article class="bg-surface-blue studio-card p-6 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <span class="font-mono text-xs font-semibold text-gray-500">TOOL / 02</span>
-                <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-900">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">5-Second Hook Analyzer</h3>
-              <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              <span class="font-mono text-xs font-bold bg-surface-light border border-black/40 px-2 py-0.5 rounded">TOOL / 02</span>
+              <h3 class="text-lg font-black brand-font mt-4 mb-2">5-Second Hook Analyzer</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Review the opening of a video script for clarity and curiosity.
               </p>
             </div>
-            <a href="/tools/hook-analyzer" class="arrow-link inline-flex items-center justify-between pt-4 border-t border-gray-100 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/tools/hook-analyzer" class="font-mono text-xs font-bold uppercase pt-3 border-t border-black/15 inline-flex items-center justify-between arrow-shift">
               <span>Test a hook</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-6 flex flex-col justify-between">
+          <article class="bg-surface-mint studio-card p-6 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <span class="font-mono text-xs font-semibold text-gray-500">TOOL / 03</span>
-                <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-900">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Dialogue Word Pruner</h3>
-              <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              <span class="font-mono text-xs font-bold bg-surface-light border border-black/40 px-2 py-0.5 rounded">TOOL / 03</span>
+              <h3 class="text-lg font-black brand-font mt-4 mb-2">Dialogue Word Pruner</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-5">
                 Spot opportunities to make dialogue tighter and more direct.
               </p>
             </div>
-            <a href="/tools/dialogue-pruner" class="arrow-link inline-flex items-center justify-between pt-4 border-t border-gray-100 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/tools/dialogue-pruner" class="font-mono text-xs font-bold uppercase pt-3 border-t border-black/15 inline-flex items-center justify-between arrow-shift">
               <span>Refine dialogue</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card p-6 flex flex-col justify-between">
+          <article class="bg-brand-yellow studio-card p-6 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-5">
-                <span class="font-mono text-xs font-semibold text-gray-500">TOOL / 04</span>
-                <span class="w-8 h-8 rounded-lg bg-yellow-300 flex items-center justify-center text-gray-900">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"></path></svg>
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Dual-Column Converter</h3>
-              <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              <span class="font-mono text-xs font-bold bg-surface-light border border-black/40 px-2 py-0.5 rounded">TOOL / 04</span>
+              <h3 class="text-lg font-black brand-font mt-4 mb-2">Dual-Column Converter</h3>
+              <p class="text-sm font-medium text-gray-900 leading-relaxed mb-5">
                 Turn a script into a two-column audio-visual layout.
               </p>
             </div>
-            <a href="/tools/format-converter" class="arrow-link inline-flex items-center justify-between pt-4 border-t border-gray-100 font-mono text-xs font-semibold uppercase text-gray-900">
+            <a href="/tools/format-converter" class="font-mono text-xs font-bold uppercase pt-3 border-t border-black/20 inline-flex items-center justify-between arrow-shift">
               <span>Convert a script</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Online Script Editor Callout Banner -->
-    <section class="max-w-7xl mx-auto px-6 py-16">
-      <div class="dark-grid-bg rounded-2xl p-8 sm:p-12 md:p-14 border border-gray-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 text-white shadow-xl">
-        <div class="max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 border border-gray-700 font-mono text-xs text-yellow-400 uppercase mb-4">
-            <span class="pulse-dot"></span>
+    <!-- Script Editor Banner: #D6E4EE Container with #F8D000 Badge -->
+    <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <div class="bg-surface-blue studio-feature-box p-7 sm:p-10 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-3xl">
+          <span class="studio-badge bg-brand-yellow brand-font uppercase">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <span>Write in your browser</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Turn rough ideas into readable screenplays.
-          </h2>
-          <p class="text-base text-gray-300 leading-relaxed">
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-4 mb-4">Turn rough ideas into readable screenplays.</h2>
+          <p class="text-sm md:text-base font-medium text-gray-800 leading-relaxed">
             Use the online Script Editor to format screenplay elements or convert a plain-language story into structured script blocks. Keep the drafting process focused and export your work when you are ready.
           </p>
         </div>
-        <a href="/script-editor" class="btn-gold px-8 py-4 text-sm font-mono uppercase tracking-wider flex-shrink-0 inline-flex items-center gap-2.5 arrow-link">
-          <span>Open Script Editor</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
+        <a href="/script-editor" class="flex-shrink-0 bg-ink text-white font-bold brand-font text-sm px-7 py-4 studio-btn uppercase">
+          Open Script Editor →
         </a>
       </div>
     </section>
 
-    <!-- Custom Scriptwriting Services Section -->
-    <section class="bg-gray-900 text-white py-20 md:py-24 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <!-- Custom Scriptwriting Services: #CCD0DC Background with #F0F2F5, #FFF6CF, #E1F5E3 Cards -->
+    <section class="bg-section-steel border-y border-black/25 py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div>
-            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-yellow-400">Studio Commissions</span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2">Custom Scriptwriting Services</h2>
-            <p class="text-base text-gray-400 mt-3 max-w-2xl leading-relaxed">
+            <span class="inline-block bg-ink text-white px-3 py-1 rounded-full text-xs font-bold brand-font uppercase tracking-wider">When you need a writing partner</span>
+            <h2 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-3">Custom Scriptwriting Services</h2>
+            <p class="text-sm md:text-base font-medium text-gray-800 mt-3 max-w-2xl">
               For creators, channels, brands, and agencies that need research-backed scripts prepared to a clear brief.
             </p>
           </div>
-          <a href="/scripts" class="btn-gold px-6 py-3.5 text-xs uppercase tracking-wider font-mono self-start md:self-auto inline-flex items-center gap-2 arrow-link">
-            <span>View Script Services</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
+          <a href="/scripts" class="bg-brand-yellow text-black font-bold brand-font text-xs md:text-sm px-6 py-3.5 studio-btn uppercase whitespace-nowrap self-start">
+            View Script Services →
           </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <article class="studio-card-dark p-8 flex flex-col justify-between">
+          <article class="bg-surface-light studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs text-yellow-400 uppercase">01 / Retention Focused</span>
-              <h3 class="text-2xl font-bold text-white mt-2 mb-3">Short-Form Script Packs</h3>
-              <p class="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
+              <h3 class="text-xl font-black brand-font mb-2.5">Short-Form Script Packs</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-6">
                 Scripts for Reels, TikTok, and YouTube Shorts, shaped around a clear hook and tight pacing.
               </p>
             </div>
-            <a href="/scripts" class="arrow-link inline-flex items-center justify-between pt-5 border-t border-gray-800 font-mono text-xs font-semibold uppercase text-white hover:text-yellow-400">
+            <a href="/scripts" class="font-mono text-xs font-bold uppercase pt-4 border-t border-black/10 inline-flex items-center justify-between arrow-shift">
               <span>View packages</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card-dark p-8 flex flex-col justify-between">
+          <article class="bg-surface-cream studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs text-yellow-400 uppercase">02 / Deep Research</span>
-              <h3 class="text-2xl font-bold text-white mt-2 mb-3">Long-Form Video Essays</h3>
-              <p class="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
+              <h3 class="text-xl font-black brand-font mb-2.5">Long-Form Video Essays</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-6">
                 Structured video essays and documentary-style scripts with room for visual and audio direction.
               </p>
             </div>
-            <a href="/scripts" class="arrow-link inline-flex items-center justify-between pt-5 border-t border-gray-800 font-mono text-xs font-semibold uppercase text-white hover:text-yellow-400">
+            <a href="/scripts" class="font-mono text-xs font-bold uppercase pt-4 border-t border-black/10 inline-flex items-center justify-between arrow-shift">
               <span>Discuss a long-form script</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
 
-          <article class="studio-card-dark p-8 flex flex-col justify-between">
+          <article class="bg-surface-mint studio-card p-7 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xs text-yellow-400 uppercase">03 / Production Scale</span>
-              <h3 class="text-2xl font-bold text-white mt-2 mb-3">Agency & Studio Support</h3>
-              <p class="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
+              <h3 class="text-xl font-black brand-font mb-2.5">Agency & Studio Support</h3>
+              <p class="text-sm font-medium text-gray-800 leading-relaxed mb-6">
                 Flexible writing support for teams handling multiple briefs or production deadlines.
               </p>
             </div>
-            <a href="/partner" class="arrow-link inline-flex items-center justify-between pt-5 border-t border-gray-800 font-mono text-xs font-semibold uppercase text-white hover:text-yellow-400">
+            <a href="/partner" class="font-mono text-xs font-bold uppercase pt-4 border-t border-black/10 inline-flex items-center justify-between arrow-shift">
               <span>Partner with DraftsRush</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Interactive FAQ Section -->
-    <section class="max-w-4xl mx-auto px-6 py-20 md:py-24">
-      <div class="mb-10">
-        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-gray-500">Support & Details</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Frequently Asked Questions</h2>
+    <!-- FAQ Section: #F0F2F5, #FFF6CF, #D6E4EE Accordions -->
+    <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <div class="mb-8">
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-gray-700">Quick Answers</span>
+        <h2 class="text-3xl md:text-4xl font-black brand-font mt-1">Frequently Asked Questions</h2>
       </div>
 
       <div class="space-y-4">
-        <details class="studio-card group p-6 cursor-pointer" open>
-          <summary class="flex items-center justify-between font-bold text-lg text-gray-900 brand-font select-none">
+        <details class="bg-surface-light studio-card p-6 cursor-pointer" open>
+          <summary class="flex items-center justify-between font-black brand-font text-lg select-none">
             <span>Are DraftsRush tools free to use?</span>
-            <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 text-sm">+</span>
+            <span class="faq-plus w-7 h-7 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-sm font-mono">+</span>
           </summary>
-          <p class="text-sm sm:text-base text-gray-600 leading-relaxed mt-4 pt-4 border-t border-gray-100">
+          <p class="text-sm text-gray-800 font-medium leading-relaxed mt-4 pt-4 border-t border-black/15">
             The free browser tools are available in the Tools section. Check each tool or resource page for its specific features and available formats.
           </p>
         </details>
 
-        <details class="studio-card group p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-lg text-gray-900 brand-font select-none">
+        <details class="bg-surface-cream studio-card p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-black brand-font text-lg select-none">
             <span>Where can I find filmmaking templates?</span>
-            <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 text-sm">+</span>
+            <span class="faq-plus w-7 h-7 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-sm font-mono">+</span>
           </summary>
-          <p class="text-sm sm:text-base text-gray-600 leading-relaxed mt-4 pt-4 border-t border-gray-100">
-            Visit the <a href="/free-filmmaking-templates" class="font-semibold text-gray-900 underline">Free Filmmaking Templates collection</a> to see the available resources.
+          <p class="text-sm text-gray-800 font-medium leading-relaxed mt-4 pt-4 border-t border-black/15">
+            Visit the <a href="/free-filmmaking-templates" class="font-bold underline">Free Filmmaking Templates collection</a> to see the available resources.
           </p>
         </details>
 
-        <details class="studio-card group p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-lg text-gray-900 brand-font select-none">
+        <details class="bg-surface-blue studio-card p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-black brand-font text-lg select-none">
             <span>Can I commission a script?</span>
-            <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 text-sm">+</span>
+            <span class="faq-plus w-7 h-7 rounded-full bg-brand-yellow border border-black flex items-center justify-center text-sm font-mono">+</span>
           </summary>
-          <p class="text-sm sm:text-base text-gray-600 leading-relaxed mt-4 pt-4 border-t border-gray-100">
-            Yes. Visit <a href="/scripts" class="font-semibold text-gray-900 underline">Script Services</a> to review the offering, or use the <a href="/contact" class="font-semibold text-gray-900 underline">contact page</a> to discuss your brief.
+          <p class="text-sm text-gray-800 font-medium leading-relaxed mt-4 pt-4 border-t border-black/15">
+            Yes. Visit <a href="/scripts" class="font-bold underline">Script Services</a> to review the offering, or use the <a href="/contact" class="font-bold underline">contact page</a> to discuss your brief.
           </p>
         </details>
       </div>
     </section>
-
   </main>
 
-  <!-- Universal Executive Footer -->
-  <footer class="bg-white border-t border-gray-200 pt-16 pb-12 mt-auto">
-    <div class="max-w-7xl mx-auto px-6">
+  <!-- Universal Footer: #D6E4EE Background -->
+  <footer class="bg-surface-blue border-t border-black/30 py-14 mt-auto">
+    <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-12 border-b border-gray-200 gap-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black/20 gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
               src="/drlogo.png" 
               alt="DraftsRush" 
-              width="180" 
-              height="48" 
+              width="190" 
+              height="50" 
               loading="lazy"
               decoding="async"
               fetchpriority="low"
-              class="h-8 sm:h-9 w-auto object-contain rounded" 
+              class="h-8 sm:h-9 w-auto object-contain rounded-lg border border-black/80 shadow-sm" 
             />
           </a>
-          <p class="text-sm text-gray-600 max-w-md leading-relaxed">
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
             The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <span class="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 px-3.5 py-2 rounded-full text-xs font-semibold brand-font uppercase text-gray-900">
-            <span class="pulse-dot"></span>
-            <span>100% Free Client-Side Tools</span>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span class="studio-badge bg-brand-yellow brand-font uppercase">
+            <span>⚡ 100% Free Client-Side Tools</span>
           </span>
           <div class="flex items-center gap-2">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 bg-white hover:bg-gray-900 hover:text-white text-gray-800 transition-colors">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 bg-white hover:bg-gray-900 hover:text-white text-gray-800 transition-colors">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 bg-white hover:bg-gray-900 hover:text-white text-gray-800 transition-colors">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
@@ -1015,68 +847,77 @@
       </div>
 
       <!-- 4-Column Structured Link Directory -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
         
         <!-- Col 1: Interactive Tools & Apps -->
         <div>
-          <h4 class="font-bold brand-font text-xs uppercase tracking-wider text-gray-900 mb-4">Studio Tools</h4>
-          <ul class="space-y-2.5 text-sm text-gray-600">
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li>
-              <a href="/script-editor" class="hover:text-black font-semibold text-gray-900 inline-flex items-center gap-1.5">
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
                 <span>Online Script Editor</span>
-                <span class="bg-yellow-300 text-black text-xs px-1.5 py-0.5 rounded font-mono">NEW</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
               </a>
             </li>
-            <li><a href="/tools/script-timer" class="hover:text-black">Script Pacing Timer</a></li>
-            <li><a href="/tools/hook-analyzer" class="hover:text-black">5-Sec Hook Analyzer</a></li>
-            <li><a href="/tools/format-converter" class="hover:text-black">Dual-Column AV Converter</a></li>
-            <li><a href="/tools/dialogue-pruner" class="hover:text-black">Dialogue Word Pruner</a></li>
-            <li><a href="/tools" class="hover:text-black font-mono text-xs text-gray-900 font-semibold">All 12 Free Tools →</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
         <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
-          <h4 class="font-bold brand-font text-xs uppercase tracking-wider text-gray-900 mb-4">Writer's Room</h4>
-          <ul class="space-y-2.5 text-sm text-gray-600">
-            <li><a href="/screenplay-format-guide" class="hover:text-black">Screenplay Format Spec</a></li>
-            <li><a href="/how-to-end-a-story" class="hover:text-black">How to End a Story</a></li>
-            <li><a href="/how-to-write-a-villain" class="hover:text-black">Antagonist Archetypes</a></li>
-            <li><a href="/narrative-techniques" class="hover:text-black">Narrative Mechanics</a></li>
-            <li><a href="/storytelling-blueprints" class="hover:text-black">Visual Blueprints</a></li>
-            <li><a href="/writers-room" class="hover:text-black font-mono text-xs text-gray-900 font-semibold">Full Knowledge Base →</a></li>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Commission Services & Templates -->
         <div>
-          <h4 class="font-bold brand-font text-xs uppercase tracking-wider text-gray-900 mb-4">Script Services</h4>
-          <ul class="space-y-2.5 text-sm text-gray-600">
-            <li><a href="/scripts" class="hover:text-black">Short-Form Script Packs</a></li>
-            <li><a href="/scripts" class="hover:text-black">Video Essay Screenplays</a></li>
-            <li><a href="/templates" class="hover:text-black">Production Script Templates</a></li>
-            <li><a href="/partner" class="hover:text-black">Agency Overflow & NDAs</a></li>
-            <li><a href="/retention-teardowns" class="hover:text-black">Retention Teardowns</a></li>
-            <li><a href="/contact" class="hover:text-black font-semibold text-gray-900">Order A Custom Draft →</a></li>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
           </ul>
         </div>
 
         <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
-          <h4 class="font-bold brand-font text-xs uppercase tracking-wider text-gray-900 mb-4">Studio Desk</h4>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" class="inline-flex items-center gap-2 font-mono text-xs font-semibold border border-gray-200 bg-gray-50 px-3 py-2 rounded-lg hover:border-gray-900 transition-colors text-gray-900">
-              <svg class="w-3.5 h-3.5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              <span>care@draftsrush.com</span>
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm">
+              ✉ care@draftsrush.com
             </a>
-            <p class="text-xs text-gray-500 leading-relaxed">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
-            <ul class="space-y-2 text-sm text-gray-600 pt-1">
-              <li><a href="/about" class="hover:text-black">About & Methodology</a></li>
-              <li><a href="/contact" class="hover:text-black">Intake Desk / Custom Scope</a></li>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
             </ul>
           </div>
         </div>
@@ -1084,13 +925,13 @@
       </div>
 
       <!-- Bottom Legal & Copyright Bar -->
-      <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
-          <a href="/sitemap" class="hover:text-gray-900">Sitemap</a>
-          <a href="/privacy" class="hover:text-gray-900">Privacy Policy</a>
-          <a href="/terms" class="hover:text-gray-900">Terms of Service</a>
-          <a href="/contact" class="hover:text-gray-900">Support Desk</a>
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
         </div>
       </div>
 
@@ -1100,8 +941,10 @@
   <!-- Floating Contact Widget -->
   <a href="/contact" 
      aria-label="Contact Desk"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gray-900 text-white font-semibold brand-font text-xs uppercase tracking-wider px-5 py-3.5 rounded-full shadow-2xl hover:bg-black transition-all select-none border border-gray-700">
-    <span class="gold-dot"></span>
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-brand-yellow text-black font-black brand-font text-xs uppercase px-5 py-3.5 rounded-full studio-btn select-none">
+    <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+    </svg>
     <span>Contact Desk</span>
   </a>
 
