@@ -86,33 +86,20 @@
 
   <!-- Custom Brutalist Styles -->
   <style>
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background-color: #E2E4E9 !important;
-    }
+    body { font-family: 'Inter', sans-serif; background-color: #F7F7F5 !important; }
     h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .bg-\[\#F8D000\] { background-color: #F8D000 !important; }
-    .text-\[\#F8D000\] { color: #F8D000 !important; }
-    .brutal-box {
-      border: 2px solid #000;
-      box-shadow: 4px 4px 0px #111317;
-    }
-    .brutal-box-lg {
-      border: 4px solid #000;
-      box-shadow: 8px 8px 0px #111317;
-    }
-    .brutal-btn {
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .brutal-btn:hover { 
-      transform: translate(-2px, -2px); 
-      box-shadow: 6px 6px 0px #111317; 
-    }
-    .brutal-btn:active { 
-      transform: translate(2px, 2px); 
-      box-shadow: 2px 2px 0px #111317; 
-    }
+    .bg-\\[\\#F8D000\\] { background-color: #F8D000 !important; }
+    .text-\\[\\#F8D000\\] { color: #F8D000 !important; }
+    .brutal-box { border: 1px solid #D8DADF; box-shadow: 0 4px 14px rgba(17,19,23,.06); border-radius: 1rem; }
+    .brutal-box-lg { border: 1px solid #D8DADF; box-shadow: 0 8px 28px rgba(17,19,23,.08); border-radius: 1.5rem; }
+    .brutal-btn { transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; border-radius: 9999px; }
+    .brutal-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(17,19,23,.12); }
+    .brutal-btn:active { transform: translateY(0); }
+    header { border-bottom-width: 1px !important; border-color: #D8DADF !important; }
+    header nav a, header button, header .brutal-box { border-radius: 9999px; }
+    footer { border-top-width: 1px !important; border-color: #D8DADF !important; }
+    main > section article { border-radius: 1rem; }
   </style>
   <script src="/cookie-consent.js"></script>
 </head>
@@ -199,24 +186,49 @@
   </header>
 
   <main class="flex-grow">
-    <!-- Homepage hero: one clear description of the full DraftsRush offering -->
-    <section class="max-w-6xl mx-auto px-6 pt-10 md:pt-16 pb-12">
-      <div class="bg-[#F8D000] border-4 border-black brutal-box-lg p-7 md:p-14 relative overflow-hidden">
-        <div class="font-mono text-xs md:text-sm font-bold uppercase tracking-wider mb-5">A creative workspace for video storytellers</div>
-        <h1 class="font-black leading-tight tracking-tight mb-6 text-3xl sm:text-5xl md:text-7xl"><span class="block">Write better stories.</span><span class="block">Create your next script.</span><span class="block">Learn from great films.</span></h1>
-        <p class="text-base md:text-xl font-medium leading-relaxed max-w-3xl mb-8">DraftsRush brings screenwriting guides, movie and scene analysis, free filmmaking templates, and practical creator tools together in one place. Learn the craft, plan your production, or get help writing your next script.</p>
-        <div class="flex flex-col sm:flex-row flex-wrap gap-3">
-          <a href="/writers-room" class="bg-black text-white font-black brand-font text-sm md:text-base px-6 py-3.5 border-2 border-black brutal-box brutal-btn uppercase tracking-wide text-center">Explore the Writer's Room →</a>
-          <a href="/free-filmmaking-templates" style="background-color:#F0F2F5" class="text-black font-black brand-font text-sm md:text-base px-6 py-3.5 border-2 border-black brutal-box brutal-btn uppercase tracking-wide text-center">Get Free Templates →</a>
-          <a href="/tools" style="background-color:#D6E4EE" class="text-black font-black brand-font text-sm md:text-base px-6 py-3.5 border-2 border-black brutal-box brutal-btn uppercase tracking-wide text-center">Use Free Tools →</a>
+    <!-- Homepage hero: visual refresh only; existing links and copy retained -->
+    <section class="max-w-6xl mx-auto px-6 pt-8 md:pt-14 pb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div class="lg:col-span-7 py-4 md:py-8">
+          <div class="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest mb-6">
+            <span class="w-2 h-2 rounded-full" style="background:#F8D000"></span>
+            A creative workspace for video storytellers
+          </div>
+          <h1 class="font-black leading-tight tracking-tight mb-6 text-4xl sm:text-5xl md:text-6xl xl:text-7xl"><span class="block">Write better stories.</span><span class="block">Create your next script.</span><span class="block" style="color:#756000">Learn from great films.</span></h1>
+          <p class="text-base md:text-lg font-medium leading-relaxed max-w-2xl mb-8 text-gray-700">DraftsRush brings screenwriting guides, movie and scene analysis, free filmmaking templates, and practical creator tools together in one place. Learn the craft, plan your production, or get help writing your next script.</p>
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+            <a href="/writers-room" class="inline-flex items-center justify-center rounded-full bg-black text-white font-bold text-sm px-6 py-3.5 hover:bg-gray-800 transition-colors text-center">Explore the Writer's Room <span class="ml-2" aria-hidden="true">→</span></a>
+            <a href="/free-filmmaking-templates" class="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white text-black font-bold text-sm px-6 py-3.5 hover:border-black transition-colors text-center">Get Free Templates <span class="ml-2" aria-hidden="true">→</span></a>
+            <a href="/tools" class="inline-flex items-center justify-center rounded-full border border-gray-300 text-black font-bold text-sm px-6 py-3.5 hover:border-black transition-colors text-center" style="background:#E5EDF4">Use Free Tools <span class="ml-2" aria-hidden="true">→</span></a>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-wide text-gray-600">
+            <span>Learn the craft</span><span aria-hidden="true">·</span><span>Study the cinema</span><span aria-hidden="true">·</span><span>Plan the production</span><span aria-hidden="true">·</span><span>Write the script</span>
+          </div>
         </div>
-        <div class="mt-8 pt-4 border-t-2 border-black flex flex-wrap gap-x-6 gap-y-2 text-xs md:text-sm font-mono font-bold uppercase">
-          <span>Learn the craft</span><span>Study the cinema</span><span>Plan the production</span><span>Write the script</span>
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 shadow-xl">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+              <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-red-300"></span><span class="h-2.5 w-2.5 rounded-full bg-yellow-300"></span><span class="h-2.5 w-2.5 rounded-full bg-green-300"></span></div>
+              <span class="font-mono text-[10px] sm:text-xs tracking-wider text-gray-500">DRAFT_SUITE.FDX</span>
+            </div>
+            <div class="rounded-2xl p-5 sm:p-7" style="background:#F4F5F7">
+              <div class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-6">Scene 01 · Interior / Night</div>
+              <div class="space-y-4 font-mono text-xs sm:text-sm leading-relaxed">
+                <div class="text-center font-bold tracking-wide">INT. WRITER'S ROOM — NIGHT</div>
+                <p class="text-gray-500">A cursor blinks on an empty page.</p><p>A character enters. Something is wrong.</p>
+                <div class="h-px w-full bg-gray-200"></div><p class="text-gray-500">The story begins with a question.</p>
+                <div class="flex items-center gap-2 pt-3"><span class="h-2 w-2 rounded-full" style="background:#F8D000"></span><span class="text-[10px] uppercase tracking-widest text-gray-500">Ready for your next draft</span></div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -left-3 sm:-left-5 rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-lg">
+              <div class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Your creative toolkit</div><div class="text-sm font-bold mt-1">Learn · Write · Produce</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Three clear paths through the site -->
+        <!-- Three clear paths through the site -->
     <section class="max-w-6xl mx-auto px-6 pb-16">
       <div class="mb-7">
         <span class="font-mono text-xs font-bold uppercase tracking-widest">Choose your next step / 01</span>
