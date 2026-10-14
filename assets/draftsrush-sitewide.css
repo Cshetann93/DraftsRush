@@ -1,0 +1,35 @@
+/* DraftsRush site-wide visual system — aligned with the homepage */
+:root {
+  --dr-bg-base: #E2E4E9;
+  --dr-ink: #111317;
+  --dr-yellow: #F8D000;
+  --dr-cta-yellow: #FFE600;
+  --dr-surface-light: #F0F2F5;
+  --dr-surface-blue: #D6E4EE;
+  --dr-surface-cream: #FFF6CF;
+  --dr-surface-mint: #E1F5E3;
+  --dr-border: #111317;
+}
+html { scroll-behavior: smooth; }
+body { background-color: var(--dr-bg-base); color: var(--dr-ink); }
+header, .studio-header {
+  border-bottom: 1px solid var(--dr-border) !important;
+}
+footer {
+  border-top: 1px solid var(--dr-border) !important;
+}
+header img[src*="drlogo"], footer img[src*="drlogo"],
+header img[alt*="DraftsRush"], footer img[alt*="DraftsRush"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+header img[src*="drlogo"], footer img[src*="drlogo"] {
+  border: 0 !important;
+}
+/* Reuse the homepage's soft studio surfaces where these utility classes exist. */
+.bg-base { background-color: var(--dr-bg-base) !important; }
+.bg-surface-light { background-color: var(--dr-surface-light) !important; }
+.bg-surface-blue { background-color: var(--dr-surface-blue) !important; }
+.bg-surface-cream { background-color: var(--dr-surface-cream) !important; }
+.bg-surface-mint { background-color: var(--dr-surface-mint) !important; }
+.bg-brand-yellow, .bg-cta-yellow { background-color: var(--dr-yellow) !important; }
