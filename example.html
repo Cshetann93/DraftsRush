@@ -4,22 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OPTIX // Interactive Exposure Triangle Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-chassis: #090A0D;
-      --bg-panel: #111319;
-      --bg-card: #171A22;
-      --bg-elevated: #1F232E;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(255, 255, 255, 0.22);
+      --bg-panel: #12151E;
+      --bg-card: #181C26;
+      --bg-elevated: #222736;
+      --border-subtle: rgba(255, 255, 255, 0.1);
       --text-main: #F3F4F6;
       --text-secondary: #9CA3AF;
-      --text-dim: #6B7280;
       --accent-amber: #F59E0B;
-      --accent-amber-soft: rgba(245, 158, 11, 0.14);
       --accent-red: #EF4444;
       --accent-green: #10B981;
       --accent-cyan: #38BDF8;
@@ -32,41 +26,26 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-chassis);
       color: var(--text-main);
       line-height: 1.5;
       min-height: 100vh;
-      overflow-x: hidden;
-      background-image:
-        radial-gradient(circle at 15% 0%, rgba(245, 158, 11, 0.06), transparent 40%),
-        radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.05), transparent 40%);
-    }
-
-    h1, h2, h3, h4, .display-font {
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: -0.025em;
     }
 
     .mono {
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: -0.02em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
-    /* Top Studio Bar */
     .topbar {
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(17, 19, 25, 0.85);
-      backdrop-filter: blur(16px);
-      position: sticky;
-      top: 0;
-      z-index: 40;
+      background: #12151E;
+      padding: 0.85rem 1.5rem;
     }
 
     .topbar-inner {
-      max-width: 1440px;
+      max-width: 1380px;
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -80,43 +59,22 @@
       gap: 0.75rem;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, #262A36, #14171F);
-      border: 1px solid rgba(255,255,255,0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .brand-mark::after {
-      content: '';
-      width: 10px;
-      height: 10px;
+    .brand-dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: var(--accent-red);
-      box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+      box-shadow: 0 0 10px var(--accent-red);
     }
 
     .brand-title {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       letter-spacing: 0.04em;
-    }
-
-    .brand-sub {
-      font-size: 0.72rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     .mode-group {
       display: flex;
-      align-items: center;
       gap: 0.4rem;
       background: var(--bg-chassis);
       padding: 0.3rem;
@@ -127,50 +85,41 @@
     .mode-btn {
       background: transparent;
       color: var(--text-secondary);
-      border: none;
+      border: 1px solid transparent;
       padding: 0.45rem 0.85rem;
       border-radius: 7px;
       font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.18s ease;
-    }
-
-    .mode-btn:hover {
-      color: var(--text-main);
     }
 
     .mode-btn.active {
       background: var(--bg-elevated);
       color: var(--accent-amber);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      border-color: rgba(245, 158, 11, 0.4);
     }
 
-    /* Main Workspace Layout */
     .workspace {
-      max-width: 1440px;
+      max-width: 1380px;
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 440px;
-      gap: 1.5rem;
+      grid-template-columns: 1fr 420px;
+      gap: 1.25rem;
       align-items: start;
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1080px) {
       .workspace {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Camera Viewfinder Housing */
     .camera-housing {
       background: var(--bg-panel);
       border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      padding: 1.25rem;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+      border-radius: 18px;
+      padding: 1.15rem;
     }
 
     .camera-top-deck {
@@ -178,82 +127,41 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.85rem;
-      border-bottom: 1px solid var(--border-subtle);
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
     }
 
-    .scene-selector {
+    .btn-row {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       flex-wrap: wrap;
     }
 
-    .scene-chip {
+    .chip-btn {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
       padding: 0.4rem 0.75rem;
       border-radius: 8px;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 600;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.15s ease;
     }
 
-    .scene-chip:hover {
-      border-color: var(--border-focus);
-      color: var(--text-main);
-    }
-
-    .scene-chip.active {
-      background: var(--accent-amber-soft);
+    .chip-btn.active {
+      background: rgba(245, 158, 11, 0.16);
       border-color: var(--accent-amber);
       color: var(--accent-amber);
     }
 
-    .camera-toggles {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .util-toggle {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      padding: 0.4rem 0.7rem;
-      border-radius: 8px;
-      font-size: 0.74rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.15s ease;
-    }
-
-    .util-toggle.active {
-      background: rgba(56, 189, 248, 0.14);
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    /* Viewfinder Frame */
     .viewfinder-wrap {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 10;
-      background: #050608;
-      border-radius: 14px;
+      background: #1B2838;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     #viewfinderCanvas {
@@ -262,115 +170,57 @@
       display: block;
     }
 
-    /* Shutter Flash Overlay */
     .shutter-curtain {
       position: absolute;
       inset: 0;
-      background: #050507;
+      background: #000;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.06s ease;
-      z-index: 20;
+      z-index: 15;
     }
 
-    /* Viewfinder HUD Overlays */
     .vf-hud-top {
       position: absolute;
-      top: 14px;
-      left: 16px;
-      right: 16px;
+      top: 12px;
+      left: 14px;
+      right: 14px;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       pointer-events: none;
       z-index: 10;
     }
 
     .vf-badge {
-      background: rgba(9, 10, 13, 0.78);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      padding: 0.35rem 0.65rem;
+      background: rgba(9, 10, 13, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.3rem 0.65rem;
       border-radius: 6px;
       font-size: 0.72rem;
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    .histogram-box {
-      background: rgba(9, 10, 13, 0.78);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      padding: 6px 8px;
-      border-radius: 6px;
-      width: 124px;
-      height: 54px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .histogram-label {
-      font-size: 0.6rem;
-      color: var(--text-secondary);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* Focus Reticle */
     .af-reticle {
       position: absolute;
       top: 52%;
       left: 36%;
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       transform: translate(-50%, -50%);
-      border: 1.5px solid rgba(16, 185, 129, 0.8);
+      border: 1.5px solid rgba(16, 185, 129, 0.85);
       border-radius: 4px;
       pointer-events: none;
-      z-index: 9;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+      z-index: 8;
     }
 
-    .af-reticle::before, .af-reticle::after {
-      content: '';
-      position: absolute;
-      background: rgba(16, 185, 129, 0.8);
-    }
-    .af-reticle::before {
-      top: 50%; left: -6px; right: -6px; height: 1px;
-    }
-    .af-reticle::after {
-      left: 50%; top: -6px; bottom: -6px; width: 1px;
-    }
-
-    .af-tag {
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.6rem;
-      background: rgba(16, 185, 129, 0.9);
-      color: #04130D;
-      font-weight: 700;
-      padding: 1px 5px;
-      border-radius: 3px;
-      white-space: nowrap;
-    }
-
-    /* Bottom Telemetry Bar inside Viewfinder */
     .vf-hud-bottom {
       position: absolute;
       bottom: 12px;
-      left: 16px;
-      right: 16px;
-      background: rgba(9, 10, 13, 0.86);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      left: 14px;
+      right: 14px;
+      background: rgba(9, 10, 13, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 10px;
-      padding: 0.55rem 1rem;
+      padding: 0.55rem 0.9rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -381,84 +231,60 @@
 
     .vf-readouts {
       display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .vf-metric {
-      display: flex;
-      flex-direction: column;
+      gap: 1.2rem;
     }
 
     .vf-metric-label {
-      font-size: 0.62rem;
+      display: block;
+      font-size: 0.6rem;
       color: var(--text-secondary);
       text-transform: uppercase;
     }
 
     .vf-metric-val {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
-      color: var(--text-main);
     }
 
-    /* EV Meter Scale */
-    .ev-meter-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 190px;
+    .ev-meter-box {
+      min-width: 185px;
+      text-align: center;
     }
 
-    .ev-scale-numbers {
+    .ev-scale {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--text-secondary);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .ev-track {
       position: relative;
-      width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.1);
+      height: 7px;
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 4px;
-      overflow: hidden;
     }
 
-    .ev-center-tick {
+    .ev-ind {
       position: absolute;
-      left: 50%;
       top: 0;
       bottom: 0;
-      width: 2px;
-      background: var(--text-main);
-      transform: translateX(-50%);
-      z-index: 2;
-    }
-
-    .ev-indicator {
-      position: absolute;
-      top: 1px;
-      bottom: 1px;
       width: 12px;
       border-radius: 3px;
       background: var(--accent-green);
       transform: translateX(-50%);
-      transition: left 0.15s ease, background-color 0.15s ease;
+      transition: left 0.15s ease;
     }
 
-    /* Live Diagnostic Impact Strip */
     .diagnostic-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.85rem;
-      margin-top: 1rem;
+      gap: 0.75rem;
+      margin-top: 0.9rem;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 680px) {
       .diagnostic-grid {
         grid-template-columns: 1fr;
       }
@@ -467,730 +293,440 @@
     .diag-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      padding: 0.75rem 0.9rem;
     }
 
-    .diag-header {
+    .diag-head {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 0.35rem;
-    }
-
-    .diag-title {
       font-size: 0.72rem;
       font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      letter-spacing: 0.05em;
-    }
-
-    .diag-pill {
-      font-size: 0.68rem;
-      font-weight: 600;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.07);
-      color: var(--text-main);
+      margin-bottom: 0.3rem;
+      color: var(--accent-amber);
     }
 
     .diag-desc {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-secondary);
-      line-height: 1.4;
     }
 
-    /* Right Column: Tactile Camera Control Deck */
     .control-deck {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
-    /* Mechanical Cutaway Visualizer */
     .hardware-panel {
       background: var(--bg-panel);
       border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 1.1rem 1.25rem;
+      border-radius: 16px;
+      padding: 0.9rem 1.1rem;
       display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 1.1rem;
+      grid-template-columns: 84px 1fr;
+      gap: 1rem;
       align-items: center;
     }
 
-    .iris-box {
-      width: 92px;
-      height: 92px;
-      background: #08090C;
+    .iris-wrap {
+      width: 84px;
+      height: 84px;
       border-radius: 50%;
-      border: 2px solid #2A2E3D;
+      background: #07080B;
+      border: 2px solid #2B3040;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      box-shadow: inset 0 0 18px rgba(0,0,0,0.9);
-    }
-
-    .hardware-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
     }
 
     .hw-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.76rem;
+      padding: 0.28rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .hw-row:last-child {
       border-bottom: none;
-      padding-bottom: 0;
     }
 
-    /* Dial Cards */
     .dial-card {
       background: var(--bg-panel);
       border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 1.15rem 1.25rem;
-      transition: border-color 0.2s ease;
-    }
-
-    .dial-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .dial-card.locked {
-      opacity: 0.75;
-      border-color: rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 1rem 1.15rem;
     }
 
     .dial-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.55rem;
     }
 
-    .dial-name-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .dial-number {
-      font-size: 0.7rem;
-      color: var(--accent-amber);
+    .dial-title {
+      font-size: 0.95rem;
       font-weight: 700;
     }
 
-    .dial-name {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .dial-value {
-      font-size: 1.35rem;
+    .dial-val {
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--accent-amber);
     }
 
-    /* Slider + Step Buttons */
     .dial-controls {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      margin-bottom: 0.6rem;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
     }
 
     .step-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
-      font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.15s ease;
-      flex-shrink: 0;
     }
 
-    .step-btn:hover:not(:disabled) {
-      background: var(--bg-elevated);
-      border-color: var(--accent-amber);
-      color: var(--accent-amber);
-    }
-
-    .step-btn:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
-
-    input[type="range"].camera-slider {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 8px;
-      background: #08090C;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      outline: none;
+    input[type="range"].slider {
+      flex: 1;
+      accent-color: var(--accent-amber);
       cursor: pointer;
     }
 
-    input[type="range"].camera-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--text-main);
-      border: 3px solid var(--accent-amber);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-      cursor: grab;
-      transition: transform 0.12s ease;
-    }
-
-    input[type="range"].camera-slider::-webkit-slider-thumb:active {
-      cursor: grabbing;
-      transform: scale(1.12);
-    }
-
-    .dial-scale-labels {
+    .dial-hints {
       display: flex;
       justify-content: space-between;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--text-secondary);
     }
 
-    /* Shutter Action Bar */
-    .shutter-bar {
-      background: var(--bg-panel);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 1rem 1.25rem;
+    .action-bar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      gap: 0.65rem;
     }
 
     .shutter-btn {
       flex: 1;
-      background: linear-gradient(135deg, #EF4444, #DC2626);
-      color: #FFFFFF;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      padding: 0.85rem 1.25rem;
+      background: var(--accent-red);
+      color: #FFF;
+      border: none;
+      padding: 0.85rem 1rem;
       border-radius: 999px;
-      font-size: 0.9rem;
       font-weight: 700;
+      font-size: 0.85rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      box-shadow: 0 10px 24px rgba(239, 68, 68, 0.35);
-      transition: transform 0.12s ease, box-shadow 0.12s ease;
     }
 
-    .shutter-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(239, 68, 68, 0.45);
-    }
-
-    .shutter-btn:active {
-      transform: translateY(1px) scale(0.99);
-    }
-
-    .shutter-ring {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
-    }
-
-    .balance-btn {
-      background: var(--bg-card);
+    .auto-btn {
+      background: var(--bg-panel);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
       padding: 0.85rem 1rem;
-      border-radius: 14px;
+      border-radius: 12px;
       font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.15s ease;
-      white-space: nowrap;
     }
 
-    .balance-btn:hover {
-      border-color: var(--accent-amber);
-      color: var(--accent-amber);
-    }
-
-    /* Bottom Section: Missions & Contact Sheet */
-    .lower-studio {
-      max-width: 1440px;
+    .lower-grid {
+      max-width: 1380px;
       margin: 0 auto;
-      padding: 0 1.5rem 3rem;
+      padding: 0 1.5rem 2.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
-    @media (max-width: 980px) {
-      .lower-studio {
+    @media (max-width: 900px) {
+      .lower-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .studio-section-box {
+    .panel-box {
       background: var(--bg-panel);
       border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      padding: 1.35rem;
+      border-radius: 18px;
+      padding: 1.15rem;
     }
 
-    .section-head {
+    .panel-head {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .missions-list {
+    .missions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
-    @media (max-width: 600px) {
-      .missions-list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .mission-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.6rem;
-      transition: all 0.2s ease;
-    }
-
-    .mission-card.done {
-      border-color: rgba(16, 185, 129, 0.5);
-      background: rgba(16, 185, 129, 0.07);
-    }
-
-    .mission-status {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .mission-card.done .mission-status {
-      color: var(--accent-green);
-    }
-
-    .mission-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .mission-desc {
-      font-size: 0.76rem;
-      color: var(--text-secondary);
-    }
-
-    .filmstrip-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-    }
-
-    @media (max-width: 540px) {
-      .filmstrip-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .shot-card {
+    .mission-item {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 10px;
+      padding: 0.75rem;
+      font-size: 0.76rem;
+    }
+
+    .mission-item.done {
+      border-color: var(--accent-green);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .shots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .shot-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
       overflow: hidden;
     }
 
-    .shot-img {
+    .shot-item img {
       width: 100%;
       aspect-ratio: 16 / 10;
-      object-fit: cover;
       display: block;
-      background: #050608;
     }
 
-    .shot-exif {
-      padding: 0.5rem 0.7rem;
-      font-size: 0.7rem;
+    .shot-meta {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.68rem;
       display: flex;
       justify-content: space-between;
       color: var(--text-secondary);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .empty-filmstrip {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 2.2rem 1rem;
-      color: var(--text-dim);
-      font-size: 0.84rem;
-      border: 1px dashed var(--border-subtle);
-      border-radius: 12px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Studio Header -->
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <div class="brand-mark"></div>
-        <div>
-          <div class="brand-title display-font">OPTIX LAB // M1</div>
-          <div class="brand-sub mono">Interactive Exposure Triangle Simulator</div>
-        </div>
+        <span class="brand-dot"></span>
+        <span class="brand-title">OPTIX LAB // EXPOSURE TRIANGLE SIMULATOR</span>
       </div>
-
-      <!-- Camera Exposure Mode Switcher -->
-      <div class="mode-group" role="tablist" aria-label="Camera Shooting Modes">
-        <button class="mode-btn active" data-mode="M" onclick="setCameraMode('M')">M // Manual</button>
-        <button class="mode-btn" data-mode="Av" onclick="setCameraMode('Av')">Av // Aperture Priority</button>
-        <button class="mode-btn" data-mode="Tv" onclick="setCameraMode('Tv')">Tv // Shutter Priority</button>
+      <div class="mode-group">
+        <button class="mode-btn active" data-mode="M" onclick="setMode('M')">M // Manual</button>
+        <button class="mode-btn" data-mode="Av" onclick="setMode('Av')">Av // Aperture Priority</button>
+        <button class="mode-btn" data-mode="Tv" onclick="setMode('Tv')">Tv // Shutter Priority</button>
       </div>
     </div>
   </header>
 
-  <!-- Primary Interactive Studio -->
   <main class="workspace">
-
-    <!-- Left Column: Live Optical Viewfinder & Diagnostics -->
-    <section class="camera-housing" aria-label="Optical Viewfinder">
+    <section class="camera-housing">
       <div class="camera-top-deck">
-        <div class="scene-selector">
-          <span class="mono" style="font-size: 0.72rem; color: var(--text-secondary); margin-right: 0.25rem;">AMBIENT LIGHT:</span>
-          <button class="scene-chip" data-scene="day" onclick="setScene('day')">Bright Waterfall (EV 14)</button>
-          <button class="scene-chip active" data-scene="dusk" onclick="setScene('dusk')">Golden Hour (EV 11)</button>
-          <button class="scene-chip" data-scene="night" onclick="setScene('night')">Neon Street (EV 7)</button>
+        <div class="btn-row">
+          <button class="chip-btn" data-scene="day" onclick="setScene('day')">Daylight Alps (EV 14)</button>
+          <button class="chip-btn active" data-scene="dusk" onclick="setScene('dusk')">Golden Sunset (EV 11)</button>
+          <button class="chip-btn" data-scene="night" onclick="setScene('night')">Neon Street (EV 7)</button>
         </div>
-
-        <div class="camera-toggles">
-          <button id="tripodBtn" class="util-toggle" onclick="toggleTripod()">
-            <span>Tripod: OFF</span>
-          </button>
-          <button id="zebraBtn" class="util-toggle" onclick="toggleZebras()">
-            <span>Peak Warning: OFF</span>
-          </button>
+        <div class="btn-row">
+          <button id="tripodBtn" class="chip-btn" onclick="toggleTripod()">Tripod: OFF</button>
+          <button id="zebraBtn" class="chip-btn" onclick="toggleZebra()">Clip Warning: OFF</button>
         </div>
       </div>
 
-      <!-- Live 60FPS Optical Canvas -->
       <div class="viewfinder-wrap">
-        <canvas id="viewfinderCanvas" width="960" height="600"></canvas>
+        <canvas id="viewfinderCanvas" width="900" height="560"></canvas>
         <div id="shutterCurtain" class="shutter-curtain"></div>
 
-        <!-- Top Viewfinder HUD -->
-        <div class="vf-hud-top">
-          <div class="vf-badge mono">
-            <span id="hudModeBadge" style="color: var(--accent-amber); font-weight: 700;">[M] MANUAL</span>
-            <span>|</span>
-            <span id="hudSceneBadge">GOLDEN HOUR</span>
-          </div>
-
-          <div class="histogram-box">
-            <div class="histogram-label mono">
-              <span>SHADOW</span>
-              <span>MID</span>
-              <span>PEAK</span>
-            </div>
-            <canvas id="histogramCanvas" width="108" height="32"></canvas>
-          </div>
+        <div class="vf-hud-top mono">
+          <div id="hudMode" class="vf-badge">[M] MANUAL MODE</div>
+          <div id="hudScene" class="vf-badge">GOLDEN SUNSET</div>
         </div>
 
-        <!-- Focus Point Reticle on Subject -->
-        <div class="af-reticle">
-          <span class="af-tag mono">AF LOCKED</span>
-        </div>
+        <div class="af-reticle"></div>
 
-        <!-- Bottom Viewfinder Telemetry Bar -->
         <div class="vf-hud-bottom mono">
           <div class="vf-readouts">
-            <div class="vf-metric">
+            <div>
               <span class="vf-metric-label">Aperture</span>
-              <span id="hudAperture" class="vf-metric-val">f/2.8</span>
+              <span id="hudAp" class="vf-metric-val">f/2.8</span>
             </div>
-            <div class="vf-metric">
+            <div>
               <span class="vf-metric-label">Shutter</span>
-              <span id="hudShutter" class="vf-metric-val">1/250s</span>
+              <span id="hudSh" class="vf-metric-val">1/250s</span>
             </div>
-            <div class="vf-metric">
-              <span class="vf-metric-label">Sensor ISO</span>
+            <div>
+              <span class="vf-metric-label">ISO</span>
               <span id="hudIso" class="vf-metric-val">ISO 400</span>
             </div>
           </div>
 
-          <!-- EV Light Meter -->
-          <div class="ev-meter-container">
-            <div class="ev-scale-numbers">
-              <span>-3</span>
-              <span>-2</span>
-              <span>-1</span>
-              <span style="color: var(--accent-amber); font-weight: 700;">0</span>
-              <span>+1</span>
-              <span>+2</span>
-              <span>+3</span>
+          <div class="ev-meter-box">
+            <div class="ev-scale">
+              <span>-3</span><span>-2</span><span>-1</span><span>0</span><span>+1</span><span>+2</span><span>+3</span>
             </div>
             <div class="ev-track">
-              <div class="ev-center-tick"></div>
-              <div id="evIndicator" class="ev-indicator" style="left: 50%;"></div>
+              <div id="evInd" class="ev-ind" style="left:50%"></div>
             </div>
-            <div id="evTextReadout" style="font-size: 0.68rem; margin-top: 4px; color: var(--accent-green); font-weight: 700;">
-              BALANCED EXPOSURE (0.0 EV)
+            <div id="evText" style="font-size:0.66rem; margin-top:3px; color:var(--accent-green); font-weight:700;">
+              BALANCED (0.0 EV)
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Real-Time Optical Diagnostics -->
       <div class="diagnostic-grid">
         <div class="diag-card">
-          <div class="diag-header">
-            <span class="diag-title">Depth of Field</span>
-            <span id="dofBadge" class="diag-pill mono">Shallow</span>
+          <div class="diag-head">
+            <span>DEPTH OF FIELD</span>
+            <span id="dofTag" class="mono">Shallow</span>
           </div>
-          <p id="dofExplain" class="diag-desc">
-            Wide aperture blurs distant city lights into soft bokeh orbs while keeping the foreground pinwheel sharp.
-          </p>
+          <p id="dofText" class="diag-desc">Wide aperture blurs background lights into soft bokeh circles.</p>
         </div>
-
         <div class="diag-card">
-          <div class="diag-header">
-            <span class="diag-title">Motion Capture</span>
-            <span id="motionBadge" class="diag-pill mono">Frozen</span>
+          <div class="diag-head">
+            <span>MOTION BLUR</span>
+            <span id="motTag" class="mono">Frozen</span>
           </div>
-          <p id="motionExplain" class="diag-desc">
-            Fast shutter freezes spinning blades and water droplets cleanly with zero handheld shake.
-          </p>
+          <p id="motText" class="diag-desc">Fast shutter freezes the spinning blades and falling water drops.</p>
         </div>
-
         <div class="diag-card">
-          <div class="diag-header">
-            <span class="diag-title">Sensor Signal</span>
-            <span id="noiseBadge" class="diag-pill mono">Clean</span>
+          <div class="diag-head">
+            <span>SENSOR GRAIN</span>
+            <span id="isoTag" class="mono">Clean</span>
           </div>
-          <p id="noiseExplain" class="diag-desc">
-            Low amplification preserves smooth tonal gradients and deep shadow clarity.
-          </p>
+          <p id="isoText" class="diag-desc">Low ISO keeps shadow areas smooth and free of digital noise.</p>
         </div>
       </div>
     </section>
 
-    <!-- Right Column: Physical Lens Cutaway & Three Exposure Dials -->
-    <aside class="control-deck" aria-label="Exposure Triangle Controls">
-
-      <!-- Live Mechanical Iris & Sensor Inspector -->
+    <aside class="control-deck">
       <div class="hardware-panel">
-        <div class="iris-box">
-          <canvas id="irisCanvas" width="88" height="88"></canvas>
+        <div class="iris-wrap">
+          <canvas id="irisCanvas" width="76" height="76"></canvas>
         </div>
-        <div class="hardware-stats">
+        <div>
           <div class="hw-row">
-            <span style="color: var(--text-secondary);">Lens Iris Opening</span>
-            <span id="hwIrisVal" class="mono" style="font-weight: 700; color: var(--accent-amber);">35.7 mm wide</span>
-          </div>
-          <div class="hw-row">
-            <span style="color: var(--text-secondary);">Curtain Open Time</span>
-            <span id="hwShutterVal" class="mono" style="font-weight: 700;">4.0 milliseconds</span>
+            <span style="color:var(--text-secondary)">Physical Iris Opening</span>
+            <span id="hwIris" class="mono" style="color:var(--accent-amber); font-weight:700;">17.9 mm</span>
           </div>
           <div class="hw-row">
-            <span style="color: var(--text-secondary);">Sensor Gain Floor</span>
-            <span id="hwIsoVal" class="mono" style="font-weight: 700;">+6 dB low grain</span>
+            <span style="color:var(--text-secondary)">Curtain Open Duration</span>
+            <span id="hwTime" class="mono">4.00 ms</span>
+          </div>
+          <div class="hw-row">
+            <span style="color:var(--text-secondary)">Sensor Signal Gain</span>
+            <span id="hwGain" class="mono">+12 dB</span>
           </div>
         </div>
       </div>
 
-      <!-- Dial 1: Aperture -->
-      <div id="apertureCard" class="dial-card">
+      <div class="dial-card">
         <div class="dial-top">
-          <div class="dial-name-wrap">
-            <span class="dial-number mono">01</span>
-            <h2 class="dial-name">Aperture (f/stop)</h2>
-          </div>
-          <span id="apertureValDisplay" class="dial-value mono">f/2.8</span>
+          <span class="dial-title">1. Aperture (f/stop)</span>
+          <span id="apVal" class="dial-val mono">f/2.8</span>
         </div>
         <div class="dial-controls">
-          <button id="apMinus" class="step-btn mono" onclick="stepControl('aperture', -1)" aria-label="Wider Aperture">-</button>
-          <input id="apertureSlider" class="camera-slider" type="range" min="0" max="8" step="1" value="2" oninput="onSliderChange('aperture', this.value)">
-          <button id="apPlus" class="step-btn mono" onclick="stepControl('aperture', 1)" aria-label="Narrower Aperture">+</button>
+          <button class="step-btn mono" onclick="stepDial('ap', -1)">-</button>
+          <input id="apSlider" class="slider" type="range" min="0" max="8" step="1" value="2" oninput="changeDial('ap', this.value)">
+          <button class="step-btn mono" onclick="stepDial('ap', 1)">+</button>
         </div>
-        <div class="dial-scale-labels mono">
-          <span>f/1.4 (More Light + Blur)</span>
-          <span>f/22 (Less Light + All Sharp)</span>
+        <div class="dial-hints mono">
+          <span>f/1.4 (Bright + Blurry BG)</span>
+          <span>f/22 (Dark + Sharp BG)</span>
         </div>
       </div>
 
-      <!-- Dial 2: Shutter Speed -->
-      <div id="shutterCard" class="dial-card">
+      <div class="dial-card">
         <div class="dial-top">
-          <div class="dial-name-wrap">
-            <span class="dial-number mono">02</span>
-            <h2 class="dial-name">Shutter Speed</h2>
-          </div>
-          <span id="shutterValDisplay" class="dial-value mono">1/250s</span>
+          <span class="dial-title">2. Shutter Speed</span>
+          <span id="shVal" class="dial-val mono">1/250s</span>
         </div>
         <div class="dial-controls">
-          <button id="shMinus" class="step-btn mono" onclick="stepControl('shutter', -1)" aria-label="Faster Shutter">-</button>
-          <input id="shutterSlider" class="camera-slider" type="range" min="0" max="12" step="1" value="4" oninput="onSliderChange('shutter', this.value)">
-          <button id="shPlus" class="step-btn mono" onclick="stepControl('shutter', 1)" aria-label="Slower Shutter">+</button>
+          <button class="step-btn mono" onclick="stepDial('sh', -1)">-</button>
+          <input id="shSlider" class="slider" type="range" min="0" max="12" step="1" value="4" oninput="changeDial('sh', this.value)">
+          <button class="step-btn mono" onclick="stepDial('sh', 1)">+</button>
         </div>
-        <div class="dial-scale-labels mono">
-          <span>1/4000s (Darker + Frozen)</span>
-          <span>1.0s (Brighter + Motion Blur)</span>
+        <div class="dial-hints mono">
+          <span>1/4000s (Dark + Freeze)</span>
+          <span>1.0s (Bright + Motion Blur)</span>
         </div>
       </div>
 
-      <!-- Dial 3: ISO Sensitivity -->
-      <div id="isoCard" class="dial-card">
+      <div class="dial-card">
         <div class="dial-top">
-          <div class="dial-name-wrap">
-            <span class="dial-number mono">03</span>
-            <h2 class="dial-name">ISO Sensitivity</h2>
-          </div>
-          <span id="isoValDisplay" class="dial-value mono">ISO 400</span>
+          <span class="dial-title">3. ISO Sensitivity</span>
+          <span id="isoVal" class="dial-val mono">ISO 400</span>
         </div>
         <div class="dial-controls">
-          <button id="isoMinus" class="step-btn mono" onclick="stepControl('iso', -1)" aria-label="Lower ISO">-</button>
-          <input id="isoSlider" class="camera-slider" type="range" min="0" max="8" step="1" value="2" oninput="onSliderChange('iso', this.value)">
-          <button id="isoPlus" class="step-btn mono" onclick="stepControl('iso', 1)" aria-label="Higher ISO">+</button>
+          <button class="step-btn mono" onclick="stepDial('iso', -1)">-</button>
+          <input id="isoSlider" class="slider" type="range" min="0" max="8" step="1" value="2" oninput="changeDial('iso', this.value)">
+          <button class="step-btn mono" onclick="stepDial('iso', 1)">+</button>
         </div>
-        <div class="dial-scale-labels mono">
-          <span>ISO 100 (Clean + Darker)</span>
-          <span>ISO 25600 (Grainy + Brighter)</span>
+        <div class="dial-hints mono">
+          <span>ISO 100 (Dark + Clean)</span>
+          <span>ISO 25600 (Bright + Grainy)</span>
         </div>
       </div>
 
-      <!-- Shutter Release & Auto Balance Bar -->
-      <div class="shutter-bar">
-        <button class="shutter-btn display-font" onclick="triggerShutter()">
-          <span class="shutter-ring"></span>
-          <span>Capture Frame (Space)</span>
-        </button>
-        <button class="balance-btn mono" onclick="autoBalanceExposure()" title="Match settings to 0.0 EV">
-          Match 0.0 EV
-        </button>
+      <div class="action-bar">
+        <button class="shutter-btn" onclick="capturePhoto()">Capture Photo (Space)</button>
+        <button class="auto-btn mono" onclick="matchZeroEv()">Match 0.0 EV</button>
       </div>
-
     </aside>
   </main>
 
-  <!-- Lower Section: Field Challenges & Captured Contact Sheet -->
-  <section class="lower-studio">
-
-    <!-- Interactive Learning Challenges -->
-    <div class="studio-section-box">
-      <div class="section-head">
-        <div>
-          <h3 class="display-font" style="font-size: 1.1rem;">Interactive Field Missions</h3>
-          <p style="font-size: 0.78rem; color: var(--text-secondary);">Dial in the settings and press Capture Frame to verify each skill.</p>
-        </div>
-        <span id="missionCounter" class="mono" style="font-size: 0.78rem; color: var(--accent-amber); font-weight: 700;">0 / 4 COMPLETED</span>
+  <section class="lower-grid">
+    <div class="panel-box">
+      <div class="panel-head">
+        <strong>Practice Missions</strong>
+        <span id="missionCount" class="mono" style="font-size:0.76rem; color:var(--accent-amber);">0 / 4 Completed</span>
       </div>
-
-      <div class="missions-list">
-        <div id="mission-0" class="mission-card">
-          <div class="mission-status mono">
-            <span>MISSION 01</span>
-            <span id="mission-status-0">PENDING</span>
-          </div>
-          <div class="mission-title">Creamy Portrait Bokeh</div>
-          <p class="mission-desc">Set Aperture to f/1.4 or f/2.0 and capture a balanced photo (within 1 stop of 0.0 EV).</p>
+      <div class="missions">
+        <div id="m0" class="mission-item">
+          <strong style="color:var(--accent-amber)">01. Shallow Bokeh</strong>
+          <p style="color:var(--text-secondary); margin-top:4px;">Capture a balanced photo at f/1.4 or f/2.0.</p>
         </div>
-
-        <div id="mission-1" class="mission-card">
-          <div class="mission-status mono">
-            <span>MISSION 02</span>
-            <span id="mission-status-1">PENDING</span>
-          </div>
-          <div class="mission-title">Freeze the Action</div>
-          <p class="mission-desc">Set Shutter Speed to 1/1000s or faster to lock the spinning blades and droplets with balanced light.</p>
+        <div id="m1" class="mission-item">
+          <strong style="color:var(--accent-amber)">02. Freeze Action</strong>
+          <p style="color:var(--text-secondary); margin-top:4px;">Capture a balanced photo at 1/1000s or faster.</p>
         </div>
-
-        <div id="mission-2" class="mission-card">
-          <div class="mission-status mono">
-            <span>MISSION 03</span>
-            <span id="mission-status-2">PENDING</span>
-          </div>
-          <div class="mission-title">Silky Water & Light Trails</div>
-          <p class="mission-desc">Turn Tripod ON, set Shutter Speed to 1/4s or slower, and capture silky motion at balanced exposure.</p>
+        <div id="m2" class="mission-item">
+          <strong style="color:var(--accent-amber)">03. Silky Waterfall</strong>
+          <p style="color:var(--text-secondary); margin-top:4px;">Turn Tripod ON and capture at 1/4s or slower.</p>
         </div>
-
-        <div id="mission-3" class="mission-card">
-          <div class="mission-status mono">
-            <span>MISSION 04</span>
-            <span id="mission-status-3">PENDING</span>
-          </div>
-          <div class="mission-title">Clean Night Shot</div>
-          <p class="mission-desc">Switch to Neon Street, keep ISO at 800 or below, and capture a balanced night frame.</p>
+        <div id="m3" class="mission-item">
+          <strong style="color:var(--accent-amber)">04. Clean Night Shot</strong>
+          <p style="color:var(--text-secondary); margin-top:4px;">In Neon Street, capture at ISO 800 or lower.</p>
         </div>
       </div>
     </div>
 
-    <!-- Captured Filmstrip Contact Sheet -->
-    <div class="studio-section-box">
-      <div class="section-head">
-        <div>
-          <h3 class="display-font" style="font-size: 1.1rem;">Captured Contact Sheet</h3>
-          <p style="font-size: 0.78rem; color: var(--text-secondary);">Compare how different combinations change your image side by side.</p>
-        </div>
-        <button class="util-toggle mono" onclick="clearFilmstrip()">Clear Strip</button>
+    <div class="panel-box">
+      <div class="panel-head">
+        <strong>Captured Contact Sheet</strong>
+        <button class="chip-btn mono" onclick="clearShots()">Clear</button>
       </div>
-
-      <div id="filmstripGrid" class="filmstrip-grid">
-        <div class="empty-filmstrip mono">
-          Press "Capture Frame" to stamp your current exposure onto the comparison contact sheet.
+      <div id="shotsGrid" class="shots-grid">
+        <div class="mono" style="grid-column:1/-1; text-align:center; padding:1.8rem; color:var(--text-secondary); font-size:0.78rem;">
+          Click "Capture Photo" to compare your exposures side by side.
         </div>
       </div>
     </div>
-
   </section>
 
   <script>
-    // Full-stop photographic scales
     const APERTURES = [1.4, 2.0, 2.8, 4.0, 5.6, 8.0, 11.0, 16.0, 22.0];
     const SHUTTERS = [
       { label: '1/4000s', sec: 1/4000 },
@@ -1209,680 +745,422 @@
     ];
     const ISOS = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600];
 
-    // Scene definitions (Target stop sum where EV offset = 0)
-    // Using index math:
-    // Wider aperture (lower index) = MORE light
-    // Slower shutter (higher index) = MORE light
-    // Higher ISO (higher index) = MORE light
-    // Light Score = (8 - apIdx) + shIdx + isoIdx
     const SCENES = {
-      day:   { name: 'BRIGHT WATERFALL', targetScore: 9,  skyTop: '#1E3A5F', skyBot: '#60A5FA', ground: '#1E293B' },
-      dusk:  { name: 'GOLDEN HOUR',      targetScore: 12, skyTop: '#1E1B4B', skyBot: '#F59E0B', ground: '#171524' },
-      night: { name: 'NEON STREET',      targetScore: 16, skyTop: '#06070B', skyBot: '#111827', ground: '#090B10' }
+      day:   { name: 'DAYLIGHT ALPS', target: 9,  top: '#1D4ED8', bot: '#93C5FD', ground: '#1E293B' },
+      dusk:  { name: 'GOLDEN SUNSET', target: 12, top: '#311042', bot: '#F97316', ground: '#1F1629' },
+      night: { name: 'NEON STREET',   target: 16, top: '#090D16', bot: '#1E293B', ground: '#0B0F17' }
     };
 
     const state = {
       mode: 'M',
       scene: 'dusk',
-      apIdx: 2,   // f/2.8
-      shIdx: 4,   // 1/250s
-      isoIdx: 2,  // ISO 400
+      ap: 2,
+      sh: 4,
+      iso: 2,
       tripod: false,
-      zebras: false,
-      missions: [false, false, false, false],
+      zebra: false,
+      done: [false, false, false, false],
       shots: []
     };
 
-    // Scene animated particles
-    const bokehLights = [
-      { x: 140, y: 180, color: '#FBBF24', size: 14 },
-      { x: 260, y: 210, color: '#F43F5E', size: 11 },
-      { x: 450, y: 155, color: '#38BDF8', size: 16 },
-      { x: 590, y: 225, color: '#FBBF24', size: 13 },
-      { x: 710, y: 170, color: '#A855F7', size: 15 },
-      { x: 830, y: 205, color: '#F43F5E', size: 12 },
-      { x: 890, y: 145, color: '#38BDF8', size: 14 },
-      { x: 510, y: 240, color: '#10B981', size: 10 }
+    const lights = [
+      { x: 130, y: 180, c: '#FBBF24', r: 12 },
+      { x: 240, y: 220, c: '#F43F5E', r: 10 },
+      { x: 460, y: 160, c: '#38BDF8', r: 14 },
+      { x: 560, y: 210, c: '#FBBF24', r: 11 },
+      { x: 740, y: 175, c: '#A855F7', r: 13 },
+      { x: 820, y: 225, c: '#10B981', r: 11 }
     ];
 
-    const waterDrops = Array.from({ length: 55 }, (_, i) => ({
-      x: 640 + (i % 5) * 28 + Math.random() * 14,
-      y: 150 + Math.random() * 340,
-      speed: 2.2 + Math.random() * 1.6
+    const drops = Array.from({ length: 48 }, (_, i) => ({
+      x: 610 + (i % 6) * 24 + Math.random() * 10,
+      y: 140 + Math.random() * 310,
+      v: 2.5 + Math.random() * 1.5
     }));
 
-    let wheelAngle = 0;
-    let trainX = 120;
+    let angle = 0;
+    let carX = 100;
 
-    const vfCanvas = document.getElementById('viewfinderCanvas');
-    const vfCtx = vfCanvas.getContext('2d');
-    const irisCanvas = document.getElementById('irisCanvas');
-    const irisCtx = irisCanvas.getContext('2d');
-    const histCanvas = document.getElementById('histogramCanvas');
-    const histCtx = histCanvas.getContext('2d');
+    const vf = document.getElementById('viewfinderCanvas');
+    const ctx = vf.getContext('2d');
+    const iris = document.getElementById('irisCanvas');
+    const iCtx = iris.getContext('2d');
 
-    // Calculate current Light Score and EV offset (-3 to +3+)
-    function getEvOffset() {
-      const lightScore = (8 - state.apIdx) + state.shIdx + state.isoIdx;
-      const target = SCENES[state.scene].targetScore;
-      return lightScore - target;
+    function getEv() {
+      return (8 - state.ap) + state.sh + state.iso - SCENES[state.scene].target;
     }
 
-    function setCameraMode(mode) {
-      state.mode = mode;
-      document.querySelectorAll('.mode-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === mode);
-      });
-      document.getElementById('hudModeBadge').textContent =
-        mode === 'M' ? '[M] MANUAL' : mode === 'Av' ? '[Av] APERTURE PRIORITY' : '[Tv] SHUTTER PRIORITY';
-
-      // Lock/unlock automated dials visually
-      const apCard = document.getElementById('apertureCard');
-      const shCard = document.getElementById('shutterCard');
-      apCard.classList.toggle('locked', mode === 'Tv');
-      shCard.classList.toggle('locked', mode === 'Av');
-
-      if (mode !== 'M') {
-        applyPriorityCompensation();
+    function autoCompensate() {
+      const t = SCENES[state.scene].target;
+      if (state.mode === 'Av') {
+        state.sh = Math.max(0, Math.min(12, t - (8 - state.ap) - state.iso));
+      } else if (state.mode === 'Tv') {
+        state.ap = Math.max(0, Math.min(8, 8 - (t - state.sh - state.iso)));
       }
-      updateUI();
     }
 
-    function setScene(sceneKey) {
-      state.scene = sceneKey;
-      document.querySelectorAll('.scene-chip').forEach(chip => {
-        chip.classList.toggle('active', chip.dataset.scene === sceneKey);
-      });
-      document.getElementById('hudSceneBadge').textContent = SCENES[sceneKey].name;
-      if (state.mode !== 'M') {
-        applyPriorityCompensation();
-      }
-      updateUI();
+    function setMode(m) {
+      state.mode = m;
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+      document.getElementById('hudMode').textContent = m === 'M' ? '[M] MANUAL MODE' : m === 'Av' ? '[Av] APERTURE PRIORITY' : '[Tv] SHUTTER PRIORITY';
+      if (m !== 'M') autoCompensate();
+      syncUI();
+    }
+
+    function setScene(s) {
+      state.scene = s;
+      document.querySelectorAll('[data-scene]').forEach(b => b.classList.toggle('active', b.dataset.scene === s));
+      document.getElementById('hudScene').textContent = SCENES[s].name;
+      if (state.mode !== 'M') autoCompensate();
+      syncUI();
     }
 
     function toggleTripod() {
       state.tripod = !state.tripod;
-      const btn = document.getElementById('tripodBtn');
-      btn.classList.toggle('active', state.tripod);
-      btn.innerHTML = `<span>Tripod: ${state.tripod ? 'ON' : 'OFF'}</span>`;
-      updateUI();
+      const b = document.getElementById('tripodBtn');
+      b.classList.toggle('active', state.tripod);
+      b.textContent = `Tripod: ${state.tripod ? 'ON' : 'OFF'}`;
+      syncUI();
     }
 
-    function toggleZebras() {
-      state.zebras = !state.zebras;
-      const btn = document.getElementById('zebraBtn');
-      btn.classList.toggle('active', state.zebras);
-      btn.innerHTML = `<span>Peak Warning: ${state.zebras ? 'ON' : 'OFF'}</span>`;
-      updateUI();
+    function toggleZebra() {
+      state.zebra = !state.zebra;
+      const b = document.getElementById('zebraBtn');
+      b.classList.toggle('active', state.zebra);
+      b.textContent = `Clip Warning: ${state.zebra ? 'ON' : 'OFF'}`;
+      syncUI();
     }
 
-    function applyPriorityCompensation() {
-      const target = SCENES[state.scene].targetScore;
-      if (state.mode === 'Av') {
-        // Solve for shIdx: (8 - apIdx) + shIdx + isoIdx = target
-        let neededSh = target - (8 - state.apIdx) - state.isoIdx;
-        state.shIdx = Math.max(0, Math.min(SHUTTERS.length - 1, neededSh));
-      } else if (state.mode === 'Tv') {
-        // Solve for apIdx: 8 - apIdx = target - shIdx - isoIdx
-        let neededAp = 8 - (target - state.shIdx - state.isoIdx);
-        state.apIdx = Math.max(0, Math.min(APERTURES.length - 1, neededAp));
-      }
+    function changeDial(key, val) {
+      state[key] = parseInt(val, 10);
+      if (key === 'ap' && state.mode === 'Tv') setMode('Av');
+      if (key === 'sh' && state.mode === 'Av') setMode('Tv');
+      if (state.mode !== 'M') autoCompensate();
+      syncUI();
     }
 
-    function onSliderChange(type, val) {
-      const idx = parseInt(val, 10);
-      if (type === 'aperture') {
-        if (state.mode === 'Tv') setCameraMode('Av');
-        state.apIdx = idx;
-      } else if (type === 'shutter') {
-        if (state.mode === 'Av') setCameraMode('Tv');
-        state.shIdx = idx;
-      } else if (type === 'iso') {
-        state.isoIdx = idx;
-      }
-
-      if (state.mode !== 'M') {
-        applyPriorityCompensation();
-      }
-      playTickSound();
-      updateUI();
+    function stepDial(key, delta) {
+      const max = key === 'sh' ? 12 : 8;
+      changeDial(key, Math.max(0, Math.min(max, state[key] + delta)));
     }
 
-    function stepControl(type, delta) {
-      if (type === 'aperture') {
-        const next = Math.max(0, Math.min(APERTURES.length - 1, state.apIdx + delta));
-        onSliderChange('aperture', next);
-      } else if (type === 'shutter') {
-        const next = Math.max(0, Math.min(SHUTTERS.length - 1, state.shIdx + delta));
-        onSliderChange('shutter', next);
-      } else if (type === 'iso') {
-        const next = Math.max(0, Math.min(ISOS.length - 1, state.isoIdx + delta));
-        onSliderChange('iso', next);
-      }
+    function matchZeroEv() {
+      const t = SCENES[state.scene].target;
+      let neededSh = t - (8 - state.ap) - state.iso;
+      state.sh = Math.max(0, Math.min(12, neededSh));
+      let rem = neededSh - state.sh;
+      state.iso = Math.max(0, Math.min(8, state.iso + rem));
+      syncUI();
     }
 
-    function autoBalanceExposure() {
-      const target = SCENES[state.scene].targetScore;
-      let neededSh = target - (8 - state.apIdx) - state.isoIdx;
-      if (neededSh >= 0 && neededSh < SHUTTERS.length) {
-        state.shIdx = neededSh;
-      } else {
-        let remainder = neededSh < 0 ? neededSh : neededSh - (SHUTTERS.length - 1);
-        state.shIdx = Math.max(0, Math.min(SHUTTERS.length - 1, neededSh));
-        state.isoIdx = Math.max(0, Math.min(ISOS.length - 1, state.isoIdx + remainder));
-      }
-      playTickSound();
-      updateUI();
-    }
+    function syncUI() {
+      const ap = APERTURES[state.ap];
+      const sh = SHUTTERS[state.sh];
+      const iso = ISOS[state.iso];
+      const ev = getEv();
 
-    function updateUI() {
-      const ap = APERTURES[state.apIdx];
-      const sh = SHUTTERS[state.shIdx];
-      const iso = ISOS[state.isoIdx];
-      const ev = getEvOffset();
+      document.getElementById('apSlider').value = state.ap;
+      document.getElementById('shSlider').value = state.sh;
+      document.getElementById('isoSlider').value = state.iso;
 
-      // Sync sliders
-      document.getElementById('apertureSlider').value = state.apIdx;
-      document.getElementById('shutterSlider').value = state.shIdx;
-      document.getElementById('isoSlider').value = state.isoIdx;
+      document.getElementById('apVal').textContent = `f/${ap}`;
+      document.getElementById('shVal').textContent = sh.label;
+      document.getElementById('isoVal').textContent = `ISO ${iso}`;
 
-      // Readouts
-      const apText = `f/${ap}`;
-      const shText = sh.label;
-      const isoText = `ISO ${iso}`;
+      document.getElementById('hudAp').textContent = `f/${ap}`;
+      document.getElementById('hudSh').textContent = sh.label;
+      document.getElementById('hudIso').textContent = `ISO ${iso}`;
 
-      document.getElementById('apertureValDisplay').textContent = apText;
-      document.getElementById('shutterValDisplay').textContent = shText;
-      document.getElementById('isoValDisplay').textContent = isoText;
+      document.getElementById('hwIris').textContent = `${(50 / ap).toFixed(1)} mm`;
+      document.getElementById('hwTime').textContent = sh.sec >= 0.1 ? `${sh.sec.toFixed(2)} s` : `${(sh.sec * 1000).toFixed(2)} ms`;
+      document.getElementById('hwGain').textContent = `+${state.iso * 6} dB`;
 
-      document.getElementById('hudAperture').textContent = apText;
-      document.getElementById('hudShutter').textContent = shText;
-      document.getElementById('hudIso').textContent = isoText;
-
-      // Hardware Cutaway Metrics
-      const focalLength = 50;
-      const irisMm = (focalLength / ap).toFixed(1);
-      document.getElementById('hwIrisVal').textContent = `${irisMm} mm opening`;
-      const ms = sh.sec >= 0.1 ? `${sh.sec.toFixed(2)} sec` : `${(sh.sec * 1000).toFixed(2)} ms`;
-      document.getElementById('hwShutterVal').textContent = ms;
-      const dbGain = state.isoIdx * 6;
-      document.getElementById('hwIsoVal').textContent = `+${dbGain} dB gain`;
-
-      // EV Meter Bar
-      const clampedEv = Math.max(-3, Math.min(3, ev));
-      const pct = ((clampedEv + 3) / 6) * 100;
-      const evInd = document.getElementById('evIndicator');
-      const evTxt = document.getElementById('evTextReadout');
-      evInd.style.left = `${pct}%`;
+      const clamped = Math.max(-3, Math.min(3, ev));
+      const ind = document.getElementById('evInd');
+      const txt = document.getElementById('evText');
+      ind.style.left = `${((clamped + 3) / 6) * 100}%`;
 
       const sign = ev > 0 ? '+' : '';
       if (Math.abs(ev) <= 1) {
-        evInd.style.background = '#10B981';
-        evTxt.style.color = '#10B981';
-        evTxt.textContent = ev === 0 ? 'BALANCED EXPOSURE (0.0 EV)' : `GOOD EXPOSURE (${sign}${ev}.0 EV)`;
+        ind.style.background = '#10B981';
+        txt.style.color = '#10B981';
+        txt.textContent = `BALANCED (${sign}${ev}.0 EV)`;
       } else if (ev > 1) {
-        evInd.style.background = '#EF4444';
-        evTxt.style.color = '#EF4444';
-        evTxt.textContent = `OVEREXPOSED (${sign}${ev}.0 STOPS TOO BRIGHT)`;
+        ind.style.background = '#EF4444';
+        txt.style.color = '#EF4444';
+        txt.textContent = `OVEREXPOSED (${sign}${ev}.0 EV)`;
       } else {
-        evInd.style.background = '#38BDF8';
-        evTxt.style.color = '#38BDF8';
-        evTxt.textContent = `UNDEREXPOSED (${ev}.0 STOPS TOO DARK)`;
+        ind.style.background = '#38BDF8';
+        txt.style.color = '#38BDF8';
+        txt.textContent = `UNDEREXPOSED (${ev}.0 EV)`;
       }
 
-      // Diagnostic Explanations
-      const dofBadge = document.getElementById('dofBadge');
-      const dofExplain = document.getElementById('dofExplain');
-      if (state.apIdx <= 2) {
-        dofBadge.textContent = 'Shallow Bokeh';
-        dofExplain.textContent = `${apText} opens the lens wide, melting distant lights into large bokeh orbs and isolating your subject.`;
-      } else if (state.apIdx <= 5) {
-        dofBadge.textContent = 'Balanced Focus';
-        dofExplain.textContent = `${apText} gives moderate background separation while keeping the whole subject plane crisp.`;
-      } else {
-        dofBadge.textContent = 'Deep Focus';
-        dofExplain.textContent = `${apText} narrows the iris to a small opening so foreground leaves and distant towers stay sharp.`;
-      }
+      document.getElementById('dofTag').textContent = state.ap <= 2 ? 'Shallow Bokeh' : state.ap <= 5 ? 'Medium Focus' : 'Deep Focus';
+      document.getElementById('dofText').textContent = state.ap <= 2
+        ? `f/${ap} melts distant lights into large glowing bokeh orbs.`
+        : state.ap <= 5
+        ? `f/${ap} balances subject separation with moderate background detail.`
+        : `f/${ap} narrows the iris so both foreground and distant peaks look sharp.`;
 
-      const motionBadge = document.getElementById('motionBadge');
-      const motionExplain = document.getElementById('motionExplain');
-      if (state.shIdx <= 3) {
-        motionBadge.textContent = 'Frozen Solid';
-        motionExplain.textContent = `${shText} locks fast spinning blades and mid-air water drops with zero motion blur.`;
-      } else if (state.shIdx <= 6) {
-        motionBadge.textContent = 'Everyday Sharp';
-        motionExplain.textContent = `${shText} is safe for handheld shooting while showing slight natural movement on fast blades.`;
-      } else {
-        const shakeWarn = !state.tripod ? ' Enable Tripod to stop handheld camera shake.' : ' Tripod keeps static structures sharp.';
-        motionBadge.textContent = state.tripod ? 'Silky Trails' : 'Motion + Shake';
-        motionExplain.textContent = `${shText} turns falling water into smooth ribbons and stretches passing lights.${shakeWarn}`;
-      }
+      document.getElementById('motTag').textContent = state.sh <= 3 ? 'Frozen' : state.sh <= 6 ? 'Natural' : state.tripod ? 'Silky Blur' : 'Camera Shake';
+      document.getElementById('motText').textContent = state.sh <= 3
+        ? `${sh.label} locks spinning blades and individual water drops in mid-air.`
+        : state.sh <= 6
+        ? `${sh.label} is fast enough for handheld shots with slight blade motion.`
+        : `${sh.label} blends falling water into smooth ribbons.${state.tripod ? '' : ' Turn Tripod ON to stop shake.'}`;
 
-      const noiseBadge = document.getElementById('noiseBadge');
-      const noiseExplain = document.getElementById('noiseExplain');
-      if (state.isoIdx <= 2) {
-        noiseBadge.textContent = 'Pure Signal';
-        noiseExplain.textContent = `${isoText} produces clean shadows and smooth tonal transitions with virtually invisible grain.`;
-      } else if (state.isoIdx <= 5) {
-        noiseBadge.textContent = 'Moderate Grain';
-        noiseExplain.textContent = `${isoText} boosts low light capability while introducing fine texture in darker areas.`;
-      } else {
-        noiseBadge.textContent = 'Heavy Grain';
-        noiseExplain.textContent = `${isoText} amplifies sensor voltage heavily, adding visible chroma specs and reducing contrast.`;
-      }
+      document.getElementById('isoTag').textContent = state.iso <= 2 ? 'Clean' : state.iso <= 5 ? 'Mild Grain' : 'Heavy Noise';
+      document.getElementById('isoText').textContent = state.iso <= 2
+        ? `ISO ${iso} keeps shadows clean and colors accurate.`
+        : state.iso <= 5
+        ? `ISO ${iso} brightens low light scenes with noticeable film-style grain.`
+        : `ISO ${iso} introduces heavy digital speckles across the image.`;
 
-      drawIrisDiagram();
-      drawHistogram(ev);
+      drawIris();
     }
 
-    // Draw 9-blade physical aperture cutaway
-    function drawIrisDiagram() {
-      const w = irisCanvas.width;
-      const h = irisCanvas.height;
-      const cx = w / 2;
-      const cy = h / 2;
-      irisCtx.clearRect(0, 0, w, h);
+    function drawIris() {
+      iCtx.clearRect(0, 0, 76, 76);
+      const r = 6 + (1 - state.ap / 9.2) * 26;
+      iCtx.fillStyle = '#161922';
+      iCtx.beginPath();
+      iCtx.arc(38, 38, 35, 0, Math.PI * 2);
+      iCtx.fill();
 
-      // Outer lens barrel
-      const grad = irisCtx.createRadialGradient(cx, cy, 8, cx, cy, 42);
-      grad.addColorStop(0, '#1E293B');
-      grad.addColorStop(1, '#090A0F');
-      irisCtx.fillStyle = grad;
-      irisCtx.beginPath();
-      irisCtx.arc(cx, cy, 42, 0, Math.PI * 2);
-      irisCtx.fill();
-
-      // Calculate opening radius from apIdx (0 = widest, 8 = smallest)
-      const openRatio = 1 - (state.apIdx / 9.2);
-      const radius = 6 + openRatio * 30;
-
-      // Draw 9 polygon blades
-      const blades = 9;
-      irisCtx.fillStyle = '#0F1117';
-      irisCtx.strokeStyle = 'rgba(255,255,255,0.22)';
-      irisCtx.lineWidth = 1;
-
-      for (let i = 0; i < blades; i++) {
-        const angle1 = (i / blades) * Math.PI * 2;
-        const angle2 = ((i + 1) / blades) * Math.PI * 2;
-        irisCtx.beginPath();
-        irisCtx.arc(cx, cy, 42, angle1, angle2 + 0.35);
-        irisCtx.lineTo(cx + Math.cos(angle2) * radius, cy + Math.sin(angle2) * radius);
-        irisCtx.lineTo(cx + Math.cos(angle1) * radius, cy + Math.sin(angle1) * radius);
-        irisCtx.closePath();
-        irisCtx.fill();
-        irisCtx.stroke();
+      iCtx.fillStyle = 'rgba(245, 158, 11, 0.35)';
+      iCtx.strokeStyle = '#F59E0B';
+      iCtx.lineWidth = 1.5;
+      iCtx.beginPath();
+      for (let i = 0; i < 9; i++) {
+        const a = (i / 9) * Math.PI * 2;
+        const x = 38 + Math.cos(a) * r;
+        const y = 38 + Math.sin(a) * r;
+        if (i === 0) iCtx.moveTo(x, y);
+        else iCtx.lineTo(x, y);
       }
-
-      // Glowing glass center
-      const glassGrad = irisCtx.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, radius);
-      glassGrad.addColorStop(0, 'rgba(245, 158, 11, 0.45)');
-      glassGrad.addColorStop(0.6, 'rgba(56, 189, 248, 0.25)');
-      glassGrad.addColorStop(1, 'rgba(16, 185, 129, 0.1)');
-      irisCtx.fillStyle = glassGrad;
-      irisCtx.beginPath();
-      for (let i = 0; i < blades; i++) {
-        const a = (i / blades) * Math.PI * 2;
-        const px = cx + Math.cos(a) * radius;
-        const py = cy + Math.sin(a) * radius;
-        if (i === 0) irisCtx.moveTo(px, py);
-        else irisCtx.lineTo(px, py);
-      }
-      irisCtx.closePath();
-      irisCtx.fill();
+      iCtx.closePath();
+      iCtx.fill();
+      iCtx.stroke();
     }
 
-    // Draw Live Exposure Histogram
-    function drawHistogram(ev) {
-      const w = histCanvas.width;
-      const h = histCanvas.height;
-      histCtx.clearRect(0, 0, w, h);
-
-      const center = 0.5 + (ev / 7);
-      histCtx.fillStyle = 'rgba(245, 158, 11, 0.75)';
-      const bars = 24;
-      const barW = w / bars;
-
-      for (let i = 0; i < bars; i++) {
-        const normX = i / (bars - 1);
-        const dist = normX - center;
-        const val = Math.exp(-(dist * dist) / 0.08);
-        const noiseBoost = state.isoIdx * 0.025;
-        const barH = Math.min(h, Math.max(2, (val + noiseBoost) * (h - 2)));
-        histCtx.fillRect(i * barW + 1, h - barH, barW - 1.5, barH);
-      }
-    }
-
-    // Render 60FPS Multi-Plane Viewfinder Scene
-    function renderScene() {
-      const w = vfCanvas.width;
-      const h = vfCanvas.height;
+    // Cross-browser optical soft-bokeh renderer (no ctx.filter dependency)
+    function drawLoop() {
+      const w = vf.width;
+      const h = vf.height;
       const sc = SCENES[state.scene];
-      const ev = getEvOffset();
-      const shSec = SHUTTERS[state.shIdx].sec;
+      const ev = getEv();
+      const sec = SHUTTERS[state.sh].sec;
 
-      // Camera shake offset if handheld at slow shutter
-      let shakeX = 0;
-      let shakeY = 0;
-      if (!state.tripod && state.shIdx >= 7) {
-        const intensity = (state.shIdx - 6) * 2.4;
-        shakeX = Math.sin(performance.now() * 0.025) * intensity;
-        shakeY = Math.cos(performance.now() * 0.032) * intensity;
+      let sx = 0, sy = 0;
+      if (!state.tripod && state.sh >= 7) {
+        const mag = (state.sh - 6) * 2.5;
+        sx = Math.sin(performance.now() * 0.03) * mag;
+        sy = Math.cos(performance.now() * 0.037) * mag;
       }
 
-      vfCtx.save();
-      vfCtx.translate(shakeX, shakeY);
+      ctx.save();
+      ctx.translate(sx, sy);
 
-      // 1. BACKGROUND PLANE (Sky, Distant Towers, Bokeh Orbs)
-      const bgBlurPx = Math.max(0, (6 - state.apIdx) * 2.6);
-      vfCtx.filter = bgBlurPx > 0.3 ? `blur(${bgBlurPx.toFixed(1)}px)` : 'none';
+      // 1. Sky Gradient
+      const sky = ctx.createLinearGradient(0, 0, 0, h * 0.72);
+      sky.addColorStop(0, sc.top);
+      sky.addColorStop(1, sc.bot);
+      ctx.fillStyle = sky;
+      ctx.fillRect(-20, -20, w + 40, h * 0.75);
 
-      const skyGrad = vfCtx.createLinearGradient(0, 0, 0, h * 0.72);
-      skyGrad.addColorStop(0, sc.skyTop);
-      skyGrad.addColorStop(1, sc.skyBot);
-      vfCtx.fillStyle = skyGrad;
-      vfCtx.fillRect(-20, -20, w + 40, h * 0.75);
+      // 2. Distant Skyline & Mountains (Multi-pass optical softness based on Aperture)
+      const blurSpread = Math.max(0, (6 - state.ap) * 2.2);
+      const passes = blurSpread > 0 ? 5 : 1;
+      for (let p = 0; p < passes; p++) {
+        const ox = passes === 1 ? 0 : (p - 2) * blurSpread * 0.8;
+        ctx.fillStyle = state.scene === 'day' ? 'rgba(30, 41, 59, 0.35)' : 'rgba(12, 15, 24, 0.38)';
+        ctx.beginPath();
+        ctx.moveTo(-20 + ox, 390);
+        ctx.lineTo(160 + ox, 190);
+        ctx.lineTo(340 + ox, 310);
+        ctx.lineTo(540 + ox, 165);
+        ctx.lineTo(760 + ox, 290);
+        ctx.lineTo(940 + ox, 180);
+        ctx.lineTo(940 + ox, 390);
+        ctx.closePath();
+        ctx.fill();
+      }
 
-      // Distant mountain & skyline silhouettes
-      vfCtx.fillStyle = state.scene === 'day' ? '#1E293B' : '#0B0D14';
-      const towers = [
-        [40, 210, 75, 240], [130, 170, 90, 280], [240, 230, 70, 220],
-        [410, 150, 95, 300], [520, 195, 80, 255], [760, 160, 90, 290], [860, 215, 85, 235]
-      ];
-      towers.forEach(([tx, ty, tw, th]) => {
-        vfCtx.fillRect(tx, ty, tw, th);
+      // 3. Optical Bokeh Lights (Radius expands dramatically at f/1.4, shrinks at f/22)
+      const bokehScale = 1 + Math.max(0, (7 - state.ap) * 0.65);
+      lights.forEach(lt => {
+        const rad = lt.r * bokehScale;
+        const grad = ctx.createRadialGradient(lt.x, lt.y, 1, lt.x, lt.y, rad);
+        grad.addColorStop(0, lt.c);
+        grad.addColorStop(0.7, lt.c + '99');
+        grad.addColorStop(1, lt.c + '00');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(lt.x, lt.y, rad, 0, Math.PI * 2);
+        ctx.fill();
       });
 
-      // Optical Bokeh Orbs (Radius scales directly with wide aperture)
-      const bokehRadiusScale = 1 + Math.max(0, (7 - state.apIdx) * 0.55);
-      bokehLights.forEach(lt => {
-        const r = lt.size * bokehRadiusScale;
-        vfCtx.save();
-        vfCtx.globalAlpha = state.apIdx <= 3 ? 0.52 : 0.85;
-        vfCtx.fillStyle = lt.color;
-        vfCtx.beginPath();
-        vfCtx.arc(lt.x, lt.y, r, 0, Math.PI * 2);
-        vfCtx.fill();
-        vfCtx.restore();
+      // 4. Passing Light Trail
+      carX = (carX + 4) % (w + 220);
+      const trailW = Math.min(340, Math.max(16, sec * 520));
+      const tGrad = ctx.createLinearGradient(carX - trailW, 375, carX, 375);
+      tGrad.addColorStop(0, 'rgba(245, 158, 11, 0)');
+      tGrad.addColorStop(1, '#FBBF24');
+      ctx.fillStyle = tGrad;
+      ctx.fillRect(carX - trailW, 372, trailW, 7);
+
+      // Ground
+      ctx.fillStyle = sc.ground;
+      ctx.fillRect(-20, 385, w + 40, 200);
+
+      // 5. Waterfall Cascade (Right side)
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.75)';
+      ctx.fillRect(595, 135, 175, 320);
+
+      const streak = Math.min(115, Math.max(5, sec * 250));
+      ctx.strokeStyle = 'rgba(224, 242, 254, 0.8)';
+      ctx.lineWidth = state.sh >= 8 ? 5 : 2.5;
+      ctx.lineCap = 'round';
+      drops.forEach(d => {
+        d.y += d.v;
+        if (d.y > 440) d.y = 140;
+        ctx.beginPath();
+        ctx.moveTo(d.x, d.y);
+        ctx.lineTo(d.x, Math.min(450, d.y + streak));
+        ctx.stroke();
       });
 
-      // Passing background express light trail (shows Shutter Speed effect)
-      trainX = (trainX + 3.5) % (w + 200);
-      const trailLength = Math.min(340, Math.max(18, shSec * 520));
-      const trailGrad = vfCtx.createLinearGradient(trainX - trailLength, 365, trainX, 365);
-      trailGrad.addColorStop(0, 'rgba(244, 63, 94, 0)');
-      trailGrad.addColorStop(0.7, 'rgba(245, 158, 11, 0.75)');
-      trailGrad.addColorStop(1, '#FFFFFF');
-      vfCtx.fillStyle = trailGrad;
-      vfCtx.fillRect(trainX - trailLength, 362, trailLength, 8);
+      // 6. Sharp Subject at Focus Reticle (Pinwheel at x:324, y:290)
+      const px = 324, py = 290;
+      ctx.fillStyle = '#64748B';
+      ctx.fillRect(px - 5, py, 10, 185);
 
-      // Ground plane
-      vfCtx.fillStyle = sc.ground;
-      vfCtx.fillRect(-20, h * 0.68, w + 40, h * 0.35);
+      angle += 0.065;
+      const steps = Math.min(24, Math.max(1, Math.floor(sec * 80)));
+      const span = Math.min(Math.PI * 1.3, sec * 3.8);
+      const colors = ['#F59E0B', '#EF4444', '#38BDF8', '#10B981', '#F59E0B', '#EF4444'];
 
-      // 2. MIDGROUND FOCUS PLANE (Sharp Subject: Kinetic Pinwheel + Cascade Fountain)
-      vfCtx.filter = !state.tripod && state.shIdx >= 7 ? `blur(${(state.shIdx - 6) * 1.1}px)` : 'none';
-
-      // Cascading Waterfall / Fountain on Right
-      vfCtx.fillStyle = 'rgba(30, 41, 59, 0.85)';
-      vfCtx.fillRect(625, 140, 175, 340);
-
-      const dropStreak = Math.min(110, Math.max(4, shSec * 240));
-      vfCtx.strokeStyle = 'rgba(224, 242, 254, 0.78)';
-      vfCtx.lineWidth = state.shIdx >= 8 ? 5 : 2.5;
-      vfCtx.lineCap = 'round';
-
-      waterDrops.forEach(d => {
-        d.y += d.speed;
-        if (d.y > 465) d.y = 150;
-        vfCtx.beginPath();
-        vfCtx.moveTo(d.x, d.y);
-        vfCtx.lineTo(d.x, Math.min(475, d.y + dropStreak));
-        vfCtx.stroke();
-      });
-
-      // Kinetic Pinwheel Subject at AF Point (x: 345, y: 312)
-      const px = 345;
-      const py = 312;
-
-      // Stand Mast
-      vfCtx.fillStyle = '#475569';
-      vfCtx.fillRect(px - 6, py, 12, 210);
-
-      // Advance rotor angle
-      wheelAngle += 0.065;
-
-      // Motion blur ghosting passes based on shutter speed
-      const blurSteps = Math.min(28, Math.max(1, Math.floor(shSec * 85)));
-      const arcSpan = Math.min(Math.PI * 1.4, shSec * 3.8);
-
-      for (let s = 0; s < blurSteps; s++) {
-        const subAngle = wheelAngle - (s / blurSteps) * arcSpan;
-        vfCtx.save();
-        vfCtx.translate(px, py);
-        vfCtx.rotate(subAngle);
-        vfCtx.globalAlpha = blurSteps === 1 ? 1.0 : (1.5 / blurSteps);
-
-        const bladeColors = ['#F59E0B', '#EF4444', '#38BDF8', '#10B981', '#F59E0B', '#EF4444'];
+      for (let s = 0; s < steps; s++) {
+        ctx.save();
+        ctx.translate(px, py);
+        ctx.rotate(angle - (s / steps) * span);
+        ctx.globalAlpha = steps === 1 ? 1 : (1.5 / steps);
         for (let b = 0; b < 6; b++) {
-          vfCtx.save();
-          vfCtx.rotate((b * Math.PI) / 3);
-          vfCtx.fillStyle = bladeColors[b];
-          vfCtx.beginPath();
-          vfCtx.moveTo(0, 0);
-          vfCtx.lineTo(24, -115);
-          vfCtx.lineTo(-18, -115);
-          vfCtx.closePath();
-          vfCtx.fill();
-          vfCtx.restore();
+          ctx.save();
+          ctx.rotate((b * Math.PI) / 3);
+          ctx.fillStyle = colors[b];
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(22, -105);
+          ctx.lineTo(-16, -105);
+          ctx.closePath();
+          ctx.fill();
+          ctx.restore();
         }
-        vfCtx.restore();
+        ctx.restore();
       }
 
-      // Pinwheel Center Hub
-      vfCtx.fillStyle = '#F8FAFC';
-      vfCtx.beginPath();
-      vfCtx.arc(px, py, 14, 0, Math.PI * 2);
-      vfCtx.fill();
-      vfCtx.fillStyle = '#0F172A';
-      vfCtx.beginPath();
-      vfCtx.arc(px, py, 6, 0, Math.PI * 2);
-      vfCtx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.arc(px, py, 12, 0, Math.PI * 2);
+      ctx.fill();
 
-      // 3. FOREGROUND FRAMING FOLIAGE (Left Corner, blurs at wide aperture)
-      const fgBlurPx = Math.max(0, (5 - state.apIdx) * 2.2);
-      vfCtx.filter = fgBlurPx > 0.3 ? `blur(${fgBlurPx.toFixed(1)}px)` : 'none';
-      vfCtx.fillStyle = '#064E3B';
-      vfCtx.beginPath();
-      vfCtx.ellipse(45, 520, 115, 65, -0.3, 0, Math.PI * 2);
-      vfCtx.fill();
-      vfCtx.fillStyle = '#047857';
-      vfCtx.beginPath();
-      vfCtx.ellipse(95, 560, 95, 50, -0.15, 0, Math.PI * 2);
-      vfCtx.fill();
+      ctx.restore();
 
-      vfCtx.restore();
-      vfCtx.filter = 'none';
-
-      // 4. EXPOSURE BRIGHTNESS / DARKNESS OVERLAY
+      // 7. Exposure Brightness / Darkness Overlay
       if (ev < 0) {
-        const darkAlpha = Math.min(0.92, Math.abs(ev) * 0.23);
-        vfCtx.fillStyle = `rgba(3, 4, 7, ${darkAlpha})`;
-        vfCtx.fillRect(0, 0, w, h);
+        ctx.fillStyle = `rgba(2, 4, 8, ${Math.min(0.92, Math.abs(ev) * 0.23)})`;
+        ctx.fillRect(0, 0, w, h);
       } else if (ev > 0) {
-        const brightAlpha = Math.min(0.92, ev * 0.22);
-        vfCtx.fillStyle = `rgba(255, 252, 245, ${brightAlpha})`;
-        vfCtx.fillRect(0, 0, w, h);
+        ctx.fillStyle = `rgba(255, 252, 245, ${Math.min(0.92, ev * 0.22)})`;
+        ctx.fillRect(0, 0, w, h);
       }
 
-      // 5. PEAK BRIGHTNESS WARNING STRIPES (Zebra Pattern when overexposed)
-      if (state.zebras && ev >= 1) {
-        vfCtx.save();
-        vfCtx.strokeStyle = 'rgba(239, 68, 68, 0.55)';
-        vfCtx.lineWidth = 2;
-        for (let z = -h; z < w; z += 14) {
-          vfCtx.beginPath();
-          vfCtx.moveTo(z, 0);
-          vfCtx.lineTo(z + h * 0.5, h * 0.5);
-          vfCtx.stroke();
-        }
-        vfCtx.restore();
-      }
-
-      // 6. SENSOR ISO GRAIN / NOISE FLOOR
-      if (state.isoIdx >= 2) {
-        const grainCount = (state.isoIdx - 1) * 380;
-        const alpha = Math.min(0.45, state.isoIdx * 0.048);
-        for (let g = 0; g < grainCount; g++) {
-          const gx = Math.random() * w;
-          const gy = Math.random() * h;
-          if (state.isoIdx >= 6 && g % 4 === 0) {
-            vfCtx.fillStyle = g % 8 === 0 ? `rgba(244, 63, 94, ${alpha})` : `rgba(56, 189, 248, ${alpha})`;
-          } else {
-            const lum = Math.random() > 0.5 ? 255 : 0;
-            vfCtx.fillStyle = `rgba(${lum}, ${lum}, ${lum}, ${alpha})`;
-          }
-          vfCtx.fillRect(gx, gy, 2.2, 2.2);
+      // 8. Highlight Clipping Warning Stripes
+      if (state.zebra && ev >= 1) {
+        ctx.strokeStyle = 'rgba(239, 68, 68, 0.55)';
+        ctx.lineWidth = 2;
+        for (let z = -h; z < w; z += 16) {
+          ctx.beginPath();
+          ctx.moveTo(z, 0);
+          ctx.lineTo(z + 240, 240);
+          ctx.stroke();
         }
       }
 
-      requestAnimationFrame(renderScene);
-    }
-
-    // Web Audio API Synthesizer for Tactile Dial Clicks & Mechanical Shutter
-    let audioCtx = null;
-    function getAudio() {
-      if (!audioCtx) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (AudioContext) audioCtx = new AudioContext();
+      // 9. Sensor ISO Grain
+      if (state.iso >= 2) {
+        const count = (state.iso - 1) * 350;
+        const alpha = Math.min(0.45, state.iso * 0.05);
+        for (let g = 0; g < count; g++) {
+          ctx.fillStyle = g % 2 === 0 ? `rgba(255,255,255,${alpha})` : `rgba(0,0,0,${alpha})`;
+          ctx.fillRect(Math.random() * w, Math.random() * h, 2, 2);
+        }
       }
-      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-      return audioCtx;
+
+      requestAnimationFrame(drawLoop);
     }
 
-    function playTickSound() {
-      const ctx = getAudio();
-      if (!ctx) return;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(920, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(220, ctx.currentTime + 0.018);
-      gain.gain.setValueAtTime(0.08, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.018);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.02);
-    }
-
-    function playShutterSound(durationSec) {
-      const ctx = getAudio();
-      if (!ctx) return;
-
-      const click = (time, freq) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(freq, time);
-        osc.frequency.exponentialRampToValueAtTime(90, time + 0.035);
-        gain.gain.setValueAtTime(0.22, time);
-        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.04);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(time);
-        osc.stop(time + 0.045);
-      };
-
-      const now = ctx.currentTime;
-      click(now, 1200); // First curtain open
-      const closeDelay = Math.max(0.045, Math.min(1.0, durationSec));
-      click(now + closeDelay, 850); // Second curtain close
-    }
-
-    // Trigger Shutter & Evaluate Challenges
-    function triggerShutter() {
-      const shSec = SHUTTERS[state.shIdx].sec;
-      playShutterSound(shSec);
-
-      // Visual shutter curtain actuation
+    function capturePhoto() {
       const curtain = document.getElementById('shutterCurtain');
-      curtain.style.opacity = '0.92';
-      setTimeout(() => {
-        curtain.style.opacity = '0';
-      }, Math.max(60, Math.min(550, shSec * 500)));
+      curtain.style.opacity = '0.9';
+      setTimeout(() => { curtain.style.opacity = '0'; }, 90);
 
-      // Snapshot current canvas to Contact Sheet
-      const dataUrl = vfCanvas.toDataURL('image/jpeg', 0.85);
-      const ev = getEvOffset();
+      const ev = getEv();
       const sign = ev > 0 ? '+' : '';
       state.shots.unshift({
-        url: dataUrl,
-        ap: `f/${APERTURES[state.apIdx]}`,
-        sh: SHUTTERS[state.shIdx].label,
-        iso: `ISO ${ISOS[state.isoIdx]}`,
+        url: vf.toDataURL('image/jpeg', 0.85),
+        meta: `f/${APERTURES[state.ap]} · ${SHUTTERS[state.sh].label} · ISO ${ISOS[state.iso]}`,
         ev: `${sign}${ev}.0 EV`
       });
       if (state.shots.length > 4) state.shots.pop();
-      renderFilmstrip();
+      renderShots();
 
-      // Check Field Missions
-      const balanced = Math.abs(ev) <= 1;
-      if (state.apIdx <= 1 && balanced) state.missions[0] = true;
-      if (state.shIdx <= 2 && balanced) state.missions[1] = true;
-      if (state.tripod && state.shIdx >= 10 && balanced) state.missions[2] = true;
-      if (state.scene === 'night' && state.isoIdx <= 3 && balanced) state.missions[3] = true;
+      const ok = Math.abs(ev) <= 1;
+      if (state.ap <= 1 && ok) state.done[0] = true;
+      if (state.sh <= 2 && ok) state.done[1] = true;
+      if (state.tripod && state.sh >= 10 && ok) state.done[2] = true;
+      if (state.scene === 'night' && state.iso <= 3 && ok) state.done[3] = true;
 
-      updateMissionsUI();
+      let count = 0;
+      state.done.forEach((d, i) => {
+        document.getElementById(`m${i}`).classList.toggle('done', d);
+        if (d) count++;
+      });
+      document.getElementById('missionCount').textContent = `${count} / 4 Completed`;
     }
 
-    function renderFilmstrip() {
-      const grid = document.getElementById('filmstripGrid');
-      if (state.shots.length === 0) {
-        grid.innerHTML = `<div class="empty-filmstrip mono">Press "Capture Frame" to stamp your current exposure onto the comparison contact sheet.</div>`;
+    function renderShots() {
+      const grid = document.getElementById('shotsGrid');
+      if (!state.shots.length) {
+        grid.innerHTML = `<div class="mono" style="grid-column:1/-1; text-align:center; padding:1.8rem; color:var(--text-secondary); font-size:0.78rem;">Click "Capture Photo" to compare your exposures side by side.</div>`;
         return;
       }
       grid.innerHTML = state.shots.map(s => `
-        <div class="shot-card">
-          <img class="shot-img" src="${s.url}" alt="Captured exposure frame">
-          <div class="shot-exif mono">
-            <span>${s.ap} · ${s.sh} · ${s.iso}</span>
-            <span style="color: var(--accent-amber); font-weight: 700;">${s.ev}</span>
+        <div class="shot-item">
+          <img src="${s.url}" alt="Captured photo">
+          <div class="shot-meta mono">
+            <span>${s.meta}</span>
+            <strong style="color:var(--accent-amber)">${s.ev}</strong>
           </div>
         </div>
       `).join('');
     }
 
-    function clearFilmstrip() {
+    function clearShots() {
       state.shots = [];
-      renderFilmstrip();
+      renderShots();
     }
 
-    function updateMissionsUI() {
-      let doneCount = 0;
-      state.missions.forEach((done, idx) => {
-        const card = document.getElementById(`mission-${idx}`);
-        const badge = document.getElementById(`mission-status-${idx}`);
-        card.classList.toggle('done', done);
-        if (done) {
-          doneCount++;
-          badge.textContent = 'VERIFIED';
-        }
-      });
-      document.getElementById('missionCounter').textContent = `${doneCount} / 4 COMPLETED`;
-    }
-
-    // Spacebar shortcut to fire shutter
-    window.addEventListener('keydown', (e) => {
+    window.addEventListener('keydown', e => {
       if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
         e.preventDefault();
-        triggerShutter();
+        capturePhoto();
       }
     });
 
-    // Initialize Studio
-    updateUI();
-    requestAnimationFrame(renderScene);
+    syncUI();
+    requestAnimationFrame(drawLoop);
   </script>
 </body>
 </html>
