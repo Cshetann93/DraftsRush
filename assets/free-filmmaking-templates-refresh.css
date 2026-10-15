@@ -1,0 +1,205 @@
+/* Free Filmmaking Templates — restrained editorial refresh.
+   Visual-only: preserve all copy, downloads, links, metadata and page behavior. */
+body.page-filmmaking-templates {
+  --templates-ink: #111317;
+  --templates-yellow: #F8D000;
+  --templates-bg: #E2E4E9;
+  --templates-paper: #F0F2F5;
+  --templates-blue: #D6E4EE;
+  --templates-cream: #FFF6CF;
+  background: var(--templates-bg) !important;
+  color: var(--templates-ink);
+}
+body.page-filmmaking-templates > header {
+  border-bottom: 1px solid rgba(17,19,23,.65) !important;
+  box-shadow: 0 4px 18px rgba(17,19,23,.04) !important;
+}
+body.page-filmmaking-templates > header img[src*="drlogo"],
+body.page-filmmaking-templates > footer img[src*="drlogo"],
+body.page-filmmaking-templates > header img[alt*="DraftsRush"],
+body.page-filmmaking-templates > footer img[alt*="DraftsRush"] {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important; border-radius: 0 !important; transform: none !important;
+}
+body.page-filmmaking-templates > header a[aria-label="DraftsRush Home"],
+body.page-filmmaking-templates > footer a[aria-label="DraftsRush Home"] {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl {
+  max-width: 1180px !important;
+  padding-top: clamp(1.5rem,4vw,3rem) !important;
+  padding-bottom: clamp(3rem,6vw,5rem) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > div:first-child a {
+  display: inline-flex !important; align-items: center;
+  min-height: 44px; padding: .7rem 1.1rem !important;
+  border: 1px solid rgba(17,19,23,.6) !important; border-radius: 999px !important;
+  box-shadow: none !important; text-decoration: none;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > div:first-child a:hover {
+  background: var(--templates-cream) !important; transform: translateY(-1px);
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type {
+  padding: clamp(1.6rem,4.5vw,3.75rem) !important;
+  border: 1px solid rgba(17,19,23,.68) !important;
+  border-radius: 26px !important;
+  background: var(--templates-paper) !important;
+  box-shadow: 0 12px 30px rgba(17,19,23,.055) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type > div:first-child {
+  display: inline-block;
+  border: 1px solid rgba(17,19,23,.18);
+  border-radius: 999px !important;
+  padding: .45rem .75rem !important;
+  background: var(--templates-blue) !important;
+  color: var(--templates-ink) !important;
+  letter-spacing: .06em;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type h1 {
+  max-width: 900px; font-size: clamp(2.4rem,5.6vw,4.8rem) !important;
+  line-height: 1.01 !important; letter-spacing: -.065em !important; text-wrap: balance;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type p {
+  max-width: 760px; line-height: 1.75 !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type a {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  min-height: 48px; padding: .85rem 1.15rem !important;
+  border: 1px solid rgba(17,19,23,.6) !important; border-radius: 999px !important;
+  box-shadow: none !important; text-decoration: none;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type a:hover {
+  transform: translateY(-2px); box-shadow: 0 6px 14px rgba(17,19,23,.07) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type > div:last-child {
+  border-top: 1px solid rgba(17,19,23,.17) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section[aria-label="Template library benefits"] {
+  gap: 1rem !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section[aria-label="Template library benefits"] > div {
+  border: 1px solid rgba(17,19,23,.42) !important;
+  border-radius: 17px !important; box-shadow: none !important;
+  padding: clamp(1.15rem,2.5vw,1.6rem) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section[aria-label="Template library benefits"] > div:nth-child(1) { background: var(--templates-cream) !important; }
+body.page-filmmaking-templates main > div.max-w-6xl > section[aria-label="Template library benefits"] > div:nth-child(2) { background: var(--templates-paper) !important; }
+body.page-filmmaking-templates main > div.max-w-6xl > section[aria-label="Template library benefits"] > div:nth-child(3) { background: var(--templates-blue) !important; }
+body.page-filmmaking-templates #templates {
+  padding-bottom: 1.25rem; margin-bottom: 1.75rem !important;
+  border-bottom: 1px solid rgba(17,19,23,.18);
+}
+body.page-filmmaking-templates #templates h2 {
+  font-size: clamp(2rem,4.5vw,3.4rem) !important;
+  line-height: 1.05 !important; letter-spacing: -.06em !important;
+}
+body.page-filmmaking-templates #templates > div > div {
+  letter-spacing: .1em; color: #555b63;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.grid.grid-cols-1.md\:grid-cols-2 {
+  gap: 1.15rem !important;
+}
+body.page-filmmaking-templates article[id="script-breakdown"],
+body.page-filmmaking-templates article[id="shot-list"],
+body.page-filmmaking-templates article[id="storyboard"],
+body.page-filmmaking-templates article[id="call-sheet"],
+body.page-filmmaking-templates article[id="shooting-schedule"] {
+  min-width: 0;
+  padding: clamp(1.25rem,3vw,2rem) !important;
+  border: 1px solid rgba(17,19,23,.52) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 6px 18px rgba(17,19,23,.035) !important;
+  gap: .1rem;
+}
+body.page-filmmaking-templates article[id="script-breakdown"] { background: #FFF6CF !important; }
+body.page-filmmaking-templates article[id="shot-list"] { background: #F0F2F5 !important; }
+body.page-filmmaking-templates article[id="storyboard"] { background: #D6E4EE !important; }
+body.page-filmmaking-templates article[id="call-sheet"] { background: #E8E5F2 !important; }
+body.page-filmmaking-templates article[id="shooting-schedule"] { background: #F0F2F5 !important; }
+body.page-filmmaking-templates article[id="script-breakdown"] > div:first-child > span:first-child,
+body.page-filmmaking-templates article[id="shot-list"] > div:first-child > span:first-child,
+body.page-filmmaking-templates article[id="storyboard"] > div:first-child > span:first-child,
+body.page-filmmaking-templates article[id="call-sheet"] > div:first-child > span:first-child,
+body.page-filmmaking-templates article[id="shooting-schedule"] > div:first-child > span:first-child {
+  border: 1px solid rgba(17,19,23,.25) !important;
+  border-radius: 999px !important; padding: .4rem .7rem !important;
+  background: rgba(255,255,255,.58) !important;
+}
+body.page-filmmaking-templates article h3 {
+  font-size: clamp(1.45rem,2.5vw,2rem) !important;
+  line-height: 1.12 !important; letter-spacing: -.045em !important;
+}
+body.page-filmmaking-templates article p { line-height: 1.7 !important; }
+body.page-filmmaking-templates article ul {
+  line-height: 1.6;
+}
+body.page-filmmaking-templates article a[href$=".docx"] {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  min-height: 46px; padding: .8rem 1rem !important;
+  background: #111317 !important; color: #fff !important;
+  border: 1px solid #111317 !important; border-radius: 999px !important;
+  box-shadow: none !important; text-decoration: none;
+}
+body.page-filmmaking-templates article a[href$=".docx"]:hover {
+  background: #292c32 !important; transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(17,19,23,.12) !important;
+}
+body.page-filmmaking-templates article a:not([href$=".docx"]) {
+  text-underline-offset: 3px;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.bg-\[\#F8D000\] {
+  padding: clamp(1.5rem,4vw,2.5rem) !important;
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 22px !important; box-shadow: 0 8px 22px rgba(17,19,23,.045) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.bg-\[\#F8D000\] h2 {
+  font-size: clamp(1.7rem,3.5vw,2.7rem) !important;
+  line-height: 1.08 !important; letter-spacing: -.05em !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.bg-white {
+  border: 1px solid rgba(17,19,23,.42) !important;
+  border-radius: 18px !important; box-shadow: none !important;
+  padding: clamp(1.3rem,3vw,2rem) !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.bg-white h2 {
+  font-size: clamp(1.7rem,3.2vw,2.4rem) !important;
+  letter-spacing: -.05em !important;
+}
+body.page-filmmaking-templates main > div.max-w-6xl > section.mt-10 a {
+  text-underline-offset: 3px;
+}
+body.page-filmmaking-templates > footer {
+  border-top: 1px solid rgba(17,19,23,.42) !important; box-shadow: none !important;
+}
+body.page-filmmaking-templates > footer > div > div:first-child {
+  border-bottom: 1px solid rgba(17,19,23,.16) !important;
+}
+body.page-filmmaking-templates > footer > div > div:first-child > div:first-child,
+body.page-filmmaking-templates > footer > div > div:first-child > div:first-child > a,
+body.page-filmmaking-templates > footer > div > div:first-child > div:first-child > a img {
+  border: 0 !important; outline: 0 !important; box-shadow: none !important;
+  background: transparent !important; transform: none !important;
+}
+body.page-filmmaking-templates > footer > div > div:first-child > div:last-child > span {
+  border: 0 !important; border-radius: 999px !important; box-shadow: none !important;
+}
+body.page-filmmaking-templates > footer > div > div:first-child > div:last-child a {
+  border: 1px solid rgba(17,19,23,.22) !important; border-radius: 50% !important;
+  box-shadow: none !important; background: rgba(240,242,245,.72) !important;
+}
+body.page-filmmaking-templates > footer > div > div:last-child {
+  border-top: 1px solid rgba(17,19,23,.16) !important;
+  border-left: 0 !important; border-right: 0 !important; border-bottom: 0 !important;
+}
+body.page-filmmaking-templates > footer .brutal-box,
+body.page-filmmaking-templates > footer .brutal-box-lg { box-shadow: none !important; }
+@media (max-width: 640px) {
+  body.page-filmmaking-templates main > div.max-w-6xl { padding-inline: 1rem !important; }
+  body.page-filmmaking-templates main > div.max-w-6xl > section:first-of-type { border-radius: 18px !important; }
+  body.page-filmmaking-templates article[id] { border-radius: 16px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.page-filmmaking-templates main a,
+  body.page-filmmaking-templates main button { transition: none !important; }
+}
