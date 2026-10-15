@@ -1,0 +1,161 @@
+/* Shared visual refresh for DraftsRush standalone tools.
+   Presentation-only styles; tool controls and JavaScript behavior remain untouched. */
+body.tool-page-refresh {
+  --tool-bg: #E2E4E9;
+  --tool-ink: #111317;
+  --tool-yellow: #F8D000;
+  --tool-paper: #F0F2F5;
+  --tool-blue: #D6E4EE;
+  background: var(--tool-bg) !important;
+  color: var(--tool-ink);
+}
+
+/* Consistent site header and footer */
+body.tool-page-refresh > header {
+  background: rgba(248, 208, 0, .97) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--tool-ink) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body.tool-page-refresh > header img[src*="drlogo"],
+body.tool-page-refresh > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.tool-page-refresh > header nav a,
+body.tool-page-refresh > header > div a,
+body.tool-page-refresh > header button {
+  border-radius: 10px !important;
+  box-shadow: 0 2px 4px rgba(17, 19, 23, .06) !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.tool-page-refresh > header nav a:hover,
+body.tool-page-refresh > header > div a:hover,
+body.tool-page-refresh > header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 19, 23, .14) !important;
+}
+body.tool-page-refresh > footer {
+  background: var(--tool-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--tool-ink) !important;
+  box-shadow: none !important;
+}
+body.tool-page-refresh > footer .border-b-2 {
+  border: 0 !important;
+  border-bottom: 1px solid var(--tool-ink) !important;
+}
+body.tool-page-refresh > footer .border-t-2 {
+  border: 0 !important;
+  border-top: 1px solid var(--tool-ink) !important;
+}
+body.tool-page-refresh > footer > div > div:first-child > div:last-child > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--tool-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  box-shadow: none;
+}
+body.tool-page-refresh > footer a:hover { color: var(--tool-ink); }
+
+/* Page rhythm and hero typography */
+body.tool-page-refresh main {
+  padding-top: clamp(1.75rem, 4vw, 3rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+body.tool-page-refresh main h1 {
+  line-height: 1.06;
+  letter-spacing: -.04em;
+}
+body.tool-page-refresh main h2,
+body.tool-page-refresh main h3 {
+  line-height: 1.18;
+  letter-spacing: -.02em;
+}
+body.tool-page-refresh main p {
+  line-height: 1.65;
+}
+
+/* Reduce heavy neo-brutalist frames without flattening the whole interface */
+body.tool-page-refresh main [class*="border-4"] {
+  border-width: 1px !important;
+  border-color: rgba(17, 19, 23, .7) !important;
+  border-radius: 18px;
+}
+body.tool-page-refresh main [class*="brutal-box-lg"] {
+  box-shadow: 0 8px 24px rgba(17, 19, 23, .04) !important;
+}
+body.tool-page-refresh main [class*="brutal-box"] {
+  box-shadow: 0 3px 10px rgba(17, 19, 23, .035) !important;
+}
+body.tool-page-refresh main [class*="border-2"] {
+  border-width: 1px !important;
+}
+body.tool-page-refresh main [class*="shadow-"] {
+  box-shadow: 0 4px 12px rgba(17, 19, 23, .035);
+}
+
+/* Interactive cards and result panels */
+body.tool-page-refresh main [class*="grid"] > div[class*="border"],
+body.tool-page-refresh main section[class*="border"],
+body.tool-page-refresh main article[class*="border"] {
+  border-width: 1px !important;
+  border-color: rgba(17, 19, 23, .6) !important;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(17, 19, 23, .025);
+}
+body.tool-page-refresh main [class*="grid"] > div[class*="border"]:hover {
+  box-shadow: 0 7px 16px rgba(17, 19, 23, .06);
+}
+
+/* Inputs retain strong contrast and get a clear keyboard focus indicator */
+body.tool-page-refresh main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+body.tool-page-refresh main textarea,
+body.tool-page-refresh main select {
+  border-radius: 9px;
+}
+body.tool-page-refresh main input:focus-visible,
+body.tool-page-refresh main textarea:focus-visible,
+body.tool-page-refresh main select:focus-visible,
+body.tool-page-refresh main button:focus-visible,
+body.tool-page-refresh main a:focus-visible {
+  outline: 2px solid rgba(17, 19, 23, .85);
+  outline-offset: 2px;
+}
+body.tool-page-refresh main button,
+body.tool-page-refresh main a[class*="bg-"] {
+  transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+body.tool-page-refresh main button:hover:not(:disabled),
+body.tool-page-refresh main a[class*="bg-"]:hover {
+  transform: translateY(-1px);
+}
+body.tool-page-refresh main button:disabled {
+  cursor: not-allowed;
+}
+
+/* Keep utility-specific canvas/previews intact; only standardize surrounding panels */
+body.tool-page-refresh main canvas,
+body.tool-page-refresh main video,
+body.tool-page-refresh main iframe {
+  border-radius: 8px;
+}
+@media (max-width: 640px) {
+  body.tool-page-refresh main { padding-left: 1rem; padding-right: 1rem; }
+  body.tool-page-refresh main [class*="border-4"] { border-radius: 15px; }
+  body.tool-page-refresh > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  body.tool-page-refresh > footer > div > div:first-child > div:last-child > span {
+    min-height: 34px;
+    padding: .45rem .8rem;
+    font-size: .68rem;
+  }
+}
