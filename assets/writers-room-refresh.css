@@ -81,3 +81,27 @@ body.page-writers-room > footer a:hover { color: #111317; }
   body.page-writers-room > header nav { gap: .5rem; }
   body.page-writers-room > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 }
+
+
+/* Compact footer badge to balance the social icons */
+body.page-writers-room > footer .studio-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0.55rem 1rem;
+  border: 1px solid #111317;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  font-weight: 800;
+  box-shadow: none;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  body.page-writers-room > footer .studio-badge {
+    min-height: 34px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.68rem;
+  }
+}
