@@ -1,0 +1,168 @@
+/* Shared legal pages visual refresh — Privacy Policy and Terms of Service */
+body.page-privacy,
+body.page-terms {
+  --legal-bg: #E2E4E9;
+  --legal-ink: #111317;
+  --legal-yellow: #F8D000;
+  --legal-paper: #F0F2F5;
+  --legal-blue: #D6E4EE;
+  background: var(--legal-bg) !important;
+  color: var(--legal-ink);
+}
+
+/* Header and footer aligned with refreshed site pages */
+body.page-privacy > header,
+body.page-terms > header {
+  background: rgba(248, 208, 0, .96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--legal-ink) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body.page-privacy > header img[src*="drlogo"],
+body.page-terms > header img[src*="drlogo"],
+body.page-privacy > footer img[src*="drlogo"],
+body.page-terms > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-privacy > header nav a,
+body.page-privacy > header > div a,
+body.page-privacy > header button,
+body.page-terms > header nav a,
+body.page-terms > header > div a,
+body.page-terms > header button {
+  border-radius: 10px !important;
+  box-shadow: 0 2px 4px rgba(17, 19, 23, .06) !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.page-privacy > header nav a:hover,
+body.page-privacy > header > div a:hover,
+body.page-privacy > header button:hover,
+body.page-terms > header nav a:hover,
+body.page-terms > header > div a:hover,
+body.page-terms > header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 19, 23, .14) !important;
+}
+body.page-privacy > footer,
+body.page-terms > footer {
+  background: var(--legal-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--legal-ink) !important;
+  box-shadow: none !important;
+}
+body.page-privacy > footer .border-b-2,
+body.page-terms > footer .border-b-2 {
+  border: 0 !important;
+  border-bottom: 1px solid var(--legal-ink) !important;
+}
+body.page-privacy > footer .border-t-2,
+body.page-terms > footer .border-t-2 {
+  border: 0 !important;
+  border-top: 1px solid var(--legal-ink) !important;
+}
+body.page-privacy > footer > div > div:first-child > div:last-child > span,
+body.page-terms > footer > div > div:first-child > div:last-child > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--legal-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  box-shadow: none;
+}
+body.page-privacy > footer a:hover,
+body.page-terms > footer a:hover { color: var(--legal-ink); }
+
+/* Legal content container: reduce heavy frame and improve long-form reading */
+body.page-privacy main > div,
+body.page-terms main > div {
+  background: var(--legal-paper) !important;
+  border: 1px solid rgba(17, 19, 23, .65) !important;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(17, 19, 23, .04) !important;
+  padding: clamp(1.35rem, 4vw, 3rem) !important;
+}
+body.page-privacy main > div > span:first-child,
+body.page-terms main > div > span:first-child {
+  display: inline-block;
+  border-radius: 999px;
+  letter-spacing: .05em;
+  padding: .35rem .8rem;
+}
+body.page-privacy main h1,
+body.page-terms main h1 {
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  max-width: 900px;
+}
+body.page-privacy main > div > p:first-of-type,
+body.page-terms main > div > p:first-of-type {
+  border-bottom: 1px solid rgba(17, 19, 23, .16);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+body.page-privacy main > div > div,
+body.page-terms main > div > div {
+  gap: 1.5rem;
+  font-size: .925rem;
+  line-height: 1.8;
+  color: #343944;
+}
+body.page-privacy main section,
+body.page-terms main section {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid rgba(17, 19, 23, .12);
+}
+body.page-privacy main section:last-child,
+body.page-terms main section:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+body.page-privacy main section h2,
+body.page-terms main section h2 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  margin-bottom: .5rem;
+}
+body.page-privacy main section p,
+body.page-terms main section p {
+  line-height: 1.8;
+  margin-top: .65rem;
+}
+body.page-privacy main section a,
+body.page-terms main section a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+@media (min-width: 768px) {
+  body.page-privacy main,
+  body.page-terms main { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+@media (max-width: 640px) {
+  body.page-privacy main,
+  body.page-terms main { padding-top: 1.5rem; padding-bottom: 2.5rem; }
+  body.page-privacy main > div,
+  body.page-terms main > div { border-radius: 17px; }
+  body.page-privacy main h1,
+  body.page-terms main h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  body.page-privacy main > div > div,
+  body.page-terms main > div > div { font-size: .9rem; }
+  body.page-privacy > footer,
+  body.page-terms > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  body.page-privacy > footer > div > div:first-child > div:last-child > span,
+  body.page-terms > footer > div > div:first-child > div:last-child > span {
+    min-height: 34px;
+    padding: .45rem .8rem;
+    font-size: .68rem;
+  }
+}
