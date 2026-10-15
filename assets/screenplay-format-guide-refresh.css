@@ -1,0 +1,219 @@
+/* Screenplay Format Guide — page-specific editorial refresh.
+   Keep technical data, examples, links, metadata and interactions unchanged. */
+body.page-screenplay-format {
+  --format-ink: #111317;
+  --format-yellow: #F8D000;
+  --format-bg: #E2E4E9;
+  --format-paper: #F0F2F5;
+  --format-blue: #D6E4EE;
+  --format-cream: #FFF6CF;
+  color: var(--format-ink);
+  background: var(--format-bg) !important;
+}
+body.page-screenplay-format > header {
+  border-bottom: 1px solid rgba(17,19,23,.72) !important;
+  box-shadow: 0 5px 20px rgba(17,19,23,.045) !important;
+}
+body.page-screenplay-format > header img[src*="drlogo"],
+body.page-screenplay-format > footer img[src*="drlogo"],
+body.page-screenplay-format > header img[alt*="DraftsRush"],
+body.page-screenplay-format > footer img[alt*="DraftsRush"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  background: transparent !important;
+  transform: none !important;
+}
+body.page-screenplay-format > header a[aria-label="DraftsRush Home"],
+body.page-screenplay-format > footer a[aria-label="DraftsRush Home"] {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  background: transparent !important;
+}
+body.page-screenplay-format main > div.max-w-4xl {
+  max-width: 1120px !important;
+  padding-top: clamp(2rem,4vw,3.5rem) !important;
+  padding-bottom: clamp(3rem,6vw,5.5rem) !important;
+}
+body.page-screenplay-format main article {
+  gap: clamp(2rem,4vw,3.25rem) !important;
+}
+body.page-screenplay-format main article > header {
+  padding: clamp(1.5rem,4.2vw,3.5rem) !important;
+  border: 1px solid rgba(17,19,23,.72) !important;
+  border-radius: 24px !important;
+  background: var(--format-paper) !important;
+  box-shadow: 0 14px 34px rgba(17,19,23,.055) !important;
+}
+body.page-screenplay-format main article > header > div:first-child {
+  display: inline-block;
+  border-radius: 999px !important;
+  background: var(--format-blue) !important;
+  color: var(--format-ink) !important;
+  border: 1px solid rgba(17,19,23,.2);
+  letter-spacing: .08em;
+}
+body.page-screenplay-format main article > header h1 {
+  font-size: clamp(2.25rem,5.3vw,4.4rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.065em !important;
+  text-wrap: balance;
+  max-width: 900px;
+}
+body.page-screenplay-format main article > header p {
+  max-width: 780px;
+  font-size: clamp(.98rem,1.3vw,1.1rem) !important;
+  line-height: 1.75 !important;
+}
+body.page-screenplay-format main article > header > div:last-child {
+  border-color: rgba(17,19,23,.18) !important;
+  border-top-width: 1px !important;
+  padding-top: 1.15rem !important;
+  line-height: 1.8;
+}
+body.page-screenplay-format main article > section {
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 24px rgba(17,19,23,.035) !important;
+  padding: clamp(1.2rem,3.5vw,2.5rem) !important;
+}
+body.page-screenplay-format main article > section:nth-of-type(1) {
+  background: var(--format-cream) !important;
+}
+body.page-screenplay-format main article > section:nth-of-type(1) .bg-black {
+  background: var(--format-blue) !important;
+  color: var(--format-ink) !important;
+  border-radius: 999px !important;
+}
+body.page-screenplay-format main article > section h2 {
+  font-size: clamp(1.35rem,2.7vw,2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.045em !important;
+  text-wrap: balance;
+}
+body.page-screenplay-format main article > section h3 {
+  letter-spacing: -.035em;
+  line-height: 1.2;
+}
+body.page-screenplay-format main article > section > div:first-child {
+  border-color: rgba(17,19,23,.18) !important;
+}
+body.page-screenplay-format main article > section .bg-black.text-white,
+body.page-screenplay-format main article > section span.bg-black {
+  background: #E5E8ED !important;
+  color: var(--format-ink) !important;
+  border: 1px solid rgba(17,19,23,.2) !important;
+  border-radius: 8px !important;
+}
+body.page-screenplay-format main article > section .overflow-x-auto {
+  border: 1px solid rgba(17,19,23,.35) !important;
+  border-radius: 12px !important;
+  overflow-x: auto;
+}
+body.page-screenplay-format main article > section table thead {
+  background: #D6E4EE !important;
+  color: var(--format-ink) !important;
+}
+body.page-screenplay-format main article > section table thead th {
+  border-color: rgba(17,19,23,.16) !important;
+  font-weight: 800;
+}
+body.page-screenplay-format main article > section table tbody {
+  background: #FBFCFD !important;
+}
+body.page-screenplay-format main article > section table tbody tr {
+  border-color: rgba(17,19,23,.12) !important;
+}
+body.page-screenplay-format main article > section table tbody td {
+  border-color: rgba(17,19,23,.12) !important;
+  line-height: 1.55;
+}
+body.page-screenplay-format main article > section table tbody tr:hover {
+  background: #FFF6CF !important;
+}
+body.page-screenplay-format main article > section .font-screenplay {
+  border-radius: 12px;
+}
+body.page-screenplay-format main article > section a,
+body.page-screenplay-format main article > section button,
+body.page-screenplay-format main > div > div:first-child > a {
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+body.page-screenplay-format main article > section a[class*="border-"],
+body.page-screenplay-format main article > section button[class*="border-"],
+body.page-screenplay-format main > div > div:first-child > a {
+  border-width: 1px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 10px rgba(17,19,23,.045) !important;
+}
+body.page-screenplay-format main article > section a[class*="border-"]:hover,
+body.page-screenplay-format main article > section button[class*="border-"]:hover,
+body.page-screenplay-format main > div > div:first-child > a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(17,19,23,.09) !important;
+}
+body.page-screenplay-format main article > section .border-b-2,
+body.page-screenplay-format main article > section .border-t-2 {
+  border-width: 1px !important;
+  border-color: rgba(17,19,23,.16) !important;
+}
+body.page-screenplay-format main article > section .brutal-box,
+body.page-screenplay-format main article > section .brutal-box-lg {
+  box-shadow: 0 4px 14px rgba(17,19,23,.04) !important;
+}
+body.page-screenplay-format > footer {
+  border-top: 1px solid rgba(17,19,23,.4) !important;
+  box-shadow: none !important;
+}
+body.page-screenplay-format > footer > div > div:first-child {
+  border-bottom: 1px solid rgba(17,19,23,.16) !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+body.page-screenplay-format > footer > div > div:first-child > div:first-child,
+body.page-screenplay-format > footer > div > div:first-child > div:first-child > a,
+body.page-screenplay-format > footer > div > div:first-child > div:first-child > a img {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+}
+body.page-screenplay-format > footer > div > div:first-child > div:last-child > span {
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  background: var(--format-yellow) !important;
+}
+body.page-screenplay-format > footer > div > div:first-child > div:last-child a {
+  border: 1px solid rgba(17,19,23,.22) !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  background: rgba(240,242,245,.72) !important;
+}
+body.page-screenplay-format > footer > div > div:last-child {
+  border-top: 1px solid rgba(17,19,23,.16) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+body.page-screenplay-format > footer .brutal-box,
+body.page-screenplay-format > footer .brutal-box-lg {
+  box-shadow: none !important;
+}
+body.page-screenplay-format > footer a[style*="background-color"] {
+  background-color: #F0F2F5 !important;
+}
+@media (max-width: 640px) {
+  body.page-screenplay-format main > div.max-w-4xl { padding-inline: 1rem !important; }
+  body.page-screenplay-format main article > header { border-radius: 17px !important; }
+  body.page-screenplay-format main article > section { border-radius: 15px !important; }
+  body.page-screenplay-format main article > section table { min-width: 640px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.page-screenplay-format main a,
+  body.page-screenplay-format main button { transition: none !important; }
+}
