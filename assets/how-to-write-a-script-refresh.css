@@ -412,3 +412,51 @@ body.page-scriptwriting-guide footer > div > div:last-child {
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+
+
+/* Explicitly remove the footer's large outer frame and logo's yellow frame.
+   The screenshot shows the outer frame is the footer's first branding row wrapper. */
+body.page-scriptwriting-guide footer > div > div:first-child {
+  border: 0 !important;
+  border-bottom: 1px solid rgba(17,19,23,.18) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+body.page-scriptwriting-guide footer > div > div:first-child > div:first-child,
+body.page-scriptwriting-guide footer > div > div:first-child > div:first-child > a,
+body.page-scriptwriting-guide footer > div > div:first-child > div:first-child > a:hover {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+body.page-scriptwriting-guide footer > div > div:first-child > div:first-child > a img,
+body.page-scriptwriting-guide footer > div > div:first-child > div:first-child > a img:hover {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+body.page-scriptwriting-guide footer .bg-\\[\\#F8D000\\],
+body.page-scriptwriting-guide footer span[class*="bg-[#F8D000]"] {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer .inline-flex.items-center.justify-center.w-8.h-8 {
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer .inline-flex.items-center.justify-center.w-8.h-8:hover {
+  background: rgba(248,208,0,.25) !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer > div > div:last-child {
+  border: 0 !important;
+  border-top: 1px solid rgba(17,19,23,.18) !important;
+}
