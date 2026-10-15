@@ -1,0 +1,190 @@
+/* Contact page visual refresh — same softer studio system as recent page proposals */
+body.page-contact {
+  --contact-bg: #E2E4E9;
+  --contact-ink: #111317;
+  --contact-yellow: #F8D000;
+  --contact-paper: #F0F2F5;
+  --contact-blue: #D6E4EE;
+  background: var(--contact-bg) !important;
+  color: var(--contact-ink);
+}
+
+/* Shared header/footer */
+body.page-contact > header {
+  background: rgba(248, 208, 0, .96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--contact-ink) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body.page-contact > header img[src*="drlogo"],
+body.page-contact > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-contact > header nav a,
+body.page-contact > header > div a,
+body.page-contact > header button {
+  border-radius: 10px !important;
+  box-shadow: 0 2px 4px rgba(17, 19, 23, .06) !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.page-contact > header nav a:hover,
+body.page-contact > header > div a:hover,
+body.page-contact > header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 19, 23, .14) !important;
+}
+body.page-contact > footer {
+  background: var(--contact-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--contact-ink) !important;
+  box-shadow: none !important;
+}
+body.page-contact > footer .border-b-2 {
+  border: 0 !important;
+  border-bottom: 1px solid var(--contact-ink) !important;
+}
+body.page-contact > footer .border-t-2 {
+  border: 0 !important;
+  border-top: 1px solid var(--contact-ink) !important;
+}
+body.page-contact > footer > div > div:first-child > div:last-child > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--contact-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  box-shadow: none;
+}
+body.page-contact > footer a:hover { color: var(--contact-ink); }
+
+/* Intake form shell */
+body.page-contact main > div {
+  background: #F0F2F5 !important;
+  border: 1px solid rgba(17, 19, 23, .65) !important;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(17, 19, 23, .045) !important;
+  padding: clamp(1.35rem, 4vw, 2.75rem) !important;
+}
+body.page-contact main > div > span:first-child {
+  display: inline-block;
+  border-radius: 999px;
+  letter-spacing: .045em;
+  padding: .35rem .8rem;
+}
+body.page-contact main h1 {
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+body.page-contact main p {
+  line-height: 1.7;
+}
+body.page-contact main a[href^="mailto:"] {
+  text-underline-offset: 3px;
+}
+
+/* Form controls: calmer borders, generous focus states, accessible contrast */
+body.page-contact #contact-form {
+  gap: 1.4rem;
+}
+body.page-contact #contact-form label {
+  font-size: .75rem;
+  letter-spacing: .06em;
+  line-height: 1.4;
+}
+body.page-contact #contact-form input:not([type="hidden"]),
+body.page-contact #contact-form select,
+body.page-contact #contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(17, 19, 23, .65) !important;
+  border-radius: 10px;
+  padding: .9rem 1rem;
+  background-color: #FFFFFF;
+  color: #111317;
+  line-height: 1.5;
+  transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+body.page-contact #contact-form input:not([type="hidden"]):focus,
+body.page-contact #contact-form select:focus,
+body.page-contact #contact-form textarea:focus {
+  outline: none;
+  border-color: #111317 !important;
+  background-color: #FFFDF4 !important;
+  box-shadow: 0 0 0 3px rgba(248, 208, 0, .38);
+}
+body.page-contact #contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+body.page-contact #contact-form select {
+  cursor: pointer;
+}
+body.page-contact #contact-form input::placeholder,
+body.page-contact #contact-form textarea::placeholder {
+  color: #6B7280;
+  opacity: 1;
+}
+body.page-contact #form-success,
+body.page-contact #form-error {
+  border-width: 1px !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+  line-height: 1.55;
+}
+body.page-contact #submit-btn {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(17, 19, 23, .06) !important;
+  padding: 1rem 1.25rem;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+body.page-contact #submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(17, 19, 23, .1) !important;
+}
+body.page-contact #submit-btn:disabled {
+  cursor: wait;
+  opacity: .72;
+}
+
+/* Direct email callout */
+body.page-contact main > div > div.inline-block {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+  line-height: 1.4;
+}
+
+/* Floating contact shortcut */
+body.page-contact > a[aria-label="Contact Desk"] {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(17, 19, 23, .08) !important;
+}
+body.page-contact > a[aria-label="Contact Desk"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(17, 19, 23, .12) !important;
+}
+
+@media (max-width: 640px) {
+  body.page-contact main { padding-top: 1.5rem !important; padding-bottom: 2.5rem !important; }
+  body.page-contact main > div { border-radius: 17px; }
+  body.page-contact #contact-form input:not([type="hidden"]),
+  body.page-contact #contact-form select,
+  body.page-contact #contact-form textarea { padding: .85rem .9rem; }
+  body.page-contact #submit-btn { font-size: 1rem; }
+  body.page-contact > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  body.page-contact > footer > div > div:first-child > div:last-child > span {
+    min-height: 34px;
+    padding: .45rem .8rem;
+    font-size: .68rem;
+  }
+}
