@@ -345,3 +345,70 @@ body.page-scriptwriting-guide > footer span.bg-\[\#F8D000\] {
     align-items: flex-start !important;
   }
 }
+
+
+/* Footer frame cleanup — the original markup uses brutal-box on the logo and social links.
+   Override all frame-producing utilities within the footer, including hover transforms. */
+body.page-scriptwriting-guide footer .brutal-box,
+body.page-scriptwriting-guide footer .brutal-box-lg,
+body.page-scriptwriting-guide footer .brutal-btn,
+body.page-scriptwriting-guide footer img,
+body.page-scriptwriting-guide footer a,
+body.page-scriptwriting-guide footer span {
+  outline: none;
+}
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"],
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"]:hover,
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"] img,
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"] img:hover {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+}
+body.page-scriptwriting-guide footer img.brutal-box,
+body.page-scriptwriting-guide footer img.brutal-box:hover {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  transform: none !important;
+}
+body.page-scriptwriting-guide footer .brutal-box,
+body.page-scriptwriting-guide footer .brutal-box:hover,
+body.page-scriptwriting-guide footer .brutal-box-lg,
+body.page-scriptwriting-guide footer .brutal-box-lg:hover {
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer .border-2,
+body.page-scriptwriting-guide footer .border-4,
+body.page-scriptwriting-guide footer .border-black {
+  border-width: 1px !important;
+}
+body.page-scriptwriting-guide footer .border-b-2,
+body.page-scriptwriting-guide footer .border-t-2 {
+  border-width: 1px !important;
+}
+body.page-scriptwriting-guide footer .inline-flex.items-center.justify-center.w-8.h-8 {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(17,19,23,.45) !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer span.bg-\\[\\#F8D000\\],
+body.page-scriptwriting-guide footer span[class*="bg-[#F8D000]"] {
+  border: 1px solid rgba(17,19,23,.45) !important;
+  border-radius: 999px !important;
+}
+body.page-scriptwriting-guide footer .grid {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer > div > div:last-child {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
