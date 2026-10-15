@@ -46,7 +46,7 @@ body.page-tools > footer {
 }
 body.page-tools > footer .border-b-2 { border-bottom-width: 1px !important; }
 body.page-tools > footer a:hover { color: var(--tools-ink); }
-body.page-tools > footer .inline-block.bg-\\[\\#F8D000\\] {
+body.page-tools > footer > div > div:first-child > div:last-child > span {
   display: inline-flex;
   align-items: center;
   min-height: 38px;
@@ -163,7 +163,7 @@ body.page-tools main > div:last-child a:hover {
   body.page-tools main > div:nth-child(3) { border-radius: 16px; }
   body.page-tools main > div.mb-14 .grid > div { padding: 1.1rem !important; }
   body.page-tools main > div:last-child { border-radius: 16px; }
-  body.page-tools > footer .inline-block.bg-\\[\\#F8D000\\] {
+  body.page-tools > footer > div > div:first-child > div:last-child > span {
     min-height: 34px;
     padding: .45rem .8rem;
     font-size: .68rem;
