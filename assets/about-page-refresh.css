@@ -168,3 +168,18 @@ body.page-about main > div:last-child a:hover {
     font-size: .68rem;
   }
 }
+
+
+/* Footer cleanup: keep separators as single horizontal rules, not full rectangles */
+body.page-about > footer .border-b-2 {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid var(--about-ink) !important;
+}
+body.page-about > footer .border-t-2 {
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-top: 1px solid var(--about-ink) !important;
+}
