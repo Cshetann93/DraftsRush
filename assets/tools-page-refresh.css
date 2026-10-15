@@ -1,0 +1,171 @@
+/* Tools page visual refresh — mirrors the Writer's Room polish proposal */
+body.page-tools {
+  --tools-bg: #E2E4E9;
+  --tools-ink: #111317;
+  --tools-yellow: #F8D000;
+  --tools-paper: #F0F2F5;
+  --tools-blue: #D6E4EE;
+  background: var(--tools-bg) !important;
+  color: var(--tools-ink);
+}
+
+/* Match the sitewide header/footer treatment used on the refreshed Writer's Room */
+body.page-tools > header {
+  background: rgba(248, 208, 0, .96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--tools-ink) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body.page-tools > header img[src*="drlogo"],
+body.page-tools > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-tools > header nav a,
+body.page-tools > header > div a,
+body.page-tools > header button {
+  box-shadow: 0 2px 4px rgba(17, 19, 23, .06) !important;
+  border-radius: 10px !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.page-tools > header nav a:hover,
+body.page-tools > header > div a:hover,
+body.page-tools > header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 19, 23, .14) !important;
+}
+body.page-tools > footer {
+  background: var(--tools-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--tools-ink) !important;
+  box-shadow: none !important;
+}
+body.page-tools > footer .border-b-2 { border-bottom-width: 1px !important; }
+body.page-tools > footer a:hover { color: var(--tools-ink); }
+body.page-tools > footer .inline-block.bg-\\[\\#F8D000\\] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--tools-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  box-shadow: none;
+}
+@media (max-width: 767px) {
+  body.page-tools > header nav { gap: .5rem; }
+  body.page-tools > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+}
+
+/* Hero remains the primary visual anchor; soften the hard neo-brutalist frame */
+body.page-tools main > div:first-child {
+  border: 1px solid var(--tools-ink) !important;
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(17, 19, 23, .055) !important;
+  padding: clamp(1.5rem, 4vw, 3rem) !important;
+}
+body.page-tools main > div:first-child h1 {
+  max-width: 850px;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+/* Definition/benchmark blocks */
+body.page-tools main > div:nth-child(2),
+body.page-tools main > div:nth-child(3) {
+  border: 1px solid rgba(17, 19, 23, .55) !important;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(17, 19, 23, .025) !important;
+}
+body.page-tools main > div:nth-child(2) .border-t-2,
+body.page-tools main > div:nth-child(3) .border-t-2 {
+  border-top-width: 1px !important;
+  border-color: rgba(17, 19, 23, .18) !important;
+}
+
+/* Consistent rhythm between the tool collections */
+body.page-tools main > div.mb-14 {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem) !important;
+}
+body.page-tools main > div.mb-14 > div:first-child {
+  gap: .85rem;
+  margin-bottom: 1.5rem !important;
+}
+body.page-tools main > div.mb-14 > div:first-child h2 {
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+body.page-tools main > div.mb-14 .grid {
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+/* Individual tool cards: thin borders, calm shadows, clear hierarchy */
+body.page-tools main > div.mb-14 .grid > div {
+  border-width: 1px !important;
+  border-color: rgba(17, 19, 23, .65) !important;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(17, 19, 23, .025) !important;
+  padding: 1.35rem !important;
+}
+body.page-tools main > div.mb-14 .grid > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(17, 19, 23, .07) !important;
+}
+body.page-tools main > div.mb-14 .grid > div > div > span {
+  border-radius: 6px;
+}
+body.page-tools main > div.mb-14 .grid > div h3 {
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+body.page-tools main > div.mb-14 .grid > div p {
+  line-height: 1.65;
+}
+body.page-tools main > div.mb-14 .grid > div a {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+  padding: .75rem 1rem;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+body.page-tools main > div.mb-14 .grid > div a:hover {
+  transform: translateY(-1px);
+  box-shadow: none !important;
+}
+
+/* Commercial CTA stays bright, but no longer competes with every card */
+body.page-tools main > div:last-child {
+  border-width: 1px !important;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(17, 19, 23, .04) !important;
+}
+body.page-tools main > div:last-child a {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+}
+body.page-tools main > div:last-child a:hover {
+  transform: translateY(-1px);
+  box-shadow: none !important;
+}
+
+@media (max-width: 640px) {
+  body.page-tools main { padding-top: 1.5rem !important; }
+  body.page-tools main > div:first-child { border-radius: 18px; }
+  body.page-tools main > div:nth-child(2),
+  body.page-tools main > div:nth-child(3) { border-radius: 16px; }
+  body.page-tools main > div.mb-14 .grid > div { padding: 1.1rem !important; }
+  body.page-tools main > div:last-child { border-radius: 16px; }
+  body.page-tools > footer .inline-block.bg-\\[\\#F8D000\\] {
+    min-height: 34px;
+    padding: .45rem .8rem;
+    font-size: .68rem;
+  }
+}
