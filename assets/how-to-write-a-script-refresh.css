@@ -460,3 +460,38 @@ body.page-scriptwriting-guide footer > div > div:last-child {
   border: 0 !important;
   border-top: 1px solid rgba(17,19,23,.18) !important;
 }
+
+
+/* Final footer correction based on visual review:
+   keep the yellow tools label, but remove its hard frame; restore intentional soft icon buttons. */
+body.page-scriptwriting-guide footer > div > div:first-child > div:last-child > span {
+  display: inline-flex !important;
+  align-items: center;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 999px !important;
+  padding: .65rem 1rem !important;
+  background: #F8D000 !important;
+}
+body.page-scriptwriting-guide footer > div > div:first-child > div:last-child > div.flex.items-center.gap-1\.5 a {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  border: 1px solid rgba(17,19,23,.22) !important;
+  border-radius: 50% !important;
+  background: rgba(240,242,245,.72) !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer > div > div:first-child > div:last-child > div.flex.items-center.gap-1\.5 a:hover {
+  background: rgba(248,208,0,.35) !important;
+  transform: translateY(-1px) !important;
+}
+body.page-scriptwriting-guide footer > div > div:first-child {
+  border: 0 !important;
+  border-bottom: 1px solid rgba(17,19,23,.16) !important;
+  box-shadow: none !important;
+}
+body.page-scriptwriting-guide footer {
+  border: 0 !important;
+  box-shadow: none !important;
+}
