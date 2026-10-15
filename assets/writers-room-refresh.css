@@ -105,3 +105,59 @@ body.page-writers-room > footer .studio-badge {
     font-size: 0.68rem;
   }
 }
+
+
+/* Review proposal: soften repeated card chrome and improve long-page rhythm */
+body.page-writers-room main > section:not(:first-child) {
+  margin-top: clamp(1.25rem, 2.8vw, 2.25rem);
+}
+body.page-writers-room main .grid > a,
+body.page-writers-room main article {
+  border-width: 1px !important;
+  box-shadow: 0 3px 10px rgba(17, 19, 23, .025) !important;
+}
+body.page-writers-room main .grid > a {
+  padding: 1.2rem !important;
+  border-radius: 14px !important;
+}
+body.page-writers-room main .grid > a:hover,
+body.page-writers-room main article a:hover,
+body.page-writers-room main > section:nth-child(2) > div a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(17, 19, 23, .07) !important;
+}
+body.page-writers-room main article {
+  border-radius: 18px !important;
+}
+body.page-writers-room main article > div {
+  box-shadow: none !important;
+}
+body.page-writers-room main > section:not(:first-child) h2 {
+  line-height: 1.08;
+}
+body.page-writers-room main > section:not(:first-child) h3,
+body.page-writers-room main > section:not(:first-child) h4 {
+  line-height: 1.2;
+}
+body.page-writers-room main .font-mono {
+  letter-spacing: .055em;
+}
+body.page-writers-room main section:last-of-type > div {
+  border-width: 1px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 16px rgba(17, 19, 23, .04) !important;
+}
+@media (min-width: 768px) {
+  body.page-writers-room main .grid {
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  body.page-writers-room main > section:not(:first-child) {
+    margin-top: 1rem;
+  }
+  body.page-writers-room main .grid > a {
+    padding: 1rem !important;
+  }
+}
