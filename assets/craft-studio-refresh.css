@@ -88,3 +88,81 @@ body.page-craft-studio main .scene-card[hidden] { display: none !important; }
   body.page-craft-studio main a,
   body.page-craft-studio main button { transition: none !important; }
 }
+
+
+/* Stronger page-level treatment: cover hero panels nested inside article/div wrappers,
+   not only direct children of main. These rules intentionally make the refresh visible. */
+body.page-craft-studio main .brutal-box,
+body.page-craft-studio main .brutal-box-lg {
+  border-width: 1px !important;
+  border-color: rgba(17,19,23,.72) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 28px rgba(17,19,23,.065) !important;
+}
+body.page-craft-studio main article > header,
+body.page-craft-studio main article > section,
+body.page-craft-studio main > div > section,
+body.page-craft-studio main > section {
+  border-width: 1px !important;
+  border-color: rgba(17,19,23,.72) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 28px rgba(17,19,23,.055) !important;
+}
+body.page-craft-studio main .scene-card,
+body.page-craft-studio main article .grid > a,
+body.page-craft-studio main .grid > a,
+body.page-craft-studio main [class*="grid-cols"] > a,
+body.page-craft-studio main [class*="grid-cols"] > article {
+  border: 1px solid rgba(17,19,23,.42) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 18px rgba(17,19,23,.045) !important;
+  overflow: hidden;
+}
+body.page-craft-studio main .scene-card:hover,
+body.page-craft-studio main article .grid > a:hover,
+body.page-craft-studio main .grid > a:hover,
+body.page-craft-studio main [class*="grid-cols"] > a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(17,19,23,.09) !important;
+}
+body.page-craft-studio main .bg-black.text-white,
+body.page-craft-studio main [class*="bg-black"][class*="text-white"] {
+  border-radius: 7px;
+}
+body.page-craft-studio main a.inline-block[class*="border-"],
+body.page-craft-studio main a[class*="brutal-btn"],
+body.page-craft-studio main button[class*="brutal-btn"] {
+  border-width: 1px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 10px rgba(17,19,23,.06) !important;
+}
+body.page-craft-studio main a.inline-block[class*="border-"]:hover,
+body.page-craft-studio main a[class*="brutal-btn"]:hover,
+body.page-craft-studio main button[class*="brutal-btn"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(17,19,23,.12) !important;
+}
+body.page-craft-studio main h1 {
+  font-size: clamp(2.35rem, 5.2vw, 4.6rem);
+  line-height: 1.02 !important;
+  letter-spacing: -.055em !important;
+}
+body.page-craft-studio main h2 {
+  line-height: 1.1 !important;
+  letter-spacing: -.045em !important;
+}
+body.page-craft-studio main .border-b-2,
+body.page-craft-studio main .border-t-2,
+body.page-craft-studio main .border-y-4 {
+  border-color: rgba(17,19,23,.2) !important;
+}
+@media (max-width: 640px) {
+  body.page-craft-studio main .brutal-box,
+  body.page-craft-studio main .brutal-box-lg,
+  body.page-craft-studio main article > header,
+  body.page-craft-studio main article > section,
+  body.page-craft-studio main > div > section,
+  body.page-craft-studio main > section {
+    border-radius: 17px !important;
+  }
+}
