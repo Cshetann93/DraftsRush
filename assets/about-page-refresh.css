@@ -1,0 +1,185 @@
+/* About page visual refresh — consistent with Writer's Room, Tools, and Scripts proposals */
+body.page-about {
+  --about-bg: #E2E4E9;
+  --about-ink: #111317;
+  --about-yellow: #F8D000;
+  --about-paper: #F0F2F5;
+  --about-blue: #D6E4EE;
+  background: var(--about-bg) !important;
+  color: var(--about-ink);
+}
+
+/* Header and footer */
+body.page-about > header {
+  background: rgba(248, 208, 0, .96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--about-ink) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .06) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+body.page-about > header img[src*="drlogo"],
+body.page-about > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-about > header nav a,
+body.page-about > header > div a,
+body.page-about > header button {
+  box-shadow: 0 2px 4px rgba(17, 19, 23, .06) !important;
+  border-radius: 10px !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.page-about > header nav a:hover,
+body.page-about > header > div a:hover,
+body.page-about > header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(17, 19, 23, .14) !important;
+}
+body.page-about > footer {
+  background: var(--about-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--about-ink) !important;
+  box-shadow: none !important;
+}
+body.page-about > footer .border-b-2,
+body.page-about > footer .border-t-2 { border-width: 1px !important; }
+body.page-about > footer > div > div:first-child > div:last-child > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .55rem 1rem;
+  border: 1px solid var(--about-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  box-shadow: none;
+}
+body.page-about > footer a:hover { color: var(--about-ink); }
+
+/* Page rhythm */
+body.page-about main {
+  gap: clamp(2.5rem, 5vw, 4rem) !important;
+}
+body.page-about main > div:first-child,
+body.page-about main > section,
+body.page-about main > div:last-child {
+  border-width: 1px !important;
+  border-color: rgba(17, 19, 23, .65) !important;
+  border-radius: 22px;
+  box-shadow: 0 6px 20px rgba(17, 19, 23, .035) !important;
+}
+
+/* Founder hero remains the primary visual anchor */
+body.page-about main > div:first-child {
+  padding: clamp(1.5rem, 4.5vw, 3.5rem) !important;
+  background: #FFF6CF !important;
+}
+body.page-about main > div:first-child h1 {
+  max-width: 900px;
+  line-height: 1.03;
+  letter-spacing: -.045em;
+}
+body.page-about main > div:first-child p {
+  max-width: 800px;
+  line-height: 1.75;
+}
+body.page-about main > div:first-child .border-t-2 {
+  border-top-width: 1px !important;
+  border-color: rgba(17, 19, 23, .22) !important;
+}
+body.page-about main > div:first-child > div > div:first-child {
+  border-radius: 999px;
+  letter-spacing: .05em;
+}
+
+/* Contact links */
+body.page-about main > div:first-child a[href^="mailto:"],
+body.page-about main > div:first-child a[href*="linkedin.com"] {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+body.page-about main > div:first-child a[href^="mailto:"]:hover,
+body.page-about main > div:first-child a[href*="linkedin.com"]:hover {
+  transform: translateY(-1px);
+  box-shadow: none !important;
+}
+
+/* Studio overview */
+body.page-about main > section {
+  padding: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+body.page-about main > section > span {
+  border-width: 1px !important;
+  border-radius: 999px;
+  letter-spacing: .045em;
+}
+body.page-about main > section h2 {
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+body.page-about main > section p {
+  line-height: 1.75;
+}
+body.page-about main > section .mt-6 span {
+  border-width: 1px !important;
+  border-radius: 999px;
+  padding: .65rem 1rem;
+}
+
+/* CTA: retain yellow but reduce visual heaviness */
+body.page-about main > div:last-child {
+  background: var(--about-yellow) !important;
+  padding: clamp(1.5rem, 4vw, 3rem) !important;
+}
+body.page-about main > div:last-child h3 {
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+body.page-about main > div:last-child p {
+  line-height: 1.65;
+}
+body.page-about main > div:last-child a {
+  border-width: 1px !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+body.page-about main > div:last-child a:hover {
+  transform: translateY(-1px);
+  box-shadow: none !important;
+}
+
+@media (max-width: 640px) {
+  body.page-about main { padding-top: 1.5rem !important; }
+  body.page-about main > div:first-child,
+  body.page-about main > section,
+  body.page-about main > div:last-child { border-radius: 17px; }
+  body.page-about main > div:first-child h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  body.page-about > footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  body.page-about > footer > div > div:first-child > div:last-child > span {
+    min-height: 34px;
+    padding: .45rem .8rem;
+    font-size: .68rem;
+  }
+}
+
+
+/* Footer cleanup: keep separators as single horizontal rules, not full rectangles */
+body.page-about > footer .border-b-2 {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid var(--about-ink) !important;
+}
+body.page-about > footer .border-t-2 {
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-top: 1px solid var(--about-ink) !important;
+}
