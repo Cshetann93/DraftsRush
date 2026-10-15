@@ -259,3 +259,89 @@ body.page-scriptwriting-guide > footer a.inline-block {
   body.page-scriptwriting-guide main a,
   body.page-scriptwriting-guide main button { transition: none !important; }
 }
+/* Visual QA fixes: remove accidental logo frames and unintended black surfaces. */
+body.page-scriptwriting-guide header a[aria-label="DraftsRush Home"] img,
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"] img {
+  display: block;
+  background: transparent !important;
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+body.page-scriptwriting-guide header a[aria-label="DraftsRush Home"],
+body.page-scriptwriting-guide footer a[aria-label="DraftsRush Home"] {
+  display: inline-flex !important;
+  align-items: center;
+  width: fit-content;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+body.page-scriptwriting-guide .brutal-box,
+body.page-scriptwriting-guide .brutal-box-lg {
+  box-shadow: 0 5px 16px rgba(17,19,23,.055) !important;
+}
+body.page-scriptwriting-guide .brutal-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(17,19,23,.10) !important;
+}
+body.page-scriptwriting-guide main > section:first-child > div > div.relative > div > div.space-y-3 > div:last-child {
+  background: #D6E4EE !important;
+  color: #111317 !important;
+  border: 1px solid rgba(17,19,23,.25) !important;
+}
+body.page-scriptwriting-guide main > section:first-child > div > div.relative > div > div.space-y-3 > div:last-child p,
+body.page-scriptwriting-guide main > section:first-child > div > div.relative > div > div.space-y-3 > div:last-child span {
+  color: #111317 !important;
+}
+body.page-scriptwriting-guide main > section:nth-child(5) {
+  background: #F0F2F5 !important;
+  color: #111317 !important;
+  border-top: 1px solid rgba(17,19,23,.18) !important;
+  border-bottom: 1px solid rgba(17,19,23,.18) !important;
+}
+body.page-scriptwriting-guide main > section:nth-child(5) h1,
+body.page-scriptwriting-guide main > section:nth-child(5) h2,
+body.page-scriptwriting-guide main > section:nth-child(5) h3,
+body.page-scriptwriting-guide main > section:nth-child(5) p,
+body.page-scriptwriting-guide main > section:nth-child(5) span {
+  color: #111317 !important;
+}
+body.page-scriptwriting-guide main > section:nth-child(5) a {
+  background: #F8D000 !important;
+  color: #111317 !important;
+  border: 1px solid rgba(17,19,23,.45) !important;
+}
+body.page-scriptwriting-guide > footer {
+  padding-top: 3rem !important;
+  padding-bottom: 2rem !important;
+}
+body.page-scriptwriting-guide > footer > div {
+  max-width: 1180px;
+}
+body.page-scriptwriting-guide > footer .border-b-2,
+body.page-scriptwriting-guide > footer .border-t-2 {
+  border-color: rgba(17,19,23,.2) !important;
+}
+body.page-scriptwriting-guide > footer .grid > div > div:first-child span.w-2 {
+  background: #111317 !important;
+}
+body.page-scriptwriting-guide > footer a[style*="background-color"] {
+  background-color: #F0F2F5 !important;
+}
+body.page-scriptwriting-guide > footer .studio-badge,
+body.page-scriptwriting-guide > footer span.bg-\[\#F8D000\] {
+  box-shadow: none !important;
+}
+@media (max-width: 767px) {
+  body.page-scriptwriting-guide > footer .grid {
+    gap: 1.75rem !important;
+  }
+  body.page-scriptwriting-guide > footer > div > div:last-child {
+    align-items: flex-start !important;
+  }
+}
