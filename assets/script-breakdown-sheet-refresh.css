@@ -1,0 +1,243 @@
+/* Script Breakdown Sheet — homepage-aligned editorial refresh.
+   Scoped to this page to avoid changing other DraftsRush pages. */
+.script-breakdown-page {
+  --sbs-ink: #111317;
+  --sbs-yellow: #F8D000;
+  --sbs-cta: #FFE600;
+  --sbs-base: #E2E4E9;
+  --sbs-light: #F0F2F5;
+  --sbs-blue: #D6E4EE;
+  --sbs-cream: #FFF6CF;
+  --sbs-line: 1px solid var(--sbs-ink);
+}
+.script-breakdown-page > header {
+  background: rgba(248, 208, 0, .96) !important;
+  border: 0 !important;
+  border-bottom: var(--sbs-line) !important;
+  box-shadow: 0 4px 20px -4px rgba(17, 19, 23, .07);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.script-breakdown-page > header > div:first-child {
+  max-width: 1200px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.script-breakdown-page header img[src*="drlogo"],
+.script-breakdown-page footer img[src*="drlogo"],
+.script-breakdown-page header img[alt*="DraftsRush"],
+.script-breakdown-page footer img[alt*="DraftsRush"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.script-breakdown-page > header nav a,
+.script-breakdown-page > header > div a[href="/contact"] {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 10px !important;
+  box-shadow: 2px 2px 0 rgba(17,19,23,.12) !important;
+  padding: 9px 12px !important;
+  font-size: 11px;
+  letter-spacing: .045em;
+  transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.script-breakdown-page > header nav a:not(:first-child) { background: var(--sbs-light) !important; }
+.script-breakdown-page > header nav a:hover,
+.script-breakdown-page > header > div a[href="/contact"]:hover {
+  background: var(--sbs-ink) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 3px 4px 0 rgba(17,19,23,.14) !important;
+}
+.script-breakdown-page > header button {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 rgba(17,19,23,.12) !important;
+}
+.script-breakdown-page #mobile-nav {
+  border-top: var(--sbs-line) !important;
+  background: var(--sbs-light) !important;
+}
+.script-breakdown-page main > div {
+  max-width: 900px;
+  padding-top: clamp(28px, 5vw, 52px);
+}
+.script-breakdown-page main article { gap: clamp(22px, 3.4vw, 34px) !important; }
+.script-breakdown-page main article > header {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 24px;
+  background: var(--sbs-yellow) !important;
+  padding: clamp(26px, 5vw, 48px) !important;
+  box-shadow: 0 10px 0 rgba(17,19,23,.05), 0 22px 42px -28px rgba(17,19,23,.22) !important;
+}
+.script-breakdown-page main article > header > div:first-child {
+  background: transparent !important;
+  color: var(--sbs-ink) !important;
+  border: 1px solid rgba(17,19,23,.45);
+  border-radius: 999px;
+  padding: 7px 11px;
+  letter-spacing: .09em;
+}
+.script-breakdown-page main article > header h1 {
+  max-width: 760px;
+  font-size: clamp(2rem, 5vw, 3.65rem);
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+.script-breakdown-page main article > header p {
+  max-width: 690px;
+  color: rgba(17,19,23,.78) !important;
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.75;
+}
+.script-breakdown-page main article > header > div:last-child {
+  border-top: 1px solid rgba(17,19,23,.3) !important;
+  color: rgba(17,19,23,.7) !important;
+  gap: 9px 13px;
+}
+.script-breakdown-page main article > section {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 20px;
+  padding: clamp(22px, 4vw, 34px) !important;
+  box-shadow: 0 5px 0 rgba(17,19,23,.035), 0 16px 30px -26px rgba(17,19,23,.2) !important;
+}
+.script-breakdown-page main article > section:nth-of-type(1) { background: var(--sbs-cream) !important; }
+.script-breakdown-page main article > section:nth-of-type(2) { background: var(--sbs-light) !important; }
+.script-breakdown-page main article > section:nth-of-type(3),
+.script-breakdown-page main article > section:nth-of-type(5),
+.script-breakdown-page main article > section:nth-of-type(6),
+.script-breakdown-page main article > section:nth-of-type(7) { background: #F7F8FA !important; }
+.script-breakdown-page main article > section:nth-of-type(4) { background: var(--sbs-cream) !important; }
+.script-breakdown-page main article > section h2,
+.script-breakdown-page main article > section h3 {
+  letter-spacing: -.035em;
+  line-height: 1.15;
+}
+.script-breakdown-page main article > section h2 { font-size: clamp(1.45rem, 3.3vw, 2.15rem); }
+.script-breakdown-page main article > section h3 { font-size: clamp(1.2rem, 2.8vw, 1.6rem); }
+.script-breakdown-page main article > section [class*="border-b-2"] {
+  border-bottom: 1px solid rgba(17,19,23,.35) !important;
+}
+.script-breakdown-page main article > section [class*="bg-black"][class*="text-white"] {
+  background: transparent !important;
+  color: var(--sbs-ink) !important;
+  border: 1px solid rgba(17,19,23,.4);
+  border-radius: 999px;
+  padding: 6px 10px;
+  letter-spacing: .07em;
+}
+.script-breakdown-page main article > section ul.grid li,
+.script-breakdown-page main article > section .grid > div,
+.script-breakdown-page main article > section [class*="bg-white"][class*="border-2"] {
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+.script-breakdown-page main article > section .brutal-box,
+.script-breakdown-page main article > section .brutal-box-lg {
+  box-shadow: none !important;
+}
+.script-breakdown-page main article > section a:not([href^="#"]) {
+  border-radius: 11px;
+  box-shadow: 2px 3px 0 rgba(17,19,23,.12) !important;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.script-breakdown-page main article > section a:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 4px 0 rgba(17,19,23,.15) !important;
+}
+.script-breakdown-page main article > section table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 580px;
+}
+.script-breakdown-page main article > section .overflow-x-auto {
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 13px;
+}
+.script-breakdown-page main article > section table thead { background: var(--sbs-yellow) !important; }
+.script-breakdown-page main article > section table th {
+  border-bottom: 1px solid rgba(17,19,23,.55) !important;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+.script-breakdown-page main article > section table td { vertical-align: top; }
+.script-breakdown-page main article > section table tbody tr:nth-child(even) { background: rgba(240,242,245,.7); }
+.script-breakdown-page main article > section .bg-\[\#FAF9F5\] {
+  background: #F0F2F5 !important;
+  border: 1px solid rgba(17,19,23,.45) !important;
+  border-radius: 12px;
+}
+.script-breakdown-page main article > section [class*="bg-\[\#FCE8E6\]"],
+.script-breakdown-page main article > section [class*="bg-\[\#E8E5F2\]"],
+.script-breakdown-page main article > section [class*="bg-\[\#DDE8DF\]"] {
+  background: var(--sbs-light) !important;
+}
+.script-breakdown-page main article > section [class*="bg-\[\#D6E4EE\]"] { background: var(--sbs-blue) !important; }
+.script-breakdown-page main article > section [class*="bg-\[\#FFF6CF\]"] { background: var(--sbs-cream) !important; }
+.script-breakdown-page main article > section [class*="bg-\[\#F8D000\]"] { background: var(--sbs-yellow) !important; }
+.script-breakdown-page main article > section [class*="border-black"] { border-color: rgba(17,19,23,.65) !important; }
+.script-breakdown-page main article > section [class*="rounded-"] { border-radius: 12px; }
+.script-breakdown-page main article > section .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: .65rem; }
+.script-breakdown-page main article > section p,
+.script-breakdown-page main article > section li { line-height: 1.75; }
+.script-breakdown-page main > div > div:first-child a,
+.script-breakdown-page main > div > div:last-child a {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 11px;
+  box-shadow: 2px 3px 0 rgba(17,19,23,.12) !important;
+}
+.script-breakdown-page main > div > div:first-child a:hover,
+.script-breakdown-page main > div > div:last-child a:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 4px 0 rgba(17,19,23,.15) !important;
+}
+.script-breakdown-page main article > section[aria-labelledby] {
+  border: 0 !important;
+  border-top: 1px solid rgba(17,19,23,.25) !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 26px 0 0 !important;
+}
+.script-breakdown-page > footer {
+  background: var(--sbs-blue) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--sbs-ink) !important;
+  padding-top: 42px;
+  padding-bottom: 28px;
+}
+.script-breakdown-page > footer .border-b-2,
+.script-breakdown-page > footer .border-t-2 {
+  border-color: rgba(17,19,23,.35) !important;
+  border-width: 1px !important;
+}
+.script-breakdown-page > footer a:not([href="/"]) { text-underline-offset: 3px; }
+.script-breakdown-page > footer a[style*="background-color"],
+.script-breakdown-page > footer a[href="mailto:care@draftsrush.com"] {
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 9px;
+  box-shadow: none !important;
+}
+.script-breakdown-page > footer a[href="mailto:care@draftsrush.com"] { background: var(--sbs-light) !important; }
+.script-breakdown-page > footer .grid > div h4 { letter-spacing: .07em; }
+.script-breakdown-page > footer .grid > div ul { line-height: 1.8; }
+.script-breakdown-page > footer .grid > div > div:first-child span { border-radius: 2px; }
+.script-breakdown-page > a.fixed {
+  border: 1.5px solid var(--sbs-ink) !important;
+  border-radius: 12px;
+  box-shadow: 3px 4px 0 rgba(17,19,23,.15) !important;
+}
+@media (max-width: 767px) {
+  .script-breakdown-page > header > div:first-child { padding-left: 18px; padding-right: 18px; }
+  .script-breakdown-page main > div { padding-left: 18px; padding-right: 18px; padding-bottom: 54px; }
+  .script-breakdown-page main article > header { border-radius: 18px; }
+  .script-breakdown-page main article > section { border-radius: 16px; }
+  .script-breakdown-page > footer { padding-top: 32px; }
+  .script-breakdown-page > footer .grid { gap: 28px 18px; }
+  .script-breakdown-page > a.fixed { right: 14px; bottom: 14px; padding: 10px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .script-breakdown-page * { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
