@@ -241,3 +241,82 @@
 @media (prefers-reduced-motion: reduce) {
   .script-breakdown-page * { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Footer correction: use open editorial layout, not nested outlined boxes. */
+.script-breakdown-page > footer > div,
+.script-breakdown-page > footer > div > div,
+.script-breakdown-page > footer .grid,
+.script-breakdown-page > footer .grid > div {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.script-breakdown-page > footer > div {
+  border: 0 !important;
+}
+.script-breakdown-page > footer > div > div:first-child {
+  border: 0 !important;
+  border-bottom: 1px solid rgba(17,19,23,.28) !important;
+  padding-bottom: 30px !important;
+}
+.script-breakdown-page > footer > div > div:last-child {
+  border: 0 !important;
+  border-top: 1px solid rgba(17,19,23,.28) !important;
+  padding-top: 20px !important;
+}
+.script-breakdown-page > footer .grid {
+  border: 0 !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+.script-breakdown-page > footer .grid > div {
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+.script-breakdown-page > footer .grid > div h4 {
+  border: 0 !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+}
+.script-breakdown-page > footer .grid > div h4 + ul,
+.script-breakdown-page > footer .grid > div > div {
+  border: 0 !important;
+  background: transparent !important;
+}
+.script-breakdown-page > footer .grid > div a:not([href="mailto:care@draftsrush.com"]) {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.script-breakdown-page > footer .grid > div a[href="mailto:care@draftsrush.com"] {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(240,242,245,.8) !important;
+  border: 1px solid rgba(17,19,23,.35) !important;
+  border-radius: 10px !important;
+  padding: 9px 12px !important;
+}
+.script-breakdown-page > footer .grid > div a:hover {
+  color: #111317 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.script-breakdown-page > footer span.bg-\\[\\#F8D000\\],
+.script-breakdown-page > footer span[class*="100% Free Client-Side Tools"] {
+  border: 1px solid rgba(17,19,23,.55) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+.script-breakdown-page > footer a[aria-label="X"],
+.script-breakdown-page > footer a[aria-label="Instagram"],
+.script-breakdown-page > footer a[aria-label="YouTube"] {
+  border: 1px solid rgba(17,19,23,.35) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+@media (max-width: 767px) {
+  .script-breakdown-page > footer > div > div:first-child { padding-bottom: 24px !important; }
+  .script-breakdown-page > footer .grid { padding-top: 24px !important; padding-bottom: 24px !important; }
+  .script-breakdown-page > footer > div > div:last-child { padding-top: 18px !important; }
+}
