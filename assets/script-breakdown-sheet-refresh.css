@@ -320,3 +320,60 @@
   .script-breakdown-page > footer .grid { padding-top: 24px !important; padding-bottom: 24px !important; }
   .script-breakdown-page > footer > div > div:last-child { padding-top: 18px !important; }
 }
+
+/* CTA wrapping and spacing pass: keep labels balanced and buttons content-sized. */
+.script-breakdown-page main article > section a:not([href^="#"]),
+.script-breakdown-page main > div > div:first-child a,
+.script-breakdown-page main > div > div:last-child a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 13px 20px !important;
+  margin: 0;
+  line-height: 1.25 !important;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal !important;
+  overflow-wrap: normal;
+  word-break: normal;
+  vertical-align: middle;
+}
+.script-breakdown-page main article > section .flex.flex-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px !important;
+}
+.script-breakdown-page main article > section .flex.flex-wrap > a {
+  margin: 0 !important;
+}
+.script-breakdown-page main article > section > div.flex.flex-col.sm\\:flex-row {
+  align-items: flex-start;
+}
+.script-breakdown-page main article > section > div.flex.flex-col.sm\\:flex-row > a {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+.script-breakdown-page main article > section h2,
+.script-breakdown-page main article > section h3 {
+  max-width: 100%;
+  text-wrap: pretty;
+}
+@media (max-width: 520px) {
+  .script-breakdown-page main article > section a:not([href^="#"]),
+  .script-breakdown-page main > div > div:first-child a,
+  .script-breakdown-page main > div > div:last-child a {
+    min-height: 46px;
+    padding: 12px 16px !important;
+    font-size: 11px !important;
+    letter-spacing: .035em;
+  }
+  .script-breakdown-page main article > section .flex.flex-wrap > a {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
