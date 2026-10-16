@@ -495,5 +495,22 @@
     </svg>
     <span>Contact Desk</span>
   </a>
+
+<script>
+    function toggleMobileNav(forceOpen) {
+      var menu = document.getElementById('mobile-nav');
+      var button = document.getElementById('mobile-nav-toggle');
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      if (shouldOpen) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        button.focus();
+      }
+    }
+  </script>
 </body>
 </html>
