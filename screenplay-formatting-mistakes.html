@@ -94,70 +94,117 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Universal Header -->
-  <header class="border-b-4 border-black bg-[#F8D000] sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
+  <header class="studio-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
       <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
         <img 
           src="/drlogo.png" 
           alt="DraftsRush" 
           width="240" 
           height="64" 
-          class="h-9 sm:h-10 md:h-11 w-auto object-contain brutal-box hover:rotate-[-1deg] transition-transform" 
+          fetchpriority="high"
+          decoding="async"
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform hover:scale-[1.02]" 
         />
       </a>
 
-      <nav class="hidden md:flex items-center gap-3 font-bold text-xs tracking-wider brand-font">
-        <a href="/script-editor" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-black"></span>
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden lg:flex items-center gap-2.5 brand-font" aria-label="Primary Navigation">
+        <a href="/script-editor" class="nav-pill uppercase flex items-center gap-2">
+          <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
           <span>SCRIPT EDITOR</span>
         </a>
-        <a href="/writers-room" class="bg-[#F8D000] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+        <a href="/writers-room" class="nav-pill uppercase">
           WRITER'S ROOM
         </a>
-        <a href="/tools" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+        <a href="/tools" class="nav-pill uppercase">
           FREE TOOLS
         </a>
-        <a href="/scripts" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+        <a href="/scripts" class="nav-pill uppercase">
           SERVICES
         </a>
-        <a href="/about" class="bg-[#F0F2F5] text-[#111317] border-2 border-black px-3 py-1.5 brutal-box brutal-btn uppercase transition-transform">
+        <a href="/about" class="nav-pill uppercase">
           ABOUT
         </a>
       </nav>
 
-      <div class="hidden md:flex items-center">
-        <a href="/contact" class="bg-[#F8D000] text-black border-2 border-black px-4 py-1.5 font-black text-xs tracking-wider brand-font brutal-box brutal-btn uppercase transition-transform whitespace-nowrap flex items-center gap-1.5 hover:bg-black hover:text-[#F8D000]">
-          <span class="w-2 h-2 rounded-full bg-black"></span>
+      <!-- Desktop CTA Action -->
+      <div class="hidden lg:flex items-center">
+        <a href="/contact" class="bg-cta-yellow text-black studio-btn px-4 py-2 font-black text-xs tracking-wider brand-font uppercase whitespace-nowrap flex items-center gap-2 hover:bg-black hover:text-[#FFE600]">
+          <span class="w-2 h-2 rounded-full bg-current"></span>
           <span>ORDER DRAFT</span>
         </a>
       </div>
 
-      <button 
-        aria-label="Toggle Navigation Menu" 
-        onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
-        class="md:hidden border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        id="mobile-nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        onclick="toggleMobileNav()"
+        class="lg:hidden bg-surface-light border border-black rounded-lg p-2 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
+
     </div>
 
-    <div id="mobile-nav" class="hidden md:hidden border-t-2 border-black bg-[#F0F2F5] p-6 space-y-4 font-bold brand-font text-sm">
-      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2 text-black">
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface-light border-t border-black/20 p-6 space-y-3.5 font-bold brand-font text-sm shadow-xl">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2.5 text-black">
         <span>SCRIPT EDITOR</span>
-        <span class="bg-[#F8D000] border border-black text-[10px] px-1.5 py-0.5 font-mono">NEW</span>
+        <span class="bg-brand-yellow border border-black rounded text-[10px] px-2 py-0.5 font-mono">NEW</span>
       </a>
-      <a href="/writers-room" class="block border-b border-gray-300 pb-2">WRITER'S ROOM</a>
-      <a href="/tools" class="block border-b border-gray-300 pb-2">FREE TOOLS</a>
-      <a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a>
-      <a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a>
-      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2.5">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2.5">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2.5">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2.5">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2.5">ABOUT</a>
+      <a href="/contact" class="block text-center bg-ink text-white py-3 rounded-xl border border-black uppercase tracking-wider text-xs shadow-md">
         ORDER DRAFT
       </a>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <script>
+    function toggleMobileNav(forceOpen) {
+      var menu = document.getElementById('mobile-nav');
+      var button = document.getElementById('mobile-nav-toggle');
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      if (shouldOpen) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        button.focus();
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+
+    document.getElementById('mobile-nav').addEventListener('click', function (event) {
+      if (event.target.closest('a')) toggleMobileNav(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024) {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+  </script><!-- Main Content -->
   <main class="flex-grow">
     <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       <div class="mb-8">
@@ -167,24 +214,118 @@
       </div>
 
       <article class="space-y-12">
-        <header class="border-4 border-black bg-[#F0F2F5] p-8 md:p-12 brutal-box-lg">
-          <div class="inline-block bg-black text-white px-3 py-1 text-xs font-bold brand-font uppercase tracking-wider mb-4">
-            Coverage Audit & Screenplay Diagnostic
-          </div>
-          <h1 class="text-3xl md:text-5xl font-black brand-font leading-tight mb-4 tracking-tight">
-            10 Fatal Screenplay Formatting Mistakes That Make Producers Pass
-          </h1>
-          <p class="font-medium text-gray-700 text-sm md:text-base leading-relaxed mb-6">
-            Use this checklist to spot and correct ten common screenplay formatting problems, including inconsistent scene headings, overused parentheticals, dialogue issues, and pagination errors. For the full baseline on margins, typeface, and script elements, start with our screenplay format guide.
-          </p>
-          <div class="flex flex-wrap items-center gap-4 text-xs font-mono font-bold text-gray-600 border-t-2 border-black pt-4">
-            <span>BY DRAFTSRUSH STUDIO</span>
-            <span> </span>
-            <span>TOPIC: SCRIPT COVERAGE RED FLAGS</span>
-            <span> </span>
-            <span>12 MIN READ</span>
-          </div>
-        </header>
+        <!-- Universal Header -->
+  <header class="studio-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          fetchpriority="high"
+          decoding="async"
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform hover:scale-[1.02]" 
+        />
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden lg:flex items-center gap-2.5 brand-font" aria-label="Primary Navigation">
+        <a href="/script-editor" class="nav-pill uppercase flex items-center gap-2">
+          <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" class="nav-pill uppercase">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="nav-pill uppercase">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="nav-pill uppercase">
+          SERVICES
+        </a>
+        <a href="/about" class="nav-pill uppercase">
+          ABOUT
+        </a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden lg:flex items-center">
+        <a href="/contact" class="bg-cta-yellow text-black studio-btn px-4 py-2 font-black text-xs tracking-wider brand-font uppercase whitespace-nowrap flex items-center gap-2 hover:bg-black hover:text-[#FFE600]">
+          <span class="w-2 h-2 rounded-full bg-current"></span>
+          <span>ORDER DRAFT</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        id="mobile-nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        onclick="toggleMobileNav()"
+        class="lg:hidden bg-surface-light border border-black rounded-lg p-2 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface-light border-t border-black/20 p-6 space-y-3.5 font-bold brand-font text-sm shadow-xl">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2.5 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-brand-yellow border border-black rounded text-[10px] px-2 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2.5">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2.5">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2.5">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2.5">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2.5">ABOUT</a>
+      <a href="/contact" class="block text-center bg-ink text-white py-3 rounded-xl border border-black uppercase tracking-wider text-xs shadow-md">
+        ORDER DRAFT
+      </a>
+    </div>
+  </header>
+
+  <script>
+    function toggleMobileNav(forceOpen) {
+      var menu = document.getElementById('mobile-nav');
+      var button = document.getElementById('mobile-nav-toggle');
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      if (shouldOpen) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        button.focus();
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+
+    document.getElementById('mobile-nav').addEventListener('click', function (event) {
+      if (event.target.closest('a')) toggleMobileNav(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024) {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+  </script>
 
         <!-- Position 0 Snippet Box -->
         <section class="border-4 border-black bg-[#FFF6CF] p-6 md:p-8 brutal-box">
