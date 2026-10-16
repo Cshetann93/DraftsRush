@@ -188,3 +188,106 @@ body.page-breakdown-guide > footer .border-b-2 { border-width:1px !important; }
   body.page-breakdown-guide main a,
   body.page-breakdown-guide main button { transition:none !important; }
 }
+
+
+/* Review correction: restore the shared DraftsRush header/footer system and remove
+   accidental card-like framing from repeated content and footer elements. */
+body.page-breakdown-guide > header {
+  background: rgba(248,208,0,.98) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(17,19,23,.55) !important;
+  box-shadow: 0 4px 18px rgba(17,19,23,.045) !important;
+}
+body.page-breakdown-guide > header img[src*="drlogo"],
+body.page-breakdown-guide > footer img[src*="drlogo"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-breakdown-guide > header nav a,
+body.page-breakdown-guide > header > div a,
+body.page-breakdown-guide > header #mobile-nav a,
+body.page-breakdown-guide > header button {
+  border: 1px solid rgba(17,19,23,.28) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-breakdown-guide > header nav a {
+  background: rgba(255,255,255,.42) !important;
+}
+body.page-breakdown-guide > header nav a:hover,
+body.page-breakdown-guide > header > div a:hover {
+  background: #FFF6CF !important;
+  color: #111317 !important;
+}
+body.page-breakdown-guide > footer {
+  background: #D6E4EE !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(17,19,23,.45) !important;
+  box-shadow: none !important;
+}
+body.page-breakdown-guide > footer .border-t-2,
+body.page-breakdown-guide > footer .border-b-2,
+body.page-breakdown-guide > footer .border-2,
+body.page-breakdown-guide > footer .border {
+  border-width: 1px !important;
+  border-color: rgba(17,19,23,.22) !important;
+}
+body.page-breakdown-guide > footer .brutal-box,
+body.page-breakdown-guide > footer .brutal-box-lg,
+body.page-breakdown-guide > footer .brutal-btn,
+body.page-breakdown-guide > footer a,
+body.page-breakdown-guide > footer span {
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.page-breakdown-guide > footer .brutal-box,
+body.page-breakdown-guide > footer .brutal-box-lg,
+body.page-breakdown-guide > footer a[class*="border-"],
+body.page-breakdown-guide > footer span[class*="border-"] {
+  border-radius: 999px !important;
+}
+body.page-breakdown-guide > footer > div > div:first-child > div > a {
+  display: inline-flex !important;
+  align-items: center;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body.page-breakdown-guide > footer .grid > div > div a[href^="mailto:"] {
+  background: rgba(255,255,255,.42) !important;
+}
+body.page-breakdown-guide > footer a:hover {
+  text-decoration: underline;
+}
+body.page-breakdown-guide main article > section {
+  border: 0 !important;
+  border-top: 1px solid rgba(17,19,23,.2) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+body.page-breakdown-guide main article > section:nth-of-type(1),
+body.page-breakdown-guide main article > section:nth-of-type(2),
+body.page-breakdown-guide main article > section:nth-of-type(3),
+body.page-breakdown-guide main article > section:nth-of-type(4),
+body.page-breakdown-guide main article > section:nth-of-type(5),
+body.page-breakdown-guide main article > section:nth-of-type(6),
+body.page-breakdown-guide main article > section:nth-of-type(7),
+body.page-breakdown-guide main article > section:nth-of-type(8) {
+  background: transparent !important;
+}
+body.page-breakdown-guide main article > section ul.grid > li {
+  border: 1px solid rgba(17,19,23,.14) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  background: rgba(255,255,255,.48) !important;
+}
+body.page-breakdown-guide main article > section a[class*="border-"] {
+  box-shadow: none !important;
+}
+body.page-breakdown-guide main article > section .brutal-box,
+body.page-breakdown-guide main article > section .brutal-box-lg {
+  box-shadow: none !important;
+}
