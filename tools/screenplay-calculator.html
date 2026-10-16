@@ -368,11 +368,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div>
           <label class="block font-black text-xs uppercase tracking-wider mb-2">Screenplay Page Count</label>
-          <input id="page-count-input" type="number" min="1" max="250" value="105" class="w-full border-2 border-black p-3 font-mono font-bold bg-white text-base focus:bg-[#FFFDE6]">
+          <input id="page-count-input" type="number" min="1" max="250" value="105" class="w-full border-[1.5px] border-black rounded-xl p-3 font-mono font-bold bg-white text-base focus:bg-[#FFFDE6]">
         </div>
         <div>
           <label class="block font-black text-xs uppercase tracking-wider mb-2">Script Density & Style</label>
-          <select id="density-select" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors">
+          <select id="density-select" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors">
             <option value="0.85">Dialogue-Dense (Sorkin/Tarantino) ~0.85 min/page</option>
             <option value="1.0" selected>Standard Film Balance (1 page = 1 min)</option>
             <option value="1.25">Action / Silent Sequences ~1.25 min/page</option>
@@ -400,26 +400,26 @@
 
       <!-- Quick Metrics Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-pages" class="text-3xl font-black brand-font">105</div>
           <p class="text-xs font-bold text-gray-600 uppercase">Pages</p>
         </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-runtime" class="text-3xl font-black brand-font text-blue-700">105m</div>
           <p class="text-xs font-bold text-gray-600 uppercase">Est. Runtime</p>
         </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-hours" class="text-3xl font-black brand-font text-emerald-700">1h 45m</div>
           <p class="text-xs font-bold text-gray-600 uppercase">Duration</p>
         </div>
-        <div class="border-2 border-black bg-[#F8D000] p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-[#F8D000] p-3 brutal-box">
           <div id="metric-status" class="text-lg font-black brand-font mt-1 text-black">Feature Spec</div>
           <p class="text-xs font-bold text-black uppercase">Format Class</p>
         </div>
       </div>
 
       <!-- Live Diagnosis Feedback Card -->
-      <div id="diagnostic-card" class="border-2 border-black p-5 bg-white brutal-box space-y-2">
+      <div id="diagnostic-card" class="border-[1.5px] border-black rounded-xl p-5 bg-white brutal-box space-y-2">
         <div class="font-black text-xs brand-font uppercase">Coverage Reader Pacing Audit</div>
         <p id="diagnostic-text" class="text-sm font-medium text-gray-700">
           At 105 pages, this draft sits in the ideal sweet spot for commercial feature submissions (90 to 110 pages). Studio readers favor scripts under 115 pages for faster read passes.
@@ -457,7 +457,7 @@
       </div>
 
       <!-- Industry Length Benchmark Table -->
-      <div class="border-2 border-black bg-[#F0F2F5] p-5 space-y-3">
+      <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 space-y-3">
         <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Industry Screenplay Standards by Format</h4>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs font-medium bg-white border border-black">
@@ -504,15 +504,15 @@
         Polish and format your screenplay draft across our free client-side suite:
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/script-editor" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>📝 Online Script Editor</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft screenplay pages in 12pt Courier with automated element tabs →</span>
         </a>
-        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>✂ Dialogue Word Pruner</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Trim conversational fluff and passive lines to shave bloated page counts →</span>
         </a>
-        <a href="/tools/script-timer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>⏱ Script Pacing Timer</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate spoken voiceover duration for video essays and presenter shorts →</span>
         </a>
@@ -528,14 +528,14 @@
           We research, outline, and draft complete feature screenplays, TV pilots, and video essays with clean Courier 12pt formatting and tight pacing control.
         </p>
       </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
         Explore Script Packs →
       </a>
     </div>
 
     <!-- Bottom Return Button -->
     <div class="mt-8">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
         ← Back to Free Tools
       </a>
     </div>
@@ -568,19 +568,19 @@
           </span>
           <div class="flex items-center gap-1.5">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>

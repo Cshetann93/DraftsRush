@@ -426,7 +426,7 @@
         <button 
           aria-label="Toggle Navigation Menu" 
           onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" 
-          class="border-2 border-black bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
+          class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-1.5 brutal-box brutal-btn">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
@@ -446,7 +446,7 @@
       <a href="/scripts" class="block border-b border-gray-300 pb-2">SERVICES</a>
       <a href="/partner" class="block border-b border-gray-300 pb-2">PARTNER WITH US</a>
       <a href="/about" class="block border-b border-gray-300 pb-2">ABOUT</a>
-      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-2 border-black brutal-box uppercase tracking-wider text-xs">
+      <a href="/contact" class="block text-center bg-black text-white py-2.5 border-[1.5px] border-black rounded-xl brutal-box uppercase tracking-wider text-xs">
         ORDER DRAFT
       </a>
     </div>
@@ -457,7 +457,7 @@
 
       <!-- Top Back Link -->
       <div class="mb-8">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
           ← Return to the Writer's Room
         </a>
       </div>
@@ -487,7 +487,7 @@
             <!-- Element Selector Dropdown -->
             <div class="flex items-center gap-2">
               <label for="element-select" class="font-mono text-xs font-black uppercase tracking-wider text-black">Format Line:</label>
-              <select id="element-select" class="bg-white border-2 border-black font-mono text-xs font-bold py-1.5 px-3 brutal-box focus:outline-none cursor-pointer">
+              <select id="element-select" class="bg-white border-[1.5px] border-black rounded-xl font-mono text-xs font-bold py-1.5 px-3 brutal-box focus:outline-none cursor-pointer">
                 <option value="scene-heading">Scene Heading (INT./EXT.)</option>
                 <option value="action" selected>Action Block</option>
                 <option value="character">Character Name</option>
@@ -495,7 +495,7 @@
                 <option value="dialogue">Dialogue</option>
                 <option value="transition">Transition (CUT TO:)</option>
               </select>
-              <button onclick="applySelectedFormat()" class="bg-black text-white font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
+              <button onclick="applySelectedFormat()" class="bg-black text-white font-mono text-xs font-bold px-3 py-1.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase">
                 Apply
               </button>
             </div>
@@ -503,20 +503,20 @@
             <!-- Action Controls -->
             <div class="flex items-center gap-2">
               <span id="draft-save-status" role="status" aria-live="polite" class="font-mono text-[10px] font-bold uppercase text-black">Not saved</span>
-              <button id="copy-script-btn" onclick="copyScreenplayText()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
+              <button id="copy-script-btn" onclick="copyScreenplayText()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase">
                 Copy
               </button>
-              <button onclick="loadDemo()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
+              <button onclick="loadDemo()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase">
                 Demo
               </button>
-              <button onclick="clearEditor()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase">
+              <button onclick="clearEditor()" class="bg-white text-black font-mono text-xs font-bold px-3 py-1.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase">
                 Clear
               </button>
               <div class="relative inline-block text-left">
-                <button onclick="document.getElementById('export-menu').classList.toggle('hidden')" class="bg-black text-white font-mono text-xs font-bold px-3 py-1.5 border-2 border-black brutal-box brutal-btn uppercase flex items-center gap-1">
+                <button onclick="document.getElementById('export-menu').classList.toggle('hidden')" class="bg-black text-white font-mono text-xs font-bold px-3 py-1.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase flex items-center gap-1">
                   Export ▾
                 </button>
-                <div id="export-menu" class="hidden absolute right-0 mt-2 w-36 bg-white border-2 border-black brutal-box z-20 font-mono text-xs">
+                <div id="export-menu" class="hidden absolute right-0 mt-2 w-36 bg-white border-[1.5px] border-black rounded-xl brutal-box z-20 font-mono text-xs">
                   <button onclick="exportTxt()" class="w-full text-left px-3 py-2 hover:bg-[#F8D000] border-b border-black font-bold">Text (.TXT)</button>
                   <button onclick="exportFountain()" class="w-full text-left px-3 py-2 hover:bg-[#F8D000] border-b border-black font-bold">Fountain (.FOUNTAIN)</button>
                   <button onclick="window.print()" class="w-full text-left px-3 py-2 hover:bg-[#F8D000] font-bold">Print / PDF</button>
@@ -582,7 +582,7 @@
               <textarea 
                 id="story-input" 
                 rows="8" 
-                class="w-full border-2 border-black p-3 font-mono text-xs bg-[#FAF9F5] focus:outline-none brutal-box" 
+                class="w-full border-[1.5px] border-black rounded-xl p-3 font-mono text-xs bg-[#FAF9F5] focus:outline-none brutal-box" 
                 placeholder="Example:
 Elena walked into the dark warehouse. Rain pounded the tin roof. 
 
@@ -592,7 +592,7 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
 
               <button 
                 onclick="convertStoryToScript()" 
-                class="w-full bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-4 py-3 border-2 border-black brutal-box brutal-btn tracking-wider">
+                class="w-full bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-4 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
                 Convert Story to Script →
               </button>
             </div>
@@ -610,31 +610,31 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
 
             <ul class="space-y-2 font-mono text-xs">
               <li>
-                <a href="/tools/script-timer" class="flex items-center justify-between p-2.5 bg-white text-black border-2 border-black hover:bg-[#F8D000] transition-colors font-bold">
+                <a href="/tools/script-timer" class="flex items-center justify-between p-2.5 bg-white text-black border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold">
                   <span>⏱ Script Pacing Timer</span>
                   <span>→</span>
                 </a>
               </li>
               <li>
-                <a href="/tools/hook-analyzer" class="flex items-center justify-between p-2.5 bg-white text-black border-2 border-black hover:bg-[#F8D000] transition-colors font-bold">
+                <a href="/tools/hook-analyzer" class="flex items-center justify-between p-2.5 bg-white text-black border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold">
                   <span>🎯 5-Second Hook Analyzer</span>
                   <span>→</span>
                 </a>
               </li>
               <li>
-                <a href="/tools/dialogue-pruner" class="flex items-center justify-between p-2.5 bg-white text-black border-2 border-black hover:bg-[#F8D000] transition-colors font-bold">
+                <a href="/tools/dialogue-pruner" class="flex items-center justify-between p-2.5 bg-white text-black border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold">
                   <span>✂ Dialogue Word Pruner</span>
                   <span>→</span>
                 </a>
               </li>
               <li>
-                <a href="/tools/broll-generator" class="flex items-center justify-between p-2.5 bg-white text-black border-2 border-black hover:bg-[#F8D000] transition-colors font-bold">
+                <a href="/tools/broll-generator" class="flex items-center justify-between p-2.5 bg-white text-black border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold">
                   <span>🎬 B-Roll Cutaway Generator</span>
                   <span>→</span>
                 </a>
               </li>
               <li>
-                <a href="/tools/format-converter" class="flex items-center justify-between p-2.5 bg-white text-black border-2 border-black hover:bg-[#F8D000] transition-colors font-bold">
+                <a href="/tools/format-converter" class="flex items-center justify-between p-2.5 bg-white text-black border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold">
                   <span>📄 Dual-Column AV Converter</span>
                   <span>→</span>
                 </a>
@@ -649,7 +649,7 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
             <p class="text-xs font-medium text-gray-800 leading-relaxed">
               Review our definitive element encyclopedia covering all 16 technical screenplay specs, tab stops, and Courier margin rules.
             </p>
-            <a href="/screenplay-format-guide" class="inline-block bg-white text-black font-black brand-font text-xs uppercase px-4 py-2 border-2 border-black brutal-box brutal-btn tracking-wider">
+            <a href="/screenplay-format-guide" class="inline-block bg-white text-black font-black brand-font text-xs uppercase px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
               Read Formatting Manual →
             </a>
           </div>
@@ -664,7 +664,7 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
         <p class="font-medium text-gray-800 text-base md:text-lg mb-8 max-w-2xl mx-auto">
           We combine calculated pacing, structured visual cues, and narrative suspense to build high-retention video screenplays for creators and teams.
         </p>
-        <a href="/contact" class="inline-block bg-black text-white brand-font font-black text-sm md:text-base px-8 py-3.5 border-2 border-black brutal-box hover:bg-gray-800 uppercase tracking-wider">
+        <a href="/contact" class="inline-block bg-black text-white brand-font font-black text-sm md:text-base px-8 py-3.5 border-[1.5px] border-black rounded-xl brutal-box hover:bg-gray-800 uppercase tracking-wider">
           Order A Custom Draft
         </a>
       </div>
@@ -699,19 +699,19 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
           </span>
           <div class="flex items-center gap-1.5">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -810,7 +810,7 @@ Marcus pointed his flashlight at her and shouted, 'Put your hands up!'"></textar
   <!-- Floating Contact Widget -->
   <a href="/contact" 
      aria-label="Contact Desk"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-4 py-3 border-2 border-black brutal-box brutal-btn transition-transform select-none">
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-4 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn transition-transform select-none">
     <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>

@@ -368,7 +368,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div>
           <label class="block font-black text-xs uppercase tracking-wider mb-2">1. Cold Open / Hook Pacing</label>
-          <select id="param-hook" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
+          <select id="param-hook" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
             <option value="strong" selected>High Pacing (Curiosity loop in 3s)</option>
             <option value="moderate">Average (Voiceover thesis in 12s)</option>
             <option value="weak">Slow (Greetings/logo intro > 15s)</option>
@@ -377,7 +377,7 @@
 
         <div>
           <label class="block font-black text-xs uppercase tracking-wider mb-2">2. Visual Interrupt Frequency</label>
-          <select id="param-interrupt" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
+          <select id="param-interrupt" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
             <option value="frequent" selected>High (B-Roll cut every 3-4s)</option>
             <option value="medium">Standard (Graphic shift every 7-10s)</option>
             <option value="sparse">Low (Static talking-head > 12s)</option>
@@ -386,7 +386,7 @@
 
         <div>
           <label class="block font-black text-xs uppercase tracking-wider mb-2">3. Outro & CTA Execution</label>
-          <select id="param-outro" class="w-full border-2 border-black p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
+          <select id="param-outro" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white focus:bg-[#F8D000] transition-colors text-xs">
             <option value="bridge" selected>Video-to-Video Handoff (&lt;8s)</option>
             <option value="standard">Standard Pitch (Subscribe + Like)</option>
             <option value="announcement">Premature Announcement ("In conclusion")</option>
@@ -431,26 +431,26 @@
 
       <!-- Simulation Summary Metrics Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-30s" class="text-3xl font-black brand-font text-emerald-700">76%</div>
           <p class="text-xs font-bold text-gray-600 uppercase">30-Sec Retention</p>
         </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-apv" class="text-3xl font-black brand-font text-blue-700">58%</div>
           <p class="text-xs font-bold text-gray-600 uppercase">Predicted APV</p>
         </div>
-        <div class="border-2 border-black bg-white p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
           <div id="metric-churn" class="text-3xl font-black brand-font text-gray-900">Low</div>
           <p class="text-xs font-bold text-gray-600 uppercase">Mid-Video Churn</p>
         </div>
-        <div class="border-2 border-black bg-[#F8D000] p-3 brutal-box">
+        <div class="border-[1.5px] border-black rounded-xl bg-[#F8D000] p-3 brutal-box">
           <div id="metric-recommend" class="text-lg font-black brand-font mt-1 text-black">High Reach</div>
           <p class="text-xs font-bold text-black uppercase">Algorithmic Tier</p>
         </div>
       </div>
 
       <!-- Live Diagnosis Feedback Card -->
-      <div id="diagnostic-card" class="border-2 border-black p-5 bg-[#C2F0C2] text-black brutal-box space-y-2">
+      <div id="diagnostic-card" class="border-[1.5px] border-black rounded-xl p-5 bg-[#C2F0C2] text-black brutal-box space-y-2">
         <div class="font-black text-xs brand-font uppercase">Simulation Diagnostic Audit</div>
         <p id="diagnostic-text" class="text-sm font-medium">
           Strong configuration. Hook drops less than 25% of viewers at second 00:30, high pattern interrupts maintain a flat mid-video slope, and the video-to-video handoff prevents an outro cliff.
@@ -488,7 +488,7 @@
       </div>
 
       <!-- Retention Threshold Matrix -->
-      <div class="border-2 border-black bg-[#F0F2F5] p-5 space-y-3">
+      <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 space-y-3">
         <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Algorithm Performance Benchmarks (Long-Form Videos)</h4>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
           <div>
@@ -517,15 +517,15 @@
         Eliminate retention drop-offs across every stage of your screenplay:
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/tools/hook-analyzer" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/tools/hook-analyzer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>🎯 5-Sec Hook Analyzer</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Audit and tighten your opening lines to clear the 30-second mobile cliff →</span>
         </a>
-        <a href="/tools/cta-checker" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/tools/cta-checker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>🔔 Call-to-Action Auditor</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Eliminate trigger words that announce the end and destroy outro hold →</span>
         </a>
-        <a href="/tools/broll-generator" class="p-3 bg-white border-2 border-black hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+        <a href="/tools/broll-generator" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
           <span>🎬 B-Roll Shotlist Generator</span>
           <span class="text-[10px] text-gray-600 mt-1 font-sans">Plan visual pattern interrupts every 3.5 seconds to smooth out mid-video churn →</span>
         </a>
@@ -541,14 +541,14 @@
           We research, structure, and write video essays and documentary screenplays with calculated 90-second mini-arc resets and high-converting handoffs.
         </p>
       </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-2 border-black brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
         Explore Script Packs →
       </a>
     </div>
 
     <!-- Bottom Return Button -->
     <div class="mt-8">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-2 border-black brutal-box brutal-btn uppercase tracking-wider">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
         ← Back to Free Tools
       </a>
     </div>
@@ -581,19 +581,19 @@
           </span>
           <div class="flex items-center gap-1.5">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-2 border-black brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -761,7 +761,7 @@
         metricRecommend.innerText = 'High Reach';
         metric30s.className = 'text-3xl font-black brand-font text-emerald-700';
         metricApv.className = 'text-3xl font-black brand-font text-emerald-700';
-        card.className = 'border-2 border-black p-5 bg-[#C2F0C2] text-black brutal-box space-y-2';
+        card.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#C2F0C2] text-black brutal-box space-y-2';
         renderFeedback(`✓ High-Performing Retention Curve (${apv}% APV):`, ` Strong initial hook hold (>${hold30}%), constant visual pattern interrupts, and a seamless outro handoff give this configuration priority browse and recommended feed distribution.`);
       } else if (apv >= 40) {
         curveStatus.innerText = 'AVERAGE';
@@ -769,7 +769,7 @@
         metricRecommend.innerText = 'Search / Niche';
         metric30s.className = 'text-3xl font-black brand-font text-amber-700';
         metricApv.className = 'text-3xl font-black brand-font text-amber-700';
-        card.className = 'border-2 border-black p-5 bg-[#FFF6CF] text-black brutal-box space-y-2';
+        card.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFF6CF] text-black brutal-box space-y-2';
         renderFeedback(`⚠️ Moderate Retention Curve (${apv}% APV):`, ' Your mid-video or outro parameters are losing viewers. Tighten the middle section with frequent B-roll and replace conventional closing remarks with a direct video handoff.');
       } else {
         curveStatus.innerText = 'CHURN RISK';
@@ -777,7 +777,7 @@
         metricRecommend.innerText = 'Suppressed';
         metric30s.className = 'text-3xl font-black brand-font text-red-700';
         metricApv.className = 'text-3xl font-black brand-font text-red-700';
-        card.className = 'border-2 border-black p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
+        card.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
         renderFeedback(`⚠️ Critical Retention Drop-Off (${apv}% APV):`, " Over half your audience leaves before second 00:30, and the outro triggers a severe cliff. Cut the introductory greeting and avoid saying 'in conclusion' at the end.");
       }
     }
