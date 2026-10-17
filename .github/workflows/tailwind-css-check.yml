@@ -8,7 +8,7 @@ on:
       - replace-tailwind-cdn-with-built-css
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-css:
@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -26,9 +29,29 @@ jobs:
         run: npm run build:css
       - name: Verify generated CSS exists and is non-empty
         run: test -s assets/tailwind-generated.css
+      - name: Remove only exact duplicate sitewide stylesheet tags
+        if: github.event_name == 'pull_request'
+        run: node scripts/dedupe-sitewide-css.cjs
+      - name: Commit duplicate stylesheet cleanup to the PR branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' 'tools/*.html' assets/tailwind-generated.css
+          if git diff --cached --quiet; then
+            echo "No duplicate stylesheet links to remove."
+          else
+            git commit -m "Remove duplicate sitewide stylesheet links"
+            git push origin "HEAD:${{ github.head_ref }}"
+          fi
+      - name: Audit duplicate sitewide stylesheet links
+        run: npm run audit:css
       - name: Upload generated CSS for review
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: draftsrush-tailwind-generated-css
-          path: assets/tailwind-generated.css
-          if-no-files-found: error
+          path: |
+            assets/tailwind-generated.css
+            sitewide-css-duplicate-audit.json
+          if-no-files-found: warn
