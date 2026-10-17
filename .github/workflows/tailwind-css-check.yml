@@ -1,0 +1,34 @@
+name: Tailwind CSS build check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - replace-tailwind-cdn-with-built-css
+
+permissions:
+  contents: read
+
+jobs:
+  build-css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install build dependency
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Build production CSS
+        run: npm run build:css
+      - name: Verify generated CSS exists and is non-empty
+        run: test -s assets/tailwind-generated.css
+      - name: Upload generated CSS for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: draftsrush-tailwind-generated-css
+          path: assets/tailwind-generated.css
+          if-no-files-found: error

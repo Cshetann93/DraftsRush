@@ -1,0 +1,11 @@
+{
+  "name": "draftsrush-static-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/tailwind-input.css -o assets/tailwind-generated.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
