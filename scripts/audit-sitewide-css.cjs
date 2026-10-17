@@ -18,7 +18,7 @@ walk(root);
 const duplicates = [];
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
-  const matches = html.match(/<link\b(?=[^>]*href=["']\/assets\/draftsrush-sitewide\.css["'])[^>]*>/gi) || [];
+  const matches = html.match(/href=["']\/assets\/draftsrush-sitewide\.css["']/gi) || [];
   if (matches.length > 1) duplicates.push({ file: path.relative(root, file).split(path.sep).join('/'), count: matches.length });
 }
 
