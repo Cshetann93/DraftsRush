@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFBGQ8WX');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Cinematography Shot Guide: Camera Shots & Angles | DraftsRush</title>
+  <meta name="description" content="Explore a free interactive cinematography shot guide. Compare camera shot sizes, angles, movements and focus techniques, with examples, emotional effects and practical filming tips.">
+  <link rel="canonical" href="https://www.draftsrush.com/tools/cinematography-lab">
+
+  <!-- Favicon References -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="/favicon.png?v=4">
+
+  <!-- Instant Dark Mode Initializer -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.body) document.body.classList.add('dark');
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/tailwind-generated.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .brutal-box { box-shadow: 4px 4px 0px #111317; }
+    .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+
+    /* Pill Toggle Switch Design */
+    .theme-toggle {
+      position: relative;
+      width: 62px;
+      height: 32px;
+      border-radius: 9999px;
+      background-color: #FF5A1F;
+      border: 2px solid #111317;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7px;
+      box-shadow: 2px 2px 0px #111317;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .dark .theme-toggle {
+      background-color: #1F232B;
+      border-color: #FFFFFF;
+      box-shadow: 2px 2px 0px #000000;
+    }
+    .theme-toggle-icon {
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .theme-toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 32px;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background-color: #FFFFFF;
+      border: 2px solid #111317;
+      transition: left 0.2s ease;
+    }
+    .dark .theme-toggle-thumb {
+      left: 2px;
+      border-color: #000000;
+    }
+
+    /* Dark Mode Core Theme Overrides */
+    body.dark {
+      background-color: #0E1015 !important;
+      color: #FFFFFF !important;
+    }
+    body.dark header {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark header a, 
+    body.dark header nav a {
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+      background-color: #1F232B !important;
+    }
+    body.dark header nav a[href="/tools"] {
+      background-color: #F8D000 !important;
+      color: #111317 !important;
+      border-color: #111317 !important;
+    }
+    body.dark #mobile-nav {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark #mobile-nav a {
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark main .bg-\[\#F0F2F5\],
+    body.dark .bg-white {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+      box-shadow: 4px 4px 0px #000000 !important;
+    }
+    body.dark textarea#script-input {
+      background-color: #1F232B !important;
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark .text-gray-700, 
+    body.dark .text-gray-600,
+    body.dark .text-gray-500 {
+      color: #9CA3AF !important;
+    }
+    body.dark table th {
+      border-color: #2A2F3A !important;
+    }
+    body.dark table td {
+      border-color: #2A2F3A !important;
+      color: #E2E4E9 !important;
+    }
+    body.dark table tbody tr {
+      background-color: #16181E !important;
+    }
+    body.dark table tbody tr:hover {
+      background-color: #1F232B !important;
+    }
+    body.dark .bg-\[\#FFF6CF\] {
+      background-color: #1B1E26 !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Footer Dark Mode */
+    body.dark footer {
+      background-color: #111317 !important;
+      border-color: #2A2F3A !important;
+      color: #E2E4E9 !important;
+    }
+    body.dark footer p, 
+    body.dark footer a, 
+    body.dark footer h4 {
+      color: #E2E4E9 !important;
+    }
+    body.dark footer span.bg-\[\#F8D000\] {
+      color: #111317 !important;
+    }
+    body.dark footer .text-gray-800,
+    body.dark footer .text-gray-700 {
+      color: #9CA3AF !important;
+    }
+    body.dark footer .border-black,
+    body.dark footer .border-t-2,
+    body.dark footer .border-b-2 {
+      border-color: #2A2F3A !important;
+    }
+    body.dark footer a[style*="#F0F2F5"] {
+      background-color: #1F232B !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+    }
+    body.dark footer svg.fill-black {
+      fill: #FFFFFF !important;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
+  <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
+<!-- Studio Core Classes & Sitewide Styles -->
+  <style>
+    :root {
+      --bg-base: #E2E4E9;
+      --ink: #111317;
+      --brand-yellow: #F8D000;
+      --cta-yellow: #FFE600;
+      --surface-light: #F0F2F5;
+      --surface-blue: #D6E4EE;
+      --surface-cream: #FFF6CF;
+      --surface-mint: #E1F5E3;
+      --section-slate: #D4D7E1;
+      --section-steel: #CCD0DC;
+    }
+    .brand-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+    .studio-header {
+      background-color: rgba(248, 208, 0, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #111317;
+      box-shadow: 0 4px 20px -4px rgba(17, 19, 23, 0.06);
+    }
+    .nav-pill {
+      background-color: #F0F2F5;
+      color: #111317;
+      border: 1.5px solid rgba(17, 19, 23, 0.85);
+      border-radius: 10px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 4px rgba(17, 19, 23, 0.06);
+    }
+    .nav-pill:hover {
+      background-color: #111317 !important;
+      color: #F0F2F5 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(17, 19, 23, 0.14);
+    }
+    .nav-pill:hover .status-dot { background-color: #F8D000; }
+    .studio-btn {
+      border: 1.5px solid #111317;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 10px -2px rgba(17, 19, 23, 0.1);
+    }
+    .studio-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
+    }
+    .studio-btn:active { transform: translateY(0); }
+    .bg-surface-light { background-color: #F0F2F5 !important; }
+    .bg-surface-blue { background-color: #D6E4EE !important; }
+    .bg-brand-yellow { background-color: #F8D000 !important; }
+    .bg-cta-yellow { background-color: #FFE600 !important; }
+    .bg-ink { background-color: #111317 !important; }
+  </style>
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Interactive Cinematography Shot Guide | DraftsRush">
+  <meta property="og:description" content="Learn camera shots, angles, movements and focus techniques with a free interactive cinematography guide.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/cinematography-lab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interactive Cinematography Shot Guide | DraftsRush">
+  <meta name="twitter:description" content="Explore camera shot sizes, angles, movements and focus techniques in this free cinematography learning tool.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <style>
+.cine-lab{color:#111317}.cine-kicker{font:700 10px 'JetBrains Mono',monospace;letter-spacing:.13em;text-transform:uppercase}.cine-panel{background:#F0F2F5;border:1.5px solid #111317;border-radius:18px;box-shadow:4px 4px 0 #111317}
+.cine-chip{border:1.5px solid #111317;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:800;background:#F0F2F5}.cine-chip[aria-pressed=true]{background:#F8D000;box-shadow:2px 2px 0 #111317}.cine-shot{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:6px;padding:14px;border:1.5px solid #111317;border-radius:14px;background:#F0F2F5;min-height:100px}.cine-shot[aria-pressed=true],.cine-shot:hover{background:#FFF6CF}.cine-shot[aria-pressed=true]{box-shadow:3px 3px 0 #111317}
+.cine-chip:focus-visible,.cine-shot:focus-visible{outline:3px solid #F8D000;outline-offset:3px}.cine-view{position:relative;width:100%;aspect-ratio:16/9;min-height:220px;overflow:hidden;border:1.5px solid #111317;border-radius:14px;background:#15212b;isolation:isolate}.cine-sky{position:absolute;inset:0;background:linear-gradient(180deg,#344a5a,#7f9296 48%,#d6c5a4)}.cine-backdrop{position:absolute;left:-5%;right:-5%;bottom:15%;height:48%;background:#445c58;clip-path:polygon(0 65%,20% 15%,37% 60%,55% 0,77% 55%,100% 25%,100% 100%,0 100%)}.cine-floor{position:absolute;left:-10%;right:-10%;bottom:-5%;height:32%;background:#27383b}.cine-subject{position:absolute;width:18%;height:65%;bottom:9%;left:50%;transform:translateX(-50%);transition:all .3s}.cine-head{position:absolute;top:0;left:34%;width:32%;aspect-ratio:1;border-radius:50%;background:#bd9272}.cine-hair{position:absolute;top:-1%;left:30%;width:40%;height:14%;border-radius:50% 50% 20% 20%;background:#25272b;z-index:1}.cine-body{position:absolute;top:20%;bottom:0;left:5%;right:5%;background:linear-gradient(90deg,#252c35,#657784 48%,#252c35);clip-path:polygon(30% 0,70% 0,100% 23%,85% 100%,15% 100%,0 23%)}
+.cine-crosshair{position:absolute;inset:8%;border:1px solid #ffffff66;pointer-events:none}.cine-crosshair:before,.cine-crosshair:after{content:"";position:absolute;background:#ffffff66}.cine-crosshair:before{width:1px;top:0;bottom:0;left:50%}.cine-crosshair:after{height:1px;left:0;right:0;top:50%}.cine-frame-label{position:absolute;z-index:4;left:12px;right:12px;bottom:10px;display:flex;justify-content:space-between;color:#fff;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 1px 5px #000}
+.cine-subject.wide{width:9%;height:35%}.cine-subject.full{width:13%;height:53%}.cine-subject.medium{width:22%;height:70%}.cine-subject.close{width:46%;height:110%;bottom:-9%}.cine-subject.extreme{width:100%;height:150%;bottom:-15%}.cine-subject.extreme .cine-body{display:none}.cine-subject.extreme .cine-head{width:65%;left:17%;top:12%}.cine-subject.low{transform:translateX(-50%) perspective(400px) rotateX(-10deg) scale(1.12)}.cine-subject.high{transform:translateX(-50%) perspective(400px) rotateX(18deg) scale(.9)}.cine-subject.dutch{transform:translateX(-50%) rotate(-10deg)}.cine-view.blur .cine-backdrop{filter:blur(4px)}.cine-view.push .cine-subject{transform:translateX(-50%) scale(1.18)}.cine-view.pull .cine-subject{transform:translateX(-50%) scale(.86)}.cine-rule{border-top:1px solid #c4c7ce}
+@media(max-width:640px){.cine-view{min-height:190px}.cine-panel{box-shadow:3px 3px 0 #111317}.cine-chip{padding:8px 10px}}@media(prefers-reduced-motion:reduce){.cine-lab *{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"DraftsRush Interactive Cinematography Shot Guide","url":"https://www.draftsrush.com/tools/cinematography-lab","description":"A free interactive guide to cinematography shot sizes, camera angles, camera movements and focus techniques.","applicationCategory":"EducationalApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"DraftsRush","url":"https://www.draftsrush.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the main types of camera shots?","acceptedAnswer":{"@type":"Answer","text":"Common shot sizes include extreme wide shot, wide shot, full shot, medium shot, medium close-up, close-up and extreme close-up. Other common setups include over-the-shoulder, point-of-view, two-shot, reverse and insert shots."}},{"@type":"Question","name":"What is the difference between a camera shot and a camera angle?","acceptedAnswer":{"@type":"Answer","text":"Shot size describes how much of the subject appears in frame, while camera angle describes the camera's viewpoint, such as eye-level, high-angle, low-angle, overhead or Dutch angle."}},{"@type":"Question","name":"What are the main camera movements in cinematography?","acceptedAnswer":{"@type":"Answer","text":"Common camera movements include pan, tilt, dolly, tracking, push-in, pull-out, crane, handheld, stabilised movement, whip pan, zoom and dolly zoom."}},{"@type":"Question","name":"What is an over-the-shoulder shot used for?","acceptedAnswer":{"@type":"Answer","text":"An over-the-shoulder shot frames part of one character in the foreground while showing another character, often during dialogue. It helps establish spatial relationships and connects the conversation to a character's viewpoint."}},{"@type":"Question","name":"How do filmmakers choose the right shot?","acceptedAnswer":{"@type":"Answer","text":"Choose based on what the audience needs to notice or feel. Wide shots establish place, close-ups emphasise reactions or details, angles change perceived presence, and camera movement can reveal information or guide attention."}}]}</script>
+
+</head>
+<body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Universal Header -->
+  <header class="studio-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          fetchpriority="high"
+          decoding="async"
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform hover:scale-[1.02]" 
+        />
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden lg:flex items-center gap-2.5 brand-font" aria-label="Primary Navigation">
+        <a href="/script-editor" class="nav-pill uppercase flex items-center gap-2">
+          <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" class="nav-pill uppercase">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="nav-pill uppercase">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="nav-pill uppercase">
+          SERVICES
+        </a>
+        <a href="/about" class="nav-pill uppercase">
+          ABOUT
+        </a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden lg:flex items-center">
+        <a href="/contact" class="bg-cta-yellow text-black studio-btn px-4 py-2 font-black text-xs tracking-wider brand-font uppercase whitespace-nowrap flex items-center gap-2 hover:bg-black hover:text-[#FFE600]">
+          <span class="w-2 h-2 rounded-full bg-current"></span>
+          <span>ORDER DRAFT</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        id="mobile-nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        onclick="toggleMobileNav()"
+        class="lg:hidden bg-surface-light border border-black rounded-lg p-2 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface-light border-t border-black/20 p-6 space-y-3.5 font-bold brand-font text-sm shadow-xl">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2.5 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-brand-yellow border border-black rounded text-[10px] px-2 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2.5">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2.5">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2.5">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2.5">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2.5">ABOUT</a>
+      <a href="/contact" class="block text-center bg-ink text-white py-3 rounded-xl border border-black uppercase tracking-wider text-xs shadow-md">
+        ORDER DRAFT
+      </a>
+    </div>
+  </header>
+
+  <script>
+    function toggleMobileNav(forceOpen) {
+      var menu = document.getElementById('mobile-nav');
+      var button = document.getElementById('mobile-nav-toggle');
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      if (shouldOpen) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        button.focus();
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+
+    document.getElementById('mobile-nav').addEventListener('click', function (event) {
+      if (event.target.closest('a')) toggleMobileNav(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024) {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+  </script>
+<main class="cine-lab flex-grow max-w-6xl mx-auto px-5 sm:px-6 py-8 md:py-12 w-full">
+<nav aria-label="Breadcrumb" class="cine-kicker text-gray-600 mb-5"><a href="/" class="hover:underline">DraftsRush</a> / <a href="/tools" class="hover:underline">Free Tools</a> / Cinematography Lab</nav>
+<section class="grid lg:grid-cols-[1.02fr_.98fr] gap-7 lg:gap-10 items-end mb-10"><div><div class="flex flex-wrap gap-2 mb-4"><span class="cine-kicker bg-[#F8D000] border border-black px-3 py-1.5 rounded-full">Interactive shot guide</span><span class="cine-kicker border border-black px-3 py-1.5 rounded-full bg-[#F0F2F5]">Free · Learn by exploring</span></div><h1 class="brand-font text-4xl sm:text-5xl lg:text-6xl font-black leading-[.98] tracking-tight mb-5">Learn Cinematography.<br><span class="text-gray-500">Choose Every Shot.</span></h1><p class="text-base md:text-lg leading-relaxed max-w-xl text-gray-700">Explore camera shot types, angles, movements and focus techniques. Select a style to see what it communicates, when to use it, and how to plan it for your scene.</p></div>
+<div class="bg-[#D6E4EE] border-[1.5px] border-black rounded-2xl p-5 md:p-6"><div class="cine-kicker mb-3">Four choices shape a shot</div><div class="grid grid-cols-2 gap-4"><div><b class="text-sm">01 / Shot size</b><p class="text-xs text-gray-600 mt-1">How much do we see?</p></div><div><b class="text-sm">02 / Angle</b><p class="text-xs text-gray-600 mt-1">Where do we look from?</p></div><div><b class="text-sm">03 / Movement</b><p class="text-xs text-gray-600 mt-1">Does the camera move?</p></div><div><b class="text-sm">04 / Focus</b><p class="text-xs text-gray-600 mt-1">What holds attention?</p></div></div></div></section>
+<section class="cine-panel p-4 sm:p-6 md:p-7 mb-10" aria-labelledby="explorer-title"><div class="flex flex-wrap justify-between items-start gap-3 mb-5"><div><div class="cine-kicker text-gray-500 mb-1">01 / Interactive explorer</div><h2 id="explorer-title" class="brand-font text-2xl md:text-3xl font-bold">Explore camera shots and angles</h2></div><button id="cine-reset" class="cine-chip" type="button">Reset explorer ↺</button></div>
+<div class="flex flex-wrap gap-2 mb-5" role="group" aria-label="Cinematography categories"><button class="cine-chip" data-category="size" aria-pressed="true">Shot sizes</button><button class="cine-chip" data-category="angle" aria-pressed="false">Camera angles</button><button class="cine-chip" data-category="movement" aria-pressed="false">Camera movement</button><button class="cine-chip" data-category="focus" aria-pressed="false">Focus &amp; composition</button></div>
+<div id="cine-shot-list" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6"></div>
+<div class="grid lg:grid-cols-[1.05fr_.95fr] gap-6 lg:gap-8"><div><div id="cine-view" class="cine-view" aria-label="Illustrative framing preview"><div class="cine-sky"></div><div class="cine-backdrop"></div><div class="cine-floor"></div><div id="cine-subject" class="cine-subject"><div class="cine-hair"></div><div class="cine-head"></div><div class="cine-body"></div></div><div class="cine-crosshair"></div><div class="cine-frame-label"><span id="cine-preview-code">WS / 02</span><span>Illustrative frame</span></div></div><p class="text-xs leading-relaxed text-gray-600 mt-3">A simplified visual aid for framing and composition, not a live camera feed or precise optical simulation.</p></div>
+<div class="flex flex-col"><div id="cine-detail-kicker" class="cine-kicker text-gray-500 mb-2">SHOT SIZE / 02</div><h3 id="cine-detail-title" class="brand-font text-2xl md:text-3xl font-bold mb-3">Wide shot (WS)</h3><p id="cine-detail-description" class="text-sm leading-relaxed text-gray-700 mb-5"></p><div class="bg-[#FFF6CF] border border-black rounded-xl p-4 mb-4"><div class="cine-kicker mb-1">What it communicates</div><p id="cine-detail-effect" class="text-sm leading-relaxed"></p></div><div class="grid sm:grid-cols-2 gap-4 mb-4"><div><b class="text-sm">Use it when</b><p id="cine-detail-use" class="text-xs text-gray-600 leading-relaxed mt-1"></p></div><div><b class="text-sm">How to shoot it</b><p id="cine-detail-how" class="text-xs text-gray-600 leading-relaxed mt-1"></p></div></div><div class="cine-rule pt-4 mt-auto"><b class="text-sm">Try this in a scene</b><p id="cine-detail-example" class="text-xs text-gray-600 leading-relaxed mt-1"></p></div></div></div></section>
+<section class="mb-12" aria-labelledby="angles-title"><div class="mb-5"><div class="cine-kicker text-gray-500 mb-1">02 / Point of view</div><h2 id="angles-title" class="brand-font text-3xl md:text-4xl font-bold">Camera angles and what they communicate</h2><p class="text-gray-700 mt-2 max-w-2xl">Meaning depends on blocking, performance, lens choice and context — not the angle alone.</p></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+<article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">Eye-level shot</h3><p class="text-sm text-gray-700 leading-relaxed">A direct, observational viewpoint, useful when you want dialogue to feel grounded or relatively neutral.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">High-angle shot</h3><p class="text-sm text-gray-700 leading-relaxed">Looks down on a subject and can suggest vulnerability, exposure or a wider view of the space.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">Low-angle shot</h3><p class="text-sm text-gray-700 leading-relaxed">Looks up at a subject and can add presence, power, threat or a sense of scale.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">Dutch angle</h3><p class="text-sm text-gray-700 leading-relaxed">Tilts the horizon to create unease, instability or a deliberately off-balance visual world.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">Bird’s-eye / overhead</h3><p class="text-sm text-gray-700 leading-relaxed">Looks down from above to reveal patterns, blocking, isolation or the arrangement of objects.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-xl font-bold mb-2">Worm’s-eye angle</h3><p class="text-sm text-gray-700 leading-relaxed">Places the camera very low, often exaggerating height, architecture or a subject's presence.</p></article></div></section>
+<section class="mb-12" aria-labelledby="movement-title"><div class="mb-5"><div class="cine-kicker text-gray-500 mb-1">03 / Movement</div><h2 id="movement-title" class="brand-font text-3xl md:text-4xl font-bold">Camera movements: pan, tilt, dolly, tracking and more</h2><p class="text-gray-700 mt-2 max-w-2xl">Give each move a purpose: reveal information, follow action, change distance or guide attention.</p></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Pan</h3><p class="text-sm text-gray-700 leading-relaxed">Rotate horizontally from a fixed position to follow action or reveal something across the frame.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Tilt</h3><p class="text-sm text-gray-700 leading-relaxed">Rotate vertically to reveal height, follow a subject or shift attention up or down.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Dolly / push-in / pull-out</h3><p class="text-sm text-gray-700 leading-relaxed">Physically move closer or farther away to intensify attention or reveal context.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Tracking shot</h3><p class="text-sm text-gray-700 leading-relaxed">Move alongside, behind or ahead of a subject to sustain action and connect the audience to the character's path.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Crane / jib</h3><p class="text-sm text-gray-700 leading-relaxed">Move through an elevated arc to reveal scale, geography or a changing perspective.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Handheld / Steadicam-style</h3><p class="text-sm text-gray-700 leading-relaxed">Handheld can feel immediate and unstable; stabilised movement can preserve fluid motion through space.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Whip pan</h3><p class="text-sm text-gray-700 leading-relaxed">A fast pan creates directional blur for energy, transitions or sudden attention shifts.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Zoom</h3><p class="text-sm text-gray-700 leading-relaxed">Change focal length without moving the camera; unlike a dolly, perspective does not shift in the same way.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Dolly zoom</h3><p class="text-sm text-gray-700 leading-relaxed">Move the camera while zooming in the opposite direction to shift background scale around the subject.</p></article></div></section>
+<section class="mb-12" aria-labelledby="focus-title"><div class="mb-5"><div class="cine-kicker text-gray-500 mb-1">04 / Attention</div><h2 id="focus-title" class="brand-font text-3xl md:text-4xl font-bold">Focus, composition and cinematic techniques</h2></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Shallow depth of field</h3><p class="text-sm text-gray-700 leading-relaxed">Separate a face or object from a busy background using a narrow plane of focus.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Deep focus</h3><p class="text-sm text-gray-700 leading-relaxed">Keep foreground and background detail readable so the audience can explore multiple layers.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Rack focus</h3><p class="text-sm text-gray-700 leading-relaxed">Shift focus between subjects or depth planes to redirect attention without cutting.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Silhouette</h3><p class="text-sm text-gray-700 leading-relaxed">Expose for a brighter background so the subject becomes a shape rather than a face.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Negative space</h3><p class="text-sm text-gray-700 leading-relaxed">Leave visual room around a subject to communicate isolation, anticipation or imbalance.</p></article><article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Leading lines &amp; foreground</h3><p class="text-sm text-gray-700 leading-relaxed">Use architecture or foreground objects to guide the eye and create depth.</p></article></div></section>
+<section class="cine-panel p-5 md:p-7 mb-12" aria-labelledby="shot-choice-title"><div class="cine-kicker text-gray-500 mb-2">05 / Quick reference</div><h2 id="shot-choice-title" class="brand-font text-3xl md:text-4xl font-bold mb-4">Which camera shot should you use?</h2><div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead><tr class="border-b-2 border-black"><th class="py-3 pr-4">Story goal</th><th class="py-3 pr-4">Try this</th><th class="py-3">Why it can work</th></tr></thead><tbody class="divide-y divide-gray-300"><tr><td class="py-3 pr-4">Establish a location</td><td class="py-3 pr-4 font-bold">Extreme wide / wide shot</td><td class="py-3">Gives geography and context.</td></tr><tr><td class="py-3 pr-4">Show a reaction</td><td class="py-3 pr-4 font-bold">Close-up / medium close-up</td><td class="py-3">Makes expressions easier to read.</td></tr><tr><td class="py-3 pr-4">Create a power imbalance</td><td class="py-3 pr-4 font-bold">High-angle / low-angle</td><td class="py-3">Can change perceived scale or authority.</td></tr><tr><td class="py-3 pr-4">Cover dialogue</td><td class="py-3 pr-4 font-bold">Two-shot / OTS / reverse</td><td class="py-3">Clarifies relationships and eyelines.</td></tr><tr><td class="py-3 pr-4">Reveal information</td><td class="py-3 pr-4 font-bold">Push-in / pan / rack focus</td><td class="py-3">Directs attention to a discovery.</td></tr><tr><td class="py-3 pr-4">Create unease</td><td class="py-3 pr-4 font-bold">Dutch angle / handheld / negative space</td><td class="py-3">Can make a frame feel unstable or uncertain.</td></tr></tbody></table></div></section>
+<section class="mb-12" aria-labelledby="cine-faq-title"><div class="mb-5"><div class="cine-kicker text-gray-500 mb-1">06 / Quick answers</div><h2 id="cine-faq-title" class="brand-font text-3xl md:text-4xl font-bold">Cinematography &amp; Camera Shot FAQs</h2></div><div class="space-y-4 max-w-4xl">
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What are the main types of camera shots?</h3><p class="text-sm text-gray-700 leading-relaxed">Common shot sizes include extreme wide, wide, full, medium, medium close-up, close-up and extreme close-up. OTS, POV, two-shot, reverse and insert shots are also widely used.</p></article>
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What is the difference between a shot size and a camera angle?</h3><p class="text-sm text-gray-700 leading-relaxed">Shot size describes how much of the subject appears in frame; camera angle describes the viewpoint, such as eye-level, high-angle, low-angle, overhead or Dutch angle.</p></article>
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What is the difference between a dolly shot and a zoom?</h3><p class="text-sm text-gray-700 leading-relaxed">A dolly physically moves the camera through space and changes perspective. A zoom changes focal length while the camera stays in place.</p></article>
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What is an over-the-shoulder shot?</h3><p class="text-sm text-gray-700 leading-relaxed">It includes part of one character in the foreground while framing another, commonly used to connect viewpoints in dialogue.</p></article>
+<article class="cine-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">How do I choose the right shot for a scene?</h3><p class="text-sm text-gray-700 leading-relaxed">Start with the story beat: establish the location, show what a character notices, reveal a reaction or change how the audience reads the space. Then choose framing, angle, movement and focus to support that purpose.</p></article></div><p class="text-sm text-gray-700 mt-5">Explore more <a href="/tools" class="font-bold underline">free filmmaking and writing tools</a> from DraftsRush.</p></section>
+<section class="bg-[#111317] text-white rounded-2xl p-6 md:p-8 mb-10"><div class="grid md:grid-cols-[1fr_auto] gap-5 items-center"><div><div class="cine-kicker text-[#F8D000] mb-2">Keep learning</div><h2 class="brand-font text-2xl md:text-3xl font-bold mb-2">Make every frame serve the story.</h2><p class="text-sm leading-relaxed text-gray-300 max-w-2xl">Shot choice works best when framing, movement, performance and editing are planned together.</p></div><a href="/tools" class="cine-chip inline-flex items-center justify-center whitespace-nowrap text-black">Explore free tools ↗</a></div></section>
+</main>
+<script>
+(function(){
+const data={
+size:[
+{id:"ews",code:"EWS / 01",title:"Extreme wide shot (EWS)",kicker:"SHOT SIZE / 01",description:"The subject appears small against a large environment. The setting may dominate the frame, making geography or scale part of the story.",effect:"Scale, isolation, exposure, insignificance or awe.",use:"Open a scene, show a journey, or make a character seem small within a larger world.",how:"Keep the location readable and place the subject deliberately. Make sure the background adds information.",example:"Show a lone figure crossing a huge empty parking lot before cutting to the detail they are carrying.",visual:"wide"},
+{id:"wide",code:"WS / 02",title:"Wide shot (WS)",kicker:"SHOT SIZE / 02",description:"A wide shot shows the subject within the surrounding environment. It helps the audience understand where the scene takes place and how a character relates to the space.",effect:"Context, scale, isolation or the geography of an action.",use:"Establish a location, show blocking, or let the audience read the space.",how:"Keep the subject readable; check the background and give movement room in the frame.",example:"Begin with a wide shot of an empty platform, then cut closer when a character notices someone waiting.",visual:"wide"},
+{id:"full",code:"FS / 03",title:"Full shot (FS)",kicker:"SHOT SIZE / 03",description:"Frames the character from head to toe, keeping body language and physical action visible.",effect:"Physicality, movement, posture and how a character occupies a space.",use:"Show a character entering, crossing a room or handling an object.",how:"Leave enough headroom and footroom for the action; avoid cropping important gestures.",example:"Frame a character from head to toe as they hesitate at a doorway.",visual:"full"},
+{id:"medium",code:"MS / 04",title:"Medium shot (MS)",kicker:"SHOT SIZE / 04",description:"Usually frames a character around the waist or mid-torso, balancing expression with gestures and environment.",effect:"Conversation, grounded performance and readable gestures.",use:"Dialogue and action where both face and hands matter.",how:"Compose around the performance and eyeline; keep a clean background.",example:"Hold a medium shot as a character explains something, then cut to their hands when they falter.",visual:"medium"},
+{id:"mcu",code:"MCU / 05",title:"Medium close-up (MCU)",kicker:"SHOT SIZE / 05",description:"Frames roughly from chest or shoulders upward, emphasising the face while preserving some body language.",effect:"Reaction, intimacy and subtle shifts in expression.",use:"Dialogue beats, interviews, emotional turns and reactions.",how:"Keep eyes and headroom intentional; avoid a background that competes with the face.",example:"Move closer when a character realises the other is lying.",visual:"medium"},
+{id:"close",code:"CU / 06",title:"Close-up (CU)",kicker:"SHOT SIZE / 06",description:"Fills much of the frame with a face or important subject, making small details and reactions difficult to ignore.",effect:"Emotion, attention, tension or recognition.",use:"A decisive reaction or a beat that depends on a tiny expression.",how:"Focus precisely on the intended detail, simplify the background and let performance carry the frame.",example:"Stay on a close-up after a threatening line so the audience can read the response.",visual:"close"},
+{id:"ecu",code:"ECU / 07",title:"Extreme close-up (ECU)",kicker:"SHOT SIZE / 07",description:"Shows a very small detail, such as an eye, fingertip, key turning or a tiny object that carries story information.",effect:"Intensity, emphasis, mystery or heightened attention.",use:"Reveal a clue or make a small action into a major beat.",how:"Stabilise the camera, check focus carefully and make sure the detail matters.",example:"Cut to a fingertip stopping just before it presses a doorbell.",visual:"extreme"},
+{id:"ots",code:"OTS / 08",title:"Over-the-shoulder shot (OTS)",kicker:"SHOT TYPE / 08",description:"Frames part of one character's shoulder or head in the foreground while the other character is the main subject.",effect:"Connection, perspective and spatial continuity.",use:"Dialogue, confrontations, interviews or exchanges where viewpoint matters.",how:"Match eyelines and screen direction; keep the foreground shoulder intentional.",example:"Frame a listener over the speaker's shoulder, then reverse to show the reaction.",visual:"medium"},
+{id:"pov",code:"POV / 09",title:"Point-of-view shot (POV)",kicker:"SHOT TYPE / 09",description:"Presents the view from a character's perspective, placing the audience in the position of seeing what they see.",effect:"Subjectivity, discovery, anticipation or limited information.",use:"Reveal what a character notices, fears or misunderstands.",how:"Establish whose viewpoint it is, then connect the POV to their eyeline or reaction.",example:"A character looks toward a dark stairwell; cut to the stairwell from their viewpoint.",visual:"close"},
+{id:"twoshot",code:"TWO-SHOT / 10",title:"Two-shot",kicker:"SHOT TYPE / 10",description:"Includes two characters in the same frame, showing their physical relationship and how they share the space.",effect:"Connection, distance, conflict, intimacy or shifting power.",use:"Conversations where the relationship matters as much as dialogue.",how:"Use blocking and spacing deliberately; distance can change meaning without a cut.",example:"Keep both characters in frame as one moves away, making emotional distance visible.",visual:"medium"},
+{id:"insert",code:"INSERT / 11",title:"Insert shot",kicker:"SHOT TYPE / 11",description:"A close detail of an object, hand, document or action that supplies information the wider shot cannot show clearly.",effect:"Clue, emphasis, continuity or a concrete story detail.",use:"Reveal a message, show a handoff or make a prop legible.",how:"Match action and screen direction with surrounding shots; include only necessary detail.",example:"Cut to a phone screen showing a missed call, then return to the character.",visual:"extreme"},
+{id:"reverse",code:"REVERSE / 12",title:"Reverse shot",kicker:"SHOT TYPE / 12",description:"Shows the opposite side of a conversation or action, often paired with a matching angle on the other character.",effect:"Response, dialogue rhythm and spatial clarity.",use:"Dialogue coverage and reaction beats.",how:"Respect the 180-degree line unless crossing it is intentional; keep eyelines consistent.",example:"Cut from a speaker's line to the listener's silent reaction before returning.",visual:"medium"}
+],
+angle:[
+{id:"eye",code:"EYE LEVEL / 01",title:"Eye-level shot",kicker:"CAMERA ANGLE / 01",description:"The camera sits around the subject's eye height, giving a direct and often observational viewpoint.",effect:"Neutrality, familiarity, equality or straightforward observation.",use:"Dialogue where the audience should focus on behaviour rather than an obvious power cue.",how:"Set camera height to the character's eyeline and adjust for seated or standing subjects.",example:"Keep two characters at eye level during a calm exchange.",visual:"medium"},
+{id:"high",code:"HIGH ANGLE / 02",title:"High-angle shot",kicker:"CAMERA ANGLE / 02",description:"Looks down at a subject from above eye level and can reveal the layout around them.",effect:"Vulnerability, scrutiny, distance or a clearer view of the space.",use:"Show a character isolated or overwhelmed by their surroundings.",how:"Raise the camera enough for the angle to register; consider what the background reveals.",example:"Frame a character alone from above in a crowded room.",visual:"wide"},
+{id:"low",code:"LOW ANGLE / 03",title:"Low-angle shot",kicker:"CAMERA ANGLE / 03",description:"Looks upward toward a subject, often giving them more visual presence against the background.",effect:"Power, threat, stature, wonder or changed scale.",use:"Introduce an imposing character or make a location feel monumental.",how:"Lower the camera and watch vertical lines, distortion and background.",example:"Reveal a character from below as they enter a doorway.",visual:"full"},
+{id:"dutch",code:"DUTCH / 04",title:"Dutch angle",kicker:"CAMERA ANGLE / 04",description:"Tilts the camera so the horizon or verticals appear diagonal rather than level.",effect:"Instability, disorientation, unease or imbalance.",use:"A scene where a character's world feels wrong or out of control.",how:"Keep the tilt motivated and consistent with the scene's visual language.",example:"Introduce a slight tilt as a character realises the room has changed.",visual:"medium"},
+{id:"overhead",code:"OVERHEAD / 05",title:"Bird's-eye / overhead shot",kicker:"CAMERA ANGLE / 05",description:"Looks steeply down onto the subject and environment, making blocking and geometry central.",effect:"Pattern, distance, vulnerability, order or detachment.",use:"Show a room layout, isolation or the arrangement of meaningful objects.",how:"Check symmetry, movement paths and shadows for a readable composition.",example:"Look straight down on objects laid out as a character searches for a missing item.",visual:"wide"},
+{id:"worm",code:"WORM'S-EYE / 06",title:"Worm's-eye angle",kicker:"CAMERA ANGLE / 06",description:"Places the camera very close to the ground and points upward, exaggerating height and foreground scale.",effect:"Monumental scale, intimidation, wonder or unusual perspective.",use:"Architecture, a towering subject or a larger-than-life reveal.",how:"Check foreground clutter and use vertical lines intentionally.",example:"Reveal a tall figure from near floor level.",visual:"full"}
+],
+movement:[
+{id:"static",code:"STATIC / 01",title:"Static shot",kicker:"CAMERA MOVEMENT / 01",description:"The camera remains still while actors or objects create movement within the frame.",effect:"Stillness, observation, tension, clarity or a fixed viewpoint.",use:"A held reaction, a quiet reveal or a moment where blocking is enough.",how:"Lock the frame, check edges and let timing create the visual change.",example:"Hold on an empty doorway before someone slowly enters.",visual:"medium"},
+{id:"pan",code:"PAN / 02",title:"Pan",kicker:"CAMERA MOVEMENT / 02",description:"The camera rotates horizontally from a fixed position to follow a subject or reveal information.",effect:"Discovery, following attention or a shift in focus.",use:"Follow someone crossing a room or reveal a person just outside frame.",how:"Choose clear start and end points and a motivated speed.",example:"Pan with a character, then continue to reveal someone waiting.",visual:"medium"},
+{id:"tilt",code:"TILT / 03",title:"Tilt",kicker:"CAMERA MOVEMENT / 03",description:"The camera rotates vertically from a fixed position to follow movement or reveal height.",effect:"Scale, discovery, anticipation or redirected attention.",use:"Reveal a tall building or move from an object to a face.",how:"Set the range and speed in advance and compose the ending.",example:"Tilt from a discarded object to the character standing above it.",visual:"medium"},
+{id:"push",code:"PUSH-IN / 04",title:"Dolly in / push-in",kicker:"CAMERA MOVEMENT / 04",description:"The camera physically moves closer, changing perspective and increasing emphasis.",effect:"Attention, emotional intensity, discovery or entering a character's space.",use:"A realisation, important clue or increase in tension.",how:"Plan start and stop marks, keep eyeline stable and clear the track.",example:"Push in slowly as a character recognises an object.",visual:"medium"},
+{id:"pull",code:"PULL-OUT / 05",title:"Dolly out / pull-out",kicker:"CAMERA MOVEMENT / 05",description:"The camera moves away, revealing more of the environment or increasing distance.",effect:"Isolation, release, scale or new context.",use:"Reveal the room around a character or end a scene with distance.",how:"Choose what new information enters frame and keep the move motivated.",example:"Pull back to reveal a character is not alone in the room.",visual:"wide"},
+{id:"tracking",code:"TRACKING / 06",title:"Tracking shot",kicker:"CAMERA MOVEMENT / 06",description:"The camera travels alongside, behind or ahead of a moving subject through space.",effect:"Immersion, momentum, continuity or a shared journey.",use:"Follow a character down a corridor or through connected spaces.",how:"Plan the route, focus distance, obstacles and timing.",example:"Track behind a character through a long hallway.",visual:"full"},
+{id:"crane",code:"CRANE / 07",title:"Crane or jib shot",kicker:"CAMERA MOVEMENT / 07",description:"Raises, lowers or arcs the camera through an elevated path to reveal geography or scale.",effect:"Scale, transition, reveal or a broad view of a scene.",use:"Reveal a crowd or transition from detail to the whole location.",how:"Plan the arc and clearance, rehearse movement and maintain composition.",example:"Rise from a table to reveal the full room.",visual:"wide"},
+{id:"handheld",code:"HANDHELD / 08",title:"Handheld shot",kicker:"CAMERA MOVEMENT / 08",description:"The operator carries the camera, allowing small movements and responsive reframing.",effect:"Immediacy, instability, urgency or proximity.",use:"Action, documentary-like scenes or a character's unsettled experience.",how:"Choose how much shake the scene needs and keep the action readable.",example:"Follow a character through a confusing crowd.",visual:"medium"},
+{id:"steadicam",code:"STABILISED / 09",title:"Steadicam-style shot",kicker:"CAMERA MOVEMENT / 09",description:"A stabilised moving shot travels through space while reducing distracting camera shake.",effect:"Fluidity, immersion, graceful movement or a continuous path.",use:"Follow a character through connected rooms or a long moving scene.",how:"Map the route, rehearse timing and plan focus and obstacles.",example:"Follow a character from a corridor into a busy kitchen.",visual:"full"},
+{id:"whip",code:"WHIP PAN / 10",title:"Whip pan",kicker:"CAMERA MOVEMENT / 10",description:"A very fast horizontal pan creates strong motion blur and a sudden directional change.",effect:"Energy, surprise, urgency or fast transition.",use:"Connect related actions or create a jolt in pacing.",how:"Match direction and timing if using it between shots.",example:"Whip from a door slam to a character reacting.",visual:"medium"},
+{id:"zoom",code:"ZOOM / 11",title:"Zoom",kicker:"CAMERA MOVEMENT / 11",description:"The lens changes focal length while the camera remains in place, changing the field of view.",effect:"Emphasis, compression or a noticeable shift in attention.",use:"Draw attention to a detail or create a stylised change in perspective.",how:"Choose focal-length range and speed; remember it is different from a dolly.",example:"Slowly zoom toward a clue on a distant wall.",visual:"close"},
+{id:"dollyzoom",code:"DOLLY ZOOM / 12",title:"Dolly zoom (Vertigo effect)",kicker:"CAMERA MOVEMENT / 12",description:"The camera moves while the zoom changes in the opposite direction, keeping subject size similar as the background perspective shifts.",effect:"Disorientation, shock, realisation or destabilised space.",use:"A moment when a character's understanding abruptly changes.",how:"Coordinate camera distance and zoom, rehearse the move and test background geometry.",example:"Use the background shift as a character understands the danger.",visual:"medium"}
+],
+focus:[
+{id:"shallow",code:"SHALLOW FOCUS / 01",title:"Shallow depth of field",kicker:"FOCUS & COMPOSITION / 01",description:"A limited plane of focus separates the subject from a softer foreground or background.",effect:"Intimacy, isolation, selective attention or visual simplicity.",use:"Portraits, emotional beats or a detail that needs to stand out.",how:"Combine focus distance, aperture and background separation; focus precisely.",example:"Keep a face sharp while the busy room behind it softens.",visual:"close"},
+{id:"deep",code:"DEEP FOCUS / 02",title:"Deep focus",kicker:"FOCUS & COMPOSITION / 02",description:"Keeps multiple depth planes acceptably sharp so foreground and background information can coexist.",effect:"Layered storytelling, visual freedom or tension between simultaneous actions.",use:"Blocking with multiple characters or scenes where background information matters.",how:"Balance aperture, lighting and focal length; compose each depth plane clearly.",example:"Keep a foreground conversation and a background arrival readable together.",visual:"wide"},
+{id:"rack",code:"RACK FOCUS / 03",title:"Rack focus",kicker:"FOCUS & COMPOSITION / 03",description:"Changes focus from one depth plane or subject to another within the same shot.",effect:"Redirection, discovery, connection or changed priorities.",use:"Reveal a person or clue in the background after holding focus in foreground.",how:"Mark focus distances and rehearse the timing so the shift lands on the story beat.",example:"Start focused on a glass in foreground, then shift to a person entering behind it.",visual:"medium"},
+{id:"silhouette",code:"SILHOUETTE / 04",title:"Silhouette",kicker:"FOCUS & COMPOSITION / 04",description:"A subject is rendered mostly dark against a brighter background, emphasising shape rather than facial detail.",effect:"Mystery, anonymity, graphic contrast or a strong outline.",use:"A reveal, a figure at a window or a moment when identity stays hidden.",how:"Expose for the background and control fill light; keep the outline readable.",example:"Show an unknown figure against a lit doorway.",visual:"wide"},
+{id:"negative",code:"NEGATIVE SPACE / 05",title:"Negative space",kicker:"FOCUS & COMPOSITION / 05",description:"Leaves uncluttered space around or ahead of the subject, making placement meaningful.",effect:"Isolation, anticipation, openness or imbalance.",use:"A character waiting, watching an empty doorway or facing uncertainty.",how:"Keep the empty area intentional and decide where the subject looks.",example:"Place a small character at one edge of a frame facing an empty corridor.",visual:"wide"},
+{id:"leading",code:"LEADING LINES / 06",title:"Leading lines and foreground",kicker:"FOCUS & COMPOSITION / 06",description:"Uses lines, architecture or foreground objects to direct attention and build depth.",effect:"Direction, depth, focus or a visual path toward a character or clue.",use:"Corridors, roads, doorways or scenes where the viewer's eye should travel.",how:"Align lines with the focal point and keep foreground elements from obscuring the subject.",example:"Use corridor lines to guide attention toward a figure at the far end.",visual:"medium"}
+]};
+let category="size",selected="wide";
+const list=document.getElementById("cine-shot-list"),view=document.getElementById("cine-view"),subject=document.getElementById("cine-subject");
+function current(){return data[category].find(x=>x.id===selected)||data[category][0]}
+function render(){
+const item=current();
+document.querySelectorAll("[data-category]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.category===category)));
+list.innerHTML="";
+data[category].forEach((x,i)=>{const b=document.createElement("button");b.type="button";b.className="cine-shot";b.setAttribute("aria-pressed",String(x.id===selected));const k=document.createElement("span");k.className="cine-kicker text-gray-500";k.textContent=String(i+1).padStart(2,"0")+" / "+category.toUpperCase();const t=document.createElement("strong");t.className="font-bold";t.textContent=x.title;const d=document.createElement("span");d.className="text-xs text-gray-600";d.textContent=x.effect.split(",").slice(0,2).join(", ");b.append(k,t,d);b.addEventListener("click",()=>{selected=x.id;render()});list.appendChild(b)});
+["cine-preview-code","cine-detail-kicker","cine-detail-title","cine-detail-description","cine-detail-effect","cine-detail-use","cine-detail-how","cine-detail-example"].forEach((id,i)=>{const keys=["code","kicker","title","description","effect","use","how","example"];document.getElementById(id).textContent=item[keys[i]]||"Plan framing, camera position, focus and movement to serve the story beat."});
+subject.className="cine-subject";["wide","full","medium","close","extreme"].forEach(v=>{if(item.visual===v)subject.classList.add(v)});view.className="cine-view";view.style.filter=category==="focus"&&item.id==="silhouette"?"brightness(.55)":"";
+if(category==="angle"){if(item.id==="low"||item.id==="worm")subject.classList.add("low");if(item.id==="high"||item.id==="overhead")subject.classList.add("high");if(item.id==="dutch")subject.classList.add("dutch")}
+if(category==="movement"&&item.id==="push")view.classList.add("push");if(category==="movement"&&item.id==="pull")view.classList.add("pull");if(category==="focus"&&item.id==="shallow")view.classList.add("blur");
+let second=document.getElementById("cine-second-subject");if(second)second.remove();
+subject.style.left="50%";subject.style.width="";
+if(category==="size"&&item.id==="ots"){subject.style.left="60%";subject.style.width="22%"}
+if(category==="size"&&item.id==="twoshot"){subject.style.left="34%";subject.style.width="17%";second=document.createElement("div");second.id="cine-second-subject";second.className="cine-subject medium";second.style.left="68%";second.innerHTML='<div class="cine-hair"></div><div class="cine-head"></div><div class="cine-body"></div>';view.insertBefore(second,view.querySelector(".cine-crosshair"))}
+}
+document.querySelectorAll("[data-category]").forEach(b=>b.addEventListener("click",()=>{category=b.dataset.category;selected=data[category][0].id;render()}));
+document.getElementById("cine-reset").addEventListener("click",()=>{category="size";selected="wide";render();document.getElementById("explorer-title").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})});
+render();
+})();
+</script>
+
+<footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Top Branding & Value Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+        <div>
+          <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
+            <img 
+              src="/drlogo.png" 
+              alt="DraftsRush" 
+              width="190" 
+              height="50" 
+              loading="lazy"
+              decoding="async"
+              class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
+            />
+          </a>
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+            ⚡ 100% Free Client-Side Tools
+          </span>
+          <div class="flex items-center gap-1.5">
+            <!-- X -->
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Column Structured Link Directory -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
+            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+              ✉ care@draftsrush.com
+            </a>
+            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+              Direct response desk for creator briefs, custom quotes, and agency inquiries.
+            </p>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
