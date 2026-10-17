@@ -11,8 +11,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Photography Lab: ISO, Aperture & Shutter Speed | DraftsRush</title>
-  <meta name="description" content="Learn photography by changing ISO, aperture and shutter speed in an interactive camera simulator. Explore exposure, depth of field, motion blur, and practical settings for different situations.">
+  <title>Exposure Triangle Simulator: ISO, Aperture & Shutter Speed | DraftsRush</title>
+  <meta name="description" content="Use this free exposure triangle simulator to learn ISO, aperture and shutter speed. Test camera settings, exposure, background blur and motion for portraits, landscapes and low light.">
   <link rel="canonical" href="https://www.draftsrush.com/tools/photography-lab">
 
   <!-- Favicon References -->
@@ -249,9 +249,13 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DraftsRush">
-  <meta property="og:title" content="Interactive Photography Lab | DraftsRush">
-  <meta property="og:description" content="Experiment with ISO, aperture and shutter speed and learn how camera settings change your image.">
+  <meta property="og:title" content="Free Exposure Triangle Simulator | DraftsRush">
+  <meta property="og:description" content="Practise ISO, aperture and shutter speed in a free interactive camera settings simulator. Learn exposure and choose settings for different photography situations.">
   <meta property="og:url" content="https://www.draftsrush.com/tools/photography-lab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exposure Triangle Simulator: ISO, Aperture & Shutter Speed">
+  <meta name="twitter:description" content="Practise camera settings for portraits, landscapes, action and low light with this free interactive exposure simulator.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
   <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
   <style>
     .photo-lab { --lab-paper:#F0F2F5; --lab-ink:#111317; color:var(--lab-ink); }
@@ -291,6 +295,35 @@
     @media(max-width:640px){ .photo-stage{min-height:260px}.setting-number{font-size:19px}.lab-panel{box-shadow:3px 3px 0 #111317} }
     @media(prefers-reduced-motion:reduce){ .photo-lab *{transition:none!important;scroll-behavior:auto!important} }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DraftsRush Exposure Triangle Simulator",
+    "url": "https://www.draftsrush.com/tools/photography-lab",
+    "description": "A free interactive photography learning tool for practising ISO, aperture, shutter speed and the exposure triangle.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "publisher": {"@type":"Organization","name":"DraftsRush","url":"https://www.draftsrush.com/"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is the exposure triangle in photography?","acceptedAnswer":{"@type":"Answer","text":"The exposure triangle describes how aperture, shutter speed and ISO work together to control a photograph's exposure. Aperture changes depth of field, shutter speed affects motion blur, and ISO affects visible image noise."}},
+      {"@type":"Question","name":"What camera settings should beginners use?","acceptedAnswer":{"@type":"Answer","text":"Start with ISO 100–200 in bright daylight, around f/5.6–f/8 for general scenes, and a shutter speed fast enough for your subject. For portraits, try f/1.8–f/2.8; for sports, start around 1/1000s or faster. Treat these as starting points and check your camera's exposure meter."}},
+      {"@type":"Question","name":"Which camera setting controls background blur?","acceptedAnswer":{"@type":"Answer","text":"A wider aperture, shown by a smaller f-number such as f/1.8 or f/2.8, creates a shallower depth of field. Lens focal length, subject distance and background distance also affect the result."}},
+      {"@type":"Question","name":"What shutter speed freezes movement?","acceptedAnswer":{"@type":"Answer","text":"A fast shutter speed such as 1/500s can freeze many everyday movements, while sports and very fast action may need 1/1000s or faster."}},
+      {"@type":"Question","name":"Does this photography simulator use a real photo?","acceptedAnswer":{"@type":"Answer","text":"No. The simulator uses an illustrative scene and simplified visual effects to explain exposure, blur and noise. It is a learning aid, not a RAW image processor or a precise prediction of a specific camera and lens."}}
+    ]
+  }
+  </script>
+
 </head>
 <body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -415,11 +448,11 @@
   <section class="grid lg:grid-cols-[1.02fr_.98fr] gap-7 lg:gap-10 items-end mb-9">
     <div>
       <div class="flex flex-wrap gap-2 mb-4"><span class="lab-kicker bg-[#F8D000] border border-black px-3 py-1.5 rounded-full">Interactive learning lab</span><span class="lab-kicker border border-black px-3 py-1.5 rounded-full bg-[#F0F2F5]">100% free · Runs in browser</span></div>
-      <h1 class="brand-font text-4xl sm:text-5xl lg:text-6xl font-black leading-[.98] tracking-tight mb-5">Understand light.<br><span class="text-gray-500">Shape the image.</span></h1>
-      <p class="text-base md:text-lg leading-relaxed max-w-xl text-gray-700">Change ISO, aperture and shutter speed. See how exposure, background blur and motion respond — then use the field guide to choose settings for the situation you're shooting.</p>
+      <h1 class="brand-font text-4xl sm:text-5xl lg:text-6xl font-black leading-[.98] tracking-tight mb-5">Free Exposure Triangle Simulator<br><span class="text-gray-500">Learn ISO, Aperture &amp; Shutter Speed.</span></h1>
+      <p class="text-base md:text-lg leading-relaxed max-w-xl text-gray-700">Learn the exposure triangle by changing ISO, aperture and shutter speed in this free interactive photography simulator. See how camera settings affect brightness, background blur, image noise and motion, then use practical starting settings for portraits, landscapes, sports and low-light photography.</p>
     </div>
     <div class="bg-[#D6E4EE] border-[1.5px] border-black rounded-2xl p-5 md:p-6">
-      <div class="lab-kicker mb-3">The exposure triangle</div>
+      <div class="lab-kicker mb-3">How the exposure triangle works</div>
       <div class="grid grid-cols-3 gap-3 text-center">
         <div><div class="text-2xl mb-1" aria-hidden="true">◉</div><div class="font-bold text-sm">ISO</div><div class="text-xs text-gray-600 mt-1">Sensor sensitivity</div></div>
         <div><div class="text-2xl mb-1" aria-hidden="true">◌</div><div class="font-bold text-sm">Aperture</div><div class="text-xs text-gray-600 mt-1">Lens opening</div></div>
@@ -431,7 +464,7 @@
 
   <section aria-labelledby="simulator-title" class="lab-panel p-4 sm:p-6 md:p-7 mb-10">
     <div class="flex flex-wrap justify-between items-start gap-3 mb-5">
-      <div><div class="lab-kicker text-gray-500 mb-1">01 / Live simulator</div><h2 id="simulator-title" class="brand-font text-2xl md:text-3xl font-bold">Camera settings, in real time</h2></div>
+      <div><div class="lab-kicker text-gray-500 mb-1">01 / Live simulator</div><h2 id="simulator-title" class="brand-font text-2xl md:text-3xl font-bold">Interactive Camera Settings Simulator</h2></div>
       <button id="reset-settings" class="lab-btn lab-btn-secondary" type="button">Reset settings ↺</button>
     </div>
     <div class="grid lg:grid-cols-[1.08fr_.92fr] gap-6 lg:gap-8">
@@ -479,13 +512,26 @@
   </section>
 
   <section aria-labelledby="field-guide-title" class="mb-12">
-    <div class="mb-5"><div class="lab-kicker text-gray-500 mb-1">03 / Field guide</div><h2 id="field-guide-title" class="brand-font text-3xl md:text-4xl font-bold">Choose settings with intention.</h2><p class="text-gray-700 mt-2 max-w-2xl">A practical cheat sheet for what to prioritise, why it matters, and what you trade off.</p></div>
+    <div class="mb-5"><div class="lab-kicker text-gray-500 mb-1">03 / Field guide</div><h2 id="field-guide-title" class="brand-font text-3xl md:text-4xl font-bold">Camera Settings Cheat Sheet: ISO, Aperture &amp; Shutter Speed</h2><p class="text-gray-700 mt-2 max-w-2xl">A practical cheat sheet for what to prioritise, why it matters, and what you trade off.</p></div>
     <div class="grid md:grid-cols-3 gap-4">
       <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">ISO / Light sensitivity</div><h3 class="brand-font text-xl font-bold mb-3">Keep it low when you can.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Use ISO 100–200 in bright daylight for clean detail. Try 400–800 in shade or interiors. ISO 1600+ can help at night or indoors when you cannot use a slower shutter, but expect more visible noise.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise ISO when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">You need a fast shutter in dim light, or you want the cleanest image possible and have enough light.</p></div></article>
       <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">Aperture / Depth of field</div><h3 class="brand-font text-xl font-bold mb-3">Choose how much is in focus.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Use f/1.4–f/2.8 for portraits and low light when a shallow focus plane works. Try f/5.6–f/8 for groups, street scenes, and general sharpness. Use f/8–f/16 for landscapes when deeper focus matters.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise aperture when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">You want background separation, need more depth of field, or need to balance available light.</p></div></article>
       <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">Shutter / Time</div><h3 class="brand-font text-xl font-bold mb-3">Decide whether motion stays sharp.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Start around 1/500s or faster for running subjects; 1/1000s or faster for many sports. Try 1/125s for still subjects handheld, and 1/15–1/30s for intentional light trails with a stable tripod.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise shutter when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">Your subject is moving, you are handholding the camera, or you want deliberate motion blur.</p></div></article>
     </div>
     <div class="mt-4 rounded-xl border border-black bg-[#E1F5E3] p-4 md:p-5"><div class="font-bold text-sm mb-1">A quick exposure rule</div><p class="text-sm leading-relaxed text-gray-700">If the image is too dark, open the aperture (smaller f-number), use a slower shutter, or raise ISO. If it is too bright, do the reverse. Change shutter carefully if you need to freeze motion, and change aperture carefully if depth of field matters.</p></div>
+  </section>
+
+
+  <section aria-labelledby="photography-faq-title" class="mb-12">
+    <div class="mb-5"><div class="lab-kicker text-gray-500 mb-1">04 / Quick answers</div><h2 id="photography-faq-title" class="brand-font text-3xl md:text-4xl font-bold">Exposure Triangle &amp; Camera Settings FAQs</h2></div>
+    <div class="space-y-4 max-w-4xl">
+      <article class="lab-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What is the exposure triangle in photography?</h3><p class="text-sm leading-relaxed text-gray-700">The exposure triangle describes how aperture, shutter speed and ISO work together to control a photograph's exposure. Each setting also affects the image differently: aperture changes depth of field, shutter speed affects motion blur, and ISO affects visible image noise.</p></article>
+      <article class="lab-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What camera settings should beginners use?</h3><p class="text-sm leading-relaxed text-gray-700">Start with ISO 100–200 in bright daylight, around f/5.6–f/8 for general scenes, and a shutter speed fast enough for your subject. For portraits, try a wider aperture such as f/1.8–f/2.8; for sports, start around 1/1000s or faster. Treat these as starting points and check your camera's exposure meter.</p></article>
+      <article class="lab-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Which camera setting controls background blur?</h3><p class="text-sm leading-relaxed text-gray-700">Aperture is one of the main controls for background blur. A wider aperture, shown by a smaller f-number such as f/1.8 or f/2.8, creates a shallower depth of field. Lens focal length, subject distance and the distance between your subject and background also affect the result.</p></article>
+      <article class="lab-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">What shutter speed freezes movement?</h3><p class="text-sm leading-relaxed text-gray-700">A fast shutter speed such as 1/500s can freeze many everyday movements, while sports and very fast action may need 1/1000s or faster. The right speed depends on how quickly the subject moves and how much motion blur you want.</p></article>
+      <article class="lab-panel p-5"><h3 class="brand-font text-lg font-bold mb-2">Does this photography simulator use a real photo?</h3><p class="text-sm leading-relaxed text-gray-700">No. The simulator uses an illustrative scene and simplified visual effects to explain exposure, blur and noise. It is a learning aid, not a RAW image processor or a precise prediction of a specific camera and lens.</p></article>
+    </div>
+    <p class="text-sm text-gray-700 mt-5">Continue learning with the <a href="/tools" class="font-bold underline">DraftsRush free tools</a> and practical guides across the site.</p>
   </section>
 
   <section class="bg-[#111317] text-white rounded-2xl p-6 md:p-8 mb-10">
