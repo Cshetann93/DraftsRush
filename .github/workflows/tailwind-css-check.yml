@@ -26,9 +26,14 @@ jobs:
         run: npm run build:css
       - name: Verify generated CSS exists and is non-empty
         run: test -s assets/tailwind-generated.css
+      - name: Audit duplicate sitewide stylesheet links
+        run: npm run audit:css
       - name: Upload generated CSS for review
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: draftsrush-tailwind-generated-css
-          path: assets/tailwind-generated.css
-          if-no-files-found: error
+          path: |
+            assets/tailwind-generated.css
+            sitewide-css-duplicate-audit.json
+          if-no-files-found: warn
