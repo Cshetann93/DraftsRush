@@ -19,7 +19,7 @@ function walk(dir) {
     const html = fs.readFileSync(full, 'utf8');
     let kept = false;
     let removed = 0;
-    const updated = html.replace(/^[ \t]*<link\b(?=[^>]*href=["']\/assets\/draftsrush-sitewide\.css["'])[^>]*>[ \t]*(?:\r?\n|$)/gim, (tag) => {
+    const updated = html.replace(/<link\b(?=[^>]*href=["']\/assets\/draftsrush-sitewide\.css["'])[^>]*>/gi, (tag) => {
       if (!kept) {
         kept = true;
         return tag;
