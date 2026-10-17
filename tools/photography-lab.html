@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFBGQ8WX');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Photography Lab: ISO, Aperture & Shutter Speed | DraftsRush</title>
+  <meta name="description" content="Learn photography by changing ISO, aperture and shutter speed in an interactive camera simulator. Explore exposure, depth of field, motion blur, and practical settings for different situations.">
+  <link rel="canonical" href="https://www.draftsrush.com/tools/photography-lab">
+
+  <!-- Favicon References -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="/favicon.png?v=4">
+
+  <!-- Instant Dark Mode Initializer -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.body) document.body.classList.add('dark');
+      });
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .brutal-box { box-shadow: 4px 4px 0px #111317; }
+    .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+
+    /* Pill Toggle Switch Design */
+    .theme-toggle {
+      position: relative;
+      width: 62px;
+      height: 32px;
+      border-radius: 9999px;
+      background-color: #FF5A1F;
+      border: 2px solid #111317;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7px;
+      box-shadow: 2px 2px 0px #111317;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .dark .theme-toggle {
+      background-color: #1F232B;
+      border-color: #FFFFFF;
+      box-shadow: 2px 2px 0px #000000;
+    }
+    .theme-toggle-icon {
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .theme-toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 32px;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background-color: #FFFFFF;
+      border: 2px solid #111317;
+      transition: left 0.2s ease;
+    }
+    .dark .theme-toggle-thumb {
+      left: 2px;
+      border-color: #000000;
+    }
+
+    /* Dark Mode Core Theme Overrides */
+    body.dark {
+      background-color: #0E1015 !important;
+      color: #FFFFFF !important;
+    }
+    body.dark header {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark header a, 
+    body.dark header nav a {
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+      background-color: #1F232B !important;
+    }
+    body.dark header nav a[href="/tools"] {
+      background-color: #F8D000 !important;
+      color: #111317 !important;
+      border-color: #111317 !important;
+    }
+    body.dark #mobile-nav {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark #mobile-nav a {
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark main .bg-\[\#F0F2F5\],
+    body.dark .bg-white {
+      background-color: #16181E !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+      box-shadow: 4px 4px 0px #000000 !important;
+    }
+    body.dark textarea#script-input {
+      background-color: #1F232B !important;
+      color: #FFFFFF !important;
+      border-color: #2A2F3A !important;
+    }
+    body.dark .text-gray-700, 
+    body.dark .text-gray-600,
+    body.dark .text-gray-500 {
+      color: #9CA3AF !important;
+    }
+    body.dark table th {
+      border-color: #2A2F3A !important;
+    }
+    body.dark table td {
+      border-color: #2A2F3A !important;
+      color: #E2E4E9 !important;
+    }
+    body.dark table tbody tr {
+      background-color: #16181E !important;
+    }
+    body.dark table tbody tr:hover {
+      background-color: #1F232B !important;
+    }
+    body.dark .bg-\[\#FFF6CF\] {
+      background-color: #1B1E26 !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Footer Dark Mode */
+    body.dark footer {
+      background-color: #111317 !important;
+      border-color: #2A2F3A !important;
+      color: #E2E4E9 !important;
+    }
+    body.dark footer p, 
+    body.dark footer a, 
+    body.dark footer h4 {
+      color: #E2E4E9 !important;
+    }
+    body.dark footer span.bg-\[\#F8D000\] {
+      color: #111317 !important;
+    }
+    body.dark footer .text-gray-800,
+    body.dark footer .text-gray-700 {
+      color: #9CA3AF !important;
+    }
+    body.dark footer .border-black,
+    body.dark footer .border-t-2,
+    body.dark footer .border-b-2 {
+      border-color: #2A2F3A !important;
+    }
+    body.dark footer a[style*="#F0F2F5"] {
+      background-color: #1F232B !important;
+      border-color: #2A2F3A !important;
+      color: #FFFFFF !important;
+    }
+    body.dark footer svg.fill-black {
+      fill: #FFFFFF !important;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
+  <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
+<!-- Studio Core Classes & Sitewide Styles -->
+  <style>
+    :root {
+      --bg-base: #E2E4E9;
+      --ink: #111317;
+      --brand-yellow: #F8D000;
+      --cta-yellow: #FFE600;
+      --surface-light: #F0F2F5;
+      --surface-blue: #D6E4EE;
+      --surface-cream: #FFF6CF;
+      --surface-mint: #E1F5E3;
+      --section-slate: #D4D7E1;
+      --section-steel: #CCD0DC;
+    }
+    .brand-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+    .studio-header {
+      background-color: rgba(248, 208, 0, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #111317;
+      box-shadow: 0 4px 20px -4px rgba(17, 19, 23, 0.06);
+    }
+    .nav-pill {
+      background-color: #F0F2F5;
+      color: #111317;
+      border: 1.5px solid rgba(17, 19, 23, 0.85);
+      border-radius: 10px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 4px rgba(17, 19, 23, 0.06);
+    }
+    .nav-pill:hover {
+      background-color: #111317 !important;
+      color: #F0F2F5 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(17, 19, 23, 0.14);
+    }
+    .nav-pill:hover .status-dot { background-color: #F8D000; }
+    .studio-btn {
+      border: 1.5px solid #111317;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 10px -2px rgba(17, 19, 23, 0.1);
+    }
+    .studio-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
+    }
+    .studio-btn:active { transform: translateY(0); }
+    .bg-surface-light { background-color: #F0F2F5 !important; }
+    .bg-surface-blue { background-color: #D6E4EE !important; }
+    .bg-brand-yellow { background-color: #F8D000 !important; }
+    .bg-cta-yellow { background-color: #FFE600 !important; }
+    .bg-ink { background-color: #111317 !important; }
+  </style>
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Interactive Photography Lab | DraftsRush">
+  <meta property="og:description" content="Experiment with ISO, aperture and shutter speed and learn how camera settings change your image.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/photography-lab">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <style>
+    .photo-lab { --lab-paper:#F0F2F5; --lab-ink:#111317; color:var(--lab-ink); }
+    .lab-kicker { font:700 10px 'JetBrains Mono',monospace; letter-spacing:.13em; text-transform:uppercase; }
+    .lab-panel { background:#F0F2F5; border:1.5px solid #111317; border-radius:18px; box-shadow:4px 4px 0 #111317; }
+    .lab-control { accent-color:#111317; width:100%; cursor:pointer; }
+    .lab-select { background:#fff; border:1.5px solid #111317; border-radius:10px; padding:10px 12px; width:100%; font-weight:600; color:#111317; }
+    .lab-btn { border:1.5px solid #111317; border-radius:10px; padding:10px 14px; font-size:12px; font-weight:800; transition:transform .18s,box-shadow .18s; box-shadow:3px 3px 0 #111317; }
+    .lab-btn:hover { transform:translate(-1px,-1px); box-shadow:5px 5px 0 #111317; }
+    .lab-btn:focus-visible,.lab-control:focus-visible,.lab-select:focus-visible { outline:3px solid #F8D000; outline-offset:3px; }
+    .lab-btn-primary { background:#F8D000; }
+    .lab-btn-secondary { background:#fff; }
+    .photo-stage { position:relative; min-height:320px; aspect-ratio:4/3; overflow:hidden; border:1.5px solid #111317; border-radius:14px; background:#9eb4c0; isolation:isolate; }
+    .photo-sky { position:absolute; inset:0; background:linear-gradient(180deg,#91b4c6 0%,#d6e4ee 55%,#f5d8a4 100%); transition:filter .2s; }
+    .photo-sun { position:absolute; width:15%; aspect-ratio:1; border-radius:50%; top:12%; right:16%; background:#fff0bc; box-shadow:0 0 55px 20px #ffe7a0; }
+    .photo-hills { position:absolute; left:-10%; right:-10%; bottom:0; height:54%; background:#718d83; clip-path:polygon(0 48%,18% 16%,32% 46%,48% 5%,67% 42%,82% 18%,100% 48%,100% 100%,0 100%); }
+    .photo-ground { position:absolute; left:-10%; right:-10%; bottom:-5%; height:28%; background:#354f49; clip-path:polygon(0 28%,22% 0,43% 30%,66% 5%,100% 25%,100% 100%,0 100%); }
+    .photo-subject { position:absolute; left:49%; bottom:9%; width:22%; height:56%; transform:translateX(-50%); transition:filter .2s; }
+    .subject-head { position:absolute; width:25%; aspect-ratio:1; border-radius:50%; top:0; left:37.5%; background:#392f2a; box-shadow:inset -5px -2px 0 #211d1c; }
+    .subject-body { position:absolute; left:12%; right:12%; top:22%; bottom:0; background:linear-gradient(90deg,#303c48,#526b7a 48%,#293643); clip-path:polygon(29% 0,71% 0,100% 22%,83% 100%,17% 100%,0 22%); }
+    .subject-arm { position:absolute; top:28%; height:43%; width:17%; background:#bd8f6c; border-radius:15px; }
+    .subject-arm.left { left:7%; transform:rotate(9deg); }.subject-arm.right { right:7%; transform:rotate(-9deg); }
+    .photo-bokeh { position:absolute; inset:-4%; pointer-events:none; background:radial-gradient(circle at 15% 25%,#fff7 0 2%,transparent 3%),radial-gradient(circle at 75% 34%,#fff8 0 3%,transparent 4%),radial-gradient(circle at 31% 48%,#ffe8a7aa 0 2%,transparent 3%),radial-gradient(circle at 88% 62%,#fff8 0 2%,transparent 3%); transition:filter .2s; }
+    .photo-noise { position:absolute; inset:0; pointer-events:none; opacity:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); mix-blend-mode:soft-light; transition:opacity .2s; }
+    .photo-motion { position:absolute; inset:0; opacity:0; pointer-events:none; background:repeating-linear-gradient(0deg,transparent 0 15px,#fff5 16px 18px,transparent 19px 31px); transform:skewY(-8deg) scale(1.2); transition:opacity .2s; }
+    .photo-caption { position:absolute; z-index:2; left:12px; right:12px; bottom:12px; display:flex; justify-content:space-between; gap:8px; color:#fff; font:700 9px 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.08em; text-shadow:0 1px 6px #000; }
+    .exposure-meter { height:8px; background:linear-gradient(90deg,#43566a,#a9bdc7,#f8d000,#fff7d1); border:1px solid #111317; border-radius:99px; position:relative; }
+    .exposure-pin { position:absolute; top:-4px; height:14px; width:4px; background:#111317; border:1px solid #fff; transition:left .15s; }
+    .setting-number { font:700 21px 'Space Grotesk',sans-serif; letter-spacing:-.04em; }
+    .setting-unit { font:600 10px 'JetBrains Mono',monospace; }
+    .setting-note { font-size:12px; line-height:1.6; color:#4b5563; }
+    .scenario-card { border:1.5px solid #111317; border-radius:14px; padding:16px; background:#F0F2F5; text-align:left; transition:transform .18s,background .18s; }
+    .scenario-card[aria-pressed="true"] { background:#FFF6CF; box-shadow:3px 3px 0 #111317; transform:translate(-1px,-1px); }
+    .scenario-card:hover { background:#FFF6CF; }
+    .scenario-card:focus-visible { outline:3px solid #F8D000; outline-offset:3px; }
+    .lab-divider { border-top:1px solid #c4c7ce; }
+    @media(max-width:640px){ .photo-stage{min-height:260px}.setting-number{font-size:19px}.lab-panel{box-shadow:3px 3px 0 #111317} }
+    @media(prefers-reduced-motion:reduce){ .photo-lab *{transition:none!important;scroll-behavior:auto!important} }
+  </style>
+</head>
+<body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Universal Header -->
+  <header class="studio-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="inline-flex items-center flex-shrink-0" aria-label="DraftsRush Home">
+        <img 
+          src="/drlogo.png" 
+          alt="DraftsRush" 
+          width="240" 
+          height="64" 
+          fetchpriority="high"
+          decoding="async"
+          class="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform hover:scale-[1.02]" 
+        />
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="hidden lg:flex items-center gap-2.5 brand-font" aria-label="Primary Navigation">
+        <a href="/script-editor" class="nav-pill uppercase flex items-center gap-2">
+          <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
+          <span>SCRIPT EDITOR</span>
+        </a>
+        <a href="/writers-room" class="nav-pill uppercase">
+          WRITER'S ROOM
+        </a>
+        <a href="/tools" class="nav-pill uppercase">
+          FREE TOOLS
+        </a>
+        <a href="/scripts" class="nav-pill uppercase">
+          SERVICES
+        </a>
+        <a href="/about" class="nav-pill uppercase">
+          ABOUT
+        </a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="hidden lg:flex items-center">
+        <a href="/contact" class="bg-cta-yellow text-black studio-btn px-4 py-2 font-black text-xs tracking-wider brand-font uppercase whitespace-nowrap flex items-center gap-2 hover:bg-black hover:text-[#FFE600]">
+          <span class="w-2 h-2 rounded-full bg-current"></span>
+          <span>ORDER DRAFT</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        id="mobile-nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        onclick="toggleMobileNav()"
+        class="lg:hidden bg-surface-light border border-black rounded-lg p-2 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface-light border-t border-black/20 p-6 space-y-3.5 font-bold brand-font text-sm shadow-xl">
+      <a href="/script-editor" class="flex items-center justify-between border-b border-gray-300 pb-2.5 text-black">
+        <span>SCRIPT EDITOR</span>
+        <span class="bg-brand-yellow border border-black rounded text-[10px] px-2 py-0.5 font-mono">NEW</span>
+      </a>
+      <a href="/writers-room" class="block border-b border-gray-300 pb-2.5">WRITER'S ROOM</a>
+      <a href="/tools" class="block border-b border-gray-300 pb-2.5">FREE TOOLS</a>
+      <a href="/scripts" class="block border-b border-gray-300 pb-2.5">SERVICES</a>
+      <a href="/partner" class="block border-b border-gray-300 pb-2.5">PARTNER WITH US</a>
+      <a href="/about" class="block border-b border-gray-300 pb-2.5">ABOUT</a>
+      <a href="/contact" class="block text-center bg-ink text-white py-3 rounded-xl border border-black uppercase tracking-wider text-xs shadow-md">
+        ORDER DRAFT
+      </a>
+    </div>
+  </header>
+
+  <script>
+    function toggleMobileNav(forceOpen) {
+      var menu = document.getElementById('mobile-nav');
+      var button = document.getElementById('mobile-nav-toggle');
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      if (shouldOpen) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        button.focus();
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+
+    document.getElementById('mobile-nav').addEventListener('click', function (event) {
+      if (event.target.closest('a')) toggleMobileNav(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024) {
+        var menu = document.getElementById('mobile-nav');
+        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
+      }
+    });
+  </script>
+<main class="photo-lab flex-grow max-w-6xl mx-auto px-5 sm:px-6 py-8 md:py-12 w-full">
+  <nav aria-label="Breadcrumb" class="lab-kicker text-gray-600 mb-5"><a href="/" class="hover:underline">DraftsRush</a> <span aria-hidden="true">/</span> <a href="/tools" class="hover:underline">Free Tools</a> <span aria-hidden="true">/</span> Photography Lab</nav>
+  <section class="grid lg:grid-cols-[1.02fr_.98fr] gap-7 lg:gap-10 items-end mb-9">
+    <div>
+      <div class="flex flex-wrap gap-2 mb-4"><span class="lab-kicker bg-[#F8D000] border border-black px-3 py-1.5 rounded-full">Interactive learning lab</span><span class="lab-kicker border border-black px-3 py-1.5 rounded-full bg-[#F0F2F5]">100% free · Runs in browser</span></div>
+      <h1 class="brand-font text-4xl sm:text-5xl lg:text-6xl font-black leading-[.98] tracking-tight mb-5">Understand light.<br><span class="text-gray-500">Shape the image.</span></h1>
+      <p class="text-base md:text-lg leading-relaxed max-w-xl text-gray-700">Change ISO, aperture and shutter speed. See how exposure, background blur and motion respond — then use the field guide to choose settings for the situation you're shooting.</p>
+    </div>
+    <div class="bg-[#D6E4EE] border-[1.5px] border-black rounded-2xl p-5 md:p-6">
+      <div class="lab-kicker mb-3">The exposure triangle</div>
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div><div class="text-2xl mb-1" aria-hidden="true">◉</div><div class="font-bold text-sm">ISO</div><div class="text-xs text-gray-600 mt-1">Sensor sensitivity</div></div>
+        <div><div class="text-2xl mb-1" aria-hidden="true">◌</div><div class="font-bold text-sm">Aperture</div><div class="text-xs text-gray-600 mt-1">Lens opening</div></div>
+        <div><div class="text-2xl mb-1" aria-hidden="true">◷</div><div class="font-bold text-sm">Shutter</div><div class="text-xs text-gray-600 mt-1">Time in motion</div></div>
+      </div>
+      <p class="text-xs leading-relaxed text-gray-700 mt-4 pt-4 border-t border-black/20">These settings work together. If you change one, you may need to adjust another to keep the same brightness.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="simulator-title" class="lab-panel p-4 sm:p-6 md:p-7 mb-10">
+    <div class="flex flex-wrap justify-between items-start gap-3 mb-5">
+      <div><div class="lab-kicker text-gray-500 mb-1">01 / Live simulator</div><h2 id="simulator-title" class="brand-font text-2xl md:text-3xl font-bold">Camera settings, in real time</h2></div>
+      <button id="reset-settings" class="lab-btn lab-btn-secondary" type="button">Reset settings ↺</button>
+    </div>
+    <div class="grid lg:grid-cols-[1.08fr_.92fr] gap-6 lg:gap-8">
+      <div>
+        <div id="photo-stage" class="photo-stage" role="img" aria-label="Illustrated outdoor portrait scene that responds to camera settings">
+          <div id="photo-sky" class="photo-sky"></div><div class="photo-sun"></div><div id="photo-hills" class="photo-hills"></div><div class="photo-ground"></div>
+          <div id="photo-subject" class="photo-subject"><div class="subject-head"></div><div class="subject-body"></div><div class="subject-arm left"></div><div class="subject-arm right"></div></div>
+          <div id="photo-bokeh" class="photo-bokeh"></div><div id="photo-noise" class="photo-noise"></div><div id="photo-motion" class="photo-motion"></div>
+          <div class="photo-caption"><span>DR / Field Study 01</span><span id="photo-caption-settings">ISO 400 · f/2.8 · 1/125s</span></div>
+        </div>
+        <div class="flex justify-between gap-3 mt-3 text-xs text-gray-600"><span>Illustrative scene · effect simulation</span><span id="exposure-label" class="font-mono font-bold text-black">Balanced exposure</span></div>
+        <div class="mt-3"><div class="flex justify-between lab-kicker mb-2"><span>Exposure preview</span><span id="exposure-value">0 EV from baseline</span></div><div class="exposure-meter"><span id="exposure-pin" class="exposure-pin" style="left:50%"></span></div><div class="flex justify-between text-[10px] font-mono text-gray-500 mt-1"><span>Underexposed</span><span>Overexposed</span></div></div>
+      </div>
+      <div class="space-y-5">
+        <div class="pb-4 border-b border-gray-300">
+          <div class="flex items-start justify-between gap-4 mb-2"><div><label for="iso" class="font-bold text-base">ISO</label><p class="setting-note">Sensor sensitivity · higher ISO adds brightness and visible grain.</p></div><div class="text-right"><output id="iso-value" for="iso" class="setting-number">400</output></div></div>
+          <input id="iso" class="lab-control" type="range" min="100" max="6400" step="100" value="400" aria-describedby="iso-help">
+          <div class="flex justify-between text-[10px] font-mono text-gray-500 mt-1"><span>100 · Clean</span><span>6400 · Grainy</span></div><p id="iso-help" class="sr-only">Adjust ISO from 100 to 6400.</p>
+        </div>
+        <div class="pb-4 border-b border-gray-300">
+          <div class="flex items-start justify-between gap-4 mb-2"><div><label for="aperture" class="font-bold text-base">Aperture</label><p class="setting-note">Lens opening · lower f-number means a wider opening and shallower depth of field.</p></div><div class="text-right"><output id="aperture-value" for="aperture" class="setting-number">f/2.8</output></div></div>
+          <input id="aperture" class="lab-control" type="range" min="1.4" max="16" step="0.2" value="2.8">
+          <div class="flex justify-between text-[10px] font-mono text-gray-500 mt-1"><span>f/1.4 · More blur</span><span>f/16 · More in focus</span></div>
+        </div>
+        <div class="pb-1">
+          <div class="flex items-start justify-between gap-4 mb-2"><div><label for="shutter" class="font-bold text-base">Shutter speed</label><p class="setting-note">Exposure time · slower speeds show more movement; faster speeds freeze it.</p></div><div class="text-right"><output id="shutter-value" for="shutter" class="setting-number">1/125s</output></div></div>
+          <input id="shutter" class="lab-control" type="range" min="15" max="2000" step="5" value="125">
+          <div class="flex justify-between text-[10px] font-mono text-gray-500 mt-1"><span>1/15s · Motion blur</span><span>1/2000s · Freeze motion</span></div>
+        </div>
+        <div class="bg-[#FFF6CF] border border-black rounded-xl p-4">
+          <div class="lab-kicker mb-2">What changed?</div><p id="live-explanation" class="text-sm leading-relaxed">At ISO 400, f/2.8 and 1/125s, you have a balanced starting point for a daylight portrait, with a softly separated background.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="scenarios-title" class="mb-12">
+    <div class="mb-5"><div class="lab-kicker text-gray-500 mb-1">02 / Start with a situation</div><h2 id="scenarios-title" class="brand-font text-3xl md:text-4xl font-bold">What are you photographing?</h2><p class="text-gray-700 mt-2 max-w-2xl">Choose a common shooting situation to load a practical starting point. Treat these as starting settings, not rules — available light and creative intent still matter.</p></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" id="scenario-list">
+      <button class="scenario-card" type="button" data-iso="100" data-aperture="2" data-shutter="500" aria-pressed="false"><span class="text-2xl" aria-hidden="true">◉</span><span class="block font-bold mt-3">Bright-day portrait</span><span class="block text-xs text-gray-600 mt-1">Soft background, crisp subject</span><span class="block lab-kicker mt-4">ISO 100 · f/2 · 1/500s</span></button>
+      <button class="scenario-card" type="button" data-iso="100" data-aperture="8" data-shutter="250" aria-pressed="false"><span class="text-2xl" aria-hidden="true">⌁</span><span class="block font-bold mt-3">Landscape</span><span class="block text-xs text-gray-600 mt-1">Detail from foreground to distance</span><span class="block lab-kicker mt-4">ISO 100 · f/8 · 1/250s</span></button>
+      <button class="scenario-card" type="button" data-iso="1600" data-aperture="1.8" data-shutter="125" aria-pressed="false"><span class="text-2xl" aria-hidden="true">☾</span><span class="block font-bold mt-3">Low-light / indoors</span><span class="block text-xs text-gray-600 mt-1">Gather light without an extreme shutter</span><span class="block lab-kicker mt-4">ISO 1600 · f/1.8 · 1/125s</span></button>
+      <button class="scenario-card" type="button" data-iso="800" data-aperture="2.8" data-shutter="1000" aria-pressed="false"><span class="text-2xl" aria-hidden="true">↗</span><span class="block font-bold mt-3">Action / sports</span><span class="block text-xs text-gray-600 mt-1">Freeze fast movement</span><span class="block lab-kicker mt-4">ISO 800 · f/2.8 · 1/1000s</span></button>
+    </div>
+  </section>
+
+  <section aria-labelledby="field-guide-title" class="mb-12">
+    <div class="mb-5"><div class="lab-kicker text-gray-500 mb-1">03 / Field guide</div><h2 id="field-guide-title" class="brand-font text-3xl md:text-4xl font-bold">Choose settings with intention.</h2><p class="text-gray-700 mt-2 max-w-2xl">A practical cheat sheet for what to prioritise, why it matters, and what you trade off.</p></div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">ISO / Light sensitivity</div><h3 class="brand-font text-xl font-bold mb-3">Keep it low when you can.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Use ISO 100–200 in bright daylight for clean detail. Try 400–800 in shade or interiors. ISO 1600+ can help at night or indoors when you cannot use a slower shutter, but expect more visible noise.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise ISO when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">You need a fast shutter in dim light, or you want the cleanest image possible and have enough light.</p></div></article>
+      <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">Aperture / Depth of field</div><h3 class="brand-font text-xl font-bold mb-3">Choose how much is in focus.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Use f/1.4–f/2.8 for portraits and low light when a shallow focus plane works. Try f/5.6–f/8 for groups, street scenes, and general sharpness. Use f/8–f/16 for landscapes when deeper focus matters.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise aperture when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">You want background separation, need more depth of field, or need to balance available light.</p></div></article>
+      <article class="lab-panel p-5"><div class="lab-kicker text-gray-500 mb-2">Shutter / Time</div><h3 class="brand-font text-xl font-bold mb-3">Decide whether motion stays sharp.</h3><p class="text-sm leading-relaxed text-gray-700 mb-4">Start around 1/500s or faster for running subjects; 1/1000s or faster for many sports. Try 1/125s for still subjects handheld, and 1/15–1/30s for intentional light trails with a stable tripod.</p><div class="lab-divider pt-3"><div class="font-bold text-sm">Prioritise shutter when…</div><p class="text-xs leading-relaxed text-gray-600 mt-1">Your subject is moving, you are handholding the camera, or you want deliberate motion blur.</p></div></article>
+    </div>
+    <div class="mt-4 rounded-xl border border-black bg-[#E1F5E3] p-4 md:p-5"><div class="font-bold text-sm mb-1">A quick exposure rule</div><p class="text-sm leading-relaxed text-gray-700">If the image is too dark, open the aperture (smaller f-number), use a slower shutter, or raise ISO. If it is too bright, do the reverse. Change shutter carefully if you need to freeze motion, and change aperture carefully if depth of field matters.</p></div>
+  </section>
+
+  <section class="bg-[#111317] text-white rounded-2xl p-6 md:p-8 mb-10">
+    <div class="grid md:grid-cols-[1fr_auto] gap-5 items-center"><div><div class="lab-kicker text-[#F8D000] mb-2">Keep learning</div><h2 class="brand-font text-2xl md:text-3xl font-bold mb-2">Exposure is only the beginning.</h2><p class="text-sm leading-relaxed text-gray-300 max-w-2xl">Once you can control brightness, learn how lens choice, focal length, lighting direction and composition shape the image too.</p></div><a href="/tools" class="lab-btn lab-btn-primary text-black inline-flex items-center justify-center whitespace-nowrap">Explore free tools ↗</a></div>
+  </section>
+  <p class="text-xs leading-relaxed text-gray-600 max-w-3xl mb-5">Learning note: the preview is an illustrative simulation, not a RAW-processing engine. Actual brightness, noise, depth of field and motion rendering vary with camera sensor, lens, focal length, distance, stabilisation and lighting. For long exposures, use a tripod; for low-light moving subjects, a wider aperture or higher ISO may be preferable to a slower shutter.</p>
+</main>
+<script>
+(function(){
+  const iso=document.getElementById('iso'), aperture=document.getElementById('aperture'), shutter=document.getElementById('shutter');
+  const isoOut=document.getElementById('iso-value'), apertureOut=document.getElementById('aperture-value'), shutterOut=document.getElementById('shutter-value');
+  const exposurePin=document.getElementById('exposure-pin'), exposureValue=document.getElementById('exposure-value'), exposureLabel=document.getElementById('exposure-label'), explanation=document.getElementById('live-explanation');
+  const photoSky=document.getElementById('photo-sky'), photoHills=document.getElementById('photo-hills'), photoSubject=document.getElementById('photo-subject'), photoBokeh=document.getElementById('photo-bokeh'), photoNoise=document.getElementById('photo-noise'), photoMotion=document.getElementById('photo-motion'), caption=document.getElementById('photo-caption-settings');
+  const baseline={iso:400,aperture:2.8,shutter:125};
+  function read(){return {iso:Number(iso.value),aperture:Number(aperture.value),shutter:Number(shutter.value)}}
+  function render(){
+    const s=read(); isoOut.textContent=s.iso; apertureOut.textContent='f/'+s.aperture.toFixed(1); shutterOut.textContent='1/'+s.shutter+'s';
+    const ev=Math.log2(s.iso/baseline.iso)+2*Math.log2(baseline.aperture/s.aperture)+Math.log2(baseline.shutter/s.shutter);
+    const bounded=Math.max(-3,Math.min(3,ev)); const brightness=Math.max(.38,Math.min(1.75,Math.pow(2,bounded*.32)));
+    document.getElementById('photo-stage').style.filter='brightness('+brightness+')';
+    const blur=Math.max(0,Math.min(9,(s.aperture-1.4)/14.6*9));
+    photoSky.style.filter='blur('+blur+'px)'; photoHills.style.filter='blur('+(blur*.72)+'px)'; photoBokeh.style.filter='blur('+(blur*.9)+'px)';
+    photoSubject.style.filter='blur('+(Math.max(0,(1.4-s.aperture)*.12))+'px)';
+    photoNoise.style.opacity=String(Math.min(.58,Math.max(0,(s.iso-100)/6300*.58)));
+    photoMotion.style.opacity=String(Math.max(0,Math.min(.7,(250-s.shutter)/235*.7)));
+    caption.textContent='ISO '+s.iso+' · f/'+s.aperture.toFixed(1)+' · 1/'+s.shutter+'s';
+    exposurePin.style.left=((bounded+3)/6*100)+'%';
+    exposureValue.textContent=(ev>0?'+':'')+ev.toFixed(1)+' EV from baseline';
+    exposureLabel.textContent=ev < -1.2?'Underexposed preview':ev > 1.2?'Overexposed preview':'Balanced exposure';
+    const isoText=s.iso>=1600?'High ISO will brighten the image but introduce more visible grain.':s.iso<=200?'Low ISO helps preserve clean detail when enough light is available.':'ISO is in a moderate range; raise it if you need more light without slowing the shutter.';
+    const apertureText=s.aperture<=2.8?'A wide aperture creates stronger background separation and lets in more light.':s.aperture>=8?'A narrow aperture gives more depth of field but reduces the light reaching the sensor.':'This mid-range aperture balances light intake and depth of field.';
+    const shutterText=s.shutter<=60?'This slower shutter can blur movement; stabilise the camera and keep the subject still.':s.shutter>=500?'This fast shutter helps freeze movement, but needs more light.':'This shutter speed suits many still or moderately moving subjects; watch for camera shake.';
+    explanation.textContent=isoText+' '+apertureText+' '+shutterText;
+  }
+  [iso,aperture,shutter].forEach(el=>el.addEventListener('input',()=>{document.querySelectorAll('.scenario-card').forEach(b=>b.setAttribute('aria-pressed','false'));render()}));
+  document.getElementById('reset-settings').addEventListener('click',()=>{iso.value=400;aperture.value=2.8;shutter.value=125;document.querySelectorAll('.scenario-card').forEach(b=>b.setAttribute('aria-pressed','false'));render()});
+  document.querySelectorAll('.scenario-card').forEach(button=>button.addEventListener('click',()=>{iso.value=button.dataset.iso;aperture.value=button.dataset.aperture;shutter.value=button.dataset.shutter;document.querySelectorAll('.scenario-card').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));render();document.getElementById('simulator-title').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}));
+  render();
+})();
+</script>
+<footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Top Branding & Value Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+        <div>
+          <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
+            <img 
+              src="/drlogo.png" 
+              alt="DraftsRush" 
+              width="190" 
+              height="50" 
+              loading="lazy"
+              decoding="async"
+              class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
+            />
+          </a>
+          <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+            ⚡ 100% Free Client-Side Tools
+          </span>
+          <div class="flex items-center gap-1.5">
+            <!-- X -->
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Column Structured Link Directory -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
+            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
+            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
+          </div>
+          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-2 h-2 bg-black"></span>
+            <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+              ✉ care@draftsrush.com
+            </a>
+            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+              Direct response desk for creator briefs, custom quotes, and agency inquiries.
+            </p>
+            <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="/sitemap" class="hover:underline">Sitemap</a>
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>
+          <a href="/terms" class="hover:underline">Terms of Service</a>
+          <a href="/contact" class="hover:underline">Support Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
