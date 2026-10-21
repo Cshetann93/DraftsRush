@@ -113,6 +113,52 @@
       .software-content-flow>section:has(>div>span:first-child)>div:nth-child(2){padding:16px!important}
       .software-content-flow>section:has(>div>span:first-child)>p{font-size:16px}
     }
+
+    /* Consistent hover and focus feedback across the entire guide */
+    .software-content-flow>section,
+    .software-content-flow>#software-comparison,
+    .software-content-flow>section .border,
+    .software-content-flow>section [class*="rounded-xl"],
+    .software-content-flow>section [class*="rounded-2xl"]{
+      transition:border-color .18s ease,outline-color .18s ease,box-shadow .18s ease,background-color .18s ease,transform .18s ease;
+    }
+    .software-content-flow>section:has(>div>span:first-child):hover{
+      outline:1px solid #aab2bf;
+      outline-offset:10px;
+    }
+    .software-content-flow>section:first-child:hover,
+    .software-content-flow>#software-comparison:hover{
+      outline:1px solid #aab2bf;
+      outline-offset:6px;
+    }
+    .software-content-flow>section:has(>div>span:first-child)>div:nth-child(n+4):hover,
+    .software-content-flow>section .bg-\\[\\#F0F2F5\\]:hover,
+    .software-content-flow>section .bg-white.border:hover{
+      border-color:#9ca6b5!important;
+      box-shadow:0 8px 24px rgba(27,35,48,.07)!important;
+    }
+    .software-content-flow table tbody tr{
+      outline:1px solid transparent;
+      outline-offset:-1px;
+      transition:background-color .16s ease,outline-color .16s ease;
+    }
+    .software-content-flow table tbody tr:hover{
+      background:#fff8d7!important;
+      outline-color:#b6a33e;
+    }
+    .software-content-flow a:focus-visible,
+    .software-content-flow button:focus-visible,
+    .software-content-flow [tabindex]:focus-visible{
+      outline:2px solid #927900!important;
+      outline-offset:4px!important;
+      border-radius:4px;
+    }
+    .software-content-flow a:hover{
+      text-decoration-thickness:2px;
+    }
+    @media(prefers-reduced-motion:reduce){
+      .software-content-flow *{transition:none!important}
+    }
 </style>
 
   <!-- Schema Markup for Article SEO & FAQ -->
