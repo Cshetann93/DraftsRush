@@ -184,8 +184,8 @@
 .zodiac-redesign>div.max-w-4xl{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:50px 0 80px}
 .zodiac-redesign>div.max-w-4xl>div:first-child{margin-bottom:25px}
 .zodiac-redesign>div.max-w-4xl>div:first-child a{display:none}
-.zodiac-redesign article{display:grid;grid-template-columns:minmax(0,1fr);gap:0!important}
-.zodiac-redesign article>section{margin:0 0 34px!important;padding:clamp(24px,4vw,44px)!important;border:1px solid var(--zr-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:0 8px 30px #171a2008!important;color:var(--zr-muted)!important}
+.zodiac-redesign article{display:flex;flex-direction:column;gap:0!important;min-width:0}
+.zodiac-redesign article>section{margin:0 0 32px!important;padding:clamp(24px,4vw,44px)!important;border:1px solid var(--zr-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:0 8px 30px #171a2008!important;color:var(--zr-muted)!important}
 .zodiac-redesign article>section h2{font-family:'Space Grotesk',sans-serif;font-weight:650;letter-spacing:-.045em;line-height:1.1;color:var(--zr-ink);font-size:clamp(27px,3.4vw,42px)}
 .zodiac-redesign article>section p{color:#59616c;line-height:1.85;font-size:15px}
 .zodiac-redesign article>section .border-b-2{border-color:var(--zr-line)!important}
@@ -199,10 +199,24 @@
 .zodiac-redesign article>section .border-black{border-color:#dedfdc!important}
 .zodiac-redesign article>section .rounded-2xl,.zodiac-redesign article>section .rounded-xl{border-radius:14px!important}
 .zodiac-redesign article>section .brutal-btn,.zodiac-redesign article>section .studio-btn{border-radius:999px!important;box-shadow:0 4px 12px #171a2010!important}
-@media(min-width:900px){.zodiac-redesign article{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px!important}.zodiac-redesign article>section:first-child,.zodiac-redesign article>section:nth-child(2),.zodiac-redesign article>section:nth-child(3),.zodiac-redesign article>section:nth-child(4),.zodiac-redesign article>section:nth-child(5),.zodiac-redesign article>section:nth-child(8),.zodiac-redesign article>section:nth-child(9),.zodiac-redesign article>section:nth-child(10),.zodiac-redesign article>section:nth-child(11),.zodiac-redesign article>section:nth-child(12){grid-column:1/-1}}
+@media(min-width:900px){.zodiac-redesign article{display:flex;flex-direction:column;gap:0!important}}
 @media(max-width:760px){.z-redesign-wrap{width:calc(100% - 34px)}.z-redesign-back{margin:18px 0 25px}.z-redesign-hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.z-redesign-hero h1{font-size:clamp(48px,14vw,70px)}.z-redesign-art{min-height:280px}.z-redesign-hero-foot{gap:12px;font-size:7px}.zodiac-redesign>div.max-w-4xl{width:calc(100% - 34px);padding-top:32px}.zodiac-redesign article>section{padding:22px!important;margin-bottom:20px!important}.zodiac-redesign article>section p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.z-redesign-cta{transition:none}}
-</style></head>
+</style>
+.z-final-resources{margin-top:18px!important;padding:clamp(24px,4vw,42px)!important;background:#e9ebef!important;border:1px solid #d9dce1!important;border-radius:20px!important}
+.z-final-resources-heading{max-width:720px;margin-bottom:26px}
+.z-final-kicker{display:block;color:#8b7650;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.13em;margin-bottom:14px}
+.z-final-resources h2{font-size:clamp(28px,3.5vw,40px)!important;margin:0 0 14px!important}
+.z-final-resources-heading p{font-size:14px!important;margin:0!important}
+.z-final-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.z-final-link-grid a{display:flex;flex-direction:column;gap:7px;min-width:0;padding:17px 18px;border:1px solid #d4d7dd;border-radius:12px;background:#f9f9f7;color:#20242b!important;text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+.z-final-link-grid a:hover{background:#f8d000;border-color:#e2c000;transform:translateY(-1px)}
+.z-final-link-grid a strong{font-size:13px;font-weight:750}
+.z-final-link-grid a span{font-size:11px;line-height:1.5;color:#666e79}
+.z-final-link-grid a:hover span{color:#353a42}
+.zodiac-redesign article>section:not(.z-final-resources){scroll-margin-top:100px}
+@media(max-width:620px){.z-final-link-grid{grid-template-columns:1fr}.z-final-resources{padding:22px!important}.zodiac-redesign article>section{margin-bottom:22px!important}}
+</head>
 <body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
@@ -294,43 +308,9 @@
       var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : menu.classList.contains('hidden');
       menu.classList.toggle('hidden', !shouldOpen);
       button.setAttribute('aria-expanded', String(shouldOpen));
-      button.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
-      if (shouldOpen) {
-        var firstLink = menu.querySelector('a');
-        if (firstLink) firstLink.focus();
-      } else {
-        button.focus();
-      }
-    }
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        var menu = document.getElementById('mobile-nav');
-        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
-      }
-    });
-
-    document.getElementById('mobile-nav').addEventListener('click', function (event) {
-      if (event.target.closest('a')) toggleMobileNav(false);
-    });
-
-    window.addEventListener('resize', function () {
-      if (window.innerWidth >= 1024) {
-        var menu = document.getElementById('mobile-nav');
-        if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
-      }
-    });
-  </script><!-- Main Article Content -->
-  <main class="flex-grow zodiac-redesign"><section class="z-redesign-hero"><div class="z-redesign-wrap"><a href="/writers-room" class="z-redesign-back">← Writer's Room</a><div class="z-redesign-hero-grid"><div><div class="z-redesign-kicker"><span></span> SCENE STUDY / PSYCHOLOGICAL THRILLER</div><h1>The <em>Zodiac</em><br>Basement Scene</h1><p class="z-redesign-deck">How David Fincher turns a quiet conversation, a staircase, and a sound from upstairs into one of the film's most unnerving sequences.</p><div class="z-redesign-meta">FILM ANALYSIS <i></i> 8 MIN READ <i></i> SUSPENSE & POINT OF VIEW</div><a class="z-redesign-cta" href="#scene-analysis">Explore the breakdown <span>↓</span></a></div><div class="z-redesign-art" aria-label="Abstract illustration of a dark basement staircase"><div class="z-redesign-file">CASE FILE 06<br><b>THE BASEMENT</b></div><div class="z-redesign-stairs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="z-redesign-art-caption">THE FEAR IS WHAT YOU CAN'T CONFIRM.</div></div></div><div class="z-redesign-hero-foot"><span>01 — THE SETUP</span><span>OBSERVATION → DOUBT → DREAD</span></div></div></section>
+      button.setAttribute('aria-label', shouldOpen ? 'Cl<main class="flex-grow zodiac-redesign"><section class="z-redesign-hero"><div class="z-redesign-wrap"><a href="/writers-room" class="z-redesign-back">← Writer's Room</a><div class="z-redesign-hero-grid"><div><div class="z-redesign-kicker"><span></span> SCENE STUDY / PSYCHOLOGICAL THRILLER</div><h1>The <em>Zodiac</em><br>Basement Scene</h1><p class="z-redesign-deck">How David Fincher turns a quiet conversation, a staircase, and a sound from upstairs into one of the film's most unnerving sequences.</p><div class="z-redesign-meta">FILM ANALYSIS <i></i> 8 MIN READ <i></i> SUSPENSE & POINT OF VIEW</div><a class="z-redesign-cta" href="#scene-analysis">Explore the breakdown <span>↓</span></a></div><div class="z-redesign-art" aria-label="Abstract illustration of a dark basement staircase"><div class="z-redesign-file">CASE FILE 06<br><b>THE BASEMENT</b></div><div class="z-redesign-stairs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="z-redesign-art-caption">THE FEAR IS WHAT YOU CAN'T CONFIRM.</div></div></div><div class="z-redesign-hero-foot"><span>01 — THE SETUP</span><span>OBSERVATION → DOUBT → DREAD</span></div></div></section>
     <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       
-      <!-- Top Back Button -->
-      <div class="mb-8">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
-          ← Return to the Writer's Room
-        </a>
-      </div>
-
       <article class="space-y-12" id="scene-analysis">
 
         <!-- Scene Introduction & Context -->
@@ -441,23 +421,6 @@
             <li><strong>The Sound Design:</strong> Footsteps pacing above when Vaughn claimed to live entirely alone.</li>
           </ul>
         </section>
-
-        <!-- In-Article Tool Bridge (Calibrated for Script Pacing & Duration) -->
-        <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box space-y-3">
-          <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold font-mono uppercase">Screenplay Tool Callout</span>
-          <h3 class="text-lg font-black brand-font text-black">Drafting Suspenseful Dialogue?</h3>
-          <p class="text-xs text-gray-800 font-medium leading-relaxed">
-            Notice how Bob Vaughn's lines average under five words per delivery ("No. Rick didn't draw the posters." / "I did." / "I do."). Dread requires calculated pauses and deliberate speaking speeds rather than long speeches. Measure your scene's speaking duration, delivery speed, and pause intervals with our free browser tool:
-          </p>
-          <div class="flex flex-wrap gap-3 pt-1">
-            <a href="/tools/script-timer" class="p-2.5 bg-white border-2 border-black text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">
-              ⏱ Open Script Pacing Timer →
-            </a>
-            <a href="/tools/dialogue-pruner" class="p-2.5 bg-white border-2 border-black text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">
-              ✂ Prune Filler Dialogue →
-            </a>
-          </div>
-        </div>
 
         <!-- Visual Walkthrough / Schematic Section -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-8">
@@ -702,39 +665,27 @@
           </div>
         </section>
 
-        <!-- Sibling Studies (Curated Next-Read Sequence) -->
-        <section class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box space-y-4">
-          <div class="border-b-2 border-black pb-2">
-            <h3 class="text-lg font-black brand-font uppercase">Sibling Studies: Tension & Suspense Mechanics</h3>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
-            <a href="/no-country-for-old-men-coin-toss-scene-breakdown" class="p-4 bg-[#F0F2F5] border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors block">
-              <strong class="text-black block mb-1 text-sm font-sans font-black">No Country for Old Men: Coin Toss Breakdown →</strong>
-              <p class="text-gray-600 font-normal">How the Coen brothers weaponize conversational stakes with zero background music.</p>
-            </a>
-            <a href="/sicario-border-crossing-scene-breakdown" class="p-4 bg-[#F0F2F5] border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors block">
-              <strong class="text-black block mb-1 text-sm font-sans font-black">Sicario: Border Crossing Scene Breakdown →</strong>
-              <p class="text-gray-600 font-normal">Mastering spatial claustrophobia and anticipatory dread inside trapped vehicles.</p>
-            </a>
-          </div>
-        </section>
+        <section class="z-final-resources" aria-labelledby="related-reading">
+  <div class="z-final-resources-heading">
+    <span class="z-final-kicker">CONTINUE EXPLORING</span>
+    <h2 id="related-reading">More scene studies and writing resources</h2>
+    <p>Finish the analysis first. When you're ready, continue with related breakdowns, practical writing tools, and resources for your next script.</p>
+  </div>
+  <div class="z-final-link-grid">
+    <a href="/no-country-for-old-men-coin-toss-scene-breakdown"><strong>No Country for Old Men</strong><span>Coin toss scene breakdown →</span></a>
+    <a href="/sicario-border-crossing-scene-breakdown"><strong>Sicario</strong><span>Border crossing scene breakdown →</span></a>
+    <a href="/most-disturbing-movies-ever-made-ranked"><strong>Most disturbing movies</strong><span>Explore unsettling film choices →</span></a>
+    <a href="/best-psychological-thriller-movies"><strong>Psychological thrillers</strong><span>Browse films built on suspicion →</span></a>
+    <a href="/american-psycho-ending-explained"><strong>American Psycho</strong><span>Ending explained →</span></a>
+    <a href="/scene-analysis-library"><strong>Scene Analysis Library</strong><span>Browse all scene studies →</span></a>
+    <a href="/tools/script-timer"><strong>Script Pacing Timer</strong><span>Measure scene duration →</span></a>
+    <a href="/tools/dialogue-pruner"><strong>Dialogue Pruner</strong><span>Trim unnecessary dialogue →</span></a>
+    <a href="/scripts"><strong>DraftsRush Script Packs</strong><span>Get production-ready writing support →</span></a>
+  </div>
+</section></article>
 
-        <section class="mt-10 border-t-2 border-black pt-6" aria-labelledby="related-reading">
-          <h2 id="related-reading" class="text-xl font-black brand-font mb-3">Explore more psychological tension</h2>
-          <p class="mb-4 text-gray-700">The basement scene shows how a film can create dread through uncertainty, setting, and what a character cannot confirm. Continue with these related breakdowns and film guides.</p>
-          <ul class="list-disc pl-6 space-y-2 text-blue-900">
-            <li><a class="underline" href="/most-disturbing-movies-ever-made-ranked">Most disturbing movies ever made</a> for more unsettling films and the choices that make them linger.</li>
-            <li><a class="underline" href="/best-psychological-thriller-movies">Best psychological thriller movies</a> for films that build fear through suspicion and perception.</li>
-            <li><a class="underline" href="/american-psycho-ending-explained">American Psycho ending explained</a> for an example of ambiguity that keeps viewers questioning what they saw.</li>
-            <li><a class="underline" href="/scene-analysis-library">Browse the Scene Analysis Library</a> for more detailed breakdowns of filmmaking choices.</li>
-          </ul>
-        </section>
-
-        <!-- Commercial Scriptwriting CTA Strip -->
-        <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
-            <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Research-Heavy Scripts Written?</h2>
+      </div>
+  </main>ed Research-Heavy Scripts Written?</h2>
             <p class="text-sm font-medium text-black max-w-xl">
               We write investigative true crime video essays, documentary screenplays, and high-retention video stories ready for production.
             </p>
