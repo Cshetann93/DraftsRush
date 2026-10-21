@@ -56,6 +56,25 @@
     .software-hero-footer{max-width:1320px;margin:30px auto 0;padding-top:16px;border-top:1px solid #c7cbd3;display:flex;justify-content:space-between;gap:18px;font-size:9px}
     @media(max-width:850px){.software-hero-inner{grid-template-columns:1fr;gap:34px}.software-hero-copy{max-width:720px}.software-hero h1{font-size:clamp(46px,10vw,76px)}.software-hero-image img{aspect-ratio:1.35}.software-hero-footer{font-size:8px}}
     @media(max-width:520px){.software-hero{padding:38px 18px 22px}.software-hero-meta{gap:8px;font-size:8px}.software-hero-meta i{width:12px}.software-hero-image{border-radius:16px}.software-hero-image figcaption{flex-direction:column;font-size:8px}.software-hero-footer{letter-spacing:.06em}}
+
+    .software-content-flow{width:min(1180px,100% - 48px);margin:0 auto;padding:58px 0 84px;display:flex;flex-direction:column;gap:52px}
+    .software-content-flow>*{margin:0!important;min-width:0}
+    .software-content-flow>section,.software-content-flow>#software-comparison{border:0!important;border-radius:0!important;box-shadow:none!important}
+    .software-content-flow>section{padding:0 0 44px!important;border-bottom:1px solid #c7cbd3!important;background:transparent!important}
+    .software-content-flow>#software-comparison{padding:0 0 42px!important;background:transparent!important;border-bottom:1px solid #c7cbd3!important;overflow-x:auto}
+    .software-content-flow>section h2,.software-content-flow>#software-comparison h3{letter-spacing:-.035em}
+    .software-content-flow>section>div:first-child:has(>h2){border-bottom:1px solid #c7cbd3!important;padding-bottom:18px!important}
+    .software-content-flow>section .brutal-box{box-shadow:none!important}
+    .software-content-flow>section>div.bg-white.border-\\[1\\.5px\\].border-black.rounded-xl{border:1px solid #d4d8df!important;border-radius:14px!important;box-shadow:none!important}
+    .software-content-flow table{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;border:1px solid #c7cbd3!important;border-radius:12px;overflow:hidden}
+    .software-content-flow table th{background:#20242b!important;color:#f7f7f4;padding:16px 14px}
+    .software-content-flow table td{padding:16px 14px;border-bottom:1px solid #d8dce2}
+    .software-content-flow table tbody tr:last-child td{border-bottom:0}
+    .software-content-flow .border-b-2.border-black{border-bottom:1px solid #c7cbd3!important}
+    .software-content-flow>section .bg-\\[\\#F0F2F5\\],.software-content-flow>section .bg-white{background:#f5f6f8!important}
+    .software-content-flow>section .bg-\\[\\#111317\\]{background:#20242b!important;border:0!important;border-radius:16px!important}
+    .software-content-flow a{ text-underline-offset:3px }
+    @media(max-width:700px){.software-content-flow{width:calc(100% - 36px);padding:38px 0 56px;gap:38px}.software-content-flow>section{padding-bottom:32px!important}.software-content-flow>#software-comparison{padding-bottom:32px!important}.software-content-flow>section .p-8,.software-content-flow>section .md\\:p-10{padding:22px!important}.software-content-flow>section .p-5{padding:16px!important}}
 </style>
 
   <!-- Schema Markup for Article SEO & FAQ -->
@@ -309,7 +328,7 @@
       </div>
       <div class="software-hero-footer"><span>01 — CHOOSE YOUR WORKFLOW</span><span>FORMAT → WRITE → EXPORT</span></div>
     </section>
-      <article class="space-y-12">
+      <article class="software-content-flow">
 
 
 
