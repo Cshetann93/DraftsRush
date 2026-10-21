@@ -38,7 +38,7 @@
     link.type = 'button';
     link.textContent = 'Privacy & cookie settings';
     link.setAttribute('aria-label', 'Reopen privacy and cookie settings');
-    link.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:9998;background:#f8d000;color:#111317;border:2px solid #111317;padding:8px 10px;font:600 12px Arial,sans-serif;box-shadow:3px 3px 0 #111317;cursor:pointer';
+    link.style.cssText = 'position:fixed;left:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;background:#f8d000;color:#111317;border:1px solid rgba(17,19,23,.18);border-radius:999px;padding:11px 16px;font:600 13px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 8px 24px rgba(17,19,23,.12);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease';
     link.addEventListener('click', function () { try { localStorage.removeItem(KEY); } catch (e) {} renderBanner(true); });
     document.body.appendChild(link);
   }
@@ -59,21 +59,21 @@
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Privacy and cookie choices');
     banner.setAttribute('aria-live', 'polite');
-    banner.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:760px;margin:0 auto;background:#f0f2f5;color:#111317;border:2px solid #111317;padding:16px;box-shadow:5px 5px 0 #111317;font:14px/1.5 Arial,sans-serif';
+    banner.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:680px;margin:0 auto;background:#fff;color:#17191f;border:1px solid rgba(17,19,23,.1);border-radius:22px;padding:clamp(20px,3vw,28px);box-shadow:0 24px 70px rgba(17,19,23,.2),0 4px 14px rgba(17,19,23,.06);font:14px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-sizing:border-box';
     var copy = document.createElement('p');
-    copy.style.margin = '0 0 12px';
+    copy.style.cssText = 'margin:0 0 16px;color:#525866;font-size:14px;line-height:1.7';
     copy.textContent = 'DraftsRush uses necessary storage to operate this site. With your permission, analytics and advertising technologies may also be used. You can reject optional technologies or accept them. Read our Privacy Policy for details.';
     var policy = document.createElement('a');
     policy.href = '/privacy';
     policy.textContent = 'Privacy Policy';
-    policy.style.cssText = 'display:inline-block;color:#111317;font-weight:700;text-decoration:underline;margin-bottom:12px';
+    policy.style.cssText = 'display:inline-flex;align-items:center;color:#17191f;font-weight:650;text-decoration:underline;text-underline-offset:3px;margin-bottom:20px;font-size:13px';
     var actions = document.createElement('div');
-    actions.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px';
+    actions.style.cssText = 'display:flex;flex-wrap:wrap;gap:10px;align-items:center';
     function button(label, action, primary) {
       var b = document.createElement('button');
       b.type = 'button';
       b.textContent = label;
-      b.style.cssText = 'border:2px solid #111317;padding:9px 12px;font-weight:700;cursor:pointer;background:' + (primary ? '#f8d000' : '#fff') + ';color:#111317';
+      b.style.cssText = 'min-height:44px;border:1px solid ' + (primary ? '#f8d000' : 'rgba(17,19,23,.16)') + ';border-radius:999px;padding:11px 18px;font:650 13px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;background:' + (primary ? '#f8d000' : '#f7f8fa') + ';color:#17191f;transition:transform .18s ease,box-shadow .18s ease,background .18s ease';
       b.addEventListener('click', action);
       actions.appendChild(b);
     }
