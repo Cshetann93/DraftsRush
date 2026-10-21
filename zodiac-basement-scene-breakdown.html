@@ -153,7 +153,56 @@
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
   </style>
-</head>
+<style id="zodiac-redesign">
+.zodiac-redesign{--zr-ink:#191c22;--zr-muted:#606873;--zr-paper:#f8f7f3;--zr-line:#e1e0db;--zr-yellow:#f8d000;background:var(--zr-paper);color:var(--zr-ink);font-family:Inter,system-ui,sans-serif}
+.z-redesign-wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
+.z-redesign-hero{background:#e8eaee;border-bottom:1px solid #d7d9de;overflow:hidden}
+.z-redesign-back{display:inline-flex;margin:24px 0 34px;color:#5e6570;text-decoration:none;font-size:12px;font-weight:700;gap:8px}
+.z-redesign-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;padding-bottom:48px}
+.z-redesign-kicker,.z-redesign-meta,.z-redesign-file,.z-redesign-art-caption,.z-redesign-hero-foot{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;font-weight:700}
+.z-redesign-kicker{display:flex;align-items:center;gap:10px;color:#626975;margin-bottom:22px}
+.z-redesign-kicker span{width:8px;height:8px;border-radius:50%;background:#c6a900;box-shadow:0 0 0 4px #f8d00030}
+.z-redesign-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,6.5vw,84px);line-height:.94;letter-spacing:-.075em;font-weight:700;margin:0 0 24px;max-width:620px}
+.z-redesign-hero h1 em{font-family:Georgia,serif;font-weight:400}
+.z-redesign-deck{max-width:510px;color:#59616d;font-size:clamp(16px,1.5vw,19px);line-height:1.7;margin:0 0 23px}
+.z-redesign-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#747b85;font-size:9px;margin-bottom:27px}
+.z-redesign-meta i{height:1px;width:18px;background:#aeb3bb}
+.z-redesign-cta{display:inline-flex;align-items:center;gap:25px;border-radius:999px;background:#f8d000;padding:14px 18px;color:#191c22;text-decoration:none;font-size:12px;font-weight:800;box-shadow:0 6px 18px #191c2212;transition:transform .2s,box-shadow .2s}
+.z-redesign-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px #191c2220}
+.z-redesign-art{position:relative;min-height:390px;border-radius:18px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 48% 4%,#59616d 0,#292e36 38%,#14171c 78%);box-shadow:0 24px 60px #191c2228}
+.z-redesign-art:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff2 4px,transparent 5px);pointer-events:none}
+.z-redesign-art:after{content:"";position:absolute;top:-30px;left:25%;width:220px;height:300px;background:#f8d00018;filter:blur(45px);transform:rotate(12deg)}
+.z-redesign-file{position:absolute;z-index:2;top:25px;left:26px;line-height:1.9;color:#d0d4db}
+.z-redesign-file b{font-size:12px;color:#f8d000}
+.z-redesign-stairs{position:absolute;bottom:62px;left:15%;width:70%;height:67%;transform:perspective(420px) rotateX(52deg) rotateZ(-2deg);transform-origin:bottom center}
+.z-redesign-stairs:before{content:"";position:absolute;inset:0 12%;background:linear-gradient(90deg,#15191f,#3c424c 48%,#171b20);border-left:1px solid #727985;border-right:1px solid #0b0d10}
+.z-redesign-stairs i{position:relative;display:block;height:14.28%;border-top:2px solid #747b85;background:linear-gradient(#ffffff12,#0008);box-shadow:0 5px 8px #0004}
+.z-redesign-stairs i:nth-child(2){margin:0 4%}.z-redesign-stairs i:nth-child(3){margin:0 8%}.z-redesign-stairs i:nth-child(4){margin:0 12%}.z-redesign-stairs i:nth-child(5){margin:0 16%}.z-redesign-stairs i:nth-child(6){margin:0 20%}.z-redesign-stairs i:nth-child(7){margin:0 24%}
+.z-redesign-art-caption{position:absolute;z-index:2;bottom:23px;left:25px;color:#b9bec7;font-size:8px}
+.z-redesign-hero-foot{display:flex;justify-content:space-between;border-top:1px solid #d0d4da;padding:16px 0;color:#747b85;font-size:8px}
+.zodiac-redesign main,.zodiac-redesign .max-w-4xl{max-width:none}
+.zodiac-redesign main>div.max-w-4xl{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:50px 0 80px}
+.zodiac-redesign main>div>div:first-child{margin-bottom:25px}
+.zodiac-redesign main>div>div:first-child a{display:none}
+.zodiac-redesign article{display:grid;grid-template-columns:minmax(0,1fr);gap:0!important}
+.zodiac-redesign article>section{margin:0 0 34px!important;padding:clamp(24px,4vw,44px)!important;border:1px solid var(--zr-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:0 8px 30px #171a2008!important;color:var(--zr-muted)!important}
+.zodiac-redesign article>section h2{font-family:'Space Grotesk',sans-serif;font-weight:650;letter-spacing:-.045em;line-height:1.1;color:var(--zr-ink);font-size:clamp(27px,3.4vw,42px)}
+.zodiac-redesign article>section p{color:#59616c;line-height:1.85;font-size:15px}
+.zodiac-redesign article>section .border-b-2{border-color:var(--zr-line)!important}
+.zodiac-redesign article>section span.bg-\[\#F8D000\]{background:#f8d000!important;border:0!important;border-radius:999px;padding:6px 10px}
+.zodiac-redesign article>section .brutal-box{box-shadow:none!important}
+.zodiac-redesign article>section .font-screenplay{background:#f4f2eb!important;border:1px solid #e3dfd3!important;border-radius:12px!important}
+.zodiac-redesign article>section a{color:#3e4652}
+.zodiac-redesign article>section a:hover{color:#15181e}
+.zodiac-redesign article>section .bg-black{background:#272b33!important}
+.zodiac-redesign article>section .text-white{color:#fff!important}
+.zodiac-redesign article>section .border-black{border-color:#dedfdc!important}
+.zodiac-redesign article>section .rounded-2xl,.zodiac-redesign article>section .rounded-xl{border-radius:14px!important}
+.zodiac-redesign article>section .brutal-btn,.zodiac-redesign article>section .studio-btn{border-radius:999px!important;box-shadow:0 4px 12px #171a2010!important}
+@media(min-width:900px){.zodiac-redesign article{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px!important}.zodiac-redesign article>section:first-child,.zodiac-redesign article>section:nth-child(2),.zodiac-redesign article>section:nth-child(3),.zodiac-redesign article>section:nth-child(4),.zodiac-redesign article>section:nth-child(5),.zodiac-redesign article>section:nth-child(8),.zodiac-redesign article>section:nth-child(9),.zodiac-redesign article>section:nth-child(10),.zodiac-redesign article>section:nth-child(11),.zodiac-redesign article>section:nth-child(12){grid-column:1/-1}}
+@media(max-width:760px){.z-redesign-wrap{width:calc(100% - 34px)}.z-redesign-back{margin:18px 0 25px}.z-redesign-hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.z-redesign-hero h1{font-size:clamp(48px,14vw,70px)}.z-redesign-art{min-height:280px}.z-redesign-hero-foot{gap:12px;font-size:7px}.zodiac-redesign main>div.max-w-4xl{width:calc(100% - 34px);padding-top:32px}.zodiac-redesign article>section{padding:22px!important;margin-bottom:20px!important}.zodiac-redesign article>section p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.z-redesign-cta{transition:none}}
+</style></head>
 <body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
@@ -272,7 +321,7 @@
       }
     });
   </script><!-- Main Article Content -->
-  <main class="flex-grow">
+  <main class="flex-grow zodiac-redesign"><section class="z-redesign-hero"><div class="z-redesign-wrap"><a href="/writers-room" class="z-redesign-back">← Writer's Room</a><div class="z-redesign-hero-grid"><div><div class="z-redesign-kicker"><span></span> SCENE STUDY / PSYCHOLOGICAL THRILLER</div><h1>The <em>Zodiac</em><br>Basement Scene</h1><p class="z-redesign-deck">How David Fincher turns a quiet conversation, a staircase, and a sound from upstairs into one of the film's most unnerving sequences.</p><div class="z-redesign-meta">FILM ANALYSIS <i></i> 8 MIN READ <i></i> SUSPENSE & POINT OF VIEW</div><a class="z-redesign-cta" href="#scene-analysis">Explore the breakdown <span>↓</span></a></div><div class="z-redesign-art" aria-label="Abstract illustration of a dark basement staircase"><div class="z-redesign-file">CASE FILE 06<br><b>THE BASEMENT</b></div><div class="z-redesign-stairs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="z-redesign-art-caption">THE FEAR IS WHAT YOU CAN'T CONFIRM.</div></div></div><div class="z-redesign-hero-foot"><span>01 — THE SETUP</span><span>OBSERVATION → DOUBT → DREAD</span></div></div></section>
     <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       
       <!-- Top Back Button -->
@@ -282,7 +331,7 @@
         </a>
       </div>
 
-      <article class="space-y-12">
+      <article class="space-y-12" id="scene-analysis">
 
         <!-- Scene Introduction & Context -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6 text-gray-800 text-base leading-relaxed font-medium">
