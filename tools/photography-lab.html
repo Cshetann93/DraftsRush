@@ -329,7 +329,47 @@ body.tool-page-refresh footer .border-t-2 { border-width:1px!important; border-c
     .lab-divider { border-top:1px solid #c4c7ce; }
     @media(max-width:640px){ .photo-stage{min-height:260px}.setting-number{font-size:19px}.lab-panel{box-shadow:3px 3px 0 #111317} }
     @media(prefers-reduced-motion:reduce){ .photo-lab *{transition:none!important;scroll-behavior:auto!important} }
-  </style>
+  
+    /* Definitive footer contrast override — placed after all sitewide styles */
+    body.tool-page-refresh footer,
+    body.tool-page-refresh footer *,
+    body.dark.tool-page-refresh footer,
+    body.dark.tool-page-refresh footer * {
+      color:#111317!important;
+      opacity:1!important;
+      text-shadow:none!important;
+    }
+    body.tool-page-refresh footer,
+    body.dark.tool-page-refresh footer {
+      background:#D6E4EE!important;
+      border-top:1px solid #111317!important;
+    }
+    body.tool-page-refresh footer svg,
+    body.tool-page-refresh footer svg *,
+    body.dark.tool-page-refresh footer svg,
+    body.dark.tool-page-refresh footer svg * {
+      fill:#111317!important;
+      color:#111317!important;
+    }
+    body.tool-page-refresh footer .bg-brand-yellow,
+    body.tool-page-refresh footer .bg-\\[\\#F8D000\\],
+    body.dark.tool-page-refresh footer .bg-brand-yellow,
+    body.dark.tool-page-refresh footer .bg-\\[\\#F8D000\\] {
+      background-color:#F8D000!important;
+      color:#111317!important;
+    }
+    body.tool-page-refresh footer .border-b,
+    body.tool-page-refresh footer .border-b-2,
+    body.tool-page-refresh footer .border-t,
+    body.tool-page-refresh footer .border-t-2,
+    body.dark.tool-page-refresh footer .border-b,
+    body.dark.tool-page-refresh footer .border-b-2,
+    body.dark.tool-page-refresh footer .border-t,
+    body.dark.tool-page-refresh footer .border-t-2 {
+      border-width:1px!important;
+      border-color:#111317!important;
+    }
+</style>
 
   <script type="application/ld+json">
   {
