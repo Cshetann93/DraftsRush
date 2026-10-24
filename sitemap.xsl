@@ -156,7 +156,7 @@
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
   </style>
-  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css" />
 </head>
       <body>
         <div class="container">
