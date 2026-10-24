@@ -161,6 +161,74 @@
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
   </style>
+<style id="zodiac-redesign">
+.zodiac-redesign{--zr-ink:#191c22;--zr-muted:#606873;--zr-paper:#f8f7f3;--zr-line:#e1e0db;--zr-yellow:#f8d000;background:var(--zr-paper);color:var(--zr-ink);font-family:Inter,system-ui,sans-serif}
+.z-redesign-wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
+.z-redesign-hero{background:#e8eaee;border-bottom:1px solid #d7d9de;overflow:hidden}
+.z-redesign-back-label{display:block;margin:24px 0 34px;color:#737a84;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em}
+.z-redesign-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;padding-bottom:48px}
+.z-redesign-kicker,.z-redesign-meta,.z-redesign-file,.z-redesign-art-caption,.z-redesign-hero-foot{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;font-weight:700}
+.z-redesign-kicker{display:flex;align-items:center;gap:10px;color:#626975;margin-bottom:22px}
+.z-redesign-kicker span{width:8px;height:8px;border-radius:50%;background:#c6a900;box-shadow:0 0 0 4px #f8d00030}
+.z-redesign-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,6.5vw,84px);line-height:.94;letter-spacing:-.075em;font-weight:700;margin:0 0 24px;max-width:620px}
+.z-redesign-hero h1 em{font-family:Georgia,serif;font-weight:400}
+.z-redesign-deck{max-width:510px;color:#59616d;font-size:clamp(16px,1.5vw,19px);line-height:1.7;margin:0 0 23px}
+.z-redesign-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#747b85;font-size:9px;margin-bottom:27px}
+.z-redesign-meta i{height:1px;width:18px;background:#aeb3bb}
+.z-redesign-cta{display:inline-flex;align-items:center;gap:25px;border-radius:999px;background:#f8d000;padding:14px 18px;color:#191c22;text-decoration:none;font-size:12px;font-weight:800;box-shadow:0 6px 18px #191c2212;transition:transform .2s,box-shadow .2s}
+.z-redesign-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px #191c2220}
+.z-redesign-art{position:relative;min-height:390px;border-radius:18px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 48% 4%,#59616d 0,#292e36 38%,#14171c 78%);box-shadow:0 24px 60px #191c2228}
+.z-redesign-art:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff2 4px,transparent 5px);pointer-events:none}
+.z-redesign-art:after{content:"";position:absolute;top:-30px;left:25%;width:220px;height:300px;background:#f8d00018;filter:blur(45px);transform:rotate(12deg)}
+.z-redesign-file{position:absolute;z-index:2;top:25px;left:26px;line-height:1.9;color:#d0d4db}
+.z-redesign-file b{font-size:12px;color:#f8d000}
+.z-redesign-stairs{position:absolute;bottom:62px;left:15%;width:70%;height:67%;transform:perspective(420px) rotateX(52deg) rotateZ(-2deg);transform-origin:bottom center}
+.z-redesign-stairs:before{content:"";position:absolute;inset:0 12%;background:linear-gradient(90deg,#15191f,#3c424c 48%,#171b20);border-left:1px solid #727985;border-right:1px solid #0b0d10}
+.z-redesign-stairs i{position:relative;display:block;height:14.28%;border-top:2px solid #747b85;background:linear-gradient(#ffffff12,#0008);box-shadow:0 5px 8px #0004}
+.z-redesign-stairs i:nth-child(2){margin:0 4%}.z-redesign-stairs i:nth-child(3){margin:0 8%}.z-redesign-stairs i:nth-child(4){margin:0 12%}.z-redesign-stairs i:nth-child(5){margin:0 16%}.z-redesign-stairs i:nth-child(6){margin:0 20%}.z-redesign-stairs i:nth-child(7){margin:0 24%}
+.z-redesign-art-caption{position:absolute;z-index:2;bottom:23px;left:25px;color:#b9bec7;font-size:8px}
+.z-redesign-hero-foot{display:flex;justify-content:space-between;border-top:1px solid #d0d4da;padding:16px 0;color:#747b85;font-size:8px}
+.zodiac-redesign main,.zodiac-redesign .max-w-4xl{max-width:none}
+.zodiac-redesign>div.max-w-4xl{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:50px 0 80px}
+.zodiac-redesign>div.max-w-4xl>div:first-child{margin-bottom:25px}
+.zodiac-redesign>div.max-w-4xl>div:first-child a{display:none}
+.zodiac-redesign article{display:flex;flex-direction:column;gap:0!important;min-width:0}
+.zodiac-redesign article>section{margin:0 0 32px!important;padding:clamp(24px,4vw,44px)!important;border:1px solid var(--zr-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:0 8px 30px #171a2008!important;color:var(--zr-muted)!important}
+.zodiac-redesign article>section h2{font-family:'Space Grotesk',sans-serif;font-weight:650;letter-spacing:-.045em;line-height:1.1;color:var(--zr-ink);font-size:clamp(27px,3.4vw,42px)}
+.zodiac-redesign article>section p{color:#59616c;line-height:1.85;font-size:15px}
+.zodiac-redesign article>section .border-b-2{border-color:var(--zr-line)!important}
+.zodiac-redesign article>section span.bg-\[\#F8D000\]{background:#f8d000!important;border:0!important;border-radius:999px;padding:6px 10px}
+.zodiac-redesign article>section .brutal-box{box-shadow:none!important}
+.zodiac-redesign article>section .font-screenplay{background:#f4f2eb!important;border:1px solid #e3dfd3!important;border-radius:12px!important}
+.zodiac-redesign article>section a{color:#3e4652}
+.zodiac-redesign article>section a:hover{color:#15181e}
+.zodiac-redesign article>section .bg-black{background:#272b33!important}
+.zodiac-redesign article>section .text-white{color:#fff!important}
+.zodiac-redesign article>section .border-black{border-color:#dedfdc!important}
+.zodiac-redesign article>section .rounded-2xl,.zodiac-redesign article>section .rounded-xl{border-radius:14px!important}
+.zodiac-redesign article>section .brutal-btn,.zodiac-redesign article>section .studio-btn{border-radius:999px!important;box-shadow:0 4px 12px #171a2010!important}
+@media(min-width:900px){.zodiac-redesign article{display:flex;flex-direction:column;gap:0!important}}
+@media(max-width:760px){.z-redesign-wrap{width:calc(100% - 34px)}.z-redesign-back-label{margin:18px 0 25px}.z-redesign-hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.z-redesign-hero h1{font-size:clamp(48px,14vw,70px)}.z-redesign-art{min-height:280px}.z-redesign-hero-foot{gap:12px;font-size:7px}.zodiac-redesign>div.max-w-4xl{width:calc(100% - 34px);padding-top:32px}.zodiac-redesign article>section{padding:22px!important;margin-bottom:20px!important}.zodiac-redesign article>section p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.z-redesign-cta{transition:none}}
+.z-redesign-art-image{padding:0;min-height:0;aspect-ratio:1.32;overflow:hidden;background:#171a1f}
+.z-redesign-art-image img{display:block;width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center;border-radius:inherit}
+@media(max-width:760px){.z-redesign-art-image{aspect-ratio:1.25}.z-redesign-art-image img{min-height:280px}}
+</style>
+<style id="zodiac-final-resources-styles">
+.z-final-resources{margin-top:18px!important;padding:clamp(24px,4vw,42px)!important;background:#e9ebef!important;border:1px solid #d9dce1!important;border-radius:20px!important}
+.z-final-resources-heading{max-width:720px;margin-bottom:26px}
+.z-final-kicker{display:block;color:#8b7650;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.13em;margin-bottom:14px}
+.z-final-resources h2{font-size:clamp(28px,3.5vw,40px)!important;margin:0 0 14px!important}
+.z-final-resources-heading p{font-size:14px!important;margin:0!important}
+.z-final-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.z-final-link-grid a{display:flex;flex-direction:column;gap:7px;min-width:0;padding:17px 18px;border:1px solid #d4d7dd;border-radius:12px;background:#f9f9f7;color:#20242b!important;text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+.z-final-link-grid a:hover{background:#f8d000;border-color:#e2c000;transform:translateY(-1px)}
+.z-final-link-grid a strong{font-size:13px;font-weight:750}
+.z-final-link-grid a span{font-size:11px;line-height:1.5;color:#666e79}
+.z-final-link-grid a:hover span{color:#353a42}
+.zodiac-redesign article>section:not(.z-final-resources){scroll-margin-top:100px}
+@media(max-width:620px){.z-final-link-grid{grid-template-columns:1fr}.z-final-resources{padding:22px!important}.zodiac-redesign article>section{margin-bottom:22px!important}}
+</style>
 </head>
 <body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -281,17 +349,10 @@
     });
   </script>
 
-  <main class="flex-grow">
+  <main class="flex-grow zodiac-redesign"><section class="z-redesign-hero"><div class="z-redesign-wrap"><div class="z-redesign-back-label">SCENE ANALYSIS / FEATURED BREAKDOWN</div><div class="z-redesign-hero-grid"><div><div class="z-redesign-kicker"><span></span> SCENE STUDY / PSYCHOLOGICAL THRILLER</div><h1>The <em>Zodiac</em><br>Basement Scene</h1><p class="z-redesign-deck">How David Fincher turns a quiet conversation, a staircase, and a sound from upstairs into one of the film's most unnerving sequences.</p><div class="z-redesign-meta">FILM ANALYSIS <i></i> 8 MIN READ <i></i> SUSPENSE & POINT OF VIEW</div><a class="z-redesign-cta" href="#scene-analysis">Explore the breakdown <span>↓</span></a></div><div class="z-redesign-art z-redesign-art-image"><img src="/images/zodiac-basement-scene.webp" alt="The basement scene from Zodiac" width="1200" height="900" loading="eager" fetchpriority="high"></div></div><div class="z-redesign-hero-foot"><span>01 — THE SETUP</span><span>OBSERVATION → DOUBT → DREAD</span></div></div></section>
     <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       
-      <!-- Top Back Button -->
-      <div class="mb-8">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
-          ← Return to the Writer's Room
-        </a>
-      </div>
-
-      <article class="space-y-12">
+      <article class="space-y-12" id="scene-analysis">
 
         <!-- Scene Introduction & Context -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6 text-gray-800 text-base leading-relaxed font-medium">
@@ -307,8 +368,18 @@
             Graysmith arrives on a stormy night at the suburban home of Bob Vaughn, an elderly organist who worked at a movie theater with a prime Zodiac suspect, Rick Marshall. Graysmith believes Marshall drew the movie posters displaying the exact handwriting found in the killer's taunting letters to the <em>San Francisco Chronicle</em>.
           </p>
           <p>
-            What follows is a textbook lesson in dramatic subversion: an investigative interview transforms into an inescapable physical trap inside an ordinary suburban basement.
+            What follows is a lesson in suspense: an investigative conversation gradually becomes frightening because Graysmith cannot tell whether the clues point to a real threat or whether his own obsession is shaping what he sees.
           </p>
+        </section>
+
+        <!-- Quick Answer for Search Intent -->
+        <section class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 space-y-4" aria-labelledby="quick-answer-heading">
+          <div class="border-b border-black/15 pb-3">
+            <span class="text-xs font-bold uppercase tracking-wider brand-font">Quick Answer</span>
+            <h2 id="quick-answer-heading" class="text-2xl md:text-3xl font-black brand-font mt-2">Was Bob Vaughn the Zodiac Killer?</h2>
+          </div>
+          <p class="text-sm md:text-base leading-relaxed text-gray-800">The film <em>Zodiac</em> does not confirm that Bob Vaughn was the Zodiac killer. The basement scene connects him to theater-poster lettering that interests Robert Graysmith, then uses the setting and unexplained footsteps to heighten suspicion. These details create fear and uncertainty; they do not prove Vaughn committed the murders.</p>
+          <p class="text-sm leading-relaxed text-gray-700">The historical identity of the Zodiac killer remains unresolved. The scene should be read as a dramatization of Graysmith’s suspicion, not as conclusive evidence against Vaughn.</p>
         </section>
 
         <!-- Script Page Display -->
@@ -316,13 +387,13 @@
           <div class="border-b-2 border-black pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">Production Page</span>
-              <h2 class="text-2xl md:text-3xl font-black brand-font">What This Scene Looked Like on the Script</h2>
+              <h2 class="text-2xl md:text-3xl font-black brand-font">Reconstructing the Scene: Dialogue, Pauses and Sound</h2>
             </div>
             <span class="text-xs font-mono font-bold bg-black text-white px-2.5 py-1 w-fit">COURIER 12PT SPEC</span>
           </div>
 
           <p class="font-medium text-gray-800 text-sm leading-relaxed">
-            Notice how sparse James Vanderbilt's screenplay reads on the page. Pacing is driven by whitespace, clipped dialogue lines, and acoustic cues:
+            The following is an illustrative reconstruction of the scene’s dramatic beats, not a verified verbatim excerpt from James Vanderbilt’s screenplay. It demonstrates how short exchanges, pauses, and sound cues can build suspense:
           </p>
 
           <!-- Authentic Script Rendering Box -->
@@ -389,35 +460,32 @@
             The genius of this scene lies in its refusal to confirm whether Bob Vaughn is actually the Zodiac killer. 
           </p>
           <p>
-            Up to this point, the audience has sat through two hours of verified procedural facts: police reports, autopsy results, ballistics tests, and handwriting analysis. The viewer knows that the killer had military wing-walker shoes, wrote with a felt-tip pen, and claimed in letters that his victims were stored in a basement.
+            Up to this point, the audience has sat through two hours of verified procedural facts: police reports, autopsy results, ballistics tests, and handwriting analysis. The film has already presented investigative details about footwear, writing instruments, and a letter referring to a basement. Those details shape the viewer’s expectations, but they do not establish that every clue points to Vaughn.
           </p>
           <p>
             When Graysmith descends the stairs, the movie strips away his identity as an investigator. He has no badge, no backup, no gun, and nobody knows he is in that house. The scene works because every single clue lines up simultaneously:
           </p>
           <ul class="space-y-2 text-sm font-bold text-gray-900 list-disc list-inside">
             <li><strong>The Handwriting:</strong> Vaughn admits he drew the posters himself.</li>
-            <li><strong>The Architectural Anomaly:</strong> California homes rarely have basements due to seismic building codes; Vaughn has one.</li>
+            <li><strong>The Setting:</strong> The basement echoes a detail associated with a Zodiac letter. Its significance in the scene comes from Graysmith’s interpretation, not from the mere existence of a basement.</li>
             <li><strong>The Physical Blocking:</strong> Vaughn stands between Graysmith and the only exit stairs.</li>
-            <li><strong>The Sound Design:</strong> Footsteps pacing above when Vaughn claimed to live entirely alone.</li>
+            <li><strong>The Sound Design:</strong> Unexplained footsteps above introduce a possible threat, but the scene does not conclusively identify who—or what—causes them.</li>
           </ul>
         </section>
-
-        <!-- In-Article Tool Bridge (Calibrated for Script Pacing & Duration) -->
-        <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box space-y-3">
-          <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold font-mono uppercase">Screenplay Tool Callout</span>
-          <h3 class="text-lg font-black brand-font text-black">Drafting Suspenseful Dialogue?</h3>
-          <p class="text-xs text-gray-800 font-medium leading-relaxed">
-            Notice how Bob Vaughn's lines average under five words per delivery ("No. Rick didn't draw the posters." / "I did." / "I do."). Dread requires calculated pauses and deliberate speaking speeds rather than long speeches. Measure your scene's speaking duration, delivery speed, and pause intervals with our free browser tool:
+        
+        <!-- In-Article Tool Bridge (Preserved addition from the previous iteration) -->
+        <section class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 brutal-box space-y-3" aria-labelledby="suspense-dialogue-tools">
+          <span class="inline-block bg-black text-white px-2 py-1 text-[10px] font-bold font-mono uppercase">Screenplay Tool Callout</span>
+          <h2 id="suspense-dialogue-tools" class="text-xl md:text-2xl font-black brand-font text-black">Drafting Suspenseful Dialogue?</h2>
+          <p class="text-sm text-gray-800 font-medium leading-relaxed">
+            The scene uses short answers, deliberate pauses, and uncertainty rather than long explanations. Use these free tools to estimate scene duration and trim dialogue that weakens tension.
           </p>
           <div class="flex flex-wrap gap-3 pt-1">
-            <a href="/tools/script-timer" class="p-2.5 bg-white border-2 border-black text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">
-              ⏱ Open Script Pacing Timer →
-            </a>
-            <a href="/tools/dialogue-pruner" class="p-2.5 bg-white border-2 border-black text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">
-              ✂ Prune Filler Dialogue →
-            </a>
+            <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-lg text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">Open Script Pacing Timer →</a>
+            <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-lg text-xs font-bold font-mono hover:bg-[#F8D000] transition-colors">Open Dialogue Pruner →</a>
           </div>
-        </div>
+        </section>
+
 
         <!-- Visual Walkthrough / Schematic Section -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-8">
@@ -472,7 +540,7 @@
                   <span class="bg-[#FCE8E6] border border-black px-2 py-0.5 font-bold text-black uppercase">BEAT 04</span>
                   <strong class="text-sm font-black brand-font">The Acoustic Pattern Interrupt (The Footsteps)</strong>
                 </div>
-                <p class="font-sans text-xs text-gray-700 font-medium">Heavy, measured steps pacing across the ceiling above. Vaughn claims he is alone. Graysmith realizes there is an unseen second presence in the house.</p>
+                <p class="font-sans text-xs text-gray-700 font-medium">Heavy, measured steps pacing across the ceiling above. Vaughn claims he is alone. Graysmith fears there may be another presence in the house, but the sound does not conclusively identify its source.</p>
               </div>
               <span class="bg-white border border-black px-2.5 py-1 font-bold text-red-600 whitespace-nowrap">ACOUSTIC TRAP</span>
             </div>
@@ -527,7 +595,7 @@
             <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5">
               <strong class="text-base font-black brand-font block mb-1">4. Exploit the Auditory Dimension (Sound Over Sight)</strong>
               <p class="text-sm font-medium text-gray-700 leading-relaxed">
-                What the audience cannot see is always more terrifying than what you show. The footsteps pacing overhead work because they violate the established rule of the house (Vaughn lives alone). Use off-screen acoustic clues to destabilize the protagonist's reality.
+                What the audience cannot see is always more terrifying than what you show. The footsteps pacing overhead work because they introduce a possible contradiction to what Graysmith believes about the house. The source remains uncertain, allowing the audience to share his fear without treating his interpretation as fact. Use off-screen sound to destabilize the protagonist’s sense of safety.
               </p>
             </div>
           </div>
@@ -635,7 +703,7 @@
             <div class="bg-white border-[1.5px] border-black rounded-xl p-4 brutal-box space-y-1">
               <strong class="text-sm font-sans font-black text-black block">What was the basement scene in Zodiac about?</strong>
               <p class="font-sans text-gray-700 text-xs leading-relaxed">
-                Robert Graysmith visits Bob Vaughn, an organist who worked alongside suspect Rick Marshall. Vaughn reveals that he personally drew the movie posters featuring the killer's exact handwriting. When Graysmith notes that few California houses have basements, Vaughn replies "I do," right before unexplained footsteps pace across the ceiling above.
+                Robert Graysmith visits Bob Vaughn, an organist who worked alongside suspect Rick Marshall. Vaughn says he drew the movie posters whose lettering Graysmith associates with the Zodiac letters. When Graysmith notes that few California houses have basements, Vaughn replies "I do," right before unexplained footsteps pace across the ceiling above.
               </p>
             </div>
 
@@ -656,63 +724,44 @@
             <div class="bg-white border-[1.5px] border-black rounded-xl p-4 brutal-box space-y-1">
               <strong class="text-sm font-sans font-black text-black block">Whose footsteps were heard upstairs?</strong>
               <p class="font-sans text-gray-700 text-xs leading-relaxed">
-                The footsteps are never visually confirmed. The sound design serves as an acoustic pattern interrupt, leaving Graysmith and the viewer terrified that Vaughn either lied about living alone or is harboring an accomplice.
+                The footsteps are never visually confirmed as belonging to a specific person. The sound interrupts the conversation and leaves Graysmith—and the viewer—to consider the possibility of danger without resolving what caused it.
               </p>
             </div>
           </div>
         </section>
 
-        <!-- Sibling Studies (Curated Next-Read Sequence) -->
-        <section class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box space-y-4">
-          <div class="border-b-2 border-black pb-2">
-            <h3 class="text-lg font-black brand-font uppercase">Sibling Studies: Tension & Suspense Mechanics</h3>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
-            <a href="/no-country-for-old-men-coin-toss-scene-breakdown" class="p-4 bg-[#F0F2F5] border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors block">
-              <strong class="text-black block mb-1 text-sm font-sans font-black">No Country for Old Men: Coin Toss Breakdown →</strong>
-              <p class="text-gray-600 font-normal">How the Coen brothers weaponize conversational stakes with zero background music.</p>
-            </a>
-            <a href="/sicario-border-crossing-scene-breakdown" class="p-4 bg-[#F0F2F5] border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors block">
-              <strong class="text-black block mb-1 text-sm font-sans font-black">Sicario: Border Crossing Scene Breakdown →</strong>
-              <p class="text-gray-600 font-normal">Mastering spatial claustrophobia and anticipatory dread inside trapped vehicles.</p>
-            </a>
-          </div>
-        </section>
-
-        <section class="mt-10 border-t-2 border-black pt-6" aria-labelledby="related-reading">
-          <h2 id="related-reading" class="text-xl font-black brand-font mb-3">Explore more psychological tension</h2>
-          <p class="mb-4 text-gray-700">The basement scene shows how a film can create dread through uncertainty, setting, and what a character cannot confirm. Continue with these related breakdowns and film guides.</p>
-          <ul class="list-disc pl-6 space-y-2 text-blue-900">
-            <li><a class="underline" href="/most-disturbing-movies-ever-made-ranked">Most disturbing movies ever made</a> for more unsettling films and the choices that make them linger.</li>
-            <li><a class="underline" href="/best-psychological-thriller-movies">Best psychological thriller movies</a> for films that build fear through suspicion and perception.</li>
-            <li><a class="underline" href="/american-psycho-ending-explained">American Psycho ending explained</a> for an example of ambiguity that keeps viewers questioning what they saw.</li>
-            <li><a class="underline" href="/scene-analysis-library">Browse the Scene Analysis Library</a> for more detailed breakdowns of filmmaking choices.</li>
-          </ul>
-        </section>
-
+        <section class="z-final-resources" aria-labelledby="related-reading">
+  <div class="z-final-resources-heading">
+    <span class="z-final-kicker">CONTINUE EXPLORING</span>
+    <h2 id="related-reading">More scene studies and writing resources</h2>
+    <p>Finish the analysis first. When you're ready, continue with related breakdowns, practical writing tools, and resources for your next script.</p>
+  </div>
+  <div class="z-final-link-grid">
+    <a href="/no-country-for-old-men-coin-toss-scene-breakdown"><strong>No Country for Old Men</strong><span>Coin toss scene breakdown →</span></a>
+    <a href="/sicario-border-crossing-scene-breakdown"><strong>Sicario</strong><span>Border crossing scene breakdown →</span></a>
+    <a href="/most-disturbing-movies-ever-made-ranked"><strong>Most disturbing movies</strong><span>Explore unsettling film choices →</span></a>
+    <a href="/best-psychological-thriller-movies"><strong>Psychological thrillers</strong><span>Browse films built on suspicion →</span></a>
+    <a href="/american-psycho-ending-explained"><strong>American Psycho</strong><span>Ending explained →</span></a>
+    <a href="/scene-analysis-library"><strong>Scene Analysis Library</strong><span>Browse all scene studies →</span></a>
+    <a href="/tools/script-timer"><strong>Script Pacing Timer</strong><span>Measure scene duration →</span></a>
+    <a href="/tools/dialogue-pruner"><strong>Dialogue Pruner</strong><span>Trim unnecessary dialogue →</span></a>
+    <a href="/scripts"><strong>DraftsRush Script Packs</strong><span>Get production-ready writing support →</span></a>
+  </div>
+</section>
+      
+        
         <!-- Commercial Scriptwriting CTA Strip -->
-        <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
+        <section class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6" aria-labelledby="research-heavy-scripts">
           <div>
-            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
-            <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Research-Heavy Scripts Written?</h2>
+            <span class="inline-block bg-black text-white px-2 py-1 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+            <h2 id="research-heavy-scripts" class="text-2xl font-black brand-font mt-3 mb-2 text-black">Need Research-Heavy Scripts Written?</h2>
             <p class="text-sm font-medium text-black max-w-xl">
-              We write investigative true crime video essays, documentary screenplays, and high-retention video stories ready for production.
+              DraftsRush writes investigative video essays, documentary scripts, and high-retention video stories ready for production.
             </p>
           </div>
-          <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
-            Explore Script Packs →
-          </a>
-        </div>
-
-      </article>
-
-      <!-- Bottom Back Button -->
-      <div class="mt-12">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
-          ← Return to the Writer's Room
-        </a>
-      </div>
-
+          <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">Explore Script Packs →</a>
+        </section>
+</article>
     </div>
   </main>
 
