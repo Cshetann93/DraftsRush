@@ -56,27 +56,22 @@
     .coin-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px;}.coin-answer{scroll-margin-top:24px;}
     @media(max-width:760px){.coin-hero-inner{grid-template-columns:1fr;}.coin-art{min-height:270px;}.coin-hero-footer{flex-direction:column;gap:7px;}.coin-hero h1{font-size:clamp(42px,12vw,64px);}}
 
-    /* Restyle every article section rather than only the hero */
+    /* Keep the full article in outlined content blocks, inspired by the Zodiac breakdown page */
     main > .max-w-4xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important;}
-    main > .max-w-4xl > article{display:grid;grid-template-columns:minmax(0,1fr);gap:0!important;}
-    main > .max-w-4xl > article > section:not(#coin-answer){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:clamp(28px,4vw,54px) 0!important;margin:0!important;border-bottom:1px solid #cbd2d9!important;}
-    main > .max-w-4xl > article > section:first-of-type:not(#coin-answer){border-top:1px solid #cbd2d9!important;}
-    main > .max-w-4xl > article > section:not(#coin-answer) > div:first-child{border-bottom:1px solid #cbd2d9!important;padding-bottom:18px!important;}
-    main > .max-w-4xl > article > section h2{font-size:clamp(28px,3.5vw,43px)!important;line-height:1.08!important;letter-spacing:-.045em!important;max-width:850px;}
-    main > .max-w-4xl > article > section h3{letter-spacing:-.025em;}
+    main > .max-w-4xl > article{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,36px)!important;}
+    main > .max-w-4xl > article > section:not(.coin-hero){
+      border:1.5px solid #111317!important;
+      border-radius:16px!important;
+      box-shadow:4px 4px 0 #111317!important;
+      padding:clamp(24px,3.5vw,40px)!important;
+      margin:0!important;
+    }
+    main > .max-w-4xl > article > #coin-answer{border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;}
+    main > .max-w-4xl > article > section .grid a,
+    main > .max-w-4xl > article > section .grid li{border:1px solid #111317!important;border-radius:10px!important;box-shadow:2px 2px 0 rgba(17,19,23,.15)!important;}
+    main > .max-w-4xl > article > section h2{line-height:1.1!important;letter-spacing:-.04em!important;}
     main > .max-w-4xl > article > section p{line-height:1.8!important;}
-    main > .max-w-4xl > article > section .border-b-2{border-bottom-width:1px!important;border-color:#cbd2d9!important;}
-    main > .max-w-4xl > article > section .brutal-box{box-shadow:none!important;}
-    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl{border:1px solid #d5dbe1!important;border-radius:14px!important;box-shadow:none!important;}
-    main > .max-w-4xl > article > section .bg-\\[\\#F0F2F5\\]{background:#eef1f3!important;}
-    main > .max-w-4xl > article > section .bg-white{background:#f8f8f5!important;}
-    main > .max-w-4xl > article > #coin-answer{margin:0 0 20px!important;padding:clamp(24px,4vw,42px)!important;border:1px solid #d7c76d!important;border-radius:18px!important;box-shadow:none!important;background:#fff7d5!important;}
-    main > .max-w-4xl > article > #coin-answer h2{font-size:clamp(26px,3vw,36px)!important;}
-    main > .max-w-4xl > article > section .font-mono.text-xs > .bg-white{border:0!important;border-bottom:1px solid #d2d8df!important;border-radius:0!important;box-shadow:none!important;padding:18px 0!important;background:transparent!important;}
-    main > .max-w-4xl > article > section .font-mono.text-xs > .bg-white:last-child{border-bottom:0!important;}
-    main > .max-w-4xl > article > section .grid a{border:1px solid #d3d9df!important;border-radius:14px!important;box-shadow:none!important;background:#f8f8f5!important;padding:22px!important;}
-    main > .max-w-4xl > article > section .grid a:hover{background:#fff7d5!important;}
-    @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article > section:not(#coin-answer){padding:30px 0!important;}main > .max-w-4xl > article > section h2{font-size:29px!important;}}
+    @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article{gap:22px!important;}main > .max-w-4xl > article > section:not(.coin-hero){padding:22px!important;}}
   </style>
 
   <!-- Schema Markup -->
