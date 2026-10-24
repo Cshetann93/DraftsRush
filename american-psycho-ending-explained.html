@@ -242,142 +242,33 @@
       .psycho-hero h1 { font-size: clamp(42px,12vw,64px); }
     }
 
-    /* Editorial Reading Redesign Layout */
-    main > .max-w-4xl {
-      max-width: 1120px !important;
-      padding-top: clamp(32px,5vw,64px) !important;
-      padding-bottom: clamp(56px,7vw,96px) !important;
+    /* Zodiac-inspired boxed article layout: thin black outlines on every major section */
+    main > .max-w-4xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important;}
+    main > .max-w-4xl > article{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,36px)!important;}
+    main > .max-w-4xl > article > section:not(#ending-answer){
+      border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;
+      background:#fff!important;padding:clamp(24px,3.5vw,40px)!important;margin:0!important;
     }
-    main > .max-w-4xl > article {
-      display: grid;
-      grid-template-columns: minmax(0,1fr);
-      gap: 0 !important;
-    }
-    main > .max-w-4xl > article > section:not(#ending-answer) {
-      border: 0 !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-      background: transparent !important;
-      padding: clamp(28px,4vw,54px) 0 !important;
-      margin: 0 !important;
-      border-bottom: 1px solid #cbd2d9 !important;
-    }
-    main > .max-w-4xl > article > section:first-of-type:not(#ending-answer) {
-      border-top: 1px solid #cbd2d9 !important;
-    }
-    main > .max-w-4xl > article > section:not(#ending-answer) > div:first-child {
-      border-bottom: 1px solid #cbd2d9 !important;
-      padding-bottom: 18px !important;
-    }
-    main > .max-w-4xl > article > section h2 {
-      font-size: clamp(28px,3.5vw,43px) !important;
-      line-height: 1.08 !important;
-      letter-spacing: -.045em !important;
-      max-width: 850px;
-    }
-    main > .max-w-4xl > article > section h3 { letter-spacing: -.025em; }
-    main > .max-w-4xl > article > section p { line-height: 1.8 !important; }
-    main > .max-w-4xl > article > section .border-b-2 {
-      border-bottom-width: 1px !important;
-      border-color: #cbd2d9 !important;
-    }
-    main > .max-w-4xl > article > section span.bg-\\[\\#F8D000\\],
-    main > .max-w-4xl > article > section span.bg-\\[\\#FFF6CF\\] {
-      background: transparent !important;
-      border: 0 !important;
-      padding: 0 !important;
-      color: #7b6810 !important;
-      letter-spacing: .16em !important;
-      font-size: 10px !important;
-    }
-
-    /* Clean Inset Card Boxes Restored */
+    main > .max-w-4xl > article > section:nth-of-type(3n+1):not(#ending-answer){background:#fff!important;}
+    main > .max-w-4xl > article > section:nth-of-type(3n+2):not(#ending-answer){background:#f0f2f5!important;}
+    main > .max-w-4xl > article > section:nth-of-type(3n):not(#ending-answer){background:#fff!important;}
+    main > .max-w-4xl > article > section:not(#ending-answer) > div:first-child{border-bottom:1px solid #d5dbe1!important;padding-bottom:16px!important;}
+    main > .max-w-4xl > article > section h2{font-size:clamp(28px,3.5vw,43px)!important;line-height:1.1!important;letter-spacing:-.04em!important;max-width:850px;}
+    main > .max-w-4xl > article > section h3{letter-spacing:-.025em;}
+    main > .max-w-4xl > article > section p{line-height:1.8!important;}
     main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl,
-    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-2xl {
-      border: 1px solid #d5dbe1 !important;
-      border-radius: 14px !important;
-      box-shadow: 0 2px 6px rgba(17, 19, 23, 0.04) !important;
-      background: #f8f8f5 !important;
-      transition: all 0.2s ease;
+    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-2xl,
+    main > .max-w-4xl > article > section .grid a,
+    main > .max-w-4xl > article > section .beat-card-box{
+      border:1px solid #111317!important;border-radius:10px!important;box-shadow:2px 2px 0 rgba(17,19,23,.15)!important;background:#fbfbf8!important;
     }
-    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl:hover {
-      border-color: #111317 !important;
-      background: #ffffff !important;
-      box-shadow: 0 6px 16px -4px rgba(17, 19, 23, 0.08) !important;
-    }
-
-    /* The Answer Card Highlight */
-    main > .max-w-4xl > article > #ending-answer {
-      margin: 0 0 20px !important;
-      padding: clamp(24px,4vw,42px) !important;
-      border: 1px solid #d7c76d !important;
-      border-radius: 18px !important;
-      box-shadow: none !important;
-      background: #fff7d5 !important;
-    }
-    main > .max-w-4xl > article > #ending-answer h2 {
-      font-size: clamp(26px,3vw,36px) !important;
-    }
-
-    /* Timeline & Lists */
-    main > .max-w-4xl > article > section .list-decimal { padding-left: 1.4rem; }
-    main > .max-w-4xl > article > section .list-decimal li {
-      padding: 0 0 16px 8px;
-      border-bottom: 1px solid #d9dee3;
-      margin-bottom: 14px;
-    }
-    main > .max-w-4xl > article > section .list-decimal li:last-child {
-      border-bottom: 0;
-      margin-bottom: 0;
-    }
-
-    /* Restored Diagram Beat Cards */
-    .beat-card-box {
-      border: 1px solid #cbd2d9 !important;
-      border-radius: 14px !important;
-      background: #f4f6f8 !important;
-      padding: 18px 22px !important;
-      transition: all 0.2s ease;
-    }
-    .beat-card-box:hover {
-      border-color: #111317 !important;
-      background: #ffffff !important;
-      box-shadow: 0 6px 16px -4px rgba(17, 19, 23, 0.08) !important;
-      transform: translateY(-2px);
-    }
-
-    /* Sibling Reads */
-    main > .max-w-4xl > article > section .grid a {
-      border: 1px solid #d3d9df !important;
-      border-radius: 14px !important;
-      box-shadow: none !important;
-      background: #f8f8f5 !important;
-      padding: 22px !important;
-      transition: all 0.2s ease;
-    }
-    main > .max-w-4xl > article > section .grid a:hover {
-      background: #fff7d5 !important;
-      border-color: #111317 !important;
-    }
-
-    /* CTA Strip */
-    main > .max-w-4xl > article > div:last-child {
-      box-shadow: none !important;
-      border: 0 !important;
-      border-radius: 18px !important;
-      padding: clamp(24px,4vw,42px) !important;
-      background-color: #F8D000 !important;
-    }
-    main > .max-w-4xl > article > div:last-child h2 {
-      font-size: clamp(27px,3vw,38px) !important;
-      line-height: 1.1 !important;
-    }
-
-    @media(max-width:760px){
-      main > .max-w-4xl { padding-left: 22px !important; padding-right: 22px !important; }
-      main > .max-w-4xl > article > section:not(#ending-answer) { padding: 30px 0 !important; }
-      main > .max-w-4xl > article > section h2 { font-size: 29px !important; }
-    }
+    main > .max-w-4xl > article > #ending-answer{margin:0!important;padding:clamp(24px,3.5vw,40px)!important;border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;background:#fff6cf!important;}
+    main > .max-w-4xl > article > #ending-answer h2{font-size:clamp(26px,3vw,36px)!important;}
+    main > .max-w-4xl > article > section .grid a{padding:20px!important;}
+    main > .max-w-4xl > article > section .grid a:hover{background:#fff7d5!important;border-color:#111317!important;}
+    main > .max-w-4xl > article > div:last-child{box-shadow:4px 4px 0 #111317!important;border:1.5px solid #111317!important;border-radius:16px!important;padding:clamp(24px,3.5vw,40px)!important;background-color:#f8d000!important;}
+    main > .max-w-4xl > article > div:last-child h2{font-size:clamp(27px,3vw,38px)!important;line-height:1.1!important;}
+    @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article{gap:22px!important;}main > .max-w-4xl > article > section:not(#ending-answer){padding:22px!important;}main > .max-w-4xl > article > section h2{font-size:29px!important;}}
   </style>
 
   <!-- Schema Markup -->
