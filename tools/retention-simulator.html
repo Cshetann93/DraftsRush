@@ -12,7 +12,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Audience Retention Simulator & Drop-Off Predictor | DraftsRush</title>
-  <meta name="description" content="Simulate audience retention curves for YouTube videos. Predict drop-off cliffs from hook speed, B-roll frequency, and outro execution to optimize average percentage viewed.">
+  <meta name="description" content="Model a YouTube audience retention curve with this free simulator. Explore how hook pacing, visual pattern interrupts, and outro choices may affect viewer drop-off and average percentage viewed.">
+  <meta name="keywords" content="YouTube audience retention simulator, retention curve, viewer drop-off, average percentage viewed, video retention analysis, YouTube retention">
   <link rel="canonical" href="https://www.draftsrush.com/tools/retention-simulator">
 
   <!-- Favicon References -->
@@ -171,6 +172,25 @@
     body.dark footer svg.fill-black {
       fill: #FFFFFF !important;
     }
+  
+    /* Editorial refresh: presentation-only overrides; tool behavior and element IDs remain unchanged. */
+    .tool-page-refresh { background-color: #F4F1EA !important; color: #252A31 !important; }
+    .tool-page-refresh main { max-width: 960px; padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+    .tool-page-refresh main > div:first-child { background: #FFFEFA !important; border-color: #D8D6CE !important; border-radius: 1.35rem !important; box-shadow: 0 14px 42px rgba(37,42,49,.07) !important; }
+    .tool-page-refresh main > div:first-child h1 { color: #252A31 !important; letter-spacing: -.035em; line-height: 1.08; }
+    .tool-page-refresh main > div:first-child p { max-width: 70ch; line-height: 1.8; }
+    .tool-page-refresh main > div:first-child .tool-seo-intro { margin: -.6rem 0 1.5rem; color: #58616C; font-size: .94rem; line-height: 1.8; }
+    .tool-page-refresh main > div:not(:first-child) { margin-top: 2rem; }
+    .tool-page-refresh main h2 { letter-spacing: -.025em; line-height: 1.2; }
+    .tool-page-refresh main textarea, .tool-page-refresh main input:not([type=checkbox]):not([type=radio]), .tool-page-refresh main select { border-color: #C9CDD3 !important; border-radius: .8rem !important; }
+    .tool-page-refresh main textarea:focus, .tool-page-refresh main input:focus, .tool-page-refresh main select:focus { outline: 2px solid #7A8C9F; outline-offset: 2px; }
+    .tool-page-refresh main button { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
+    @media (max-width: 640px) {
+      .tool-page-refresh main { padding-left: 1rem; padding-right: 1rem; }
+      .tool-page-refresh main > div:first-child { padding: 1.15rem !important; border-radius: 1rem !important; }
+      .tool-page-refresh main > div:first-child h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+      .tool-page-refresh main > div:first-child .tool-seo-intro { font-size: .9rem; }
+    }
   </style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
@@ -233,6 +253,16 @@
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
   </style>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="YouTube Audience Retention Simulator &amp; Drop-Off Predictor | DraftsRush">
+  <meta property="og:description" content="Model a YouTube audience retention curve with this free simulator. Explore how hook pacing, visual pattern interrupts, and outro choices may affect viewer drop-off and average percentage viewed.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/retention-simulator">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube Audience Retention Simulator &amp; Drop-Off Predictor | DraftsRush">
+  <meta name="twitter:description" content="Model a YouTube audience retention curve with this free simulator. Explore how hook pacing, visual pattern interrupts, and outro choices may affect viewer drop-off and average percentage viewed.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 </head>
 <body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -362,6 +392,7 @@
       <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
         Simulate how your structural script decisions impact your YouTube audience retention curve. Adjust hook pace, pattern interrupts, and outro framing to model your predicted Average Percentage Viewed (APV).
       </p>
+      <p class="tool-seo-intro">Explore how opening-hook pace, visual pattern interrupts, and outro structure can influence a predicted YouTube retention curve. Use the simulator to compare script and editing choices before publishing.</p>
 
       <!-- Simulation Parameter Controls -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
