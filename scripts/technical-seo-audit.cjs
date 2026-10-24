@@ -44,7 +44,7 @@ function rel(file) {
   return path.relative(ROOT, file).split(path.sep).join('/');
 }
 function attr(tag, name) {
-  const match = tag.match(new RegExp("\\\\b" + name + "\\\\s*=\\\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\\\s>]+))", 'i'));
+  const match = tag.match(new RegExp("\\b" + name + "\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\s>]+))", "i"));
   return match ? (match[1] ?? match[2] ?? match[3] ?? '').trim() : '';
 }
 function normalizeUrl(value) {
