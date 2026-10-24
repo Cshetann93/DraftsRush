@@ -43,6 +43,46 @@
     .psycho-cta{display:inline-flex;align-items:center;gap:28px;padding:15px 22px;border-radius:999px;background:#f8d000;color:#15191f;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s;}.psycho-cta:hover{transform:translateY(-2px);}.psycho-art{position:relative;min-height:340px;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#252b33,#111317 68%,#3b3030);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#f2f1ec;box-shadow:0 24px 60px rgba(20,24,30,.18);}.psycho-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none;}
     .psycho-art-label,.psycho-art-title,.psycho-art-bottom{position:relative;z-index:1;}.psycho-art-label{color:#d3d8de;display:flex;justify-content:space-between;gap:10px;}.psycho-art-title{margin:auto 0;font-size:clamp(36px,4vw,58px);font-weight:900;line-height:.9;letter-spacing:-.07em;text-transform:uppercase;}.psycho-art-title em{display:block;font-family:Georgia,serif;font-weight:400;text-transform:none;letter-spacing:-.05em;color:#f8d000;margin-top:8px;}.psycho-art-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#d3d8de;}.psycho-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px;}.psycho-answer{scroll-margin-top:24px;}
     @media(max-width:760px){.psycho-hero-inner{grid-template-columns:1fr;}.psycho-art{min-height:260px;}.psycho-hero-footer{flex-direction:column;gap:7px;}.psycho-hero h1{font-size:clamp(42px,12vw,64px);}}
+
+    /* Full article redesign — editorial reading layout, not the legacy card stack */
+    main > .max-w-4xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important;}
+    main > .max-w-4xl > article{display:grid;grid-template-columns:minmax(0,1fr);gap:0!important;}
+    main > .max-w-4xl > article > section:not(#ending-answer){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:clamp(28px,4vw,54px) 0!important;margin:0!important;border-bottom:1px solid #cbd2d9!important;}
+    main > .max-w-4xl > article > section:first-of-type:not(#ending-answer){border-top:1px solid #cbd2d9!important;}
+    main > .max-w-4xl > article > section:not(#ending-answer) > div:first-child{border-bottom:1px solid #cbd2d9!important;padding-bottom:18px!important;}
+    main > .max-w-4xl > article > section h2{font-size:clamp(28px,3.5vw,43px)!important;line-height:1.08!important;letter-spacing:-.045em!important;max-width:850px;}
+    main > .max-w-4xl > article > section h3{letter-spacing:-.025em;}
+    main > .max-w-4xl > article > section p{line-height:1.8!important;}
+    main > .max-w-4xl > article > section .border-b-2{border-bottom-width:1px!important;border-color:#cbd2d9!important;}
+    main > .max-w-4xl > article > section span.bg-\\[\\#F8D000\\],main > .max-w-4xl > article > section span.bg-\\[\\#FFF6CF\\]{background:transparent!important;border:0!important;padding:0!important;color:#7b6810!important;letter-spacing:.16em!important;font-size:10px!important;}
+    /* Replace the old heavy inset cards with lighter editorial rows */
+    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl,
+    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-2xl{border:1px solid #d5dbe1!important;border-radius:14px!important;box-shadow:none!important;}
+    main > .max-w-4xl > article > section .brutal-box{box-shadow:none!important;}
+    main > .max-w-4xl > article > section .bg-\\[\\#F0F2F5\\]{background:#eef1f3!important;}
+    main > .max-w-4xl > article > section .bg-white{background:#f8f8f5!important;}
+    main > .max-w-4xl > article > section .bg-\\[\\#FAF9F5\\]{background:#f3f1eb!important;}
+    /* The answer card remains the page's single highlighted element */
+    main > .max-w-4xl > article > #ending-answer{margin:0 0 20px!important;padding:clamp(24px,4vw,42px)!important;border:1px solid #d7c76d!important;border-radius:18px!important;box-shadow:none!important;background:#fff7d5!important;}
+    main > .max-w-4xl > article > #ending-answer h2{font-size:clamp(26px,3vw,36px)!important;}
+    /* Scene beat timeline */
+    main > .max-w-4xl > article > section .list-decimal{padding-left:1.4rem;}
+    main > .max-w-4xl > article > section .list-decimal li{padding:0 0 16px 8px;border-bottom:1px solid #d9dee3;margin-bottom:14px;}
+    main > .max-w-4xl > article > section .list-decimal li:last-child{border-bottom:0;margin-bottom:0;}
+    /* The diagram is now a calm vertical sequence, with less visual noise */
+    main > .max-w-4xl > article > section .font-mono.text-xs > .flex.flex-col{border:0!important;border-left:2px solid #c5ccd4!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:18px 0 18px 22px!important;position:relative;}
+    main > .max-w-4xl > article > section .font-mono.text-xs > .flex.flex-col:before{content:'';position:absolute;left:-6px;top:25px;width:10px;height:10px;border-radius:50%;background:#f8d000;border:1px solid #a38c00;}
+    main > .max-w-4xl > article > section .font-mono.text-xs > .flex.flex-col .bg-\\[\\#F8D000\\]{background:#f8d000!important;letter-spacing:.08em!important;}
+    /* FAQ as a clean reading list instead of four heavy cards */
+    main > .max-w-4xl > article > section .font-mono.text-xs > .bg-white{border:0!important;border-bottom:1px solid #d2d8df!important;border-radius:0!important;box-shadow:none!important;padding:18px 0!important;background:transparent!important;}
+    main > .max-w-4xl > article > section .font-mono.text-xs > .bg-white:last-child{border-bottom:0!important;}
+    /* Related reads become clean editorial links */
+    main > .max-w-4xl > article > section .grid a{border:1px solid #d3d9df!important;border-radius:14px!important;box-shadow:none!important;background:#f8f8f5!important;padding:22px!important;}
+    main > .max-w-4xl > article > section .grid a:hover{background:#fff7d5!important;}
+    /* CTA strip keeps the brand yellow but loses the chunky shadow */
+    main > .max-w-4xl > article > div:last-child{box-shadow:none!important;border:0!important;border-radius:18px!important;padding:clamp(24px,4vw,42px)!important;}
+    main > .max-w-4xl > article > div:last-child h2{font-size:clamp(27px,3vw,38px)!important;line-height:1.1!important;}
+    @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article > section:not(#ending-answer){padding:30px 0!important;}main > .max-w-4xl > article > section h2{font-size:29px!important;}main > .max-w-4xl > article > section .font-mono.text-xs > .flex.flex-col{padding-left:17px!important;}}
   </style>
 
   <!-- Schema Markup -->
