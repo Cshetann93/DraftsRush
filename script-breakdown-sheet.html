@@ -74,6 +74,26 @@
     main > .max-w-4xl > article > section .grid li{border:1px solid #d5dbe1!important;border-radius:12px!important;box-shadow:none!important;padding:16px!important;background:#f8f8f5!important;}
     main > .max-w-4xl > article > section a{transition:background-color .18s ease,transform .18s ease;}
     @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article > section:not(#breakdown-answer){padding:30px 0!important;}main > .max-w-4xl > article > section h2{font-size:29px!important;}}
+
+    /* Restore the original boxed content style, with thin black outlines */
+    main > .max-w-4xl > article{gap:clamp(22px,3vw,34px)!important;}
+    main > .max-w-4xl > article > section:not(#breakdown-answer){
+      border:1px solid #17191d!important;
+      border-radius:16px!important;
+      padding:clamp(22px,3.5vw,38px)!important;
+      margin:0!important;
+      background:#fff!important;
+      box-shadow:none!important;
+    }
+    main > .max-w-4xl > article > section:first-of-type:not(#breakdown-answer){border-top:1px solid #17191d!important;}
+    main > .max-w-4xl > article > section:not(#breakdown-answer) > div:first-child{border-bottom:1px solid #d8dde2!important;padding-bottom:16px!important;}
+    main > .max-w-4xl > article > section .grid li,
+    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl{
+      border:1px solid #17191d!important;border-radius:10px!important;background:#fbfbf8!important;box-shadow:none!important;
+    }
+    main > .max-w-4xl > article > #breakdown-answer{border:1px solid #17191d!important;border-radius:16px!important;box-shadow:none!important;}
+    main > .max-w-4xl > article > section a{border-radius:9px;}
+    @media(max-width:760px){main > .max-w-4xl > article > section:not(#breakdown-answer){padding:22px!important;}}
   </style>
 
   <!-- Schema Markup for Production Article -->
