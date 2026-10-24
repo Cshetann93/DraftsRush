@@ -125,6 +125,47 @@
     .lab-divider { border-top:1px solid #d1d5db; }
     @media(max-width:640px){ .photo-stage{min-height:260px}.setting-number{font-size:19px} }
     @media(prefers-reduced-motion:reduce){ .photo-lab *{transition:none!important;scroll-behavior:auto!important} }
+  
+    
+    /* Photography Lab footer: keep the light editorial footer readable regardless of inherited utility styles. */
+    .photo-lab-footer {
+      background-color: #D6E4EE !important;
+      border-top: 1px solid #111317 !important;
+      color: #111317 !important;
+    }
+    .photo-lab-footer,
+    .photo-lab-footer p,
+    .photo-lab-footer a,
+    .photo-lab-footer li,
+    .photo-lab-footer span,
+    .photo-lab-footer h4,
+    .photo-lab-footer div,
+    .photo-lab-footer svg {
+      color: #111317 !important;
+      opacity: 1 !important;
+      text-shadow: none !important;
+    }
+    .photo-lab-footer svg,
+    .photo-lab-footer svg * {
+      fill: #111317 !important;
+      color: #111317 !important;
+    }
+    .photo-lab-footer .studio-badge,
+    .photo-lab-footer .bg-brand-yellow,
+    .photo-lab-footer [style*="#F8D000"] {
+      background-color: #F8D000 !important;
+      color: #111317 !important;
+    }
+    .photo-lab-footer .border-b,
+    .photo-lab-footer .border-t,
+    .photo-lab-footer .border-black,
+    .photo-lab-footer [class*="border-black/"] {
+      border-color: #111317 !important;
+    }
+    .photo-lab-footer a:focus-visible {
+      outline: 2px solid #111317;
+      outline-offset: 3px;
+    }
   </style>
 
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -421,7 +462,7 @@
   </script>
 
   <!-- Universal Footer -->
-  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317; background-color: #D6E4EE !important;">
+  <footer class="photo-lab-footer bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317; background-color: #D6E4EE !important;">
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
