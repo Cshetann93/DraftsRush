@@ -36,7 +36,120 @@
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
     .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
-  </style>
+  
+    .software-hero{padding:clamp(42px,6vw,88px) 24px 26px;background:#e7e9ee;border-bottom:1px solid #c7cbd3}
+    .software-hero-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.98fr);gap:clamp(36px,6vw,90px);align-items:center}
+    .software-hero-copy{max-width:650px}
+    .software-eyebrow,.software-hero-meta,.software-hero-footer,.software-hero-image figcaption{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.15em;color:#68717e}
+    .software-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+    .software-eyebrow span{width:9px;height:9px;border-radius:50%;background:#d6b900;box-shadow:0 0 0 6px rgba(214,185,0,.12)}
+    .software-hero h1{margin:0;color:#17191e;font-size:clamp(46px,6.3vw,88px);line-height:.98;letter-spacing:-.065em;font-weight:850}
+    .software-hero h1 em{font-family:Georgia,serif;font-weight:500;letter-spacing:-.07em}
+    .software-hero-lede{max-width:620px;margin:28px 0 24px;font-size:clamp(17px,1.65vw,22px);line-height:1.55;color:#596270}
+    .software-hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin:0 0 32px;font-size:10px}
+    .software-hero-meta i{height:1px;width:22px;background:#aeb4bd}
+    .software-hero-cta{display:inline-flex;align-items:center;gap:32px;padding:17px 24px;border-radius:999px;background:#ffd400;color:#17191e;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.08);transition:transform .2s,background .2s}
+    .software-hero-cta:hover{transform:translateY(-2px);background:#ffe15b}
+    .software-hero-image{position:relative;min-width:0;margin:0;padding:0;border-radius:24px;overflow:hidden;background:#20242b;box-shadow:0 24px 60px rgba(20,24,30,.12)}
+    .software-hero-image img{display:block;width:100%;aspect-ratio:1.25;object-fit:cover;object-position:center}
+    .software-hero-image figcaption{display:flex;justify-content:space-between;gap:12px;padding:16px 20px;background:#20242b;color:#d0d4dc;font-size:9px;letter-spacing:.1em}
+    .software-hero-footer{max-width:1320px;margin:30px auto 0;padding-top:16px;border-top:1px solid #c7cbd3;display:flex;justify-content:space-between;gap:18px;font-size:9px}
+    @media(max-width:850px){.software-hero-inner{grid-template-columns:1fr;gap:34px}.software-hero-copy{max-width:720px}.software-hero h1{font-size:clamp(46px,10vw,76px)}.software-hero-image img{aspect-ratio:1.35}.software-hero-footer{font-size:8px}}
+    @media(max-width:520px){.software-hero{padding:38px 18px 22px}.software-hero-meta{gap:8px;font-size:8px}.software-hero-meta i{width:12px}.software-hero-image{border-radius:16px}.software-hero-image figcaption{flex-direction:column;font-size:8px}.software-hero-footer{letter-spacing:.06em}}
+
+    .software-content-flow{width:min(1180px,100% - 48px);margin:0 auto;padding:58px 0 84px;display:flex;flex-direction:column;gap:52px}
+    .software-content-flow>*{margin:0!important;min-width:0}
+    .software-content-flow>section,.software-content-flow>#software-comparison{border:0!important;border-radius:0!important;box-shadow:none!important}
+    .software-content-flow>section{padding:0 0 44px!important;border-bottom:1px solid #c7cbd3!important;background:transparent!important}
+    .software-content-flow>#software-comparison{padding:0 0 42px!important;background:transparent!important;border-bottom:1px solid #c7cbd3!important;overflow-x:auto}
+    .software-content-flow>section h2,.software-content-flow>#software-comparison h3{letter-spacing:-.035em}
+    .software-content-flow>section>div:first-child:has(>h2){border-bottom:1px solid #c7cbd3!important;padding-bottom:18px!important}
+    .software-content-flow>section .brutal-box{box-shadow:none!important}
+    .software-content-flow>section>div.bg-white.border-\\[1\\.5px\\].border-black.rounded-xl{border:1px solid #d4d8df!important;border-radius:14px!important;box-shadow:none!important}
+    .software-content-flow table{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;border:1px solid #c7cbd3!important;border-radius:12px;overflow:hidden}
+    .software-content-flow table th{background:#20242b!important;color:#f7f7f4;padding:16px 14px}
+    .software-content-flow table td{padding:16px 14px;border-bottom:1px solid #d8dce2}
+    .software-content-flow table tbody tr:last-child td{border-bottom:0}
+    .software-content-flow .border-b-2.border-black{border-bottom:1px solid #c7cbd3!important}
+    .software-content-flow>section .bg-\\[\\#F0F2F5\\],.software-content-flow>section .bg-white{background:#f5f6f8!important}
+    .software-content-flow>section .bg-\\[\\#111317\\]{background:#20242b!important;border:0!important;border-radius:16px!important}
+    .software-content-flow a{ text-underline-offset:3px }
+    @media(max-width:700px){.software-content-flow{width:calc(100% - 36px);padding:38px 0 56px;gap:38px}.software-content-flow>section{padding-bottom:32px!important}.software-content-flow>#software-comparison{padding-bottom:32px!important}.software-content-flow>section .p-8,.software-content-flow>section .md\\:p-10{padding:22px!important}.software-content-flow>section .p-5{padding:16px!important}}
+
+    /* Editorial content hierarchy and software profiles */
+    .software-content-flow{max-width:1240px;gap:60px}
+    .software-content-flow>section{padding:0 0 50px!important}
+    .software-content-flow>section:has(>div>h2){position:relative}
+    .software-content-flow>section:has(>div>span:first-child) h2{font-size:clamp(28px,3vw,40px);line-height:1.08}
+    .software-content-flow>section:has(>div>span:first-child){display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+    .software-content-flow>section:has(>div>span:first-child)>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:18px;border:0!important;border-bottom:1px solid #c7cbd3!important;padding:0 0 20px!important}
+    .software-content-flow>section:has(>div>span:first-child)>div:first-child>div{min-width:0}
+    .software-content-flow>section:has(>div>span:first-child)>div:first-child>div>span{background:#f5d400!important;border:0!important;border-radius:4px;padding:5px 8px!important}
+    .software-content-flow>section:has(>div>span:first-child)>div:first-child>span:last-child{background:#20242b!important;border-radius:4px;letter-spacing:.06em;white-space:normal;text-align:center}
+    .software-content-flow>section:has(>div>span:first-child)>div:nth-child(2){float:none;min-height:0!important;padding:22px!important;display:flex;align-items:center;justify-content:flex-start!important;background:#20242b!important;border:0!important;border-radius:14px!important;box-shadow:none!important}
+    .software-content-flow>section:has(>div>span:first-child)>div:nth-child(2)>div{background:#fff!important;border:0!important;border-radius:10px!important;box-shadow:none!important}
+    .software-content-flow>section:has(>div>span:first-child)>p{max-width:920px;margin:0!important;font-size:17px;line-height:1.85;color:#343b46}
+    .software-content-flow>section:has(>div>span:first-child)>div:nth-child(n+4){border:1px solid #d9dde4!important;border-radius:12px!important;background:#f6f7f9!important;padding:20px!important;box-shadow:none!important}
+    .software-content-flow>section:has(>div>span:first-child) h3{font-size:18px;line-height:1.3;letter-spacing:-.02em}
+    .software-content-flow>section:has(>div>span:first-child) ul{padding-left:1.2rem}
+    .software-content-flow>section:has(>div>span:first-child) li{padding-left:.15rem;margin:.45rem 0;line-height:1.7}
+    .software-content-flow>section:first-child{padding:26px!important;background:#f5f6f8!important;border:1px solid #dce0e6!important;border-radius:16px!important}
+    .software-content-flow>section:first-child h2{font-size:25px}
+    .software-content-flow>section:first-child ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+    .software-content-flow>section:first-child li{padding:14px 16px;background:#fff;border:1px solid #e0e3e8;border-radius:10px;list-style-position:inside;line-height:1.65}
+    .software-content-flow>#software-comparison h3{font-size:25px;margin-bottom:20px}
+    .software-content-flow>section:nth-of-type(2){font-size:17px;line-height:1.85}
+    .software-content-flow>section:nth-of-type(2)>p:first-child{font-size:clamp(23px,2.6vw,32px);line-height:1.35;font-weight:750;letter-spacing:-.03em;color:#191c22;max-width:900px}
+    .software-content-flow>section:nth-of-type(2) .bg-\\[\\#F0F2F5\\]{margin-top:30px!important;padding:22px!important;border:0!important;border-left:4px solid #f0cc00!important;border-radius:0 12px 12px 0!important;background:#f3f4f6!important}
+    .software-content-flow>section:last-child .bg-white{border:1px solid #dce0e6!important;border-radius:12px!important;box-shadow:none!important}
+    .software-content-flow>section:last-child .bg-white span{border:0!important;border-radius:4px!important}
+    .software-content-flow a{color:#17191e;text-decoration-thickness:1px;text-underline-offset:4px}
+    .software-content-flow a:hover{color:#6c5800}
+    @media(max-width:760px){
+      .software-content-flow{gap:42px}
+      .software-content-flow>section:first-child ul{grid-template-columns:1fr}
+      .software-content-flow>section:has(>div>span:first-child)>div:first-child{align-items:flex-start;flex-direction:column}
+      .software-content-flow>section:has(>div>span:first-child)>div:first-child>span:last-child{align-self:flex-start}
+      .software-content-flow>section:has(>div>span:first-child)>div:nth-child(2){padding:16px!important}
+      .software-content-flow>section:has(>div>span:first-child)>p{font-size:16px}
+    }
+
+    /* Keep body content visually steady; retain keyboard-only focus indicators */
+    .software-content-flow>section,
+    .software-content-flow>#software-comparison,
+    .software-content-flow>section .border,
+    .software-content-flow>section [class*="rounded-xl"],
+    .software-content-flow>section [class*="rounded-2xl"]{
+      transition:none!important;
+    }
+    .software-content-flow>section:has(>div>span:first-child):hover,
+    .software-content-flow>section:first-child:hover,
+    .software-content-flow>#software-comparison:hover{
+      outline:none!important;
+      box-shadow:none!important;
+    }
+    .software-content-flow>section:has(>div>span:first-child)>div:nth-child(n+4):hover,
+    .software-content-flow>section .bg-\\[\\#F0F2F5\\]:hover,
+    .software-content-flow>section .bg-white.border:hover{
+      border-color:inherit!important;
+      box-shadow:none!important;
+    }
+    .software-content-flow table tbody tr{
+      outline:none!important;
+      transition:none!important;
+    }
+    .software-content-flow table tbody tr:hover{
+      background:inherit!important;
+      outline:none!important;
+    }
+    .software-content-flow a:focus-visible,
+    .software-content-flow button:focus-visible,
+    .software-content-flow [tabindex]:focus-visible{
+      outline:2px solid #927900!important;
+      outline-offset:4px!important;
+      border-radius:4px;
+    }
+</style>
 
   <!-- Schema Markup for Article SEO & FAQ -->
   <script type="application/ld+json">
@@ -273,21 +386,25 @@
     });
   </script><!-- Main Article Body -->
   <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
-      
-      <!-- Top Back Button -->
-      <div class="mb-8">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
-          ← Return to the Writer's Room
-        </a>
-      </div>
-
-      <article class="space-y-12">
-
-        <figure class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-2 brutal-box">
-          <img src="/images/best-free-screenwriting-software.webp" alt="A screenplay displayed on a laptop beside printed script pages and writing notes on a desk." width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" class="w-full h-auto border border-black" />
-          <figcaption class="px-2 py-3 text-sm font-medium text-gray-700">A screenplay workspace with script pages, writing notes, and tools for developing a story.</figcaption>
+    <section class="software-hero" aria-labelledby="software-hero-title">
+      <div class="software-hero-inner">
+        <div class="software-hero-copy">
+          <div class="software-eyebrow"><span></span> WRITER'S TOOLKIT / SOFTWARE GUIDE</div>
+          <h1 id="software-hero-title">The right tools.<br><em>Your next great script.</em></h1>
+          <p class="software-hero-lede">Five screenwriting apps compared by what matters when you actually sit down to write: free limits, collaboration, offline access, and clean PDF exports.</p>
+          <div class="software-hero-meta"><span>UPDATED FOR 2026</span><i></i><span>5 TOOLS COMPARED</span><i></i><span>8 MIN READ</span></div>
+          <a class="software-hero-cta" href="#software-comparison">Compare the tools <span>↓</span></a>
+        </div>
+        <figure class="software-hero-image">
+          <img src="/images/best-free-screenwriting-software.webp" alt="A screenplay displayed on a laptop beside printed script pages and writing notes on a desk." width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
+          <figcaption><span>FIELD NOTES / 01</span><span>FROM FIRST DRAFT TO FINAL PDF</span></figcaption>
         </figure>
+      </div>
+      <div class="software-hero-footer"><span>01 — CHOOSE YOUR WORKFLOW</span><span>FORMAT → WRITE → EXPORT</span></div>
+    </section>
+      <article class="software-content-flow">
+
+
 
         <!-- TL;DR Executive Summary Box -->
         <section class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 brutal-box">
@@ -308,7 +425,7 @@
         </section>
 
         <!-- Above-the-Fold Feature Comparison Table -->
-        <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 brutal-box mb-8 overflow-x-auto">
+        <div id="software-comparison" class="border-[1.5px] border-black rounded-2xl bg-white p-6 brutal-box mb-8 overflow-x-auto">
           <h3 class="text-xl font-black brand-font mb-4">Quick Feature & Platform Comparison</h3>
           <table class="w-full text-left text-xs font-medium border-[1.5px] border-black rounded-xl">
             <thead class="bg-black text-white font-mono uppercase">
