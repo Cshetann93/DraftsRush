@@ -11,14 +11,14 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Script Breakdown Sheet Template for Film & Video | DraftsRush</title>
-  <meta name="description" content="Get a free script breakdown sheet template for film and video production. Learn to tag cast, props, locations, wardrobe, and other elements before a shoot.">
-  <meta name="keywords" content="script breakdown sheet, free script breakdown template, how to break down a script, scene breakdown sheet pdf, script breakdown sheet google docs, assistant director breakdown sheet, video script breakdown">
+  <title>Free Script Breakdown Sheet Template</title>
+  <meta name="description" content="Get a free script breakdown sheet template for film and video production. Learn to track cast, props, locations, wardrobe, and other scene requirements before a shoot.">
+
   <link rel="canonical" href="https://www.draftsrush.com/script-breakdown-sheet">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Free Script Breakdown Sheet Template for Film & Video | DraftsRush">
-  <meta property="og:description" content="Get a free script breakdown sheet template for film and video production. Learn to tag cast, props, locations, wardrobe, and other elements before a shoot.">
+  <meta property="og:title" content="Free Script Breakdown Sheet Template">
+  <meta property="og:description" content="Get a free script breakdown sheet template for film and video production. Learn to track cast, props, locations, wardrobe, and other scene requirements before a shoot.">
   <meta property="og:url" content="https://www.draftsrush.com/script-breakdown-sheet">
   <meta property="og:type" content="article">
 
@@ -26,6 +26,8 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -36,6 +38,42 @@
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
     .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
+
+    /* Script breakdown page: full-width editorial hero */
+    .breakdown-hero{width:100%;padding:clamp(42px,6vw,82px) 24px 28px;background:#d6e0e8;border-bottom:1px solid #b6c4d0;}
+    .breakdown-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.78fr);gap:clamp(32px,6vw,84px);align-items:center;}
+    .breakdown-eyebrow,.breakdown-meta,.breakdown-art-label,.breakdown-hero-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#526273;}
+    .breakdown-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px;}.breakdown-eyebrow span{width:8px;height:8px;border-radius:50%;background:#b79b00;box-shadow:0 0 0 5px rgba(183,155,0,.14);}
+    .breakdown-hero h1{margin:0;color:#15191f;font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:900;}.breakdown-hero h1 em{font-family:Georgia,serif;font-weight:500;letter-spacing:-.06em;}
+    .breakdown-lede{max-width:650px;margin:24px 0;color:#465362;font-size:clamp(16px,1.6vw,21px);line-height:1.6;}.breakdown-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 28px;font-size:9px;}.breakdown-meta i{height:1px;width:20px;background:#9aa9b7;}
+    .breakdown-cta{display:inline-flex;align-items:center;gap:22px;padding:15px 22px;border-radius:999px;background:#f8d000;color:#15191f;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s;}.breakdown-cta:hover{transform:translateY(-2px);}
+    .breakdown-art{position:relative;min-height:340px;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#252b33,#111317 68%,#3b3030);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#f2f1ec;box-shadow:0 24px 60px rgba(20,24,30,.18);}
+    .breakdown-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none;}
+    .breakdown-art-label,.breakdown-art-title,.breakdown-art-bottom{position:relative;z-index:1;}.breakdown-art-label{color:#d3d8de;display:flex;justify-content:space-between;gap:10px;}
+    .breakdown-art-title{margin:auto 0;font-size:clamp(34px,4vw,54px);font-weight:900;line-height:.9;letter-spacing:-.07em;text-transform:uppercase;}.breakdown-art-title em{display:block;font-family:Georgia,serif;font-weight:400;text-transform:none;letter-spacing:-.05em;color:#f8d000;margin-top:8px;}
+    .breakdown-art-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#d3d8de;}
+    .breakdown-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px;}.breakdown-answer{scroll-margin-top:24px;}
+    @media(max-width:760px){.breakdown-hero-inner{grid-template-columns:1fr;}.breakdown-art{min-height:270px;}.breakdown-hero-footer{flex-direction:column;gap:7px;}.breakdown-hero h1{font-size:clamp(42px,12vw,64px);}}
+
+    /* Restyle the entire guide into a lighter editorial reading layout */
+    main > .max-w-4xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important;}
+    main > .max-w-4xl > article{display:grid;grid-template-columns:minmax(0,1fr);gap:0!important;}
+    main > .max-w-4xl > article > section:not(#breakdown-answer){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:clamp(28px,4vw,54px) 0!important;margin:0!important;border-bottom:1px solid #cbd2d9!important;}
+    main > .max-w-4xl > article > section:first-of-type:not(#breakdown-answer){border-top:1px solid #cbd2d9!important;}
+    main > .max-w-4xl > article > section:not(#breakdown-answer) > div:first-child{border-bottom:1px solid #cbd2d9!important;padding-bottom:18px!important;}
+    main > .max-w-4xl > article > section h2{font-size:clamp(28px,3.5vw,43px)!important;line-height:1.08!important;letter-spacing:-.045em!important;max-width:850px;}
+    main > .max-w-4xl > article > section h3{letter-spacing:-.025em;}
+    main > .max-w-4xl > article > section p{line-height:1.8!important;}
+    main > .max-w-4xl > article > section .border-b-2{border-bottom-width:1px!important;border-color:#cbd2d9!important;}
+    main > .max-w-4xl > article > section .brutal-box{box-shadow:none!important;}
+    main > .max-w-4xl > article > section .border-\\[1\\.5px\\].border-black.rounded-xl{border:1px solid #d5dbe1!important;border-radius:14px!important;box-shadow:none!important;}
+    main > .max-w-4xl > article > section .bg-white{background:#f8f8f5!important;}
+    main > .max-w-4xl > article > section .bg-\\[\\#F0F2F5\\]{background:#eef1f3!important;}
+    main > .max-w-4xl > article > #breakdown-answer{margin:0 0 20px!important;padding:clamp(24px,4vw,42px)!important;border:1px solid #d7c76d!important;border-radius:18px!important;box-shadow:none!important;background:#fff7d5!important;}
+    main > .max-w-4xl > article > #breakdown-answer h2{font-size:clamp(26px,3vw,36px)!important;}
+    main > .max-w-4xl > article > section .grid li{border:1px solid #d5dbe1!important;border-radius:12px!important;box-shadow:none!important;padding:16px!important;background:#f8f8f5!important;}
+    main > .max-w-4xl > article > section a{transition:background-color .18s ease,transform .18s ease;}
+    @media(max-width:760px){main > .max-w-4xl{padding-left:22px!important;padding-right:22px!important;}main > .max-w-4xl > article > section:not(#breakdown-answer){padding:30px 0!important;}main > .max-w-4xl > article > section h2{font-size:29px!important;}}
   </style>
 
   <!-- Schema Markup for Production Article -->
@@ -43,7 +81,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Free Script Breakdown Sheet Template for Film & Video",
+    "headline": "Free Script Breakdown Sheet Template",
     "description": "Get a free script breakdown sheet template for film and video production, with guidance on tagging cast, props, locations, wardrobe, and other production elements before a shoot.",
     "publisher": {
       "@type": "Organization",
@@ -237,6 +275,11 @@
     });
   </script><!-- Main Article Body -->
   <main class="flex-grow">
+    <section class="breakdown-hero" aria-labelledby="breakdown-hero-title"><div class="breakdown-hero-inner"><div>
+      <div class="breakdown-eyebrow"><span></span> FILM & VIDEO / PRE-PRODUCTION</div><h1 id="breakdown-hero-title">Script Breakdown<br><em>Sheet Template</em></h1>
+      <p class="breakdown-lede">Turn a screenplay into a practical production plan. Learn what to tag in each scene, how page eighths work, and how to organize cast, props, wardrobe, locations, and technical needs.</p>
+      <div class="breakdown-meta"><span>FREE TEMPLATE GUIDE</span><i></i><span>PRE-PRODUCTION</span><i></i><span>6 MIN READ</span></div><a class="breakdown-cta" href="#free-script-breakdown-template">Find the free template <span aria-hidden="true">↓</span></a>
+    </div><div class="breakdown-art" role="img" aria-label="Editorial graphic showing a script breakdown sheet with scene elements and production planning labels"><div class="breakdown-art-label"><span>PRODUCTION / 01</span><span>SCENE BY SCENE</span></div><div class="breakdown-art-title">From page <em>to production.</em></div><div class="breakdown-art-bottom"><span>CAST / PROPS / WARDROBE</span><span>BREAKDOWN</span></div></div></div><div class="breakdown-hero-footer"><span>01 — PREPARE THE SCENE</span><span>MAKE EVERY REQUIREMENT VISIBLE</span></div></section>
     <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       
       <!-- Top Back Button -->
@@ -248,22 +291,7 @@
 
       <article class="space-y-12">
 
-        <!-- TL;DR Executive Summary Box -->
-        <section class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 brutal-box">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">TL;DR</span>
-            <h2 class="text-xl font-black brand-font">The Script Breakdown in 60 Seconds</h2>
-          </div>
-          <p class="text-sm font-medium text-gray-800 leading-relaxed mb-4">
-            Every scene in your draft requires its own individual breakdown sheet before production schedules can be built:
-          </p>
-          <ul class="space-y-2 text-sm font-bold text-gray-900 list-disc list-inside">
-            <li><span class="font-black text-black">The Purpose:</span> Dissect every word on the page into physical asset requirements (cast, props, wardrobe, B-roll, visual effects, and sound).</li>
-            <li><span class="font-black text-black">The One-Eighth Rule:</span> Scene lengths are measured in eighths of a page (1/8 to 8/8) to estimate shooting time with mathematical accuracy.</li>
-            <li><span class="font-black text-black">Color Highlighting:</span> Industry standard colors tag specific elements (Red = Cast, Yellow = Extras, Violet = Props, Blue = Special FX).</li>
-            <li><span class="font-black text-black">Digital Video Application:</span> For video essays and commercial shorts, your breakdown sheet catalogs A-roll talking points, B-roll capture lists, on-screen motion graphics, and sound design layers.</li>
-          </ul>
-        </section>
+        <section id="breakdown-answer" class="breakdown-answer border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 brutal-box space-y-4" aria-labelledby="breakdown-answer-title"><div class="border-b border-black/15 pb-3"><span class="text-xs font-bold uppercase tracking-wider brand-font">Quick Answer</span><h2 id="breakdown-answer-title" class="text-2xl md:text-3xl font-black brand-font mt-2">What is a script breakdown sheet?</h2></div><p class="text-sm md:text-base leading-relaxed text-gray-800">A script breakdown sheet is a scene-by-scene planning document used to identify everything a production needs before filming, including cast, extras, props, wardrobe, locations, set dressing, vehicles, stunts, visual effects, and sound requirements. It helps departments prepare, estimate resources, and build a workable shooting schedule.</p><p class="text-sm leading-relaxed text-gray-700">Use one sheet per scene, keep scene numbers aligned with the latest script draft, and mark who is responsible for each item. The free-template link below leads to the DraftsRush templates page, where the available files can be checked.</p></section>
 
         <!-- Template Download Box -->
         <section class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box">
