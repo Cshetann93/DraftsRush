@@ -117,6 +117,173 @@
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
   </style>
+
+  <style id="scene-page-uniform-redesign">
+    /* Redesigned Hero Header */
+    .scene-hero {
+      width: 100%;
+      padding: clamp(42px,6vw,82px) 24px 28px;
+      background: #d6e0e8;
+      border-bottom: 1px solid #b6c4d0;
+    }
+    .scene-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(300px,.78fr);
+      gap: clamp(32px,6vw,84px);
+      align-items: center;
+    }
+    .scene-eyebrow, .scene-meta, .scene-art-label, .scene-hero-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #526273;
+    }
+    .scene-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+    .scene-eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #b79b00;
+      box-shadow: 0 0 0 5px rgba(183,155,0,.14);
+    }
+    .scene-hero h1 {
+      margin: 0;
+      color: #15191f;
+      font-size: clamp(42px,6vw,78px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 900;
+    }
+    .scene-hero h1 em {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.06em;
+    }
+    .scene-lede {
+      max-width: 640px;
+      margin: 24px 0;
+      color: #465362;
+      font-size: clamp(16px,1.6vw,21px);
+      line-height: 1.6;
+    }
+    .scene-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      font-size: 9px;
+    }
+    .scene-meta i {
+      height: 1px;
+      width: 20px;
+      background: #9aa9b7;
+    }
+    .scene-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: #f8d000;
+      color: #15191f;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(20,24,30,.1);
+      transition: transform .2s;
+    }
+    .scene-cta:hover { transform: translateY(-2px); }
+    .scene-art {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: linear-gradient(145deg,#252b33,#111317 68%,#3b3030);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      color: #f2f1ec;
+      box-shadow: 0 24px 60px rgba(20,24,30,.18);
+    }
+    .scene-art:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);
+      pointer-events: none;
+    }
+    .scene-art-label, .scene-art-title, .scene-art-bottom {
+      position: relative;
+      z-index: 1;
+    }
+    .scene-art-label {
+      color: #d3d8de;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .scene-art-title {
+      margin: auto 0;
+      font-size: clamp(36px,4vw,58px);
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+    .scene-art-title em {
+      display: block;
+      font-family: Georgia, serif;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: -.05em;
+      color: #f8d000;
+      margin-top: 8px;
+    }
+    .scene-art-bottom {
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font: 700 9px 'JetBrains Mono', monospace;
+      letter-spacing: .12em;
+      color: #d3d8de;
+    }
+    .scene-hero-footer {
+      max-width: 1240px;
+      margin: 28px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9px;
+    }
+    .scene-answer { scroll-margin-top: 24px; }
+    @media(max-width:760px){
+      .scene-hero-inner { grid-template-columns: 1fr; }
+      .scene-art { min-height: 260px; }
+      .scene-hero-footer { flex-direction: column; gap: 7px; }
+      .scene-hero h1 { font-size: clamp(42px,12vw,64px); }
+    }
+
+
+    .scene-hero { background:#d6e0e8; }
+    .scene-hero .scene-hero-inner { max-width:1240px; }
+    .scene-hero h1 { overflow-wrap:anywhere; }
+    .scene-hero .scene-hero-title { color:#15191f; }
+    .scene-hero .scene-hero-title em { display:block; }
+    @media (prefers-reduced-motion: reduce) { .scene-hero * { transition:none !important; animation:none !important; scroll-behavior:auto !important; } }
+  </style>
+
 </head>
 <body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -237,7 +404,26 @@
     });
   </script><!-- Main Content -->
   <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
+    <!-- Uniform scene-breakdown hero based on American Psycho ending page -->
+    <section class="scene-hero" aria-labelledby="scene-hero-title">
+      <div class="scene-hero-inner">
+        <div>
+          <div class="scene-eyebrow"><span></span> FILM ANALYSIS / SCENE BREAKDOWN</div>
+          <h1 class="scene-hero-title" id="scene-hero-title">The Dark Knight:<br><em>Bank Heist Scene Breakdown</em></h1>
+          <p class="scene-lede">How does the opening heist introduce the Joker before we see him clearly? Break down the misdirection, shifting alliances, visual geography, and the scene’s precise setup-and-payoff structure.</p>
+          <div class="scene-meta"><span>SCENE ANALYSIS</span><i></i><span>VISUAL STORYTELLING</span><i></i><span>SCREENWRITING CRAFT</span></div>
+          <a class="scene-cta" href="#scene-analysis-content">Explore the scene<span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="scene-art" role="img" aria-label="Editorial graphic for The Dark Knight, exploring misdirection / control / chaos">
+          <div class="scene-art-label"><span>SCENE FILE</span><span>FILM STUDY</span></div>
+          <div class="scene-art-title">A PLAN<br><em>WITHIN A PLAN</em></div>
+          <div class="scene-art-bottom"><span>MISDIRECTION / CONTROL / CHAOS</span><span>SHOT / REVERSE / ACTION</span></div>
+        </div>
+      </div>
+      <div class="scene-hero-footer"><span>THE SEQUENCE</span><span>WHAT THE FILM SHOWS / HOW THE SCENE WORKS</span></div>
+    </section>
+
+    <div id="scene-analysis-content" class="max-w-4xl mx-auto px-6 pt-10 pb-20">
       
       <!-- Top Return Link -->
       <div class="mb-8">
