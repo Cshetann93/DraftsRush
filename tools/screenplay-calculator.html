@@ -31,15 +31,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
+  <!-- This calculator preview uses the shared light theme to keep controls and footer readable. -->
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -213,6 +205,12 @@
 .tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
 .tool-content-shell>.max-w-6xl,.tool-content-shell>.max-w-5xl,.tool-content-shell>.max-w-4xl{max-width:100%!important}
 @media(max-width:640px){.tool-content-shell{padding:30px 16px 56px}}
+
+/* Batch 2 layout correction: full-width editorial hero, centered tool content. */
+.tool-page-refresh main{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box}
+.tool-page-refresh main>.shot-hero{display:block;width:100%;max-width:none!important;margin:0!important;box-sizing:border-box}
+.tool-page-refresh main>.tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
+@media(max-width:640px){.tool-page-refresh main>.tool-content-shell{padding:30px 16px 56px}}
 </style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
@@ -276,7 +274,7 @@
     .bg-ink { background-color: #111317 !important; }
   </style>
 </head>
-<body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+<body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -793,7 +791,7 @@
       btn.addEventListener('click', () => {
         const isDark = document.body.classList.toggle('dark');
         if (isDark) {
-          document.documentElement.classList.add('dark');
+          /* Dark mode disabled for consistent light-theme tool styling. */
           localStorage.setItem('theme', 'dark');
         } else {
           document.documentElement.classList.remove('dark');
