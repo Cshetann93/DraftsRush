@@ -15,6 +15,18 @@
   <meta name="description" content="Model a YouTube audience retention curve with this free simulator. Explore how hook pacing, visual pattern interrupts, and outro choices may affect viewer drop-off and average percentage viewed.">
   <meta name="keywords" content="YouTube audience retention simulator, retention curve, viewer drop-off, average percentage viewed, video retention analysis, YouTube retention">
   <link rel="canonical" href="https://www.draftsrush.com/tools/retention-simulator">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F8D000">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Audience Retention Simulator: Plan Video Pacing | DraftsRush">
+  <meta property="og:description" content="Simulate a video's audience retention curve, spot potential drop-off points, and plan pacing improvements with this free retention tool.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/retention-simulator">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Audience Retention Simulator: Plan Video Pacing | DraftsRush">
+  <meta name="twitter:description" content="Simulate a video's audience retention curve, spot potential drop-off points, and plan pacing improvements with this free retention tool.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 
   <!-- Favicon References -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
@@ -191,7 +203,40 @@
       .tool-page-refresh main > div:first-child h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
       .tool-page-refresh main > div:first-child .tool-seo-intro { font-size: .9rem; }
     }
-  </style>
+  
+/* Shared Shot List hero system for Batch 3. */
+.shot-hero{width:100%;padding:clamp(42px,6vw,82px) 24px 28px;background:#D6E0E8;border-bottom:1px solid #B6C4D0}
+    .shot-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.78fr);gap:clamp(32px,6vw,84px);align-items:center}
+    .shot-eyebrow,.shot-meta,.shot-art-label,.shot-hero-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#526273}
+    .shot-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.shot-eyebrow span{width:8px;height:8px;border-radius:50%;background:#B79B00;box-shadow:0 0 0 5px rgba(183,155,0,.14)}
+    .shot-hero h1{margin:0;color:#15191F;font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:900}.shot-hero h1 em{font-family:Georgia,serif;font-weight:500;letter-spacing:-.06em}
+    .shot-lede{max-width:650px;margin:24px 0;color:#465362;font-size:clamp(16px,1.6vw,21px);line-height:1.6}.shot-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 28px;font-size:9px}.shot-meta i{height:1px;width:20px;background:#9AA9B7}
+    .shot-cta{display:inline-flex;align-items:center;gap:18px;padding:15px 22px;border-radius:999px;background:#F8D000;color:#15191F;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s}.shot-cta:hover{transform:translateY(-2px)}
+    .shot-art{position:relative;min-height:340px;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#252B33,#111317 68%,#343C49);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#F2F1EC;box-shadow:0 24px 60px rgba(20,24,30,.18)}
+    .shot-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none}
+    .shot-art-label,.shot-art-title,.shot-art-bottom{position:relative;z-index:1}.shot-art-label{color:#D3D8DE;display:flex;justify-content:space-between;gap:10px}
+    .shot-clapper{align-self:center;position:relative;z-index:1;width:min(80%,320px);padding:16px;border:2px solid #E7E8E8;border-radius:8px;background:#D6E4EE;color:#15191F;box-shadow:0 18px 35px rgba(0,0,0,.35);transform:rotate(-5deg)}
+    .shot-clapper-top{height:24px;margin:-16px -16px 15px;background:repeating-linear-gradient(135deg,#F8D000 0,#F8D000 18px,#17191D 18px,#17191D 36px);border-bottom:2px solid #E7E8E8}
+    .shot-clapper-title{font:900 clamp(18px,2.6vw,26px) 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-align:center}.shot-clapper-lines{display:flex;gap:8px;margin-top:12px}.shot-clapper-lines span{height:5px;background:#8A98A7;flex:1}
+    .shot-art-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#D3D8DE}
+    .shot-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px}
+    main > .max-w-6xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important}
+    .guide-content{max-width:1120px!important;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,36px)}
+    .guide-content>section{border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;padding:clamp(24px,3.5vw,40px)!important;margin:0!important;background:#fff}
+    .guide-content>section:nth-child(3n+2){background:#FFF6CF}.guide-content>section:nth-child(3n){background:#D6E4EE}
+    .guide-content h2{line-height:1.1!important;letter-spacing:-.04em!important}.guide-content p{line-height:1.8!important}
+    .template-shell{border-radius:16px!important;box-shadow:4px 4px 0 #111317!important}
+    .template-shell h2{line-height:1.1;letter-spacing:-.04em}
+    @media(max-width:760px){.shot-hero-inner{grid-template-columns:1fr}.shot-art{min-height:270px}.shot-hero-footer{flex-direction:column;gap:7px}.shot-hero h1{font-size:clamp(42px,12vw,64px)}main > .max-w-6xl{padding-left:22px!important;padding-right:22px!important}.guide-content{gap:22px!important}.guide-content>section{padding:22px!important}}
+
+    
+/* Full-width hero; centered content below, matching approved Batch 1/2 layout. */
+.tool-page-refresh main{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box}
+.tool-page-refresh main>.shot-hero{display:block;width:100%;max-width:none!important;margin:0!important;box-sizing:border-box}
+.tool-page-refresh main>.tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
+.tool-page-refresh main>.tool-content-shell>.max-w-6xl,.tool-page-refresh main>.tool-content-shell>.max-w-5xl,.tool-page-refresh main>.tool-content-shell>.max-w-4xl{max-width:100%!important}
+@media(max-width:640px){.tool-page-refresh main>.tool-content-shell{padding:30px 16px 56px}}
+</style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
 <!-- Studio Core Classes & Sitewide Styles -->
@@ -381,7 +426,11 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
+  </script><main class="flex-grow w-full">
+<section class="shot-hero" aria-labelledby="shot-hero-title"><div class="shot-hero-inner"><div><div class="shot-eyebrow"><span></span> VIDEO STRATEGY / AUDIENCE RETENTION</div><h1 id="shot-hero-title">Find where viewers<br><em>might drop off</em></h1><p class="shot-lede">Map a video's likely retention curve, identify risky sections, and plan pacing changes that give viewers a reason to keep watching.</p><div class="shot-meta"><span>RETENTION CURVE</span><i></i><span>PACING CHECK</span><i></i><span>FREE TOOL</span></div><a class="shot-cta" href="#retention-simulator-tool">Simulate retention <span aria-hidden="true">↓</span></a></div><div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for RETENTION SIMULATOR"><div class="shot-art-label"><span>CREATOR TOOL / 09</span><span>VIEWER JOURNEY</span></div><div class="shot-clapper" aria-hidden="true"><div class="shot-clapper-top"></div><div class="shot-clapper-title">RETENTION SIMULATOR</div><div class="shot-clapper-lines"><span></span><span></span><span></span></div><div class="shot-clapper-lines"><span></span><span></span><span></span></div></div><div class="shot-art-bottom"><span>MAP / REVIEW / IMPROVE</span><span>KEEP THEM WATCHING</span></div></div></div><div class="shot-hero-footer"><span>02 — PLAN VIEWER MOMENTUM</span><span>FROM OPENING TO OUTRO</span></div></section>
+    <div class="tool-content-shell" id="retention-simulator-tool">
+
+
     <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
       <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
         Utility: Algorithmic Retention Diagnostics
@@ -582,7 +631,9 @@
         ← Back to Free Tools
       </a>
     </div>
-  </main>
+  
+    </div><!-- /.tool-content-shell -->
+</main>
 
   <!-- Universal Footer -->
   <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
