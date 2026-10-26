@@ -32,15 +32,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
+  <!-- This tool uses the shared light theme so its hero and controls match the other creator tools. -->
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -246,7 +238,7 @@
     .bg-ink { background-color: #111317 !important; }
   </style>
 </head>
-<body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+<body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
