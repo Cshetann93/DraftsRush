@@ -15,20 +15,22 @@
   <meta name="description" content="Analyze the first five seconds of a video script with this free hook analyzer. Review curiosity gaps, urgency, word economy, filler phrases, and potential viewer drop-off risks.">
   <meta name="keywords" content="video hook analyzer, 5 second hook, hook grader, YouTube hook analysis, video script opening, audience retention">
   <link rel="canonical" href="https://www.draftsrush.com/tools/hook-analyzer">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F8D000">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="5-Second Hook Analyzer: Improve Video Openings | DraftsRush">
+  <meta property="og:description" content="Analyze your video opening for clarity, curiosity, and momentum with this free 5-second hook analyzer for YouTube, Shorts, and Reels.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/hook-analyzer">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="5-Second Hook Analyzer: Improve Video Openings | DraftsRush">
+  <meta name="twitter:description" content="Analyze your video opening for clarity, curiosity, and momentum with this free 5-second hook analyzer for YouTube, Shorts, and Reels.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 
   <!-- Favicon References -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
-
-  <!-- Instant Dark Mode Initializer (Zero Flash) -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -193,7 +195,45 @@
       .tool-page-refresh main > div:first-child h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
       .tool-page-refresh main > div:first-child .tool-seo-intro { font-size: .9rem; }
     }
-  </style>
+  
+/* Shared Shot List hero system for Batch 3. */
+.shot-hero{width:100%;padding:clamp(42px,6vw,82px) 24px 28px;background:#D6E0E8;border-bottom:1px solid #B6C4D0}
+    .shot-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.78fr);gap:clamp(32px,6vw,84px);align-items:center}
+    .shot-eyebrow,.shot-meta,.shot-art-label,.shot-hero-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#526273}
+    .shot-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.shot-eyebrow span{width:8px;height:8px;border-radius:50%;background:#B79B00;box-shadow:0 0 0 5px rgba(183,155,0,.14)}
+    .shot-hero h1{margin:0;color:#15191F;font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:900}.shot-hero h1 em{font-family:Georgia,serif;font-weight:500;letter-spacing:-.06em}
+    .shot-lede{max-width:650px;margin:24px 0;color:#465362;font-size:clamp(16px,1.6vw,21px);line-height:1.6}.shot-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 28px;font-size:9px}.shot-meta i{height:1px;width:20px;background:#9AA9B7}
+    .shot-cta{display:inline-flex;align-items:center;gap:18px;padding:15px 22px;border-radius:999px;background:#F8D000;color:#15191F;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s}.shot-cta:hover{transform:translateY(-2px)}
+    .shot-art{position:relative;min-height:340px;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#252B33,#111317 68%,#343C49);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#F2F1EC;box-shadow:0 24px 60px rgba(20,24,30,.18)}
+    .shot-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none}
+    .shot-art-label,.shot-art-title,.shot-art-bottom{position:relative;z-index:1}.shot-art-label{color:#D3D8DE;display:flex;justify-content:space-between;gap:10px}
+    .shot-clapper{align-self:center;position:relative;z-index:1;width:min(80%,320px);padding:16px;border:2px solid #E7E8E8;border-radius:8px;background:#D6E4EE;color:#15191F;box-shadow:0 18px 35px rgba(0,0,0,.35);transform:rotate(-5deg)}
+    .shot-clapper-top{height:24px;margin:-16px -16px 15px;background:repeating-linear-gradient(135deg,#F8D000 0,#F8D000 18px,#17191D 18px,#17191D 36px);border-bottom:2px solid #E7E8E8}
+    .shot-clapper-title{font:900 clamp(18px,2.6vw,26px) 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-align:center}.shot-clapper-lines{display:flex;gap:8px;margin-top:12px}.shot-clapper-lines span{height:5px;background:#8A98A7;flex:1}
+    .shot-art-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#D3D8DE}
+    .shot-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px}
+    main > .max-w-6xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important}
+    .guide-content{max-width:1120px!important;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,36px)}
+    .guide-content>section{border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;padding:clamp(24px,3.5vw,40px)!important;margin:0!important;background:#fff}
+    .guide-content>section:nth-child(3n+2){background:#FFF6CF}.guide-content>section:nth-child(3n){background:#D6E4EE}
+    .guide-content h2{line-height:1.1!important;letter-spacing:-.04em!important}.guide-content p{line-height:1.8!important}
+    .template-shell{border-radius:16px!important;box-shadow:4px 4px 0 #111317!important}
+    .template-shell h2{line-height:1.1;letter-spacing:-.04em}
+    @media(max-width:760px){.shot-hero-inner{grid-template-columns:1fr}.shot-art{min-height:270px}.shot-hero-footer{flex-direction:column;gap:7px}.shot-hero h1{font-size:clamp(42px,12vw,64px)}main > .max-w-6xl{padding-left:22px!important;padding-right:22px!important}.guide-content{gap:22px!important}.guide-content>section{padding:22px!important}}
+
+    
+/* Full-width hero; centered content below, matching approved Batch 1/2 layout. */
+.tool-page-refresh main{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box}
+.tool-page-refresh main>.shot-hero{display:block;width:100%;max-width:none!important;margin:0!important;box-sizing:border-box}
+.tool-page-refresh main>.tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
+.tool-page-refresh main>.tool-content-shell>.max-w-6xl,.tool-page-refresh main>.tool-content-shell>.max-w-5xl,.tool-page-refresh main>.tool-content-shell>.max-w-4xl{max-width:100%!important}
+@media(max-width:640px){.tool-page-refresh main>.tool-content-shell{padding:30px 16px 56px}}
+
+/* Batch 3 contrast fix: enforce the approved light palette and shared footer contrast. */
+.tool-page-refresh{background:#E2E4E9!important;color:#111317!important}
+.tool-page-refresh.dark{background:#E2E4E9!important;color:#111317!important}
+.tool-page-refresh.dark main,.tool-page-refresh.dark main h1,.tool-page-refresh.dark main h2,.tool-page-refresh.dark main h3,.tool-page-refresh.dark main p,.tool-page-refresh.dark main label,.tool-page-refresh.dark main span{color:inherit}
+</style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
 <!-- Studio Core Classes & Sitewide Styles -->
@@ -383,14 +423,18 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
+  </script><main class="flex-grow w-full">
+<section class="shot-hero" aria-labelledby="shot-hero-title"><div class="shot-hero-inner"><div><div class="shot-eyebrow"><span></span> SHORT-FORM VIDEO / HOOK TESTING</div><h1 id="shot-hero-title">Make the first five<br><em>seconds count</em></h1><p class="shot-lede">Test your opening line for clarity, curiosity, and momentum. Use a quick hook review to spot weak starts before you record or publish.</p><div class="shot-meta"><span>OPENING LINE</span><i></i><span>HOOK STRENGTH</span><i></i><span>FREE TOOL</span></div><a class="shot-cta" href="#hook-analyzer-tool">Analyze your hook <span aria-hidden="true">↓</span></a></div><div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for HOOK ANALYZER"><div class="shot-art-label"><span>CREATOR TOOL / 08</span><span>OPENING LINE LAB</span></div><div class="shot-clapper" aria-hidden="true"><div class="shot-clapper-top"></div><div class="shot-clapper-title">HOOK ANALYZER</div><div class="shot-clapper-lines"><span></span><span></span><span></span></div><div class="shot-clapper-lines"><span></span><span></span><span></span></div></div><div class="shot-art-bottom"><span>CHECK / SHARPEN / TEST</span><span>READY TO CAPTURE</span></div></div></div><div class="shot-hero-footer"><span>01 — WIN THE FIRST MOMENT</span><span>FROM SCROLL TO STORY</span></div></section>
+    <div class="tool-content-shell" id="hook-analyzer-tool">
+
+
     <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
       <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
         Utility: Retention Diagnostics
       </div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">
+      <h2 class="text-2xl md:text-3xl font-black brand-font tracking-tight mb-3">
         5-Second Video Hook Analyzer
-      </h1>
+      </h2>
       <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
         Paste the opening line or first two sentences of your video. The tool analyzes pacing speed, identifies curiosity triggers, flags filler phrases, and grades your opening against short-form drop-off patterns.
       </p>
@@ -515,14 +559,16 @@
         ← Back to Free Tools
       </a>
     </div>
-  </main>
+  
+    </div><!-- /.tool-content-shell -->
+</main>
 
   <!-- Universal Footer -->
-  <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317">
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -532,7 +578,8 @@
               height="50" 
               loading="lazy"
               decoding="async"
-              class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
+              fetchpriority="low"
+              class="h-8 sm:h-9 w-auto object-contain" 
             />
           </a>
           <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
@@ -541,24 +588,24 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
-            ⚡ 100% Free Client-Side Tools
+          <span class="studio-badge bg-brand-yellow brand-font uppercase">
+            <span>⚡ 100% Free Client-Side Tools</span>
           </span>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -572,43 +619,48 @@
         
         <!-- Col 1: Interactive Tools & Apps -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
-            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
+              </a>
+            </li>
             <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
             <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
             <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
         <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
             <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
             <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
             <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
             <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Commission Services & Templates -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
             <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
             <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
@@ -620,15 +672,15 @@
 
         <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm">
               ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
@@ -641,7 +693,7 @@
       </div>
 
       <!-- Bottom Legal & Copyright Bar -->
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
           <a href="/sitemap" class="hover:underline">Sitemap</a>
@@ -691,97 +743,8 @@
     }
 
     // Dark Mode Toggle Logic
-    const toggleBtns = [
-      document.getElementById('theme-toggle'),
-      document.getElementById('theme-toggle-mobile')
-    ].filter(Boolean);
+    // Keep this tool on the approved light theme to preserve text contrast.
 
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    });
-
-    // Heuristic Hook Auditor
-    function auditHook() {
-      const text = hookInput.value.trim();
-      if (!text) {
-        metricWords.innerText = '0';
-        metricTime.innerText = '0.0s';
-        metricScore.innerText = '--';
-        metricScore.className = 'text-3xl font-black brand-font text-emerald-700';
-        metricCuriosity.innerText = 'Awaiting Input';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-white brutal-box space-y-2';
-        diagnosticText.innerText = 'Type or paste your hook above. We evaluate length (under 16 words is ideal), presence of high-stakes contrast, and absence of rhetorical greetings.';
-        return;
-      }
-
-      const words = text.match(/\b\S+\b/g) || [];
-      const wordCount = words.length;
-      metricWords.innerText = wordCount;
-
-      // Standard short-form pace: ~150 WPM
-      const seconds = (wordCount / 150) * 60;
-      metricTime.innerText = seconds.toFixed(1) + 's';
-
-      // Check filler phrases
-      const lower = text.toLowerCase();
-      const hasGreeting = /^(hey|hello|hi|what's up|welcome back)/i.test(lower);
-      const hasSelfIntro = /(in this video|today i'm going to show you|i wanted to share)/i.test(lower);
-      const hasCuriosity = /(why|how|this single|secret|trick|nobody talks about|banned|mistake|reason)/i.test(lower);
-
-      let score = 90;
-      let feedback = [];
-
-      if (hasGreeting || hasSelfIntro) {
-        score -= 30;
-        feedback.push("⚠️ Remove introductory greeting. Cut directly into the core subject.");
-      }
-
-      if (wordCount > 16) {
-        score -= 20;
-        feedback.push(`⚠️ Hook is ${wordCount} words (${seconds.toFixed(1)}s). Mobile viewers swipe away before second 00:04. Cut it down to under 14 words.`);
-      } else {
-        feedback.push("✓ Word economy is tight and delivers within the critical mobile window.");
-      }
-
-      if (hasCuriosity) {
-        metricCuriosity.innerText = 'High (Open Loop)';
-        feedback.push("✓ Strong psychological curiosity hook detected.");
-      } else {
-        score -= 15;
-        metricCuriosity.innerText = 'Moderate / Low';
-        feedback.push("⚠️ Lacks an explicit curiosity trigger (e.g. 'why', 'the reason', 'this secret').");
-      }
-
-      metricScore.innerText = Math.max(20, score) + '/100';
-
-      if (score >= 80) {
-        metricScore.className = 'text-3xl font-black brand-font text-emerald-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#C2F0C2] text-black brutal-box space-y-2';
-      } else if (score >= 60) {
-        metricScore.className = 'text-3xl font-black brand-font text-amber-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFF6CF] text-black brutal-box space-y-2';
-      } else {
-        metricScore.className = 'text-3xl font-black brand-font text-red-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
-      }
-
-      diagnosticText.replaceChildren();
-      feedback.forEach((message, index) => {
-        if (index > 0) diagnosticText.appendChild(document.createElement('br'));
-        diagnosticText.appendChild(document.createTextNode(message));
-      });
-    }
-
-    hookInput.addEventListener('input', auditHook);
   </script>
 </body>
 </html>
