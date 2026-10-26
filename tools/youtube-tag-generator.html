@@ -69,6 +69,47 @@
     #youtube-tag-tool input,#youtube-tag-tool select{min-height:46px}#tags-output{min-height:124px;border-radius:8px}
     @media(max-width:768px){.yt-hero{padding:20px 16px 0}.yt-hero-inner{grid-template-columns:1fr;padding:26px 22px}.yt-hero-art{min-height:230px}.yt-hero-footer{font-size:8px}.yt-hero h1{font-size:clamp(36px,10vw,52px)}}
 
+  
+    .yt-content-section{margin:0 0 clamp(36px,5vw,64px)}
+    .yt-section-heading{max-width:790px;margin:0 0 22px}
+    .yt-section-kicker{display:inline-block;font:700 10px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#626873;text-transform:uppercase;margin-bottom:10px}
+    .yt-section-heading h2{font:800 clamp(27px,3.5vw,39px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.045em;color:#111317;margin:0 0 12px}
+    .yt-section-heading>p{font-size:16px;line-height:1.7;color:#515661;max-width:720px;margin:0}
+    .yt-steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .yt-step{padding:22px;border:1.5px solid #111317;border-radius:18px;background:#F0F2F5;box-shadow:0 8px 20px -14px rgba(17,19,23,.35)}
+    .yt-step-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#F8D000;border:1.5px solid #111317;border-radius:10px;font:800 12px 'JetBrains Mono',monospace}
+    .yt-step h3,.yt-example-card h3,.yt-guidance-card h3{font:800 19px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.025em;margin:17px 0 9px;color:#111317}
+    .yt-step p,.yt-example-card p,.yt-guidance-card li{font-size:14px;line-height:1.7;color:#50545C;margin:0}
+    .yt-example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .yt-example-card{padding:22px;border:1.5px solid #111317;border-radius:18px;background:#fff;box-shadow:0 8px 20px -14px rgba(17,19,23,.3)}
+    .yt-example-label{display:inline-block;background:#D6E4EE;border:1px solid #111317;border-radius:6px;padding:5px 8px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.1em}
+    .yt-example-card h3{margin-top:15px}.yt-example-topic{font-size:12px!important;margin-bottom:14px!important;color:#656A74!important}
+    .yt-example-tags{display:flex;flex-wrap:wrap;gap:7px}.yt-example-tags code{font:500 11px/1.4 'JetBrains Mono',monospace;background:#F0F2F5;border:1px solid #C7CAD2;border-radius:6px;padding:6px 8px;color:#272B32}
+    .yt-guidance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .yt-guidance-card{padding:24px;border:1.5px solid #111317;border-radius:18px;background:#fff}
+    .yt-guidance-do{background:#E1F5E3}.yt-guidance-avoid{background:#FFF6CF}
+    .yt-guidance-card h3{display:flex;align-items:center;gap:9px;margin:0 0 15px}.yt-guidance-card h3 span{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1.5px solid #111317;border-radius:8px;background:#fff}
+    .yt-guidance-card ul{margin:0;padding-left:20px;display:grid;gap:9px}
+    .yt-note{margin-top:16px;border:1.5px solid #111317;border-radius:14px;background:#D6E4EE;padding:18px 20px;font-size:14px;line-height:1.7;color:#30343B}.yt-note a{font-weight:800;color:#111317;text-decoration:underline;text-underline-offset:3px}
+    .yt-faq-list{border-top:1.5px solid #C7CAD2}
+    .yt-faq-list details{border-bottom:1px solid #C7CAD2;padding:0}
+    .yt-faq-list summary{cursor:pointer;list-style:none;position:relative;padding:19px 42px 19px 0;font:700 17px/1.4 'Space Grotesk',sans-serif;color:#111317}
+    .yt-faq-list summary::-webkit-details-marker{display:none}.yt-faq-list summary:after{content:'+';position:absolute;right:6px;top:15px;width:28px;height:28px;display:grid;place-items:center;border:1px solid #111317;border-radius:8px;background:#F8D000;font:700 20px 'Inter',sans-serif}
+    .yt-faq-list details[open] summary:after{content:'−'}
+    .yt-faq-list details p{max-width:800px;margin:0;padding:0 36px 20px 0;font-size:14px;line-height:1.75;color:#515661}
+    .yt-related-section{margin:0 0 44px}
+    .yt-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .yt-related-card{display:flex;flex-direction:column;align-items:flex-start;min-height:190px;padding:21px;border:1.5px solid #111317;border-radius:16px;background:#F0F2F5;color:#111317;text-decoration:none;transition:transform .18s,box-shadow .18s}
+    .yt-related-card:hover{transform:translateY(-3px);box-shadow:5px 5px 0 #111317;background:#FFF6CF}
+    .yt-related-card span{font:700 9px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#626873}
+    .yt-related-card strong{font:800 18px/1.2 'Space Grotesk',sans-serif;margin:17px 0 8px;letter-spacing:-.025em}
+    .yt-related-card p{font-size:13px;line-height:1.6;color:#515661;margin:0 0 18px}.yt-related-card b{font:700 11px 'JetBrains Mono',monospace;margin-top:auto}
+    .yt-bottom-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(24px,4vw,40px);border:1.5px solid #111317;border-radius:22px;background:#F8D000;box-shadow:0 14px 30px -16px rgba(17,19,23,.35)}
+    .yt-bottom-cta h2{font:800 clamp(25px,3vw,36px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.04em;max-width:600px;margin:8px 0 10px;color:#111317}
+    .yt-bottom-cta p{font-size:14px;line-height:1.6;color:#30343B;margin:0;max-width:560px}
+    .yt-back-link{display:inline-block;font:700 11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;color:#111317;text-decoration:underline;text-underline-offset:4px}
+    @media(max-width:760px){.yt-steps-grid,.yt-example-grid,.yt-related-grid{grid-template-columns:1fr}.yt-guidance-grid{grid-template-columns:1fr}.yt-bottom-cta{align-items:flex-start;flex-direction:column}.yt-section-heading h2{font-size:30px}}
+
   </style>
 
   <!-- Schema Markup: WebApplication & FAQPage -->
@@ -88,16 +129,17 @@
     "description": "Free browser-based tool for drafting relevant YouTube video tag ideas, formatting a comma-separated list, and checking its character count before pasting into YouTube Studio."
   }
   </script>
-    <script type="application/ld+json">
+      <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"What is a YouTube tag generator?","acceptedAnswer":{"@type":"Answer","text":"A YouTube tag generator helps create a comma-separated list of descriptive tags for a video's topic. Review suggestions and keep only tags that accurately describe the video."}},
-      {"@type":"Question","name":"Do YouTube tags help videos rank?","acceptedAnswer":{"@type":"Answer","text":"YouTube says tags play a minimal role in discovery. They are most useful when a video's topic or terms are commonly misspelled. Titles, thumbnails, and descriptions are more important pieces of metadata."}},
-      {"@type":"Question","name":"What is the character limit for YouTube tags?","acceptedAnswer":{"@type":"Answer","text":"YouTube Studio allows up to 500 characters in the tags field. Keep tags relevant and remove repetitive or unrelated suggestions rather than filling the limit for its own sake."}},
-      {"@type":"Question","name":"Can I paste generated tags into YouTube Studio?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy the comma-separated tag list and paste it into the Tags field in the video's Details settings in YouTube Studio. Review every tag for relevance first."}},
-      {"@type":"Question","name":"Are YouTube tags and hashtags the same?","acceptedAnswer":{"@type":"Answer","text":"No. Tags are entered in the dedicated Tags field in YouTube Studio. Hashtags start with the # symbol and are placed in a video's title or description."}}
+      {"@type":"Question","name":"What is a YouTube tag generator?","acceptedAnswer":{"@type":"Answer","text":"A YouTube tag generator creates ideas for descriptive phrases related to a video topic and formats them as a comma-separated list. Review suggestions and keep only tags that accurately describe the video."}},
+      {"@type":"Question","name":"How do I generate keywords for a YouTube video?","acceptedAnswer":{"@type":"Answer","text":"Enter your video title or subject, choose a focus type, and generate suggestions. Prioritise the main topic and specific related phrases. This tool brainstorms tags but does not provide live search-volume or keyword-difficulty data."}},
+      {"@type":"Question","name":"What is the character limit for YouTube tags?","acceptedAnswer":{"@type":"Answer","text":"YouTube Studio allows up to 500 characters in the tags field. The counter helps check the length of the comma-separated list. You do not need to fill all 500 characters if you have fewer relevant tags."}},
+      {"@type":"Question","name":"Do YouTube tags help videos rank?","acceptedAnswer":{"@type":"Answer","text":"YouTube says tags play a minimal role in discovery. They are mainly useful for common misspellings or alternate terms. Titles, thumbnails, and descriptions have a greater role in helping viewers understand a video."}},
+      {"@type":"Question","name":"Are YouTube tags and hashtags the same?","acceptedAnswer":{"@type":"Answer","text":"No. Tags are added in the dedicated Tags field in YouTube Studio. Hashtags begin with the # symbol and can be placed in a video's title or description."}},
+      {"@type":"Question","name":"Can I paste generated tags directly into YouTube Studio?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy the comma-separated list and paste it into the Tags field in the video's Details settings. Review the list first and remove anything irrelevant."}}
     ]
   }
   </script>
@@ -286,12 +328,12 @@
         <div class="yt-hero-copy">
           <p class="yt-eyebrow"><span></span> FREE CREATOR TOOL / YOUTUBE SEO</p>
           <h1 id="yt-hero-title">Free YouTube Tag <em>Generator</em></h1>
-          <p class="yt-hero-lede">Generate relevant YouTube video tags and keyword ideas from your topic. Check your tag list against the 500-character limit, then copy it into YouTube Studio.</p>
+          <p class="yt-hero-lede">Turn a video topic into a focused list of relevant YouTube tags. Generate keyword ideas, check the 500-character limit, and copy your final list into YouTube Studio.</p>
           <div class="yt-hero-meta"><span>FREE TO USE</span><i></i><span>500-CHARACTER CHECK</span><i></i><span>INSTANT COPY</span></div>
           <a class="yt-hero-cta" href="#youtube-tag-tool">Generate YouTube Tags <span aria-hidden="true">↓</span></a>
-          <p class="yt-hero-note">Tags are supporting metadata, not a ranking guarantee. YouTube says titles, thumbnails, and descriptions matter more.</p>
+          <p class="yt-hero-note">Tags can help with misspellings and alternate terms, but YouTube says titles, thumbnails, and descriptions matter more for discovery.</p>
         </div>
-        <div class="yt-hero-art" role="img" aria-label="Illustration of a YouTube video tag list with a 500 character counter">
+        <div class="yt-hero-art" role="img" aria-label="Illustration of relevant video tags and a 500 character counter">
           <div class="yt-art-top"><span>METADATA / 01</span><span>TAG BUILDER</span></div>
           <div class="yt-art-screen">
             <div class="yt-art-screen-title">VIDEO TAGS</div>
@@ -379,147 +421,79 @@
       </div>
     </div>
 
-    <!-- Editorial Craft Section: How YouTube Tags Function -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
-      <div class="border-b-2 border-black pb-3">
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Metadata Strategy</span>
-        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">How to Use YouTube Tags Correctly</h2>
-      </div>
 
-      <div class="text-sm font-medium text-gray-700 leading-relaxed space-y-4">
-        <p>
-          YouTube says video tags play a minimal role in discovery. They can be useful for common misspellings or alternate spellings, but titles, thumbnails, and descriptions are more important metadata. Use this generator as a formatting and brainstorming aid—not as a promise of higher rankings.
-        </p>
-        <p>
-          Start with a clear, accurate title and description. Then add only tags that describe the actual video, including relevant alternate spellings when needed. Do not add unrelated keywords or paste tag lists into the description.
-        </p>
-        <p>
-          For the official guidance, read <a href="https://support.google.com/youtube/answer/146402?hl=en" target="_blank" rel="noopener noreferrer" class="font-bold underline text-black">YouTube's help page on adding video tags</a>. You can also review your headline with the <a href="/tools/title-checker" class="font-bold underline text-black">YouTube Title Checker</a> before publishing.
-        </p>
-      </div>
-
-      <!-- Strategy Table -->
-      <div class="overflow-x-auto border-[1.5px] border-black rounded-xl">
-        <table class="w-full text-left text-xs font-medium">
-          <thead class="bg-black text-white font-mono uppercase">
-            <tr>
-              <th class="p-3 border-r border-gray-700">Tag Tier</th>
-              <th class="p-3 border-r border-gray-700">Description</th>
-              <th class="p-3">Example for a video about film editing</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">1. Primary Target</td>
-              <td class="p-3 border-r-2 border-black">Exact-match query matching your video title.</td>
-              <td class="p-3"><code>film editing tutorial, editing workflow</code></td>
-            </tr>
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">2. Long-Tail Variations</td>
-              <td class="p-3 border-r-2 border-black">Specific sub-problems, questions, and software tools.</td>
-              <td class="p-3"><code>how to edit a video, beginner editing tips</code></td>
-            </tr>
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">3. Broad Category</td>
-              <td class="p-3 border-r-2 border-black">General genre and niche classifications.</td>
-              <td class="p-3"><code>video editing, post production</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Search Intent FAQ Section -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-4">
-      <div class="border-b-2 border-black pb-2">
-        <span class="bg-[#F8D000] border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Direct Search FAQ</span>
-        <h3 class="text-xl md:text-2xl font-black brand-font mt-2">YouTube Tag Generator: Frequently Asked Questions</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-medium">
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">How many tags should you put on a YouTube video?</h4>
-          <p class="leading-relaxed">
-            There is no need to fill the field with a fixed number of tags. Keep them relevant and concise. YouTube says tags are most useful for common misspellings and otherwise play a minimal role in discovery.
-          </p>
+      <section class="yt-content-section" aria-labelledby="yt-how-title">
+        <div class="yt-section-heading">
+          <span class="yt-section-kicker">01 / QUICK WORKFLOW</span>
+          <h2 id="yt-how-title">How to Generate Tags for a YouTube Video</h2>
+          <p>Start with the subject of the video, not a list of trending words. Use the generator to brainstorm relevant phrases, then remove anything that does not accurately describe what viewers will see.</p>
         </div>
-
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">Should I put tags in my video description?</h4>
-          <p class="leading-relaxed">
-            No. Enter tags in the dedicated Tags field in YouTube Studio. YouTube warns that adding excessive tags to a video description is against its spam policies.
-          </p>
+        <div class="yt-steps-grid">
+          <article class="yt-step"><span class="yt-step-number">01</span><h3>Enter your video topic</h3><p>Use the main subject, a draft title, or the question your video answers. Specific topics usually produce more useful suggestions than broad terms.</p></article>
+          <article class="yt-step"><span class="yt-step-number">02</span><h3>Choose a keyword focus</h3><p>Try balanced suggestions first. Use long-tail focus for a specific question or broad focus for category ideas, then check every phrase for relevance.</p></article>
+          <article class="yt-step"><span class="yt-step-number">03</span><h3>Review and copy</h3><p>Generate the list, review the output and character count, then copy the comma-separated tags into the Tags field in YouTube Studio.</p></article>
         </div>
+      </section>
 
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">How do tags interact with titles and thumbnails?</h4>
-          <p class="leading-relaxed">
-            YouTube says titles, thumbnails, and descriptions are more important for discovery than tags. Before publishing, review your title with our <a href="/tools/title-checker" class="font-bold underline text-black hover:text-[#D32F2F]">YouTube Title Checker</a> and preview artwork with the <a href="/tools/thumbnail-preview" class="font-bold underline text-black hover:text-[#D32F2F]">Thumbnail Preview Studio</a>.
-          </p>
+      <section class="yt-content-section" aria-labelledby="yt-examples-title">
+        <div class="yt-section-heading">
+          <span class="yt-section-kicker">02 / SEARCH INTENT</span>
+          <h2 id="yt-examples-title">YouTube Keyword Generator: Examples by Video Type</h2>
+          <p>Use these examples as a starting point. Keep only phrases that match the video's actual subject, format, and audience.</p>
         </div>
-
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">Are YouTube tags and hashtags the same?</h4>
-          <p class="leading-relaxed">No. Tags go in the dedicated Tags field in YouTube Studio. Hashtags start with # and appear in a video's title or description.</p>
+        <div class="yt-example-grid">
+          <article class="yt-example-card"><span class="yt-example-label">TUTORIAL</span><h3>How-to video</h3><p class="yt-example-topic">Topic: editing a video for beginners</p><div class="yt-example-tags"><code>video editing tutorial</code><code>beginner video editing</code><code>how to edit videos</code><code>editing workflow</code></div></article>
+          <article class="yt-example-card"><span class="yt-example-label">EDUCATION</span><h3>Explainer video</h3><p class="yt-example-topic">Topic: how solar panels work</p><div class="yt-example-tags"><code>how solar panels work</code><code>solar energy explained</code><code>renewable energy basics</code><code>solar panel science</code></div></article>
+          <article class="yt-example-card"><span class="yt-example-label">ENTERTAINMENT</span><h3>Film analysis</h3><p class="yt-example-topic">Topic: analysing a thriller scene</p><div class="yt-example-tags"><code>thriller scene analysis</code><code>film scene breakdown</code><code>cinematography analysis</code><code>movie storytelling</code></div></article>
         </div>
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">Does this tool show live keyword search volume?</h4>
-          <p class="leading-relaxed">No. It generates topic-related tag ideas and formats them for copying; it does not access live YouTube search-volume or ranking data.</p>
+      </section>
+
+      <section class="yt-content-section" aria-labelledby="yt-best-practices-title">
+        <div class="yt-section-heading">
+          <span class="yt-section-kicker">03 / METADATA BASICS</span>
+          <h2 id="yt-best-practices-title">How to Choose YouTube Video Tags That Fit</h2>
+          <p>A tag generator can help brainstorm and format terms, but relevance matters more than the number of tags. Treat the output as a draft to edit—not a checklist to fill.</p>
         </div>
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">Can I copy these tags directly into YouTube Studio?</h4>
-          <p class="leading-relaxed">
-            Yes. Click Copy Tags for Studio, then paste the comma-separated list into the Tags field in the video Details settings in YouTube Studio. Review the list first and remove anything that does not describe your video.
-          </p>
+        <div class="yt-guidance-grid">
+          <article class="yt-guidance-card yt-guidance-do"><h3><span aria-hidden="true">+</span> Do</h3><ul><li>Use the main topic and close variations.</li><li>Add a common alternate spelling if viewers may use it.</li><li>Check that each tag describes the actual video.</li><li>Use a clear title and description that naturally explain the topic.</li></ul></article>
+          <article class="yt-guidance-card yt-guidance-avoid"><h3><span aria-hidden="true">−</span> Avoid</h3><ul><li>Adding unrelated high-traffic keywords.</li><li>Repeating the same phrase in multiple forms without a reason.</li><li>Putting a block of tags in the video description.</li><li>Assuming more tags automatically mean better rankings.</li></ul></article>
         </div>
-      </div>
-    </div>
+        <div class="yt-note"><strong>Important:</strong> YouTube says tags play a minimal role in discovery and are mainly useful for common misspellings. Titles, thumbnails, and descriptions are more important metadata. <a href="https://support.google.com/youtube/answer/146402?hl=en" target="_blank" rel="noopener noreferrer">Read YouTube's official tag guidance ↗</a></div>
+      </section>
 
-    <!-- Related Packaging & Distribution Tools Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
-      <div class="flex items-center justify-between border-b-2 border-black pb-2">
-        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Packaging & YouTube Distribution Suite</h3>
-        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
-      </div>
-      <p class="text-xs font-medium text-gray-800 leading-relaxed">
-        Verify the rest of your video metadata before publishing:
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/tools/title-checker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>🔍 YouTube Title Checker</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Check title character counts against mobile feed truncation →</span>
-        </a>
-        <a href="/tools/timestamp-maker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>⏱ YouTube Timestamps Maker</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Generate clickable description chapters for Google Key Moments →</span>
-        </a>
-        <a href="/tools/thumbnail-preview" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>🖼 Thumbnail Preview Studio</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Audit thumbnail image contrast across simulated feeds →</span>
-        </a>
-      </div>
-    </div>
+      <section class="yt-content-section" aria-labelledby="yt-faq-title">
+        <div class="yt-section-heading">
+          <span class="yt-section-kicker">04 / COMMON QUESTIONS</span>
+          <h2 id="yt-faq-title">YouTube Tag Generator FAQs</h2>
+          <p>Quick answers about tag formatting, keywords, hashtags, and what this tool can—and cannot—do.</p>
+        </div>
+        <div class="yt-faq-list">
+          <details><summary>What is a YouTube tag generator?</summary><p>A YouTube tag generator creates ideas for descriptive phrases related to a video topic and formats them as a comma-separated list. Review the suggestions and keep only tags that accurately describe your video.</p></details>
+          <details><summary>How do I generate keywords for a YouTube video?</summary><p>Enter your video title or subject, choose a focus type, and generate suggestions. Prioritise the main topic and specific related phrases. This tool brainstorms tags; it does not provide live search-volume or keyword-difficulty data.</p></details>
+          <details><summary>What is the character limit for YouTube tags?</summary><p>YouTube Studio allows up to 500 characters in the tags field. The counter helps you check the length of your comma-separated list. You do not need to fill all 500 characters if you have fewer relevant tags.</p></details>
+          <details><summary>Do YouTube tags help videos rank?</summary><p>YouTube says tags play a minimal role in discovery. They are mainly useful for common misspellings or alternate terms. Titles, thumbnails, and descriptions have a greater role in helping viewers understand a video.</p></details>
+          <details><summary>Are YouTube tags and hashtags the same?</summary><p>No. Tags are added in the dedicated Tags field in YouTube Studio. Hashtags begin with the # symbol and can be placed in a video's title or description.</p></details>
+          <details><summary>Can I paste generated tags directly into YouTube Studio?</summary><p>Yes. Use Copy Tags for Studio, then paste the comma-separated list into the Tags field in the video's Details settings. Review the list first and remove anything irrelevant.</p></details>
+        </div>
+      </section>
 
-    <!-- Commercial CTA Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-      <div>
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
-        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Research-Backed Video Scripts?</h2>
-        <p class="text-sm font-medium text-black max-w-xl">
-          We research, outline, and write complete retention-tested video essays, explainers, and documentary screenplays optimized for high completion rates.
-        </p>
-      </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
-        Explore Script Packs →
-      </a>
-    </div>
-
-    <!-- Bottom Return Button -->
-    <div class="mt-8">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
-        ← Back to Free Tools
-      </a>
-    </div>
+      <section class="yt-related-section" aria-labelledby="yt-related-title">
+        <div class="yt-section-heading">
+          <span class="yt-section-kicker">05 / COMPLETE YOUR UPLOAD</span>
+          <h2 id="yt-related-title">More Free YouTube Tools</h2>
+          <p>Review the rest of your video's packaging before you publish.</p>
+        </div>
+        <div class="yt-related-grid">
+          <a href="/tools/title-checker" class="yt-related-card"><span>01 / TITLE</span><strong>YouTube Title Checker</strong><p>Review title length and readability before publishing.</p><b>Check your title ↗</b></a>
+          <a href="/tools/thumbnail-preview" class="yt-related-card"><span>02 / THUMBNAIL</span><strong>Thumbnail Preview Studio</strong><p>Preview your artwork in a video-feed layout.</p><b>Preview a thumbnail ↗</b></a>
+          <a href="/tools/timestamp-maker" class="yt-related-card"><span>03 / CHAPTERS</span><strong>YouTube Timestamps Maker</strong><p>Format timestamps for video description chapters.</p><b>Create timestamps ↗</b></a>
+        </div>
+      </section>
+      <section class="yt-bottom-cta">
+        <div><span class="yt-section-kicker">DRAFTSRUSH / CREATOR WORKFLOW</span><h2>Make the metadata clear. Make the story worth watching.</h2><p>Explore writing resources and production tools to help plan your next video.</p></div>
+        <a href="/tools" class="yt-hero-cta">Explore Free Tools <span aria-hidden="true">→</span></a>
+      </section>
+      <div class="mt-8"><a href="/tools" class="yt-back-link">← Back to Free Tools</a></div>
     </div>
   </main>
 
