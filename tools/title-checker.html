@@ -69,7 +69,12 @@
     @media(max-width:760px){.shot-hero-inner{grid-template-columns:1fr}.shot-art{min-height:270px}.shot-hero-footer{flex-direction:column;gap:7px}.shot-hero h1{font-size:clamp(42px,12vw,64px)}main > .max-w-6xl{padding-left:22px!important;padding-right:22px!important}.guide-content{gap:22px!important}.guide-content>section{padding:22px!important}}
 
 
-</style>
+
+    /* Keep tool panels aligned to the editorial content width; only the hero spans the viewport. */
+    .tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
+    .tool-content-shell > .max-w-6xl,.tool-content-shell > .max-w-5xl,.tool-content-shell > .max-w-4xl{max-width:100%!important}
+    @media(max-width:640px){.tool-content-shell{padding:30px 16px 56px}}
+  </style>
 
   <!-- Schema Markup: WebApplication & FAQPage -->
   <script type="application/ld+json">
@@ -301,6 +306,8 @@
     });
   </script><main class="flex-grow w-full">
     <section class="shot-hero" aria-labelledby="shot-hero-title"><div class="shot-hero-inner"><div><div class="shot-eyebrow"><span></span> YOUTUBE / TITLE OPTIMIZATION</div><h1 id="shot-hero-title">YouTube Title<br><em>Checker & Preview</em></h1><p class="shot-lede">Check title length, review how wording may truncate, and sharpen the promise before publishing your video.</p><div class="shot-meta"><span>TITLE REVIEW</span><i></i><span>FEED PREVIEW</span><i></i><span>FREE TOOL</span></div><a class="shot-cta" href="#title-checker-tool">Check your title <span aria-hidden="true">↓</span></a></div><div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for TITLE CHECKER"><div class="shot-art-label"><span>CREATOR TOOL / 01</span><span>PACKAGING CHECK</span></div><div class="shot-clapper" aria-hidden="true"><div class="shot-clapper-top"></div><div class="shot-clapper-title">TITLE CHECKER</div><div class="shot-clapper-lines"><span></span><span></span><span></span></div><div class="shot-clapper-lines"><span></span><span></span><span></span></div></div><div class="shot-art-bottom"><span>COUNT / CLARIFY / REFINE</span><span>READY TO PUBLISH</span></div></div></div><div class="shot-hero-footer"><span>01 — PREPARE YOUR VIDEO</span><span>FROM IDEA TO PUBLISH</span></div></section>
+    <div class="tool-content-shell">
+
 
     <div id="title-checker-tool"></div>
     <!-- Interactive Tool Container -->
@@ -419,7 +426,9 @@
         ← Back to Free Tools
       </a>
     </div>
-  </main>
+  
+    </div><!-- /.tool-content-shell -->
+</main>
 
   <!-- Universal Footer -->
   <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
