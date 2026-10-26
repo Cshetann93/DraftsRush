@@ -32,16 +32,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer (Zero Flash) -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
@@ -753,97 +743,8 @@
     }
 
     // Dark Mode Toggle Logic
-    const toggleBtns = [
-      document.getElementById('theme-toggle'),
-      document.getElementById('theme-toggle-mobile')
-    ].filter(Boolean);
+    // Keep this tool on the approved light theme to preserve text contrast.
 
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    });
-
-    // Heuristic Hook Auditor
-    function auditHook() {
-      const text = hookInput.value.trim();
-      if (!text) {
-        metricWords.innerText = '0';
-        metricTime.innerText = '0.0s';
-        metricScore.innerText = '--';
-        metricScore.className = 'text-3xl font-black brand-font text-emerald-700';
-        metricCuriosity.innerText = 'Awaiting Input';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-white brutal-box space-y-2';
-        diagnosticText.innerText = 'Type or paste your hook above. We evaluate length (under 16 words is ideal), presence of high-stakes contrast, and absence of rhetorical greetings.';
-        return;
-      }
-
-      const words = text.match(/\b\S+\b/g) || [];
-      const wordCount = words.length;
-      metricWords.innerText = wordCount;
-
-      // Standard short-form pace: ~150 WPM
-      const seconds = (wordCount / 150) * 60;
-      metricTime.innerText = seconds.toFixed(1) + 's';
-
-      // Check filler phrases
-      const lower = text.toLowerCase();
-      const hasGreeting = /^(hey|hello|hi|what's up|welcome back)/i.test(lower);
-      const hasSelfIntro = /(in this video|today i'm going to show you|i wanted to share)/i.test(lower);
-      const hasCuriosity = /(why|how|this single|secret|trick|nobody talks about|banned|mistake|reason)/i.test(lower);
-
-      let score = 90;
-      let feedback = [];
-
-      if (hasGreeting || hasSelfIntro) {
-        score -= 30;
-        feedback.push("⚠️ Remove introductory greeting. Cut directly into the core subject.");
-      }
-
-      if (wordCount > 16) {
-        score -= 20;
-        feedback.push(`⚠️ Hook is ${wordCount} words (${seconds.toFixed(1)}s). Mobile viewers swipe away before second 00:04. Cut it down to under 14 words.`);
-      } else {
-        feedback.push("✓ Word economy is tight and delivers within the critical mobile window.");
-      }
-
-      if (hasCuriosity) {
-        metricCuriosity.innerText = 'High (Open Loop)';
-        feedback.push("✓ Strong psychological curiosity hook detected.");
-      } else {
-        score -= 15;
-        metricCuriosity.innerText = 'Moderate / Low';
-        feedback.push("⚠️ Lacks an explicit curiosity trigger (e.g. 'why', 'the reason', 'this secret').");
-      }
-
-      metricScore.innerText = Math.max(20, score) + '/100';
-
-      if (score >= 80) {
-        metricScore.className = 'text-3xl font-black brand-font text-emerald-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#C2F0C2] text-black brutal-box space-y-2';
-      } else if (score >= 60) {
-        metricScore.className = 'text-3xl font-black brand-font text-amber-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFF6CF] text-black brutal-box space-y-2';
-      } else {
-        metricScore.className = 'text-3xl font-black brand-font text-red-700';
-        diagnosticCard.className = 'border-[1.5px] border-black rounded-xl p-5 bg-[#FFB4B4] text-black brutal-box space-y-2';
-      }
-
-      diagnosticText.replaceChildren();
-      feedback.forEach((message, index) => {
-        if (index > 0) diagnosticText.appendChild(document.createElement('br'));
-        diagnosticText.appendChild(document.createTextNode(message));
-      });
-    }
-
-    hookInput.addEventListener('input', auditHook);
   </script>
 </body>
 </html>
