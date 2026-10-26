@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free YouTube Tag Generator & Keyword Tool | DraftsRush</title>
-  <meta name="description" content="Generate relevant YouTube video tags and keyword ideas for free. Create a comma-separated tag list, check the 500-character limit, and copy it into YouTube Studio.">
+  <meta name="description" content="Free YouTube tag generator for relevant video tag ideas. Create a comma-separated list, check the 500-character limit, and copy tags into YouTube Studio.">
   <meta name="keywords" content="youtube tag generator, free youtube tag generator, youtube keyword generator, youtube tags generator, video tag generator, generate keywords for youtube video, youtube tag creator">
   <link rel="canonical" href="https://www.draftsrush.com/tools/youtube-tag-generator">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -370,7 +370,7 @@
               ⚡ Try an Example
             </button>
           </div>
-          <input id="topic-input" type="text" placeholder="e.g. David Fincher Suspense Techniques" class="w-full border-[1.5px] border-black rounded-xl p-3 font-medium bg-white text-base focus:bg-[#FFFDE6]">
+          <input id="topic-input" type="text" placeholder="e.g. video editing for beginners" class="w-full border-[1.5px] border-black rounded-xl p-3 font-medium bg-white text-base focus:bg-[#FFFDE6]">
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -654,108 +654,69 @@
 
     if (sampleBtn) {
       sampleBtn.addEventListener('click', () => {
-        topicInput.value = "David Fincher Suspense Techniques";
+        topicInput.value = "video editing for beginners";
         generateTags();
       });
     }
 
     function cleanString(str) {
-      return str.toLowerCase().replace(/[^a-z0-9\s]/gi, '').trim();
+      return str.toLowerCase().replace(/[^a-z0-9\s'-]/gi, '').replace(/\s+/g, ' ').trim();
     }
 
     function generateTags() {
       const rawTopic = topicInput.value.trim();
-      const topic = cleanString(rawTopic) || "video essay";
+      if (!rawTopic) {
+        tagsOutput.value = '';
+        charCounter.innerText = '0 / 500 Characters';
+        pillsContainer.innerHTML = '';
+        topicInput.setAttribute('aria-invalid', 'true');
+        topicInput.focus();
+        return;
+      }
+      topicInput.removeAttribute('aria-invalid');
+      const topic = cleanString(rawTopic);
       const focus = focusSelect.value;
       const format = formatSelect.value;
-
       const words = topic.split(/\s+/).filter(Boolean);
-      let tags = [];
+      const tags = [topic];
 
-      // Tier 1: Primary Exact Match & Variations
-      tags.push(topic);
-      if (words.length > 1) {
-        tags.push(words.join(' '));
-        tags.push(words.slice(0, 2).join(' '));
-      }
+      if (words.length > 1) tags.push(words.slice(0, 2).join(' '));
 
-      // Tier 2: Format-Specific Modifiers
       if (format === 'essay') {
-        tags.push(`${topic} analysis`);
-        tags.push(`${topic} breakdown`);
-        tags.push(`${topic} video essay`);
-        tags.push("cinematic storytelling");
-        tags.push("directing breakdown");
+        tags.push(`${topic} analysis`, `${topic} breakdown`, `${topic} video essay`);
       } else if (format === 'tutorial') {
-        tags.push(`how to ${topic}`);
-        tags.push(`${topic} tutorial`);
-        tags.push(`${topic} for beginners`);
-        tags.push(`${topic} step by step`);
-        tags.push("creator tips");
+        tags.push(`how to ${topic}`, `${topic} tutorial`, `${topic} for beginners`, `${topic} step by step`);
       } else if (format === 'shortform') {
-        tags.push(`${topic} shorts`);
-        tags.push(`${topic} tips`);
-        tags.push("youtube shorts");
-        tags.push("short form video");
-        tags.push("viral tricks");
+        tags.push(`${topic} shorts`, `${topic} tips`, 'youtube shorts', 'short form video');
       }
 
-      // Tier 3: Focus Alignment
       if (focus === 'longtail') {
-        tags.push(`best ${topic} examples`);
-        tags.push(`why ${topic} works`);
-        tags.push(`${topic} secrets explained`);
-        tags.push(`${topic} retention`);
+        tags.push(`how to ${topic}`, `best ${topic} examples`, `why ${topic} works`);
       } else if (focus === 'broad') {
-        tags.push("video production");
-        tags.push("filmmaking");
-        tags.push("content creation");
-        tags.push("youtube growth");
+        tags.push(topic, `${topic} videos`, `${topic} guide`, `${topic} explained`);
       } else {
-        // Balanced
-        tags.push(`${topic} explained`);
-        tags.push("filmmaking breakdown");
-        tags.push("screenplay analysis");
-        tags.push("visual storytelling");
+        tags.push(`${topic} explained`, `${topic} guide`, `${topic} tips`);
       }
 
-      // Deduplicate tags while preserving order
-      const uniqueTags = Array.from(new Set(tags));
-
-      // Build comma separated string respecting 500 characters
-      let finalTags = [];
+      const uniqueTags = Array.from(new Set(tags.map(tag => tag.trim()).filter(Boolean)));
+      const finalTags = [];
       let currentLength = 0;
-
       for (const tag of uniqueTags) {
-        const addedLen = tag.length + (finalTags.length > 0 ? 2 : 0);
-        if (currentLength + addedLen <= 485) {
+        const addedLen = tag.length + (finalTags.length ? 2 : 0);
+        if (currentLength + addedLen <= 500) {
           finalTags.push(tag);
           currentLength += addedLen;
-        } else {
-          break;
         }
       }
-
       const outputString = finalTags.join(', ');
       tagsOutput.value = outputString;
-
-      const len = outputString.length;
-      charCounter.innerText = `${len} / 500 Characters`;
-
-      if (len > 480) {
-        charCounter.className = 'font-mono text-xs font-bold text-red-600';
-      } else if (len > 300) {
-        charCounter.className = 'font-mono text-xs font-bold text-emerald-700';
-      } else {
-        charCounter.className = 'font-mono text-xs font-bold text-gray-700';
-      }
-
-      // Render Interactive Pills
+      charCounter.innerText = `${outputString.length} / 500 Characters`;
+      charCounter.className = 'font-mono text-xs font-bold ' + (outputString.length > 480 ? 'text-red-600' : outputString.length > 300 ? 'text-emerald-700' : 'text-gray-700');
       pillsContainer.innerHTML = '';
       finalTags.forEach(tag => {
         const span = document.createElement('span');
-        span.className = 'bg-[#F0F2F5] border border-black font-mono text-[11px] font-semibold px-2 py-0.5 text-black';
-        span.innerText = tag;
+        span.className = 'bg-[#F0F2F5] border border-black font-mono text-[11px] font-semibold px-2 py-1 text-black rounded-md';
+        span.textContent = tag;
         pillsContainer.appendChild(span);
       });
     }
