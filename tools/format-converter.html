@@ -397,72 +397,128 @@
         </div>
       </div>
     </section>
-    <section id="tool-interface" class="av-workbench" aria-labelledby="av-workbench-title">
-      <div class="av-content-wrap">
-        <div class="av-intro-row">
-          <div>
-            <span class="av-section-kicker">FREE PRODUCTION TOOL</span>
-            <h2 id="av-workbench-title">Build your AV script</h2>
-            <p>Paste your voiceover, split it into beats, and generate a clear visual-and-audio production sheet.</p>
+    <div id="tool-interface" class="prod-tool-content">
+      <p class="tool-seo-intro mb-6">Learn how to format an audio visual script for commercials, YouTube videos, explainers, and branded content. Use the AV script formatter to organise narration alongside visuals and production cues.</p>
+
+
+      <!-- Input Section with Toolbar -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <label class="block font-black text-xs uppercase tracking-wider">Paste Voiceover Paragraphs</label>
+          <div class="flex items-center gap-3">
+            <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              ⚡ Try an Example
+            </button>
+            <button id="copy-table-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              📋 Copy AV Script
+            </button>
           </div>
-          <div class="av-step-mark" aria-hidden="true"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
         </div>
-
-        <div class="av-editor-panel">
-          <div class="av-panel-head">
-            <div><span class="av-panel-number">01</span><label for="script-input">Voiceover script</label></div>
-            <div class="av-toolbar">
-              <button id="sample-btn" type="button" class="av-text-button">Try an example <span aria-hidden="true">↗</span></button>
-              <button id="copy-table-btn" type="button" class="av-text-button">Copy AV script <span aria-hidden="true">▣</span></button>
-            </div>
-          </div>
-          <textarea id="script-input" rows="7" placeholder="Paste your script here. Use a new line or paragraph for each beat or visual moment..." class="av-script-input"></textarea>
-          <div class="av-editor-foot"><span>Tip: separate each new scene, beat, or idea with a line break.</span><span>TEXT → PRODUCTION SHEET</span></div>
-        </div>
-
-        <button id="convert-btn" class="av-convert-button" type="button"><span>Convert to dual-column AV layout</span><span aria-hidden="true">→</span></button>
-
-        <section class="av-output-panel" aria-labelledby="av-output-title">
-          <div class="av-output-head">
-            <div><span class="av-panel-number av-panel-number-dark">02</span><h3 id="av-output-title">Production sheet</h3></div>
-            <span id="row-count" class="av-row-count">0 rows generated</span>
-          </div>
-          <div class="av-table-scroll">
-            <table class="av-output-table">
-              <thead><tr><th scope="col">Visual cue &amp; camera direction</th><th scope="col">Spoken audio &amp; voiceover</th></tr></thead>
-              <tbody id="av-tbody">
-                <tr class="av-empty-row"><td>Visual direction will appear here.</td><td>Your voiceover lines will appear here. Choose “Try an example” or paste your own script and convert it.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="av-output-foot"><span>EDITOR HANDOFF / TWO-COLUMN FORMAT</span><span>Use “Copy AV Script” to copy the generated sheet.</span></div>
-        </section>
-
-        <section class="av-info-section" aria-labelledby="av-standards-title">
-          <div class="av-info-heading"><span class="av-section-kicker">WHY THIS FORMAT WORKS</span><h2 id="av-standards-title">One script. Two clear tracks.</h2></div>
-          <div class="av-info-grid">
-            <article><span class="av-info-index">A / VISUALS</span><h3>Plan the picture</h3><p>Use the visual column to note B-roll, screen recordings, camera moves, archive footage, graphics, and on-screen text.</p></article>
-            <article><span class="av-info-index">B / AUDIO</span><h3>Keep the words in sync</h3><p>Place each voiceover beat beside its visual direction so writers, editors, and producers can follow the same sequence.</p></article>
-          </div>
-        </section>
-
-        <section class="av-related-section" aria-labelledby="av-related-title">
-          <div class="av-related-heading"><div><span class="av-section-kicker">KEEP YOUR WORKFLOW MOVING</span><h2 id="av-related-title">Related production tools</h2></div><span class="av-related-stamp">DRAFTSRUSH STUDIO</span></div>
-          <div class="av-related-grid">
-            <a href="/tools/title-checker"><span class="av-related-number">01</span><strong>YouTube Title Checker</strong><span>Check title length and mobile cut-offs.</span><b aria-hidden="true">↗</b></a>
-            <a href="/tools/script-timer"><span class="av-related-number">02</span><strong>Script Pacing Timer</strong><span>Estimate runtime from your spoken words.</span><b aria-hidden="true">↗</b></a>
-            <a href="/script-editor"><span class="av-related-number">03</span><strong>Online Script Editor</strong><span>Draft and organise your next screenplay.</span><b aria-hidden="true">↗</b></a>
-          </div>
-        </section>
-
-        <section class="av-service-cta">
-          <div><span class="av-section-kicker">FROM DRAFT TO SHOOTING FLOOR</span><h2>Need a production-ready script?</h2><p>Explore writing support for video essays, branded content, and short-form videos.</p></div>
-          <a href="/scripts">Explore script packs <span aria-hidden="true">→</span></a>
-        </section>
-        <div class="av-back-link"><a href="/tools">← Browse all free tools</a></div>
+        <textarea id="script-input" rows="7" placeholder="Paste your script text here. Separate each beat or visual moment with a new line or paragraph..." class="w-full border-[1.5px] border-black rounded-xl p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]"></textarea>
       </div>
-    </section>
-</main>
+
+      <!-- Action Button -->
+      <div class="mb-8">
+        <button id="convert-btn" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
+          Convert to Dual-Column AV Layout →
+        </button>
+      </div>
+
+      <!-- Two-Column Output Table -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-white brutal-box overflow-hidden">
+        <div class="bg-black text-white p-3 flex justify-between items-center font-mono text-xs uppercase font-bold">
+          <span>Dual-Column Production View</span>
+          <span id="row-count">0 Rows Generated</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-medium">
+            <thead class="bg-[#F0F2F5] text-black font-mono uppercase border-b-2 border-black">
+              <tr>
+                <th class="p-3 border-r-2 border-black w-1/2">Visual Cue & Camera Direction (Left Column)</th>
+                <th class="p-3 w-1/2">Spoken Audio & Voiceover (Right Column)</th>
+              </tr>
+            </thead>
+            <tbody id="av-tbody" class="divide-y-2 divide-black">
+              <tr>
+                <td class="p-4 border-r-2 border-black text-gray-500 font-mono italic">Awaiting script input above...</td>
+                <td class="p-4 text-gray-500 font-mono italic">Click 'Convert' or 'Try an Example' to build your layout.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- AV Format Architecture Reference Card -->
+    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+      <div class="border-b-2 border-black pb-3">
+        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Standards</span>
+        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Why Digital Video Uses Dual-Column Formatting</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
+        <div>
+          <h3 class="font-black brand-font text-base text-black mb-1">Standard Screenplay vs. AV Format</h3>
+          <p>
+            Standard Courier 12pt format is designed for actors on a soundstage. But for YouTube, video essays, and commercials, the editor needs to know what visual corresponds to every exact spoken phrase. Dual-column eliminates guesswork by anchoring voiceover lines directly opposite B-roll instructions.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-black brand-font text-base text-black mb-1">Syncing Sound and Sight</h3>
+          <p>
+            When an editor receives a dual-column sheet, they can read down the left side to compile stock assets, 3D renders, and text pop-ups before voiceover recordings even finish. It cuts editing turnaround time by up to 50%.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Creator Tools (Interlinking Matrix) -->
+    <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+      <div class="flex items-center justify-between border-b-2 border-black pb-2">
+        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Production Tools</h3>
+        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+      </div>
+      <p class="text-xs font-medium text-gray-800 leading-relaxed">
+        Complete your video pre-production workflow with our client-side utilities:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a href="/tools/title-checker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>🔍 YouTube Title Checker</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Check title character lengths & mobile cut-offs →</span>
+        </a>
+        <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>⏱ Script Pacing Timer</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate total spoken duration & WPM rhythm →</span>
+        </a>
+        <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+          <span>📝 Online Script Editor</span>
+          <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft screenplays & convert plain text stories →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial CTA Strip -->
+    <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">From Draft to Shooting Floor</span>
+        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Production AV Scripts Written?</h2>
+        <p class="text-sm font-medium text-black max-w-xl">
+          We write research-backed video essays and short-form scripts with calculated pacing, exact camera cutaways, and B-roll notes.
+        </p>
+      </div>
+      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
+        Explore Script Packs →
+      </a>
+    </div>
+
+    <!-- Bottom Return Button -->
+    <div class="mt-12">
+      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
+        ← Back to Free Tools
+      </a>
+    </div>
+  </div>
+  </main>
 
   <!-- Universal Footer -->
   <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317">
