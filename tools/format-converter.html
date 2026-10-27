@@ -19,16 +19,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer (Zero Flash) -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   
@@ -101,101 +91,6 @@
       border-color: #000000;
     }
 
-    /* Dark Mode Core Theme Overrides */
-    body.dark {
-      background-color: #0E1015 !important;
-      color: #FFFFFF !important;
-    }
-    body.dark header {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark header a, 
-    body.dark header nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-      background-color: #1F232B !important;
-    }
-    body.dark header nav a[href="/tools"] {
-      background-color: #F8D000 !important;
-      color: #111317 !important;
-      border-color: #111317 !important;
-    }
-    body.dark #mobile-nav {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark #mobile-nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark main .bg-\[\#F0F2F5\],
-    body.dark .bg-white {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-      box-shadow: 4px 4px 0px #000000 !important;
-    }
-    body.dark textarea#script-input {
-      background-color: #1F232B !important;
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark .text-gray-700, 
-    body.dark .text-gray-600,
-    body.dark .text-gray-500 {
-      color: #9CA3AF !important;
-    }
-    body.dark table th {
-      border-color: #2A2F3A !important;
-    }
-    body.dark table td {
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark table tbody tr {
-      background-color: #16181E !important;
-    }
-    body.dark table tbody tr:hover {
-      background-color: #1F232B !important;
-    }
-    body.dark .bg-\[\#FFF6CF\] {
-      background-color: #1B1E26 !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
-
-    /* Footer Dark Mode */
-    body.dark footer {
-      background-color: #111317 !important;
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark footer p, 
-    body.dark footer a, 
-    body.dark footer h4 {
-      color: #E2E4E9 !important;
-    }
-    body.dark footer span.bg-\[\#F8D000\] {
-      color: #111317 !important;
-    }
-    body.dark footer .text-gray-800,
-    body.dark footer .text-gray-700 {
-      color: #9CA3AF !important;
-    }
-    body.dark footer .border-black,
-    body.dark footer .border-t-2,
-    body.dark footer .border-b-2 {
-      border-color: #2A2F3A !important;
-    }
-    body.dark footer a[style*="#F0F2F5"] {
-      background-color: #1F232B !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
-    body.dark footer svg.fill-black {
-      fill: #FFFFFF !important;
-    }
   </style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
@@ -753,24 +648,6 @@ When you master spatial compression, you don't need dialogue to create claustrop
       });
     }
 
-    // Dark Mode Toggle Logic
-    const toggleBtns = [
-      document.getElementById('theme-toggle'),
-      document.getElementById('theme-toggle-mobile')
-    ].filter(Boolean);
-
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    });
   </script>
 </body>
 </html>
