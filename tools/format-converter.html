@@ -11,25 +11,28 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dual-Column AV Script Converter | DraftsRush</title>
-  <meta name="description" content="Convert standard video scripts or narrative text into production-ready dual-column Audio/Visual (AV) format for video editors and commercial shoots.">
+  <title>Free AV Script Formatter for Video Production | DraftsRush</title>
+  <meta name="description" content="Convert a script into a clear two-column audio visual (AV) format. Pair voiceover, dialogue, and sound with visual directions using this free AV script formatter.">
   <link rel="canonical" href="https://www.draftsrush.com/tools/format-converter">
+  <meta name="keywords" content="convert a script into a clear two-column audio visual (av) format, free video production tool, DraftsRush">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F8D000">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Free AV Script Formatter for Video Production | DraftsRush">
+  <meta property="og:description" content="Convert a script into a clear two-column audio visual (AV) format. Pair voiceover, dialogue, and sound with visual directions using this free AV script formatter.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/format-converter">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Free AV Script Formatter for Video Production | DraftsRush">
+  <meta name="twitter:description" content="Convert a script into a clear two-column audio visual (AV) format. Pair voiceover, dialogue, and sound with visual directions using this free AV script formatter.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 
   <!-- Favicon References -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer (Zero Flash) -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   
   <style>
@@ -88,106 +91,79 @@
       border-color: #000000;
     }
 
-    /* Dark Mode Core Theme Overrides */
-    body.dark {
-      background-color: #0E1015 !important;
-      color: #FFFFFF !important;
-    }
-    body.dark header {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark header a, 
-    body.dark header nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-      background-color: #1F232B !important;
-    }
-    body.dark header nav a[href="/tools"] {
-      background-color: #F8D000 !important;
-      color: #111317 !important;
-      border-color: #111317 !important;
-    }
-    body.dark #mobile-nav {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark #mobile-nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark main .bg-\[\#F0F2F5\],
-    body.dark .bg-white {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-      box-shadow: 4px 4px 0px #000000 !important;
-    }
-    body.dark textarea#script-input {
-      background-color: #1F232B !important;
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark .text-gray-700, 
-    body.dark .text-gray-600,
-    body.dark .text-gray-500 {
-      color: #9CA3AF !important;
-    }
-    body.dark table th {
-      border-color: #2A2F3A !important;
-    }
-    body.dark table td {
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark table tbody tr {
-      background-color: #16181E !important;
-    }
-    body.dark table tbody tr:hover {
-      background-color: #1F232B !important;
-    }
-    body.dark .bg-\[\#FFF6CF\] {
-      background-color: #1B1E26 !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
+    /* Keep the production formatter on its accessible light theme. */
+  
+/* AV Formatter content redesign — scoped below the existing hero only */
+.av-workbench{background:#F1F3F6;color:#17191F;padding:clamp(32px,5vw,68px) 20px 76px;border-top:1px solid #C8D0D9}
+.av-content-wrap{max-width:1120px;width:100%;margin:0 auto}
+.av-intro-row{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:0 0 28px}
+.av-section-kicker{display:block;font:800 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;color:#657282;text-transform:uppercase;margin-bottom:10px}
+.av-intro-row h2,.av-info-heading h2,.av-related-heading h2,.av-service-cta h2{margin:0;color:#17191F;font:800 clamp(25px,3vw,36px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-.04em}
+.av-intro-row p{max-width:650px;margin:12px 0 0;color:#4B5563;font-size:15px;line-height:1.7}
+.av-step-mark{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-bottom:5px;color:#5B6572;font:700 10px 'JetBrains Mono',monospace}
+.av-step-mark i{display:block;width:24px;height:1px;background:#B5BEC8}
+.av-editor-panel,.av-output-panel{background:#fff;border:1px solid #C8D0D9;border-radius:16px;overflow:hidden;box-shadow:0 8px 26px rgba(20,27,35,.045)}
+.av-panel-head,.av-output-head{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid #E1E5EA}
+.av-panel-head>div:first-child,.av-output-head>div{display:flex;align-items:center;gap:11px;min-width:0}
+.av-panel-head label,.av-output-head h3{color:#17191F;font:800 14px/1.4 'Space Grotesk',sans-serif;margin:0}
+.av-panel-number{display:inline-grid;place-items:center;width:27px;height:27px;flex:0 0 27px;border-radius:50%;background:#F8D000;color:#17191F;font:800 10px 'JetBrains Mono',monospace}
+.av-panel-number-dark{background:#17191F;color:#fff}
+.av-toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.av-text-button{border:0;background:transparent;padding:7px 0;color:#303844;font:800 10px 'JetBrains Mono',monospace;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.av-text-button:hover{color:#806900}
+.av-script-input{display:block;width:100%;min-height:190px;resize:vertical;border:0!important;border-radius:0!important;outline:none!important;box-shadow:none!important;padding:22px!important;background:#fff!important;color:#17191F!important;font:500 15px/1.75 Inter,system-ui,sans-serif!important}
+.av-script-input::placeholder{color:#8A95A3;opacity:1}
+.av-script-input:focus{background:#FFFEF5!important;box-shadow:inset 0 0 0 2px #E8C400!important}
+.av-editor-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 22px;border-top:1px solid #E7EAF0;background:#FAFBFC;color:#657282;font:10px/1.5 'JetBrains Mono',monospace}
+.av-convert-button{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;margin:16px 0 28px;padding:18px 22px;border:1px solid #17191F;border-radius:12px;background:#F8D000;color:#17191F;font:800 12px/1.4 'JetBrains Mono',monospace;letter-spacing:.045em;text-transform:uppercase;box-shadow:0 4px 0 #17191F;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.av-convert-button:hover{transform:translateY(-2px);box-shadow:0 6px 0 #17191F}
+.av-convert-button:active{transform:translateY(1px);box-shadow:0 2px 0 #17191F}
+.av-output-head{background:#fff}
+.av-row-count{flex-shrink:0;color:#687382;font:700 10px 'JetBrains Mono',monospace;text-transform:uppercase}
+.av-table-scroll{width:100%;overflow-x:auto}
+.av-output-table{width:100%;border-collapse:collapse;text-align:left;color:#20252C;font-size:13px;line-height:1.65}
+.av-output-table th{width:50%;padding:14px 18px;background:#EEF1F5;color:#343E4A;font:800 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #D5DCE4}
+.av-output-table th+th,.av-output-table td+td{border-left:1px solid #D5DCE4}
+.av-output-table td{vertical-align:top;padding:18px;border-bottom:1px solid #E4E8ED;overflow-wrap:anywhere;white-space:normal;color:#343E4A}
+.av-output-table tbody tr:last-child td{border-bottom:0}
+.av-output-table tbody tr:hover td{background:#FFFBE5}
+.av-output-table .av-empty-row td{color:#77818E;font-style:italic}
+.av-output-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 18px;background:#FAFBFC;border-top:1px solid #E1E5EA;color:#77818E;font:9px/1.5 'JetBrains Mono',monospace}
+.av-info-section{margin:42px 0 0;padding:30px;background:#fff;border:1px solid #D2D8E0;border-radius:16px}
+.av-info-heading{padding-bottom:20px;border-bottom:1px solid #DDE2E8}
+.av-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:23px}
+.av-info-index{display:block;margin-bottom:10px;color:#8A7500;font:800 10px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.av-info-grid h3{margin:0 0 8px;color:#17191F;font:800 17px/1.3 'Space Grotesk',sans-serif}
+.av-info-grid p{margin:0;color:#56616E;font-size:14px;line-height:1.75}
+.av-related-section{margin:26px 0 0;padding:28px;background:#FFF8D7;border:1px solid #E8D98B;border-radius:16px}
+.av-related-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:20px}
+.av-related-stamp{display:inline-block;padding:7px 9px;background:#17191F;color:#fff;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.06em;white-space:nowrap}
+.av-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.av-related-grid a{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:148px;padding:17px;background:#fff;border:1px solid #E0D8B7;border-radius:11px;color:#17191F;text-decoration:none;transition:transform .15s,border-color .15s}
+.av-related-grid a:hover{transform:translateY(-2px);border-color:#B69B00}
+.av-related-number{color:#8A7500;font:800 10px 'JetBrains Mono',monospace;margin-bottom:15px}
+.av-related-grid strong{font:800 14px/1.35 'Space Grotesk',sans-serif}
+.av-related-grid a>span:nth-of-type(2){margin-top:7px;color:#606B78;font-size:12px;line-height:1.55}
+.av-related-grid a>b{position:absolute;right:15px;top:14px;color:#8A7500}
+.av-service-cta{display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:26px;padding:28px 30px;background:#F8D000;border:1px solid #17191F;border-radius:16px}
+.av-service-cta .av-section-kicker{color:#4D4300}
+.av-service-cta h2{font-size:clamp(23px,3vw,30px)}
+.av-service-cta p{margin:10px 0 0;color:#302B17;font-size:14px;line-height:1.65}
+.av-service-cta>a{display:inline-flex;align-items:center;justify-content:center;gap:14px;flex-shrink:0;padding:13px 16px;background:#17191F;color:#fff;text-decoration:none;border-radius:9px;font:800 11px 'JetBrains Mono',monospace;text-transform:uppercase}
+.av-service-cta>a:hover{background:#343A43}
+.av-back-link{padding-top:26px}
+.av-back-link a{color:#4E5966;font:800 10px 'JetBrains Mono',monospace;text-transform:uppercase;text-underline-offset:4px}
+@media(max-width:760px){.av-workbench{padding:32px 14px 48px}.av-intro-row{align-items:flex-start}.av-step-mark{display:none}.av-panel-head{align-items:flex-start;flex-direction:column}.av-toolbar{gap:15px}.av-script-input{min-height:170px;padding:17px!important}.av-editor-foot{padding:11px 15px}.av-convert-button{padding:16px}.av-output-head{align-items:flex-start;flex-direction:column}.av-output-table{min-width:570px}.av-info-section,.av-related-section{padding:21px 17px}.av-info-grid{grid-template-columns:1fr;gap:22px}.av-related-heading{align-items:flex-start;flex-direction:column}.av-related-grid{grid-template-columns:1fr}.av-related-grid a{min-height:120px}.av-service-cta{align-items:flex-start;flex-direction:column;padding:23px 20px}.av-service-cta>a{width:100%}}
+@media(prefers-reduced-motion:reduce){.av-convert-button,.av-related-grid a{transition:none}}
 
-    /* Footer Dark Mode */
-    body.dark footer {
-      background-color: #111317 !important;
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark footer p, 
-    body.dark footer a, 
-    body.dark footer h4 {
-      color: #E2E4E9 !important;
-    }
-    body.dark footer span.bg-\[\#F8D000\] {
-      color: #111317 !important;
-    }
-    body.dark footer .text-gray-800,
-    body.dark footer .text-gray-700 {
-      color: #9CA3AF !important;
-    }
-    body.dark footer .border-black,
-    body.dark footer .border-t-2,
-    body.dark footer .border-b-2 {
-      border-color: #2A2F3A !important;
-    }
-    body.dark footer a[style*="#F0F2F5"] {
-      background-color: #1F232B !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
-    body.dark footer svg.fill-black {
-      fill: #FFFFFF !important;
-    }
-  </style>
+</style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
 <!-- Studio Core Classes & Sitewide Styles -->
   <style>
+    html { scroll-padding-top: 96px; }
+    body { color: #111317; background: #E2E4E9; }
+    .prod-workspace { position: relative; z-index: 1; }
     :root {
       --bg-base: #E2E4E9;
       --ink: #111317;
@@ -244,7 +220,47 @@
     .bg-brand-yellow { background-color: #F8D000 !important; }
     .bg-cta-yellow { background-color: #FFE600 !important; }
     .bg-ink { background-color: #111317 !important; }
-  </style>
+  
+/* Batch 4 — Shot List hero system */
+.prod-hero{width:100vw;position:relative;left:50%;margin-left:-50vw;padding:clamp(64px,8vw,100px) 24px 48px;background:#D6E0E8;border-bottom:1px solid #B6C4D0;margin-top:0;margin-bottom:0;scroll-margin-top:110px}
+.prod-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.78fr);gap:clamp(28px,5vw,76px);align-items:center}
+.prod-eyebrow,.prod-meta,.prod-art-label,.prod-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#526273}
+.prod-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.prod-eyebrow span{width:8px;height:8px;border-radius:50%;background:#B79B00;box-shadow:0 0 0 5px rgba(183,155,0,.14)}
+.prod-hero h1{margin:0;color:#15191F;font-size:clamp(40px,5.5vw,72px);line-height:.98;letter-spacing:-.06em;font-weight:900}.prod-hero h1 em{display:block;margin-top:.08em;font-family:Georgia,serif;font-weight:500;letter-spacing:-.055em}
+.prod-lede{max-width:650px;margin:22px 0;color:#465362;font-size:clamp(16px,1.5vw,20px);line-height:1.6}.prod-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 25px;font-size:9px}.prod-meta i{height:1px;width:20px;background:#9AA9B7}
+.prod-cta{display:inline-flex;align-items:center;gap:16px;padding:14px 21px;border-radius:999px;background:#F8D000;color:#15191F;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s}.prod-cta:hover{transform:translateY(-2px)}
+.prod-art{position:relative;min-height:300px;overflow:hidden;border-radius:20px;background:linear-gradient(145deg,#252B33,#111317 68%,#343C49);display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:#F2F1EC;box-shadow:0 24px 60px rgba(20,24,30,.18)}
+.prod-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none}
+.prod-art-label,.prod-clapper,.prod-footer{position:relative;z-index:1}.prod-art-label{color:#D3D8DE;display:flex;justify-content:space-between;gap:10px}
+.prod-clapper{align-self:center;width:min(84%,320px);padding:15px;border:2px solid #E7E8E8;border-radius:8px;background:#D6E4EE;color:#15191F;box-shadow:0 18px 35px rgba(0,0,0,.35);transform:rotate(-4deg)}
+.prod-clapper-top{height:22px;margin:-15px -15px 14px;background:repeating-linear-gradient(135deg,#F8D000 0,#F8D000 18px,#17191D 18px,#17191D 36px);border-bottom:2px solid #E7E8E8}
+.prod-clapper-title{font:900 clamp(18px,2.5vw,26px) 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-align:center}
+.prod-clapper-lines{display:flex;gap:8px;margin-top:12px}.prod-clapper-lines span{height:5px;background:#8A98A7;flex:1}
+.prod-footer{border-top:1px solid rgba(255,255,255,.25);padding-top:13px;display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#D3D8DE}
+.prod-workspace{max-width:1180px;margin:0 auto;padding:0 0 64px;width:calc(100% - 40px)}
+.prod-workspace>div:first-child{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0!important}
+.prod-workspace .prod-hero{margin-bottom:0}
+@media(max-width:760px){.prod-hero{padding:38px 20px 24px}.prod-hero-inner{grid-template-columns:1fr;gap:28px}.prod-art{min-height:230px}.prod-hero h1{font-size:clamp(38px,11vw,54px)}.prod-workspace{width:calc(100% - 24px);padding:0 0 48px}}
+
+
+/* Batch 4 readability guard: these redesigned pages use a light editorial workspace. */
+.prod-tool-content{color:#15191F!important;color-scheme:light}
+.prod-tool-content h2,.prod-tool-content h3,.prod-tool-content h4,
+.prod-tool-content label,.prod-tool-content p,.prod-tool-content li,
+.prod-tool-content .text-black,.prod-tool-content .text-gray-800,
+.prod-tool-content .text-gray-700,.prod-tool-content .text-gray-600,
+.prod-tool-content .text-gray-500{color:#303844}
+.prod-tool-content input,.prod-tool-content textarea,.prod-tool-content select{
+  background-color:#FFFFFF;color:#15191F;border-color:#8794A2
+}
+.prod-tool-content button{color:#15191F}
+.prod-hero,.prod-hero *{color-scheme:light}
+.prod-hero .prod-copy h1{color:#15191F!important}
+.prod-hero .prod-lede{color:#465362!important}
+.prod-hero .prod-eyebrow,.prod-hero .prod-meta{color:#526273!important}
+.prod-hero .prod-cta{color:#15191F!important}
+
+</style>
 </head>
 <body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -253,7 +269,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Universal Header -->
-  <header class="studio-header sticky top-0 z-50">
+  <header class="studio-header relative z-50">
     <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
@@ -363,17 +379,27 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
-      <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
-        Utility: Production Formatting
+  </script><main class="flex-grow w-full">
+    <div class="prod-workspace">
+    <section class="prod-hero" aria-labelledby="tool-page-title">
+      <div class="prod-hero-inner">
+        <div class="prod-copy">
+          <div class="prod-eyebrow"><span></span>PRODUCTION WORKFLOW / 01</div>
+          <h1 id="tool-page-title">AV Script Formatter<em>Audio meets visual.</em></h1>
+          <p class="prod-lede">Turn voiceover copy into a production-ready two-column AV script. Keep spoken lines, visual cues, and editor notes aligned in one readable format.</p>
+          <div class="prod-meta"><span>FREE AV FORMATTER</span><i></i><span>VIDEO PRODUCTION</span></div>
+          <a class="prod-cta" href="#tool-interface">Start using the tool <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="prod-art" aria-hidden="true">
+          <div class="prod-art-label"><span>DRAFTSRUSH / FIELD NOTES</span><span>01</span></div>
+          <div class="prod-clapper"><div class="prod-clapper-top"></div><div class="prod-clapper-title">AV SCRIPT</div><div class="prod-clapper-lines"><span></span><span></span><span></span></div></div>
+          <div class="prod-footer"><span>AUDIO / VISUAL</span><span>SCRIPT FORMAT / EDITOR HANDOFF</span></div>
+        </div>
       </div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">
-        Dual-Column AV Script Formatter
-      </h1>
-      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
-        Convert continuous voiceover prose into an industry-standard two-column Audio/Visual layout. Pairs spoken lines with timed visual placeholders, camera cues, and graphic callouts for your video editor.
-      </p>
+    </section>
+    <div id="tool-interface" class="prod-tool-content">
+      <p class="tool-seo-intro mb-6">Learn how to format an audio visual script for commercials, YouTube videos, explainers, and branded content. Use the AV script formatter to organise narration alongside visuals and production cues.</p>
+
 
       <!-- Input Section with Toolbar -->
       <div class="mb-6">
@@ -491,14 +517,15 @@
         ← Back to Free Tools
       </a>
     </div>
+  </div>
   </main>
 
   <!-- Universal Footer -->
-  <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317">
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -508,7 +535,8 @@
               height="50" 
               loading="lazy"
               decoding="async"
-              class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
+              fetchpriority="low"
+              class="h-8 sm:h-9 w-auto object-contain" 
             />
           </a>
           <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
@@ -517,24 +545,24 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
-            ⚡ 100% Free Client-Side Tools
+          <span class="studio-badge bg-brand-yellow brand-font uppercase">
+            <span>⚡ 100% Free Client-Side Tools</span>
           </span>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -548,43 +576,48 @@
         
         <!-- Col 1: Interactive Tools & Apps -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
-            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
+              </a>
+            </li>
             <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
             <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
             <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
         <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
             <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
             <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
             <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
             <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Commission Services & Templates -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
             <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
             <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
@@ -596,15 +629,15 @@
 
         <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm">
               ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
@@ -617,7 +650,7 @@
       </div>
 
       <!-- Bottom Legal & Copyright Bar -->
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
           <a href="/sitemap" class="hover:underline">Sitemap</a>
@@ -740,24 +773,7 @@ When you master spatial compression, you don't need dialogue to create claustrop
       });
     }
 
-    // Dark Mode Toggle Logic
-    const toggleBtns = [
-      document.getElementById('theme-toggle'),
-      document.getElementById('theme-toggle-mobile')
-    ].filter(Boolean);
-
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    });
+    // Keep this production tool in the light theme to avoid low-contrast states.
   </script>
 </body>
 </html>
