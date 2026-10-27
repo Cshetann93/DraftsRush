@@ -15,6 +15,20 @@
   <meta name="description" content="Free character name and bio generator for screenwriters. Generate multi-dimensional character profiles, psychological flaws, internal needs, and wants by genre.">
   <meta name="keywords" content="character name generator, screenplay character name generator, character bio generator, character profile generator, character flaws screenwriting, character archetypes">
   <link rel="canonical" href="https://www.draftsrush.com/tools/character-name-generator">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F8D000">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Screenplay Character Name & Bio Generator | DraftsRush">
+  <meta property="og:description" content="Free character name and bio generator for screenwriters. Generate multi-dimensional character profiles, psychological flaws, internal needs, and wants by genre.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/character-name-generator">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Screenplay Character Name & Bio Generator | DraftsRush">
+  <meta name="twitter:description" content="Free character name and bio generator for screenwriters. Generate multi-dimensional character profiles, psychological flaws, internal needs, and wants by genre.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
@@ -24,81 +38,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; color: #111317; }
     h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .brutal-box { box-shadow: 4px 4px 0px #111317; }
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
     .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
-  </style>
 
-  <!-- Schema Markup: WebApplication & FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "DraftsRush Screenplay Character Name & Bio Generator",
-    "url": "https://www.draftsrush.com/tools/character-name-generator",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "Free character generator for screenwriters that crafts genre-tailored names, fatal flaws, internal needs, and narrative arcs in one click."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do you name a screenplay character effectively?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Effective character naming avoids phonetic confusion with other characters in the script, matches the genre's world, reflects the character's social background, and conveys subtext without feeling cartoonish or cliché."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between a character's want and need?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A character's Want is their visible, conscious external goal (e.g., winning the trial, stealing the money). Their Need is the unacknowledged internal moral or emotional change required to heal their emotional wound (e.g., accepting vulnerability, forgiving family)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes a character profile ready for a screenplay draft?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A production-ready screenplay character profile requires an external goal, an internal flaw that creates conflict, distinctive speech patterns, and clear relationship stakes with the antagonist."
-        }
-      }
-    ]
-  }
-  </script>
-  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
-  <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
-<!-- Studio Core Classes & Sitewide Styles -->
-  <style>
-    :root {
-      --bg-base: #E2E4E9;
-      --ink: #111317;
-      --brand-yellow: #F8D000;
-      --cta-yellow: #FFE600;
-      --surface-light: #F0F2F5;
-      --surface-blue: #D6E4EE;
-      --surface-cream: #FFF6CF;
-      --surface-mint: #E1F5E3;
-      --section-slate: #D4D7E1;
-      --section-steel: #CCD0DC;
-    }
-    .brand-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+    /* Studio Header & Navigation */
     .studio-header {
       background-color: rgba(248, 208, 0, 0.94);
       backdrop-filter: blur(14px);
@@ -137,12 +85,210 @@
       box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
     }
     .studio-btn:active { transform: translateY(0); }
-    .bg-surface-light { background-color: #F0F2F5 !important; }
-    .bg-surface-blue { background-color: #D6E4EE !important; }
-    .bg-brand-yellow { background-color: #F8D000 !important; }
-    .bg-cta-yellow { background-color: #FFE600 !important; }
-    .bg-ink { background-color: #111317 !important; }
+    .studio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      border: 1.5px solid #111317;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Shared Shot List Hero System (Matching script-breakdown-sheet) */
+    .shot-hero {
+      width: 100%;
+      padding: clamp(42px, 6vw, 82px) 24px 28px;
+      background: #D6E0E8;
+      border-bottom: 1px solid #B6C4D0;
+    }
+    .shot-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
+      gap: clamp(32px, 6vw, 84px);
+      align-items: center;
+    }
+    .shot-eyebrow, .shot-meta, .shot-art-label, .shot-hero-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #526273;
+    }
+    .shot-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+    .shot-eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #B79B00;
+      box-shadow: 0 0 0 5px rgba(183, 155, 0, .14);
+    }
+    .shot-hero h1 {
+      margin: 0;
+      color: #15191F;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 900;
+    }
+    .shot-hero h1 em {
+      display: block;
+      margin-top: .08em;
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.06em;
+    }
+    .shot-lede {
+      max-width: 650px;
+      margin: 24px 0;
+      color: #465362;
+      font-size: clamp(16px, 1.6vw, 21px);
+      line-height: 1.6;
+    }
+    .shot-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      font-size: 9px;
+    }
+    .shot-meta i {
+      height: 1px;
+      width: 20px;
+      background: #9AA9B7;
+    }
+    .shot-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 15px 22px;
+      border-radius: 9999px;
+      background: #F8D000;
+      color: #15191F;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(20, 24, 30, .1);
+      transition: transform .2s;
+    }
+    .shot-cta:hover { transform: translateY(-2px); }
+    .shot-art {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #252B33, #111317 68%, #343C49);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      color: #F2F1EC;
+      box-shadow: 0 24px 60px rgba(20, 24, 30, .18);
+    }
+    .shot-art:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent 0, transparent 39px, rgba(255, 255, 255, .045) 40px), linear-gradient(115deg, transparent 45%, rgba(248, 208, 0, .1) 45.2%, transparent 46%);
+      pointer-events: none;
+    }
+    .shot-art-label, .shot-art-title, .shot-art-bottom {
+      position: relative;
+      z-index: 1;
+    }
+    .shot-art-label {
+      color: #D3D8DE;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .shot-clapper {
+      align-self: center;
+      position: relative;
+      z-index: 1;
+      width: min(80%, 320px);
+      padding: 16px;
+      border: 2px solid #E7E8E8;
+      border-radius: 8px;
+      background: #D6E4EE;
+      color: #15191F;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, .35);
+      transform: rotate(-4deg);
+    }
+    .shot-clapper-top {
+      height: 24px;
+      margin: -16px -16px 15px;
+      background: repeating-linear-gradient(135deg, #F8D000 0, #F8D000 18px, #17191D 18px, #17191D 36px);
+      border-bottom: 2px solid #E7E8E8;
+    }
+    .shot-clapper-title {
+      font: 900 clamp(18px, 2.6vw, 26px) 'Space Grotesk', sans-serif;
+      letter-spacing: -.04em;
+      text-align: center;
+    }
+    .shot-clapper-lines {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .shot-clapper-lines span {
+      height: 5px;
+      background: #8A98A7;
+      flex: 1;
+    }
+    .shot-art-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font: 700 9px 'JetBrains Mono', monospace;
+      letter-spacing: .12em;
+      color: #D3D8DE;
+    }
+    .shot-hero-footer {
+      max-width: 1240px;
+      margin: 28px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9px;
+    }
+
+    /* Content Shell (Exact match from script-breakdown-sheet) */
+    .tool-content-shell {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) 22px clamp(56px, 7vw, 96px);
+      box-sizing: border-box;
+    }
+    .tool-content-shell > .max-w-6xl,
+    .tool-content-shell > .max-w-5xl,
+    .tool-content-shell > .max-w-4xl {
+      max-width: 100% !important;
+    }
+    @media(max-width: 760px) {
+      .shot-hero-inner { grid-template-columns: 1fr; }
+      .shot-art { min-height: 270px; }
+      .shot-hero-footer { flex-direction: column; gap: 7px; }
+      .shot-hero h1 { font-size: clamp(40px, 11vw, 58px); }
+    }
+    @media(max-width: 640px) {
+      .tool-content-shell { padding: 30px 16px 56px; }
+    }
   </style>
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
 </head>
 <body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -176,7 +322,7 @@
         <a href="/writers-room" class="nav-pill uppercase">
           WRITER'S ROOM
         </a>
-        <a href="/tools" class="nav-pill uppercase">
+        <a href="/tools" class="nav-pill uppercase" style="background-color: #111317; color: #F0F2F5;">
           FREE TOOLS
         </a>
         <a href="/scripts" class="nav-pill uppercase">
@@ -261,220 +407,251 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
-    <!-- Interactive Tool Container -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
-      <div class="flex flex-wrap items-center gap-2 mb-3">
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Character Engine</span>
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
-      </div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mt-1 mb-2">
-        Character Name & Bio Generator for Screenwriters
-      </h1>
-      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
-        Generate three-dimensional screenplay characters in one click. Pair grounded names with dramatic character bios, subconscious psychological flaws, external wants, and internal moral needs.
-      </p>
+  </script>
 
-      <!-- Generator Filters Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+  <main class="flex-grow w-full">
+    <!-- Hero Banner (Matching script-breakdown-sheet architecture) -->
+    <section class="shot-hero" aria-labelledby="tool-page-title">
+      <div class="shot-hero-inner">
         <div>
-          <label class="block font-black text-xs uppercase tracking-wider mb-2">Narrative Genre</label>
-          <select id="genre-select" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white text-sm focus:bg-[#FFFDE6]">
-            <option value="noir">Neo-Noir & Crime Thriller</option>
-            <option value="scifi">Sci-Fi & Cyberpunk</option>
-            <option value="psychological" selected>Psychological Thriller</option>
-            <option value="drama">Prestige Drama & Family Sagas</option>
-            <option value="horror">Psychological Horror & Mystery</option>
-          </select>
+          <div class="shot-eyebrow"><span></span> NARRATIVE CRAFT / 05</div>
+          <h1 id="tool-page-title">Character Name<br><em>& Bio Generator</em></h1>
+          <p class="shot-lede">Generate three-dimensional screenplay characters in one click. Pair grounded names with dramatic character bios, subconscious psychological flaws, external wants, and internal moral needs.</p>
+          <div class="shot-meta"><span>CHARACTER ENGINE</span><i></i><span>WANT VS. NEED</span><i></i><span>100% FREE</span></div>
+          <a class="shot-cta" href="#character-generator-tool">Generate Character <span aria-hidden="true">↓</span></a>
         </div>
-
-        <div>
-          <label class="block font-black text-xs uppercase tracking-wider mb-2">Character Archetype</label>
-          <select id="archetype-select" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white text-sm focus:bg-[#FFFDE6]">
-            <option value="all">Any Archetype</option>
-            <option value="protagonist" selected>The Reluctant Protagonist</option>
-            <option value="antagonist">The Ideological Antagonist</option>
-            <option value="shadow">The Shadow / Anti-Hero</option>
-            <option value="mentor">The Corrupted Mentor</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Action Button -->
-      <div class="mb-6">
-        <button id="generate-btn" type="button" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
-          Generate Screenplay Character Profile →
-        </button>
-      </div>
-
-      <!-- Live Generated Character Card -->
-      <div id="character-output" class="border-[1.5px] border-black rounded-xl bg-white p-6 brutal-box space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-3">
-          <div>
-            <span id="card-badge" class="bg-black text-white font-mono text-xs font-bold px-2 py-0.5 uppercase tracking-wider">Psychological Thriller • Protagonist</span>
-            <h2 id="card-name" class="text-2xl md:text-3xl font-black brand-font mt-1">Elena Vance</h2>
+        <div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for CHARACTER NAME GENERATOR">
+          <div class="shot-art-label"><span>CREATOR TOOL / 05</span><span>CHARACTER PSYCHOLOGY</span></div>
+          <div class="shot-clapper" aria-hidden="true">
+            <div class="shot-clapper-top"></div>
+            <div class="shot-clapper-title">CHARACTERS</div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
           </div>
-          <button id="copy-card-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-red-600 transition-colors">
-            📋 Copy Profile
+          <div class="shot-art-bottom"><span>PROFILES / ARCS</span><span>READY FOR SCENE</span></div>
+        </div>
+      </div>
+      <div class="shot-hero-footer"><span>05 — DRAMATIC PROFILES</span><span>ARCHETYPE → FLAW & WOUND → DIALOGUE</span></div>
+    </section>
+
+    <!-- Content Shell -->
+    <div class="tool-content-shell" id="character-generator-tool">
+
+      <!-- Interactive Tool Container -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Character Engine</span>
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black brand-font tracking-tight mt-1 mb-2">Screenplay Character Profile Generator</h2>
+        <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+          Generate three-dimensional screenplay characters in one click. Filter by genre and archetype to pair memorable names with external goals, internal moral wounds, and weaponized flaws.
+        </p>
+
+        <!-- Generator Filters Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label for="genre-select" class="block font-black text-xs uppercase tracking-wider mb-2 text-black">Narrative Genre</label>
+            <select id="genre-select" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white text-sm focus:outline-none focus:bg-[#FFFDE6]">
+              <option value="noir">Neo-Noir & Crime Thriller</option>
+              <option value="scifi">Sci-Fi & Cyberpunk</option>
+              <option value="psychological" selected>Psychological Thriller</option>
+              <option value="drama">Prestige Drama & Family Sagas</option>
+              <option value="horror">Psychological Horror & Mystery</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="archetype-select" class="block font-black text-xs uppercase tracking-wider mb-2 text-black">Character Archetype</label>
+            <select id="archetype-select" class="w-full border-[1.5px] border-black rounded-xl p-3 font-bold bg-white text-sm focus:outline-none focus:bg-[#FFFDE6]">
+              <option value="all">Any Archetype</option>
+              <option value="protagonist" selected>The Reluctant Protagonist</option>
+              <option value="antagonist">The Ideological Antagonist</option>
+              <option value="shadow">The Shadow / Anti-Hero</option>
+              <option value="mentor">The Corrupted Mentor</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="mb-6">
+          <button id="generate-btn" type="button" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
+            Generate Screenplay Character Profile →
           </button>
         </div>
 
-        <div class="space-y-3 text-xs md:text-sm text-gray-800 font-medium leading-relaxed">
-          <p><strong class="font-black text-black uppercase font-mono text-xs">Role & Logline:</strong> <span id="card-logline">A forensic audio engineer hired to digitize wiretap reels from an unsolved corporate blackmail case.</span></p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            <div class="border border-gray-300 bg-[#F0F2F5] p-3">
-              <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">External Want (The Goal)</span>
-              <strong id="card-want" class="text-black block mt-0.5">Prove the missing master tape was altered before trial.</strong>
+        <!-- Live Generated Character Card -->
+        <div id="character-output" class="border-[1.5px] border-black rounded-xl bg-white p-6 brutal-box space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-3">
+            <div>
+              <span id="card-badge" class="bg-black text-white font-mono text-xs font-bold px-2 py-0.5 uppercase tracking-wider rounded">Psychological Thriller • Protagonist</span>
+              <h3 id="card-name" class="text-2xl md:text-3xl font-black brand-font mt-1 text-black">Elena Vance</h3>
             </div>
-            <div class="border border-gray-300 bg-[#F0F2F5] p-3">
-              <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">Internal Need (The Moral Arc)</span>
-              <strong id="card-need" class="text-black block mt-0.5">Stop using obsessive technical precision to avoid facing her sister's death.</strong>
+            <button id="copy-card-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
+              📋 Copy Profile
+            </button>
+          </div>
+
+          <div class="space-y-3 text-xs md:text-sm text-gray-800 font-medium leading-relaxed">
+            <p><strong class="font-black text-black uppercase font-mono text-xs">Role & Logline:</strong> <span id="card-logline">A forensic audio engineer hired to digitize wiretap reels from an unsolved corporate blackmail case.</span></p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="border border-gray-300 bg-[#F0F2F5] p-3 rounded-lg">
+                <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">External Want (The Goal)</span>
+                <strong id="card-want" class="text-black block mt-0.5">Prove the missing master tape was altered before trial.</strong>
+              </div>
+              <div class="border border-gray-300 bg-[#F0F2F5] p-3 rounded-lg">
+                <span class="font-mono text-[11px] font-bold text-gray-500 uppercase block">Internal Need (The Moral Arc)</span>
+                <strong id="card-need" class="text-black block mt-0.5">Stop using obsessive technical precision to avoid facing her sister's death.</strong>
+              </div>
+            </div>
+            <div class="border-t border-gray-200 pt-2">
+              <span class="font-mono text-[11px] font-bold text-red-600 uppercase block">Fatal Flaw / Blindspot</span>
+              <span id="card-flaw" class="text-gray-700 italic">Refuses to trust eyewitness testimony over mechanical recordings, making her blind to emotional manipulation.</span>
             </div>
           </div>
-          <div class="border-t border-gray-200 pt-2">
-            <span class="font-mono text-[11px] font-bold text-red-600 uppercase block">Fatal Flaw / Blindspot</span>
-            <span id="card-flaw" class="text-gray-700 italic">Refuses to trust eyewitness testimony over mechanical recordings, making her blind to emotional manipulation.</span>
+        </div>
+      </div>
+
+      <!-- Editorial Craft Section: How Character Profiles Drive Scripts -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+        <div class="border-b-2 border-black pb-3">
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Screenplay Craft</span>
+          <h2 class="text-2xl md:text-3xl font-black brand-font mt-2 text-black">How Great Screenplay Characters Are Built</h2>
+        </div>
+
+        <div class="text-sm font-medium text-gray-700 leading-relaxed space-y-4">
+          <p>
+            Amateur screenplays collapse when characters are merely passive cameras witnessing plot events. A character is not their hair color, leather jacket, or quirky habit; <strong>a screenplay character is defined by the friction between what they want and what they need</strong>.
+          </p>
+          <p>
+            In classic drama, characters start the script with a protective delusion—a lie they tell themselves to survive an old trauma. The plot exists as a hostile laboratory specifically designed by the writer to strip away their defense mechanisms until they are forced to make an irreversible moral choice at the climax.
+          </p>
+        </div>
+
+        <!-- The 3 Anatomy Pillars Table -->
+        <div class="overflow-x-auto border-[1.5px] border-black rounded-xl">
+          <table class="w-full text-left text-xs font-medium">
+            <thead class="bg-black text-white font-mono uppercase">
+              <tr>
+                <th class="p-3 border-r border-gray-700">Pillar</th>
+                <th class="p-3 border-r border-gray-700">Narrative Function</th>
+                <th class="p-3">Classic Film Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
+              <tr class="hover:bg-[#FFF6CF]">
+                <td class="p-3 border-r-2 border-black font-bold">The Want</td>
+                <td class="p-3 border-r-2 border-black">The conscious physical goal driving scenes in Act 1 & 2.</td>
+                <td class="p-3">Clarice Starling wants to catch Buffalo Bill and save Catherine.</td>
+              </tr>
+              <tr class="hover:bg-[#FFF6CF]">
+                <td class="p-3 border-r-2 border-black font-bold">The Need</td>
+                <td class="p-3 border-r-2 border-black">The subconscious moral growth required to complete the arc.</td>
+                <td class="p-3">Silence the screaming spring lambs of her childhood guilt.</td>
+              </tr>
+              <tr class="hover:bg-[#FFF6CF]">
+                <td class="p-3 border-r-2 border-black font-bold">The Flaw</td>
+                <td class="p-3 border-r-2 border-black">The psychological blindspot the antagonist weaponizes.</td>
+                <td class="p-3">Insecurity regarding her Appalachian working-class roots.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Search Intent FAQ Section -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-4">
+        <div class="border-b-2 border-black pb-2">
+          <span class="bg-[#F8D000] border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Direct Search FAQ</span>
+          <h3 class="text-xl md:text-2xl font-black brand-font mt-2 text-black">Frequently Asked Questions: Character Creation</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-medium">
+          <div>
+            <h4 class="font-black brand-font text-base text-black mb-1">How do I choose character names that don't sound generic?</h4>
+            <p class="leading-relaxed">
+              Avoid phonetically similar names within the same scene (e.g., John and Jack). Balance syllables, align the name with the character's generation and geographical origin, and test how easily the name reads in dialogue cues across Courier 12pt screenplay pages.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-black brand-font text-base text-black mb-1">What makes an antagonist memorable?</h4>
+            <p class="leading-relaxed">
+              The antagonist must believe they are the hero of their own story with justifiable, internally consistent logic. Study our deep-dive analysis on <a href="/how-to-write-a-villain" class="font-bold underline text-black hover:text-[#D32F2F]">how to write a villain (5 antagonist archetypes)</a> to explore philosophical opposition and moral inversion.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-black brand-font text-base text-black mb-1">Can I write scenes directly with these profiles?</h4>
+            <p class="leading-relaxed">
+              Yes. Copy your generated character bio and paste their action beats directly into our free browser-based <a href="/script-editor" class="font-bold underline text-black hover:text-[#D32F2F]">online script editor</a> with automated margin and tab styling.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-black brand-font text-base text-black mb-1">How does character development impact pacing?</h4>
+            <p class="leading-relaxed">
+              When characters have distinct desires, scenes move faster with higher subtext. Check speech tempo and dialogue running times in our <a href="/tools/script-timer" class="font-bold underline text-black hover:text-[#D32F2F]">script pacing timer</a> to ensure scenes don't drag.
+            </p>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Editorial Craft Section: How Character Profiles Drive Scripts -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
-      <div class="border-b-2 border-black pb-3">
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Screenplay Craft</span>
-        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">How Great Screenplay Characters Are Built</h2>
-      </div>
-
-      <div class="text-sm font-medium text-gray-700 leading-relaxed space-y-4">
-        <p>
-          Amateur screenplays collapse when characters are merely passive cameras witnessing plot events. A character is not their hair color, leather jacket, or quirky habit; <strong>a screenplay character is defined by the friction between what they want and what they need</strong>.
+      <!-- Related Pre-Production & Character Tools Strip -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-2">
+          <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Character & Screenplay Pre-Production Suite</h3>
+          <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+        </div>
+        <p class="text-xs font-medium text-gray-800 leading-relaxed">
+          Move your newly generated characters into writing and drafting workflows:
         </p>
-        <p>
-          In classic drama, characters start the script with a protective delusion—a lie they tell themselves to survive an old trauma. The plot exists as a hostile laboratory specifically designed by the writer to strip away their defense mechanisms until they are forced to make an irreversible moral choice at the climax.
-        </p>
-      </div>
-
-      <!-- The 3 Anatomy Pillars Table -->
-      <div class="overflow-x-auto border-[1.5px] border-black rounded-xl">
-        <table class="w-full text-left text-xs font-medium">
-          <thead class="bg-black text-white font-mono uppercase">
-            <tr>
-              <th class="p-3 border-r border-gray-700">Pillar</th>
-              <th class="p-3 border-r border-gray-700">Narrative Function</th>
-              <th class="p-3">Classic Film Example</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">The Want</td>
-              <td class="p-3 border-r-2 border-black">The conscious physical goal driving scenes in Act 1 & 2.</td>
-              <td class="p-3">Clarice Starling wants to catch Buffalo Bill and save Catherine.</td>
-            </tr>
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">The Need</td>
-              <td class="p-3 border-r-2 border-black">The subconscious moral growth required to complete the arc.</td>
-              <td class="p-3">Silence the screaming spring lambs of her childhood guilt.</td>
-            </tr>
-            <tr class="hover:bg-[#FFF6CF]">
-              <td class="p-3 border-r-2 border-black font-bold">The Flaw</td>
-              <td class="p-3 border-r-2 border-black">The psychological blindspot the antagonist weaponizes.</td>
-              <td class="p-3">Insecurity regarding her Appalachian working-class roots.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Search Intent FAQ Section -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-4">
-      <div class="border-b-2 border-black pb-2">
-        <span class="bg-[#F8D000] border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Direct Search FAQ</span>
-        <h3 class="text-xl md:text-2xl font-black brand-font mt-2">Frequently Asked Questions: Character Creation</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 font-medium">
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">How do I choose character names that don't sound generic?</h4>
-          <p class="leading-relaxed">
-            Avoid phonetically similar names within the same scene (e.g., John and Jack). Balance syllables, align the name with the character's generation and geographical origin, and test how easily the name reads in dialogue cues across Courier 12pt screenplay pages.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">What makes an antagonist memorable?</h4>
-          <p class="leading-relaxed">
-            The antagonist must believe they are the hero of their own story with justifiable, internally consistent logic. Study our deep-dive analysis on <a href="/how-to-write-a-villain" class="font-bold underline text-black hover:text-red-600">how to write a villain (5 antagonist archetypes)</a> to explore philosophical opposition and moral inversion.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">Can I write scenes directly with these profiles?</h4>
-          <p class="leading-relaxed">
-            Yes. Copy your generated character bio and paste their action beats directly into our free browser-based <a href="/script-editor" class="font-bold underline text-black hover:text-red-600">online script editor</a> with automated margin and tab styling.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-black brand-font text-base text-black mb-1">How does character development impact pacing?</h4>
-          <p class="leading-relaxed">
-            When characters have distinct desires, scenes move faster with higher subtext. Check speech tempo and dialogue running times in our <a href="/tools/script-timer" class="font-bold underline text-black hover:text-red-600">script pacing timer</a> to ensure scenes don't drag.
-          </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+          <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>✍ Online Script Editor</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft formatted screenplay dialogue blocks in Courier 12pt →</span>
+          </a>
+          <a href="/how-to-write-a-villain" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>🦹 Antagonist Archetypes</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Craft compelling opposition forces using the 5 master models →</span>
+          </a>
+          <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>✂ Dialogue Word Pruner</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Strip conversational throat-clearing fluff from dialogue lines →</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- Related Pre-Production & Character Tools Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
-      <div class="flex items-center justify-between border-b-2 border-black pb-2">
-        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Character & Screenplay Pre-Production Suite</h3>
-        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
-      </div>
-      <p class="text-xs font-medium text-gray-800 leading-relaxed">
-        Move your newly generated characters into writing and drafting workflows:
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>✍ Online Script Editor</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft formatted screenplay dialogue blocks in Courier 12pt →</span>
-        </a>
-        <a href="/how-to-write-a-villain" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>🦹 Antagonist Archetypes</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Craft compelling opposition forces using the 5 master models →</span>
-        </a>
-        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>✂ Dialogue Word Pruner</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Strip conversational throat-clearing fluff from dialogue lines →</span>
+      <!-- Commercial CTA Strip -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+        <div>
+          <span class="bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase rounded">Production Scriptwriting</span>
+          <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Multi-Dimensional Scripts Written?</h2>
+          <p class="text-sm font-medium text-black max-w-xl">
+            We research, outline, and write character-driven video screenplays, commercial packs, and narrative essays calibrated for high retention and authentic dialogue.
+          </p>
+        </div>
+        <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl studio-btn whitespace-nowrap text-sm uppercase hover:bg-white hover:text-black">
+          Explore Script Packs →
         </a>
       </div>
-    </div>
 
-    <!-- Commercial CTA Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-      <div>
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
-        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Multi-Dimensional Scripts Written?</h2>
-        <p class="text-sm font-medium text-black max-w-xl">
-          We research, outline, and write character-driven video screenplays, commercial packs, and narrative essays calibrated for high retention and authentic dialogue.
-        </p>
+      <!-- Bottom Return Button -->
+      <div class="mt-8">
+        <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn uppercase tracking-wider">
+          ← Back to Free Tools
+        </a>
       </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
-        Explore Script Packs →
-      </a>
-    </div>
 
-    <!-- Bottom Return Button -->
-    <div class="mt-8">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
-        ← Back to Free Tools
-      </a>
-    </div>
+    </div><!-- /.tool-content-shell -->
   </main>
 
   <!-- Universal Footer -->
-  <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317; background-color: #D6E4EE !important;">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      
+      <!-- Top Branding & Value Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -484,6 +661,7 @@
               height="50" 
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
               class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
             />
           </a>
@@ -493,60 +671,69 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
-            100% Free Client-Side Tools
+          <span class="studio-badge bg-[#F8D000] text-black font-bold uppercase" style="background-color: #F8D000 !important; color: #111317 !important;">
+            ⚡ 100% Free Client-Side Tools
           </span>
-          <div class="flex items-center gap-1.5">
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+          <div class="flex items-center gap-2">
+            <!-- X -->
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
         </div>
       </div>
 
+      <!-- 4-Column Structured Link Directory -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono">NEW</span></a></li>
-            <li><a href="/tools/character-name-generator" class="hover:underline font-bold text-black">Character Name Generator</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
+              </a>
+            </li>
+            <li><a href="/tools/character-name-generator" class="hover:underline font-bold text-black">Character Bio Generator</a></li>
             <li><a href="/tools/title-checker" class="hover:underline">YouTube Title Checker</a></li>
             <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
             <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All Tools Directory →</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
             <li><a href="/how-to-write-a-villain" class="hover:underline font-bold text-black">Antagonist Archetypes</a></li>
             <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
-            <li><a href="/story-structure-frameworks" class="hover:underline">Story Structure Models</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
             <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
             <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
             <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
@@ -557,15 +744,15 @@
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors">
-              care@draftsrush.com
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm text-black" style="background-color: #F0F2F5 !important;">
+              ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
@@ -576,7 +763,8 @@
         </div>
       </div>
 
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+      <!-- Bottom Legal & Copyright Bar -->
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
           <a href="/sitemap" class="hover:underline">Sitemap</a>
@@ -585,6 +773,7 @@
           <a href="/contact" class="hover:underline">Support Desk</a>
         </div>
       </div>
+
     </div>
   </footer>
 
@@ -734,7 +923,6 @@
       }
 
       if (pool.length === 0) {
-        // Fallback to any character in current genre
         pool = database[selectedGenre] || database.noir;
       }
 
