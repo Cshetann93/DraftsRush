@@ -14,185 +14,38 @@
   <title>Video Speech Trainer & Spoken Pacing Coach | DraftsRush</title>
   <meta name="description" content="Rehearse your video script aloud. Live stopwatch calculator tracks words per minute (WPM), speech cadence, and alerts you when you speak too fast or slow.">
   <link rel="canonical" href="https://www.draftsrush.com/tools/speech-trainer">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F8D000">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DraftsRush">
+  <meta property="og:title" content="Video Speech Trainer & Spoken Pacing Coach | DraftsRush">
+  <meta property="og:description" content="Rehearse your video script aloud. Live stopwatch calculator tracks words per minute (WPM), speech cadence, and alerts you when you speak too fast or slow.">
+  <meta property="og:url" content="https://www.draftsrush.com/tools/speech-trainer">
+  <meta property="og:image" content="https://www.draftsrush.com/drlogo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Video Speech Trainer & Spoken Pacing Coach | DraftsRush">
+  <meta name="twitter:description" content="Rehearse your video script aloud. Live stopwatch calculator tracks words per minute (WPM), speech cadence, and alerts you when you speak too fast or slow.">
+  <meta name="twitter:image" content="https://www.draftsrush.com/drlogo.png">
 
   <!-- Favicon References -->
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
 
-  <!-- Instant Dark Mode Initializer -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      document.addEventListener('DOMContentLoaded', () => {
-        if (document.body) document.body.classList.add('dark');
-      });
-    }
-  </script>
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; }
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; color: #111317; }
     h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .brutal-box { box-shadow: 4px 4px 0px #111317; }
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
+    .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
 
-    /* Pill Toggle Switch Design */
-    .theme-toggle {
-      position: relative;
-      width: 62px;
-      height: 32px;
-      border-radius: 9999px;
-      background-color: #FF5A1F;
-      border: 2px solid #111317;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 7px;
-      box-shadow: 2px 2px 0px #111317;
-      transition: background-color 0.2s ease;
-      flex-shrink: 0;
-    }
-    .dark .theme-toggle {
-      background-color: #1F232B;
-      border-color: #FFFFFF;
-      box-shadow: 2px 2px 0px #000000;
-    }
-    .theme-toggle-icon {
-      width: 14px;
-      height: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #FFFFFF;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .theme-toggle-thumb {
-      position: absolute;
-      top: 2px;
-      left: 32px;
-      width: 24px;
-      height: 24px;
-      border-radius: 9999px;
-      background-color: #FFFFFF;
-      border: 2px solid #111317;
-      transition: left 0.2s ease;
-    }
-    .dark .theme-toggle-thumb {
-      left: 2px;
-      border-color: #000000;
-    }
-
-    /* Dark Mode Core Theme Overrides */
-    body.dark {
-      background-color: #0E1015 !important;
-      color: #FFFFFF !important;
-    }
-    body.dark header {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark header a, 
-    body.dark header nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-      background-color: #1F232B !important;
-    }
-    body.dark header nav a[href="/tools"] {
-      background-color: #F8D000 !important;
-      color: #111317 !important;
-      border-color: #111317 !important;
-    }
-    body.dark #mobile-nav {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark #mobile-nav a {
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark main .bg-\[\#F0F2F5\],
-    body.dark .bg-white {
-      background-color: #16181E !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-      box-shadow: 4px 4px 0px #000000 !important;
-    }
-    body.dark textarea#trainer-input {
-      background-color: #1F232B !important;
-      color: #FFFFFF !important;
-      border-color: #2A2F3A !important;
-    }
-    body.dark .text-gray-700, 
-    body.dark .text-gray-600,
-    body.dark .text-gray-500 {
-      color: #9CA3AF !important;
-    }
-    body.dark #metric-words,
-    body.dark #metric-timer,
-    body.dark #metric-wpm {
-      color: #FFFFFF !important;
-    }
-    body.dark .bg-\[\#FFF6CF\] {
-      background-color: #1B1E26 !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
-
-    /* Footer Dark Mode */
-    body.dark footer {
-      background-color: #111317 !important;
-      border-color: #2A2F3A !important;
-      color: #E2E4E9 !important;
-    }
-    body.dark footer p, 
-    body.dark footer a, 
-    body.dark footer h4 {
-      color: #E2E4E9 !important;
-    }
-    body.dark footer span.bg-\[\#F8D000\] {
-      color: #111317 !important;
-    }
-    body.dark footer .text-gray-800,
-    body.dark footer .text-gray-700 {
-      color: #9CA3AF !important;
-    }
-    body.dark footer .border-black,
-    body.dark footer .border-t-2,
-    body.dark footer .border-b-2 {
-      border-color: #2A2F3A !important;
-    }
-    body.dark footer a[style*="#F0F2F5"] {
-      background-color: #1F232B !important;
-      border-color: #2A2F3A !important;
-      color: #FFFFFF !important;
-    }
-    body.dark footer svg.fill-black {
-      fill: #FFFFFF !important;
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
-  <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
-<!-- Studio Core Classes & Sitewide Styles -->
-  <style>
-    :root {
-      --bg-base: #E2E4E9;
-      --ink: #111317;
-      --brand-yellow: #F8D000;
-      --cta-yellow: #FFE600;
-      --surface-light: #F0F2F5;
-      --surface-blue: #D6E4EE;
-      --surface-cream: #FFF6CF;
-      --surface-mint: #E1F5E3;
-      --section-slate: #D4D7E1;
-      --section-steel: #CCD0DC;
-    }
-    .brand-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+    /* Studio Header & Navigation */
     .studio-header {
       background-color: rgba(248, 208, 0, 0.94);
       backdrop-filter: blur(14px);
@@ -231,14 +84,212 @@
       box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
     }
     .studio-btn:active { transform: translateY(0); }
-    .bg-surface-light { background-color: #F0F2F5 !important; }
-    .bg-surface-blue { background-color: #D6E4EE !important; }
-    .bg-brand-yellow { background-color: #F8D000 !important; }
-    .bg-cta-yellow { background-color: #FFE600 !important; }
-    .bg-ink { background-color: #111317 !important; }
+    .studio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      border: 1.5px solid #111317;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Shared Shot List Hero System (Matching script-breakdown-sheet) */
+    .shot-hero {
+      width: 100%;
+      padding: clamp(42px, 6vw, 82px) 24px 28px;
+      background: #D6E0E8;
+      border-bottom: 1px solid #B6C4D0;
+    }
+    .shot-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
+      gap: clamp(32px, 6vw, 84px);
+      align-items: center;
+    }
+    .shot-eyebrow, .shot-meta, .shot-art-label, .shot-hero-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #526273;
+    }
+    .shot-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+    .shot-eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #B79B00;
+      box-shadow: 0 0 0 5px rgba(183, 155, 0, .14);
+    }
+    .shot-hero h1 {
+      margin: 0;
+      color: #15191F;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 900;
+    }
+    .shot-hero h1 em {
+      display: block;
+      margin-top: .08em;
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.06em;
+    }
+    .shot-lede {
+      max-width: 650px;
+      margin: 24px 0;
+      color: #465362;
+      font-size: clamp(16px, 1.6vw, 21px);
+      line-height: 1.6;
+    }
+    .shot-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      font-size: 9px;
+    }
+    .shot-meta i {
+      height: 1px;
+      width: 20px;
+      background: #9AA9B7;
+    }
+    .shot-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 15px 22px;
+      border-radius: 9999px;
+      background: #F8D000;
+      color: #15191F;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(20, 24, 30, .1);
+      transition: transform .2s;
+    }
+    .shot-cta:hover { transform: translateY(-2px); }
+    .shot-art {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #252B33, #111317 68%, #343C49);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      color: #F2F1EC;
+      box-shadow: 0 24px 60px rgba(20, 24, 30, .18);
+    }
+    .shot-art:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent 0, transparent 39px, rgba(255, 255, 255, .045) 40px), linear-gradient(115deg, transparent 45%, rgba(248, 208, 0, .1) 45.2%, transparent 46%);
+      pointer-events: none;
+    }
+    .shot-art-label, .shot-art-title, .shot-art-bottom {
+      position: relative;
+      z-index: 1;
+    }
+    .shot-art-label {
+      color: #D3D8DE;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .shot-clapper {
+      align-self: center;
+      position: relative;
+      z-index: 1;
+      width: min(80%, 320px);
+      padding: 16px;
+      border: 2px solid #E7E8E8;
+      border-radius: 8px;
+      background: #D6E4EE;
+      color: #15191F;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, .35);
+      transform: rotate(-4deg);
+    }
+    .shot-clapper-top {
+      height: 24px;
+      margin: -16px -16px 15px;
+      background: repeating-linear-gradient(135deg, #F8D000 0, #F8D000 18px, #17191D 18px, #17191D 36px);
+      border-bottom: 2px solid #E7E8E8;
+    }
+    .shot-clapper-title {
+      font: 900 clamp(18px, 2.6vw, 26px) 'Space Grotesk', sans-serif;
+      letter-spacing: -.04em;
+      text-align: center;
+    }
+    .shot-clapper-lines {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .shot-clapper-lines span {
+      height: 5px;
+      background: #8A98A7;
+      flex: 1;
+    }
+    .shot-art-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font: 700 9px 'JetBrains Mono', monospace;
+      letter-spacing: .12em;
+      color: #D3D8DE;
+    }
+    .shot-hero-footer {
+      max-width: 1240px;
+      margin: 28px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9px;
+    }
+
+    /* Content Shell (Exact match from script-breakdown-sheet) */
+    .tool-content-shell {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) 22px clamp(56px, 7vw, 96px);
+      box-sizing: border-box;
+    }
+    .tool-content-shell > .max-w-6xl,
+    .tool-content-shell > .max-w-5xl,
+    .tool-content-shell > .max-w-4xl {
+      max-width: 100% !important;
+    }
+    @media(max-width: 760px) {
+      .shot-hero-inner { grid-template-columns: 1fr; }
+      .shot-art { min-height: 270px; }
+      .shot-hero-footer { flex-direction: column; gap: 7px; }
+      .shot-hero h1 { font-size: clamp(40px, 11vw, 58px); }
+    }
+    @media(max-width: 640px) {
+      .tool-content-shell { padding: 30px 16px 56px; }
+    }
   </style>
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
 </head>
-<body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
+<body class="tool-page-refresh bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFBGQ8WX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -270,7 +321,7 @@
         <a href="/writers-room" class="nav-pill uppercase">
           WRITER'S ROOM
         </a>
-        <a href="/tools" class="nav-pill uppercase">
+        <a href="/tools" class="nav-pill uppercase" style="background-color: #111317; color: #F0F2F5;">
           FREE TOOLS
         </a>
         <a href="/scripts" class="nav-pill uppercase">
@@ -355,180 +406,211 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full">
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-10 brutal-box-lg mb-8">
-      <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase mb-3">
-        Utility: Presenter Rehearsal
-      </div>
-      <h1 class="text-3xl md:text-5xl font-black brand-font tracking-tight mb-3">
-        Video Speech Pacing Coach
-      </h1>
-      <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
-        Practice your script aloud. Hit the live stopwatch as you speak. The coach measures your real-time words-per-minute (WPM) cadence and grades your delivery against platform retention standards.
-      </p>
+  </script>
 
-      <!-- Text Input with Action Bar -->
-      <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <label class="block font-black text-xs uppercase tracking-wider">Paste Script to Practice</label>
+  <main class="flex-grow w-full">
+    <!-- Hero Banner (Matching script-breakdown-sheet architecture) -->
+    <section class="shot-hero" aria-labelledby="tool-page-title">
+      <div class="shot-hero-inner">
+        <div>
+          <div class="shot-eyebrow"><span></span> PRESENTER REHEARSAL / 06</div>
+          <h1 id="tool-page-title">Speech Pacing Trainer<br><em>& Cadence Coach</em></h1>
+          <p class="shot-lede">Rehearse your script aloud with a live stopwatch. Track your real-time words-per-minute (WPM) cadence, lock into the 130–160 WPM golden window, and prevent vocal fatigue on camera.</p>
+          <div class="shot-meta"><span>WPM STOPWATCH</span><i></i><span>CADENCE COACH</span><i></i><span>100% FREE</span></div>
+          <a class="shot-cta" href="#speech-trainer-tool">Start rehearsal <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for SPEECH TRAINER">
+          <div class="shot-art-label"><span>CREATOR TOOL / 06</span><span>VOCAL FLOW</span></div>
+          <div class="shot-clapper" aria-hidden="true">
+            <div class="shot-clapper-top"></div>
+            <div class="shot-clapper-title">SPEECH COACH</div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
+          </div>
+          <div class="shot-art-bottom"><span>TIMING / RHYTHM</span><span>READY FOR TAKE</span></div>
+        </div>
+      </div>
+      <div class="shot-hero-footer"><span>06 — VOCAL PACING</span><span>READ ALOUD → MEASURE WPM → ENGAGE AUDIENCE</span></div>
+    </section>
+
+    <!-- Content Shell -->
+    <div class="tool-content-shell" id="speech-trainer-tool">
+
+      <!-- Interactive Tool Container -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Delivery Utility</span>
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black brand-font tracking-tight mt-1 mb-2">Video Speech Pacing Coach</h2>
+        <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+          Practice your script aloud. Hit the live stopwatch as you speak. The coach measures your real-time words-per-minute (WPM) cadence and grades your delivery against platform retention standards.
+        </p>
+
+        <!-- Input Box -->
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-5 brutal-box mb-6 space-y-3">
+          <div class="flex items-center justify-between border-b border-gray-300 pb-2">
+            <label for="trainer-input" class="block font-black text-xs uppercase tracking-wider text-black">Paste Script to Practice</label>
+            <div class="flex items-center gap-3">
+              <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
+                ⚡ Try an Example
+              </button>
+              <button id="copy-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
+                📋 Copy Script
+              </button>
+            </div>
+          </div>
+          <textarea id="trainer-input" rows="5" class="w-full border-[1.5px] border-black rounded-xl p-4 font-mono text-sm bg-[#FAF9F5] focus:outline-none focus:bg-white" placeholder="Paste spoken lines here, then click 'Start Rehearsal' to track your reading speed..."></textarea>
+        </div>
+
+        <!-- Live Rehearsal Controls Strip -->
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-4 brutal-box mb-6 flex flex-wrap items-center justify-between gap-4">
           <div class="flex items-center gap-3">
-            <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              ⚡ Try an Example
+            <button id="timer-toggle-btn" class="bg-[#F8D000] text-black font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl studio-btn tracking-wider">
+              ▶ Start Rehearsal
             </button>
-            <button id="copy-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              📋 Copy Script
+            <button id="timer-reset-btn" class="bg-black text-white font-black brand-font text-xs uppercase py-3 px-4 border-[1.5px] border-black rounded-xl studio-btn">
+              ↺ Reset
             </button>
           </div>
+          <div class="font-mono text-xs font-bold text-gray-600">
+            Target: <span class="bg-[#F8D000] text-black px-2 py-0.5 border border-black rounded">130 - 160 WPM</span>
+          </div>
         </div>
-        <textarea id="trainer-input" rows="5" class="w-full border-[1.5px] border-black rounded-xl p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]" placeholder="Paste spoken lines here, then click 'Start Rehearsal' to track your reading speed..."></textarea>
-      </div>
 
-      <!-- Live Rehearsal Controls Strip -->
-      <div class="border-[1.5px] border-black rounded-xl bg-white p-4 brutal-box mb-6 flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <button id="timer-toggle-btn" class="bg-[#F8D000] text-black font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
-            ▶ Start Rehearsal
-          </button>
-          <button id="timer-reset-btn" class="bg-black text-white font-black brand-font text-xs uppercase py-3 px-4 border-[1.5px] border-black rounded-xl brutal-box brutal-btn">
-            ↺ Reset
-          </button>
+        <!-- Quick Metrics Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
+          <div class="border-[1.5px] border-black rounded-xl bg-white p-4 brutal-box">
+            <div id="metric-words" class="text-3xl font-black brand-font text-black">0</div>
+            <p class="text-xs font-bold text-gray-600 uppercase font-mono mt-1">Words</p>
+          </div>
+          <div class="border-[1.5px] border-black rounded-xl bg-white p-4 brutal-box">
+            <div id="metric-timer" class="text-3xl font-black brand-font text-blue-700">00:00</div>
+            <p class="text-xs font-bold text-gray-600 uppercase font-mono mt-1">Elapsed Time</p>
+          </div>
+          <div class="border-[1.5px] border-black rounded-xl bg-white p-4 brutal-box">
+            <div id="metric-wpm" class="text-3xl font-black brand-font text-emerald-700">0</div>
+            <p class="text-xs font-bold text-gray-600 uppercase font-mono mt-1">Spoken WPM</p>
+          </div>
+          <div class="border-[1.5px] border-black rounded-xl bg-[#F8D000] p-4 brutal-box">
+            <div id="metric-status" class="text-lg font-black brand-font text-black mt-1">Ready</div>
+            <p class="text-xs font-bold text-black uppercase font-mono mt-1">Pace Rating</p>
+          </div>
         </div>
-        <div class="font-mono text-xs font-bold text-gray-600">
-          Target: <span class="bg-[#F8D000] text-black px-1.5 py-0.5 border border-black">130 - 160 WPM</span>
-        </div>
-      </div>
 
-      <!-- Quick Metrics Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
-        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
-          <div id="metric-words" class="text-3xl font-black brand-font">0</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Words</p>
-        </div>
-        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
-          <div id="metric-timer" class="text-3xl font-black brand-font text-blue-700">00:00</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Elapsed Time</p>
-        </div>
-        <div class="border-[1.5px] border-black rounded-xl bg-white p-3 brutal-box">
-          <div id="metric-wpm" class="text-3xl font-black brand-font text-emerald-700">0</div>
-          <p class="text-xs font-bold text-gray-600 uppercase">Spoken WPM</p>
-        </div>
-        <div class="border-[1.5px] border-black rounded-xl bg-[#F8D000] p-3 brutal-box">
-          <div id="metric-status" class="text-lg font-black brand-font mt-1 text-black">Ready</div>
-          <p class="text-xs font-bold text-black uppercase">Pace Rating</p>
+        <!-- Live Diagnosis Feedback Card -->
+        <div id="diagnostic-card" class="border-[1.5px] border-black rounded-xl p-5 bg-white brutal-box space-y-2">
+          <div class="font-black text-xs brand-font uppercase text-black">Pacing Feedback</div>
+          <p id="diagnostic-text" class="text-sm font-medium text-gray-700 leading-relaxed font-mono">
+            Paste your text, click Start Rehearsal, and read at your normal on-camera speed. Hit Stop when finished to see your calculated pacing diagnostics.
+          </p>
         </div>
       </div>
 
-      <!-- Live Diagnosis Feedback Card -->
-      <div id="diagnostic-card" class="border-[1.5px] border-black rounded-xl p-5 bg-white brutal-box space-y-2">
-        <div class="font-black text-xs brand-font uppercase">Pacing Feedback</div>
-        <p id="diagnostic-text" class="text-sm font-medium text-gray-700">
-          Paste your text, click Start Rehearsal, and read at your normal on-camera speed. Hit Stop when finished to see your calculated pacing diagnostics.
+      <!-- Speech Cadence & Vocal Mechanics Guide (350+ Words SEO Card) -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
+        <div class="border-b-2 border-black pb-3">
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Delivery Masterclass</span>
+          <h2 class="text-2xl md:text-3xl font-black brand-font mt-2 text-black">The Science of Spoken Cadence & Viewer Comprehension</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
+          <div class="space-y-3">
+            <h3 class="font-black brand-font text-base text-black">The Golden 130–160 WPM Window</h3>
+            <p>
+              When creators first sit down in front of a studio microphone or camera, adrenaline typically spikes their delivery above <strong>180 words per minute</strong>. While fast delivery may seem energetic, exceeding 170 WPM causes vocal syllables to blur, forces rapid swallowing, and denies the listener time to process technical concepts.
+            </p>
+            <p>
+              Conversely, dropping below 120 WPM creates heavy, lethargic pacing that causes mobile viewers to instinctively swipe away. The retention sweet spot for YouTube essays, explainers, and commercial video sits squarely between <strong>130 and 160 WPM</strong>. At this cadence, your vocal tract produces clean consonants without sacrificing conversational urgency.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="font-black brand-font text-base text-black">Modulating Pacing Across Video Sections</h3>
+            <p>
+              Professional voiceover artists never speak at one uniform speed for ten continuous minutes. Pacing is an emotional tool that should vary by narrative section:
+            </p>
+            <p>
+              Push your speed to <strong>160–170 WPM during the first 15 seconds</strong> of your hook to establish high stakes and stop the initial swipe. Once your viewer is locked in, decelerate to <strong>135–145 WPM during the core technical explanation</strong>. Finally, insert deliberate 1-second silences before delivering your central thesis to grant the takeaway emotional weight.
+            </p>
+          </div>
+        </div>
+
+        <!-- Delivery Benchmarks Grid -->
+        <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 space-y-3">
+          <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">The 3 Pillars of On-Camera Vocal Control</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+            <div>
+              <strong class="text-black block mb-1">1. The 15-Sec Hook Rush</strong>
+              <p class="text-gray-600">Deliver opening lines with punchy, high-velocity energy (160+ WPM) to clear the mobile drop-off barrier.</p>
+            </div>
+            <div>
+              <strong class="text-black block mb-1">2. Midpoint Deceleration</strong>
+              <p class="text-gray-600">Slow down during deep data points and analytical arguments so viewers retain complex evidence.</p>
+            </div>
+            <div>
+              <strong class="text-black block mb-1">3. Intentional Micro-Pauses</strong>
+              <p class="text-gray-600">Insert a full beat of silence after shocking statements. Silence forces the brain to pay acute attention.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Production Tools (Workflow-Specific Interlinking) -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-2">
+          <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Rehearsal & Delivery Tools</h3>
+          <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
+        </div>
+        <p class="text-xs font-medium text-gray-800 leading-relaxed">
+          Polish your script timing and on-camera delivery with these browser tools:
         </p>
-      </div>
-    </div>
-
-    <!-- Speech Cadence & Vocal Mechanics Guide (350+ Words SEO Card) -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
-      <div class="border-b-2 border-black pb-3">
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Delivery Masterclass</span>
-        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">The Science of Spoken Cadence & Viewer Comprehension</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
-        <div class="space-y-3">
-          <h3 class="font-black brand-font text-base text-black">The Golden 130–160 WPM Window</h3>
-          <p>
-            When creators first sit down in front of a studio microphone or camera, adrenaline typically spikes their delivery above <strong>180 words per minute</strong>. While fast delivery may seem energetic, exceeding 170 WPM causes vocal syllables to blur, forces rapid swallowing, and denies the listener time to process technical concepts.
-          </p>
-          <p>
-            Conversely, dropping below 120 WPM creates heavy, lethargic pacing that causes mobile viewers to instinctively swipe away. The retention sweet spot for YouTube essays, explainers, and commercial video sits squarely between <strong>130 and 160 WPM</strong>. At this cadence, your vocal tract produces clean consonants without sacrificing conversational urgency.
-          </p>
-        </div>
-
-        <div class="space-y-3">
-          <h3 class="font-black brand-font text-base text-black">Modulating Pacing Across Video Sections</h3>
-          <p>
-            Professional voiceover artists never speak at one uniform speed for ten continuous minutes. Pacing is an emotional tool that should vary by narrative section:
-          </p>
-          <p>
-            Push your speed to <strong>160–170 WPM during the first 15 seconds</strong> of your hook to establish high stakes and stop the initial swipe. Once your viewer is locked in, decelerate to <strong>135–145 WPM during the core technical explanation</strong>. Finally, insert deliberate 1-second silences before delivering your central thesis to grant the takeaway emotional weight.
-          </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+          <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>⏱ Script Pacing Timer</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate total estimated spoken duration across preset WPM speeds →</span>
+          </a>
+          <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>✂ Dialogue Word Pruner</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Eliminate tongue-twisting filler phrases that cause stuttered takes →</span>
+          </a>
+          <a href="/tools/av-teleprompter" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
+            <span>📜 AV Teleprompter Runner</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Test your newly calibrated speaking cadence on a live auto-scrolling glass →</span>
+          </a>
         </div>
       </div>
 
-      <!-- Delivery Benchmarks Grid -->
-      <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 space-y-3">
-        <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">The 3 Pillars of On-Camera Vocal Control</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-          <div>
-            <strong class="text-black block mb-1">1. The 15-Sec Hook Rush</strong>
-            <p class="text-gray-600">Deliver opening lines with punchy, high-velocity energy (160+ WPM) to clear the mobile drop-off barrier.</p>
-          </div>
-          <div>
-            <strong class="text-black block mb-1">2. Midpoint Deceleration</strong>
-            <p class="text-gray-600">Slow down during deep data points and analytical arguments so viewers retain complex evidence.</p>
-          </div>
-          <div>
-            <strong class="text-black block mb-1">3. Intentional Micro-Pauses</strong>
-            <p class="text-gray-600">Insert a full beat of silence after shocking statements. Silence forces the brain to pay acute attention.</p>
-          </div>
+      <!-- Commercial CTA Strip -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+        <div>
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
+          <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Scripts Built for Vocal Flow?</h2>
+          <p class="text-sm font-medium text-black max-w-xl">
+            We write research-backed video essays and presenter scripts read-tested with a stopwatch to guarantee comfortable, conversational rhythm.
+          </p>
         </div>
-      </div>
-    </div>
-
-    <!-- Related Production Tools (Workflow-Specific Interlinking) -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
-      <div class="flex items-center justify-between border-b-2 border-black pb-2">
-        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Rehearsal & Delivery Tools</h3>
-        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
-      </div>
-      <p class="text-xs font-medium text-gray-800 leading-relaxed">
-        Polish your script timing and on-camera delivery with these browser tools:
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>⏱ Script Pacing Timer</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate total estimated spoken duration across preset WPM speeds →</span>
-        </a>
-        <a href="/tools/dialogue-pruner" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>✂ Dialogue Word Pruner</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Eliminate tongue-twisting filler phrases that cause stuttered takes →</span>
-        </a>
-        <a href="/tools/av-teleprompter" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>📜 AV Teleprompter Runner</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Test your newly calibrated speaking cadence on a live auto-scrolling glass →</span>
+        <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl studio-btn whitespace-nowrap text-sm uppercase hover:bg-white hover:text-black">
+          Explore Script Packs →
         </a>
       </div>
-    </div>
 
-    <!-- Commercial CTA Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-      <div>
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Scriptwriting</span>
-        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Scripts Built for Vocal Flow?</h2>
-        <p class="text-sm font-medium text-black max-w-xl">
-          We write research-backed video essays and presenter scripts read-tested with a stopwatch to guarantee comfortable, conversational rhythm.
-        </p>
+      <!-- Bottom Return Button -->
+      <div class="mt-8">
+        <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn uppercase tracking-wider">
+          ← Back to Free Tools
+        </a>
       </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
-        Explore Script Packs →
-      </a>
-    </div>
 
-    <!-- Bottom Return Button -->
-    <div class="mt-8">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
-        ← Back to Free Tools
-      </a>
-    </div>
+    </div><!-- /.tool-content-shell -->
   </main>
 
   <!-- Universal Footer -->
-  <footer class="border-t-4 border-black py-14 mt-auto bg-[#D6E4EE]">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317; background-color: #D6E4EE !important;">
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -538,6 +620,7 @@
               height="50" 
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
               class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
             />
           </a>
@@ -547,27 +630,21 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span style="color: #111317 !important;" class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
+          <span class="studio-badge bg-[#F8D000] text-black font-bold uppercase" style="background-color: #F8D000 !important; color: #111317 !important;">
             ⚡ 100% Free Client-Side Tools
           </span>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
         </div>
@@ -576,41 +653,46 @@
       <!-- 4-Column Structured Link Directory -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono text-black">NEW</span></a></li>
-            <li><a href="/tools/title-checker" class="hover:underline font-bold text-black">YouTube Title Checker</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
+              </a>
+            </li>
             <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
             <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
             <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
             <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
             <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
             <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
             <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
             <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
             <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
@@ -621,15 +703,15 @@
         </div>
 
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors text-black">
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm text-black" style="background-color: #F0F2F5 !important;">
               ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
@@ -640,8 +722,8 @@
         </div>
       </div>
 
-      <!-- Bottom Legal Bar -->
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+      <!-- Bottom Legal & Copyright Bar -->
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
           <a href="/sitemap" class="hover:underline">Sitemap</a>
@@ -650,6 +732,7 @@
           <a href="/contact" class="hover:underline">Support Desk</a>
         </div>
       </div>
+
     </div>
   </footer>
 
@@ -730,7 +813,7 @@ This is complementary color contrast. Orange and blue sit directly opposite each
     function startRehearsal() {
       isRunning = true;
       timerBtn.innerText = "⏹ Stop Rehearsal";
-      timerBtn.className = "bg-[#FF5A1F] text-white font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider";
+      timerBtn.className = "bg-[#FF5A1F] text-white font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl studio-btn tracking-wider";
 
       timerInterval = setInterval(() => {
         seconds++;
@@ -751,7 +834,7 @@ This is complementary color contrast. Orange and blue sit directly opposite each
       isRunning = false;
       clearInterval(timerInterval);
       timerBtn.innerText = "▶ Start Rehearsal";
-      timerBtn.className = "bg-[#F8D000] text-black font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider";
+      timerBtn.className = "bg-[#F8D000] text-black font-black brand-font text-xs uppercase py-3 px-6 border-[1.5px] border-black rounded-xl studio-btn tracking-wider";
 
       const words = updateWordCount();
       if (seconds > 3 && words > 0) {
@@ -776,25 +859,6 @@ This is complementary color contrast. Orange and blue sit directly opposite each
         }
       }
     }
-
-    // Theme Toggle Logic
-    const toggleBtns = [
-      document.getElementById('theme-toggle'),
-      document.getElementById('theme-toggle-mobile')
-    ].filter(Boolean);
-
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark');
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    });
   </script>
 </body>
 </html>
