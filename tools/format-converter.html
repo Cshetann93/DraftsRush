@@ -249,7 +249,7 @@
     .bg-ink { background-color: #111317 !important; }
   
 /* Batch 4 — Shot List hero system */
-.prod-hero{width:100vw;position:relative;left:50%;margin-left:-50vw;padding:clamp(42px,6vw,78px) 24px 28px;background:#D6E0E8;border-bottom:1px solid #B6C4D0;margin-top:-1px;margin-bottom:0}
+.prod-hero{width:100vw;position:relative;left:50%;margin-left:-50vw;padding:clamp(54px,7vw,88px) 24px 48px;background:#D6E0E8;border-bottom:1px solid #B6C4D0;margin-top:0;margin-bottom:0;scroll-margin-top:96px}
 .prod-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.78fr);gap:clamp(28px,5vw,76px);align-items:center}
 .prod-eyebrow,.prod-meta,.prod-art-label,.prod-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#526273}
 .prod-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.prod-eyebrow span{width:8px;height:8px;border-radius:50%;background:#B79B00;box-shadow:0 0 0 5px rgba(183,155,0,.14)}
@@ -265,9 +265,14 @@
 .prod-clapper-lines{display:flex;gap:8px;margin-top:12px}.prod-clapper-lines span{height:5px;background:#8A98A7;flex:1}
 .prod-footer{border-top:1px solid rgba(255,255,255,.25);padding-top:13px;display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#D3D8DE}
 .prod-workspace{max-width:1180px;margin:0 auto;padding:0 0 64px;width:calc(100% - 40px)}
+    .studio-header{flex-shrink:0}
+    #tool-interface{scroll-margin-top:96px}
+    .tool-seo-intro{margin:0 0 28px!important;padding:22px 24px;background:#F8F9FA;border:1px solid #CBD2DA;border-radius:0 0 14px 14px;color:#303844!important;line-height:1.75!important}
+    .prod-tool-content{padding-bottom:20px}
+    .prod-tool-content>div.mb-6{background:#fff;border:1px solid #CBD2DA;border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(17,19,23,.04)}
 .prod-workspace>div:first-child{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0!important}
 .prod-workspace .prod-hero{margin-bottom:0}
-@media(max-width:760px){.prod-hero{padding:38px 20px 24px}.prod-hero-inner{grid-template-columns:1fr;gap:28px}.prod-art{min-height:230px}.prod-hero h1{font-size:clamp(38px,11vw,54px)}.prod-workspace{width:calc(100% - 24px);padding:0 0 48px}}
+@media(max-width:760px){.prod-hero{padding:34px 20px 28px}.prod-hero-inner{grid-template-columns:1fr;gap:28px}.prod-art{min-height:230px}.prod-hero h1{font-size:clamp(38px,11vw,54px)}.prod-workspace{width:calc(100% - 24px);padding:0 0 48px}.tool-seo-intro{padding:18px 16px!important}.prod-tool-content>div.mb-6{padding:18px 14px;border-radius:12px}}
 
 
 /* Batch 4 readability guard: these redesigned pages use a light editorial workspace. */
