@@ -38,6 +38,19 @@
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .brutal-box { box-shadow: 4px 4px 0px #111317; }
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
+    /* Keep the formatter's content column comfortably readable on wide screens. */
+    main.max-w-5xl {
+      width: calc(100% - 40px) !important;
+      max-width: 1180px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    @media (max-width: 640px) {
+      main.max-w-5xl {
+        width: calc(100% - 24px) !important;
+      }
+    }
+
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
 
     /* Pill Toggle Switch */
