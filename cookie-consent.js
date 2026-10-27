@@ -5,6 +5,27 @@
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
+  function addConsentStyles() {
+    if (document.getElementById('dr-consent-styles')) return;
+    var style = document.createElement('style');
+    style.id = 'dr-consent-styles';
+    style.textContent = `
+      #dr-consent-banner{position:fixed!important;left:20px!important;right:20px!important;bottom:20px!important;top:auto!important;z-index:99999!important;width:auto!important;max-width:560px!important;margin:0 auto!important;padding:28px!important;box-sizing:border-box!important;background:#fff!important;color:#17191f!important;border:1px solid #e5e7eb!important;border-radius:20px!important;box-shadow:0 18px 60px rgba(17,19,23,.20),0 3px 12px rgba(17,19,23,.06)!important;font:14px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;text-align:left!important}
+      #dr-consent-banner .dr-consent-eyebrow{margin:0 0 10px!important;color:#6b7280!important;font-size:11px!important;font-weight:750!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+      #dr-consent-banner .dr-consent-copy{margin:0 0 14px!important;color:#525866!important;font-size:14px!important;line-height:1.7!important}
+      #dr-consent-banner .dr-consent-policy{display:inline-block!important;margin:0 0 22px!important;color:#17191f!important;font-size:13px!important;font-weight:700!important;text-decoration:underline!important;text-underline-offset:3px!important}
+      #dr-consent-banner .dr-consent-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;align-items:center!important}
+      #dr-consent-banner .dr-consent-button{min-height:46px!important;padding:12px 19px!important;border:1px solid #d1d5db!important;border-radius:999px!important;background:#fff!important;color:#17191f!important;font:650 13px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;cursor:pointer!important;transition:background .18s ease,border-color .18s ease,transform .18s ease!important}
+      #dr-consent-banner .dr-consent-button:hover{background:#f4f5f7!important;border-color:#9ca3af!important;transform:translateY(-1px)!important}
+      #dr-consent-banner .dr-consent-button-primary{background:#f8d000!important;border-color:#f8d000!important}
+      #dr-consent-banner .dr-consent-button-primary:hover{background:#eac400!important;border-color:#eac400!important}
+      #dr-consent-banner button:focus-visible,#dr-consent-banner a:focus-visible,#dr-consent-manage:focus-visible{outline:3px solid #315efb!important;outline-offset:3px!important}
+      @media(max-width:600px){#dr-consent-banner{left:12px!important;right:12px!important;bottom:12px!important;padding:22px!important;border-radius:17px!important}#dr-consent-banner .dr-consent-actions{display:grid!important;grid-template-columns:1fr!important}#dr-consent-banner .dr-consent-button{width:100%!important;min-height:48px!important}}
+      @media(prefers-reduced-motion:reduce){#dr-consent-banner .dr-consent-button{transition:none!important}}
+    `;
+    document.head.appendChild(style);
+  }
+
   function updateConsent(choice) {
     var granted = choice === 'accepted';
     window.gtag('consent', 'update', {
@@ -54,31 +75,40 @@
       } catch (e) {}
     }
     if (document.getElementById('dr-consent-banner')) return;
+    addConsentStyles();
     var banner = document.createElement('section');
     banner.id = 'dr-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Privacy and cookie choices');
     banner.setAttribute('aria-live', 'polite');
-    banner.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:680px;margin:0 auto;background:#fff;color:#17191f;border:1px solid rgba(17,19,23,.1);border-radius:22px;padding:clamp(20px,3vw,28px);box-shadow:0 24px 70px rgba(17,19,23,.2),0 4px 14px rgba(17,19,23,.06);font:14px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-sizing:border-box';
+    banner.setAttribute('aria-modal', 'true');
+
+    var eyebrow = document.createElement('p');
+    eyebrow.className = 'dr-consent-eyebrow';
+    eyebrow.textContent = 'Your privacy matters';
+
     var copy = document.createElement('p');
-    copy.style.cssText = 'margin:0 0 16px;color:#525866;font-size:14px;line-height:1.7';
-    copy.textContent = 'DraftsRush uses necessary storage to operate this site. With your permission, analytics and advertising technologies may also be used. You can reject optional technologies or accept them. Read our Privacy Policy for details.';
+    copy.className = 'dr-consent-copy';
+    copy.textContent = 'DraftsRush uses essential storage to run this site. If you agree, we’ll also use analytics and advertising cookies to improve the experience and measure performance. You can change your choice at any time.';
+
     var policy = document.createElement('a');
+    policy.className = 'dr-consent-policy';
     policy.href = '/privacy';
-    policy.textContent = 'Privacy Policy';
-    policy.style.cssText = 'display:inline-flex;align-items:center;color:#17191f;font-weight:650;text-decoration:underline;text-underline-offset:3px;margin-bottom:20px;font-size:13px';
+    policy.textContent = 'Read our Privacy Policy';
+
     var actions = document.createElement('div');
-    actions.style.cssText = 'display:flex;flex-wrap:wrap;gap:10px;align-items:center';
+    actions.className = 'dr-consent-actions';
     function button(label, action, primary) {
       var b = document.createElement('button');
       b.type = 'button';
+      b.className = 'dr-consent-button' + (primary ? ' dr-consent-button-primary' : '');
       b.textContent = label;
-      b.style.cssText = 'min-height:44px;border:1px solid ' + (primary ? '#f8d000' : 'rgba(17,19,23,.16)') + ';border-radius:999px;padding:11px 18px;font:650 13px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;background:' + (primary ? '#f8d000' : '#f7f8fa') + ';color:#17191f;transition:transform .18s ease,box-shadow .18s ease,background .18s ease';
       b.addEventListener('click', action);
       actions.appendChild(b);
     }
     button('Reject optional', function () { updateConsent('rejected'); }, false);
     button('Accept all', function () { updateConsent('accepted'); }, true);
+    banner.appendChild(eyebrow);
     banner.appendChild(copy);
     banner.appendChild(policy);
     banner.appendChild(actions);
@@ -86,6 +116,7 @@
   }
 
   function init() {
+    addConsentStyles();
     renderBanner(false);
     showManageLink();
   }
