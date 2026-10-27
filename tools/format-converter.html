@@ -171,30 +171,12 @@
     .prod-clapper-title{font:900 clamp(18px,2.5vw,26px) 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-align:center}
     .prod-clapper-lines{display:flex;gap:8px;margin-top:12px}.prod-clapper-lines span{height:5px;background:#8A98A7;flex:1}
     .prod-footer{border-top:1px solid rgba(255,255,255,.25);padding-top:13px;display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#D3D8DE}
-    .prod-workspace{max-width:1180px;margin:0 auto;padding:0 0 64px;width:calc(100% - 40px)}
-    .prod-workspace>div:first-child{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0!important}
-    .prod-workspace .prod-hero{margin-bottom:0}
-    @media(max-width:760px){.prod-hero{padding:38px 20px 24px}.prod-hero-inner{grid-template-columns:1fr;gap:28px}.prod-art{min-height:230px}.prod-hero h1{font-size:clamp(38px,11vw,54px)}.prod-workspace{width:calc(100% - 24px);padding:0 0 48px}}
+    @media(max-width:760px){.prod-hero{padding:38px 20px 24px}.prod-hero-inner{grid-template-columns:1fr;gap:28px}.prod-art{min-height:230px}.prod-hero h1{font-size:clamp(38px,11vw,54px)}}
 
-    /* Fixed Workspace Content & Block Spacing */
-    .tool-body-wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding-top: clamp(28px, 4vw, 44px);
-    }
-    .tool-seo-intro {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #272c34;
-      font-weight: 500;
-      margin-bottom: 28px;
-    }
-    .tool-card-box {
-      border: 1.5px solid rgba(17, 19, 23, 0.85);
-      border-radius: 18px;
-      background: #FFFFFF;
-      box-shadow: 0 6px 16px -4px rgba(17, 19, 23, 0.06);
-    }
+    /* Script Breakdown Reference Shell System (Matching reference page) */
+    .tool-content-shell{width:100%;max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,64px) 22px clamp(56px,7vw,96px);box-sizing:border-box}
+    .tool-content-shell>.max-w-6xl,.tool-content-shell>.max-w-5xl,.tool-content-shell>.max-w-4xl{max-width:100%!important}
+    @media(max-width:640px){.tool-content-shell{padding:30px 16px 56px}}
   </style>
 </head>
 <body class="tool-page-refresh text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
@@ -318,60 +300,62 @@
 
   <main class="flex-grow w-full">
     <!-- Hero Banner (UNTOUCHED) -->
-    <div class="prod-workspace">
-      <section class="prod-hero" aria-labelledby="tool-page-title">
-        <div class="prod-hero-inner">
-          <div class="prod-copy">
-            <div class="prod-eyebrow"><span></span>PRODUCTION WORKFLOW / 01</div>
-            <h1 id="tool-page-title">AV Script Formatter<em>Audio meets visual.</em></h1>
-            <p class="prod-lede">Turn voiceover copy into a production-ready two-column AV script. Keep spoken lines, visual cues, and editor notes aligned in one readable format.</p>
-            <div class="prod-meta"><span>FREE AV FORMATTER</span><i></i><span>VIDEO PRODUCTION</span></div>
-            <a class="prod-cta" href="#tool-interface">Start using the tool <span aria-hidden="true">↘</span></a>
-          </div>
-          <div class="prod-art" aria-hidden="true">
-            <div class="prod-art-label"><span>DRAFTSRUSH / FIELD NOTES</span><span>01</span></div>
-            <div class="prod-clapper"><div class="prod-clapper-top"></div><div class="prod-clapper-title">AV SCRIPT</div><div class="prod-clapper-lines"><span></span><span></span><span></span></div></div>
-            <div class="prod-footer"><span>AUDIO / VISUAL</span><span>SCRIPT FORMAT / EDITOR HANDOFF</span></div>
-          </div>
+    <section class="prod-hero" aria-labelledby="tool-page-title">
+      <div class="prod-hero-inner">
+        <div class="prod-copy">
+          <div class="prod-eyebrow"><span></span>PRODUCTION WORKFLOW / 01</div>
+          <h1 id="tool-page-title">AV Script Formatter<em>Audio meets visual.</em></h1>
+          <p class="prod-lede">Turn voiceover copy into a production-ready two-column AV script. Keep spoken lines, visual cues, and editor notes aligned in one readable format.</p>
+          <div class="prod-meta"><span>FREE AV FORMATTER</span><i></i><span>VIDEO PRODUCTION</span></div>
+          <a class="prod-cta" href="#tool-interface">Start using the tool <span aria-hidden="true">↘</span></a>
         </div>
-      </section>
-    </div>
-
-    <!-- Tool Interface & Content (Fixed Spacing and Boundaries) -->
-    <div class="tool-body-wrap px-5 sm:px-6 pb-20">
-      
-      <!-- Introductory SEO Text (Now visible below hero) -->
-      <div id="tool-interface" class="tool-seo-intro">
-        <p>Learn how to format an audio visual script for commercials, YouTube videos, explainers, and branded content. Use the AV script formatter to organise narration alongside visuals and production cues.</p>
+        <div class="prod-art" aria-hidden="true">
+          <div class="prod-art-label"><span>DRAFTSRUSH / FIELD NOTES</span><span>01</span></div>
+          <div class="prod-clapper"><div class="prod-clapper-top"></div><div class="prod-clapper-title">AV SCRIPT</div><div class="prod-clapper-lines"><span></span><span></span><span></span></div></div>
+          <div class="prod-footer"><span>AUDIO / VISUAL</span><span>SCRIPT FORMAT / EDITOR HANDOFF</span></div>
+        </div>
       </div>
+    </section>
 
-      <!-- Main Formatter Card Box -->
-      <section class="tool-card-box p-6 md:p-8 mb-10">
-        <!-- Input Section with Toolbar -->
-        <div class="mb-6">
-          <div class="flex items-center justify-between mb-3">
+    <!-- Content Shell (Modeled after script-breakdown-sheet) -->
+    <div class="tool-content-shell" id="tool-interface">
+
+      <!-- Interactive Tool Container -->
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-6 md:p-8 brutal-box mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Film Production Utility</span>
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-mono font-bold uppercase">100% Free Client-Side</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black brand-font tracking-tight mt-1 mb-2">Dual-Column AV Script Formatter</h2>
+        <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed mb-6">
+          Learn how to format an audio visual script for commercials, YouTube videos, explainers, and branded content. Use the AV script formatter to organise narration alongside visuals and production cues.
+        </p>
+
+        <!-- Input Box -->
+        <div class="border-[1.5px] border-black rounded-xl bg-white p-5 brutal-box mb-6 space-y-3">
+          <div class="flex items-center justify-between border-b border-gray-300 pb-2">
             <label for="script-input" class="block font-black text-xs uppercase tracking-wider text-black">Paste Voiceover Paragraphs</label>
             <div class="flex items-center gap-3">
-              <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
                 ⚡ Try an Example
               </button>
-              <button id="copy-table-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
+              <button id="copy-table-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#D32F2F] transition-colors">
                 📋 Copy AV Script
               </button>
             </div>
           </div>
-          <textarea id="script-input" rows="7" placeholder="Paste your script text here. Separate each beat or visual moment with a new line or paragraph..." class="w-full border-[1.5px] border-black rounded-xl p-4 font-medium text-sm bg-[#FAFBFC] focus:bg-white focus:outline-none focus:ring-2 focus:ring-black transition-all"></textarea>
+          <textarea id="script-input" rows="7" placeholder="Paste your script text here. Separate each beat or visual moment with a new line or paragraph..." class="w-full border-[1.5px] border-black rounded-xl p-4 font-mono text-sm bg-[#FAF9F5] focus:outline-none focus:bg-white"></textarea>
         </div>
 
         <!-- Action Button -->
-        <div class="mb-8">
-          <button id="convert-btn" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-4 border-[1.5px] border-black rounded-xl studio-btn tracking-wider">
+        <div class="mb-6">
+          <button id="convert-btn" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
             Convert to Dual-Column AV Layout →
           </button>
         </div>
 
-        <!-- Two-Column Output Table -->
-        <div class="border-[1.5px] border-black rounded-xl overflow-hidden bg-white shadow-sm">
+        <!-- Output Table -->
+        <div class="border-[1.5px] border-black rounded-xl bg-white brutal-box overflow-hidden">
           <div class="bg-black text-white p-3.5 flex justify-between items-center font-mono text-xs uppercase font-bold">
             <span>Dual-Column Production View</span>
             <span id="row-count">0 Rows Generated</span>
@@ -393,78 +377,78 @@
             </table>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- AV Format Architecture Reference Card -->
-      <section class="tool-card-box p-6 md:p-8 mb-10 space-y-6">
+      <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
         <div class="border-b-2 border-black pb-3">
-          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase rounded">Production Standards</span>
-          <h2 class="text-2xl md:text-3xl font-black brand-font mt-2 text-black">Why Digital Video Uses Dual-Column Formatting</h2>
+          <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Standards</span>
+          <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Why Digital Video Uses Dual-Column Formatting</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-800 leading-relaxed font-medium">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
           <div>
-            <h3 class="font-black brand-font text-base text-black mb-1.5">Standard Screenplay vs. AV Format</h3>
+            <h3 class="font-black brand-font text-base text-black mb-1">Standard Screenplay vs. AV Format</h3>
             <p>
               Standard Courier 12pt format is designed for actors on a soundstage. But for YouTube, video essays, and commercials, the editor needs to know what visual corresponds to every exact spoken phrase. Dual-column eliminates guesswork by anchoring voiceover lines directly opposite B-roll instructions.
             </p>
           </div>
           <div>
-            <h3 class="font-black brand-font text-base text-black mb-1.5">Syncing Sound and Sight</h3>
+            <h3 class="font-black brand-font text-base text-black mb-1">Syncing Sound and Sight</h3>
             <p>
               When an editor receives a dual-column sheet, they can read down the left side to compile stock assets, 3D renders, and text pop-ups before voiceover recordings even finish. It cuts editing turnaround time by up to 50%.
             </p>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Related Creator Tools -->
-      <section class="tool-card-box bg-[#FFF6CF] p-6 md:p-8 mb-10 space-y-4">
-        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-2">
           <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Production Tools</h3>
-          <span class="font-mono text-xs font-bold bg-black text-white px-2.5 py-0.5 rounded">STUDIO DESK</span>
+          <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
         </div>
         <p class="text-xs font-medium text-gray-800 leading-relaxed">
           Complete your video pre-production workflow with our client-side utilities:
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-          <a href="/tools/title-checker" class="p-4 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between shadow-sm">
+          <a href="/tools/title-checker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
             <span>🔍 YouTube Title Checker</span>
-            <span class="text-[11px] text-gray-700 mt-2 font-sans font-medium">Check title character lengths & mobile cut-offs →</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Check title character lengths & mobile cut-offs →</span>
           </a>
-          <a href="/tools/script-timer" class="p-4 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between shadow-sm">
+          <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
             <span>⏱ Script Pacing Timer</span>
-            <span class="text-[11px] text-gray-700 mt-2 font-sans font-medium">Calculate total spoken duration & WPM rhythm →</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate total spoken duration & WPM rhythm →</span>
           </a>
-          <a href="/script-editor" class="p-4 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between shadow-sm">
+          <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
             <span>📝 Online Script Editor</span>
-            <span class="text-[11px] text-gray-700 mt-2 font-sans font-medium">Draft screenplays & convert plain text stories →</span>
+            <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft screenplays & convert plain text stories →</span>
           </a>
         </div>
-      </section>
+      </div>
 
       <!-- Commercial CTA Strip -->
-      <section class="tool-card-box bg-[#F8D000] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
+      <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
         <div>
-          <span class="bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase rounded">From Draft to Shooting Floor</span>
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">From Draft to Shooting Floor</span>
           <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Production AV Scripts Written?</h2>
-          <p class="text-sm font-semibold text-black max-w-xl leading-relaxed">
+          <p class="text-sm font-medium text-black max-w-xl">
             We write research-backed video essays and short-form scripts with calculated pacing, exact camera cutaways, and B-roll notes.
           </p>
         </div>
-        <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3.5 border-[1.5px] border-black rounded-xl studio-btn whitespace-nowrap text-xs uppercase hover:bg-white hover:text-black">
+        <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
           Explore Script Packs →
         </a>
-      </section>
+      </div>
 
       <!-- Bottom Return Button -->
-      <div>
-        <a href="/tools" class="inline-flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-5 py-3 border-[1.5px] border-black rounded-xl studio-btn uppercase tracking-wider">
+      <div class="mt-8">
+        <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
           ← Back to Free Tools
         </a>
       </div>
 
-    </div>
+    </div><!-- /.tool-content-shell -->
   </main>
 
   <!-- Universal Footer (UNTOUCHED) -->
@@ -610,7 +594,7 @@
     </div>
   </footer>
 
-  <!-- Script Conversion Logic (UNTOUCHED) -->
+  <!-- Interactive Script Conversion Logic -->
   <script>
     const scriptInput = document.getElementById('script-input');
     const convertBtn = document.getElementById('convert-btn');
