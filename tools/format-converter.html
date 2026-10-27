@@ -92,7 +92,71 @@
     }
 
     /* Keep the production formatter on its accessible light theme. */
-  </style>
+  
+/* AV Formatter content redesign — scoped below the existing hero only */
+.av-workbench{background:#F1F3F6;color:#17191F;padding:clamp(32px,5vw,68px) 20px 76px;border-top:1px solid #C8D0D9}
+.av-content-wrap{max-width:1120px;width:100%;margin:0 auto}
+.av-intro-row{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:0 0 28px}
+.av-section-kicker{display:block;font:800 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;color:#657282;text-transform:uppercase;margin-bottom:10px}
+.av-intro-row h2,.av-info-heading h2,.av-related-heading h2,.av-service-cta h2{margin:0;color:#17191F;font:800 clamp(25px,3vw,36px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-.04em}
+.av-intro-row p{max-width:650px;margin:12px 0 0;color:#4B5563;font-size:15px;line-height:1.7}
+.av-step-mark{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-bottom:5px;color:#5B6572;font:700 10px 'JetBrains Mono',monospace}
+.av-step-mark i{display:block;width:24px;height:1px;background:#B5BEC8}
+.av-editor-panel,.av-output-panel{background:#fff;border:1px solid #C8D0D9;border-radius:16px;overflow:hidden;box-shadow:0 8px 26px rgba(20,27,35,.045)}
+.av-panel-head,.av-output-head{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid #E1E5EA}
+.av-panel-head>div:first-child,.av-output-head>div{display:flex;align-items:center;gap:11px;min-width:0}
+.av-panel-head label,.av-output-head h3{color:#17191F;font:800 14px/1.4 'Space Grotesk',sans-serif;margin:0}
+.av-panel-number{display:inline-grid;place-items:center;width:27px;height:27px;flex:0 0 27px;border-radius:50%;background:#F8D000;color:#17191F;font:800 10px 'JetBrains Mono',monospace}
+.av-panel-number-dark{background:#17191F;color:#fff}
+.av-toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.av-text-button{border:0;background:transparent;padding:7px 0;color:#303844;font:800 10px 'JetBrains Mono',monospace;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.av-text-button:hover{color:#806900}
+.av-script-input{display:block;width:100%;min-height:190px;resize:vertical;border:0!important;border-radius:0!important;outline:none!important;box-shadow:none!important;padding:22px!important;background:#fff!important;color:#17191F!important;font:500 15px/1.75 Inter,system-ui,sans-serif!important}
+.av-script-input::placeholder{color:#8A95A3;opacity:1}
+.av-script-input:focus{background:#FFFEF5!important;box-shadow:inset 0 0 0 2px #E8C400!important}
+.av-editor-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 22px;border-top:1px solid #E7EAF0;background:#FAFBFC;color:#657282;font:10px/1.5 'JetBrains Mono',monospace}
+.av-convert-button{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;margin:16px 0 28px;padding:18px 22px;border:1px solid #17191F;border-radius:12px;background:#F8D000;color:#17191F;font:800 12px/1.4 'JetBrains Mono',monospace;letter-spacing:.045em;text-transform:uppercase;box-shadow:0 4px 0 #17191F;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.av-convert-button:hover{transform:translateY(-2px);box-shadow:0 6px 0 #17191F}
+.av-convert-button:active{transform:translateY(1px);box-shadow:0 2px 0 #17191F}
+.av-output-head{background:#fff}
+.av-row-count{flex-shrink:0;color:#687382;font:700 10px 'JetBrains Mono',monospace;text-transform:uppercase}
+.av-table-scroll{width:100%;overflow-x:auto}
+.av-output-table{width:100%;border-collapse:collapse;text-align:left;color:#20252C;font-size:13px;line-height:1.65}
+.av-output-table th{width:50%;padding:14px 18px;background:#EEF1F5;color:#343E4A;font:800 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #D5DCE4}
+.av-output-table th+th,.av-output-table td+td{border-left:1px solid #D5DCE4}
+.av-output-table td{vertical-align:top;padding:18px;border-bottom:1px solid #E4E8ED;overflow-wrap:anywhere;white-space:normal;color:#343E4A}
+.av-output-table tbody tr:last-child td{border-bottom:0}
+.av-output-table tbody tr:hover td{background:#FFFBE5}
+.av-output-table .av-empty-row td{color:#77818E;font-style:italic}
+.av-output-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 18px;background:#FAFBFC;border-top:1px solid #E1E5EA;color:#77818E;font:9px/1.5 'JetBrains Mono',monospace}
+.av-info-section{margin:42px 0 0;padding:30px;background:#fff;border:1px solid #D2D8E0;border-radius:16px}
+.av-info-heading{padding-bottom:20px;border-bottom:1px solid #DDE2E8}
+.av-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:23px}
+.av-info-index{display:block;margin-bottom:10px;color:#8A7500;font:800 10px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.av-info-grid h3{margin:0 0 8px;color:#17191F;font:800 17px/1.3 'Space Grotesk',sans-serif}
+.av-info-grid p{margin:0;color:#56616E;font-size:14px;line-height:1.75}
+.av-related-section{margin:26px 0 0;padding:28px;background:#FFF8D7;border:1px solid #E8D98B;border-radius:16px}
+.av-related-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:20px}
+.av-related-stamp{display:inline-block;padding:7px 9px;background:#17191F;color:#fff;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.06em;white-space:nowrap}
+.av-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.av-related-grid a{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:148px;padding:17px;background:#fff;border:1px solid #E0D8B7;border-radius:11px;color:#17191F;text-decoration:none;transition:transform .15s,border-color .15s}
+.av-related-grid a:hover{transform:translateY(-2px);border-color:#B69B00}
+.av-related-number{color:#8A7500;font:800 10px 'JetBrains Mono',monospace;margin-bottom:15px}
+.av-related-grid strong{font:800 14px/1.35 'Space Grotesk',sans-serif}
+.av-related-grid a>span:nth-of-type(2){margin-top:7px;color:#606B78;font-size:12px;line-height:1.55}
+.av-related-grid a>b{position:absolute;right:15px;top:14px;color:#8A7500}
+.av-service-cta{display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:26px;padding:28px 30px;background:#F8D000;border:1px solid #17191F;border-radius:16px}
+.av-service-cta .av-section-kicker{color:#4D4300}
+.av-service-cta h2{font-size:clamp(23px,3vw,30px)}
+.av-service-cta p{margin:10px 0 0;color:#302B17;font-size:14px;line-height:1.65}
+.av-service-cta>a{display:inline-flex;align-items:center;justify-content:center;gap:14px;flex-shrink:0;padding:13px 16px;background:#17191F;color:#fff;text-decoration:none;border-radius:9px;font:800 11px 'JetBrains Mono',monospace;text-transform:uppercase}
+.av-service-cta>a:hover{background:#343A43}
+.av-back-link{padding-top:26px}
+.av-back-link a{color:#4E5966;font:800 10px 'JetBrains Mono',monospace;text-transform:uppercase;text-underline-offset:4px}
+@media(max-width:760px){.av-workbench{padding:32px 14px 48px}.av-intro-row{align-items:flex-start}.av-step-mark{display:none}.av-panel-head{align-items:flex-start;flex-direction:column}.av-toolbar{gap:15px}.av-script-input{min-height:170px;padding:17px!important}.av-editor-foot{padding:11px 15px}.av-convert-button{padding:16px}.av-output-head{align-items:flex-start;flex-direction:column}.av-output-table{min-width:570px}.av-info-section,.av-related-section{padding:21px 17px}.av-info-grid{grid-template-columns:1fr;gap:22px}.av-related-heading{align-items:flex-start;flex-direction:column}.av-related-grid{grid-template-columns:1fr}.av-related-grid a{min-height:120px}.av-service-cta{align-items:flex-start;flex-direction:column;padding:23px 20px}.av-service-cta>a{width:100%}}
+@media(prefers-reduced-motion:reduce){.av-convert-button,.av-related-grid a{transition:none}}
+
+</style>
   <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
   <link rel="stylesheet" href="/assets/tools-suite-refresh.css">
 <!-- Studio Core Classes & Sitewide Styles -->
@@ -333,128 +397,72 @@
         </div>
       </div>
     </section>
-    <div id="tool-interface" class="prod-tool-content">
-      <p class="tool-seo-intro mb-6">Learn how to format an audio visual script for commercials, YouTube videos, explainers, and branded content. Use the AV script formatter to organise narration alongside visuals and production cues.</p>
-
-
-      <!-- Input Section with Toolbar -->
-      <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <label class="block font-black text-xs uppercase tracking-wider">Paste Voiceover Paragraphs</label>
-          <div class="flex items-center gap-3">
-            <button id="sample-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              ⚡ Try an Example
-            </button>
-            <button id="copy-table-btn" type="button" class="text-xs font-mono font-bold uppercase underline hover:text-[#FF5A1F] transition-colors">
-              📋 Copy AV Script
-            </button>
+    <section id="tool-interface" class="av-workbench" aria-labelledby="av-workbench-title">
+      <div class="av-content-wrap">
+        <div class="av-intro-row">
+          <div>
+            <span class="av-section-kicker">FREE PRODUCTION TOOL</span>
+            <h2 id="av-workbench-title">Build your AV script</h2>
+            <p>Paste your voiceover, split it into beats, and generate a clear visual-and-audio production sheet.</p>
           </div>
+          <div class="av-step-mark" aria-hidden="true"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
         </div>
-        <textarea id="script-input" rows="7" placeholder="Paste your script text here. Separate each beat or visual moment with a new line or paragraph..." class="w-full border-[1.5px] border-black rounded-xl p-4 font-medium text-sm bg-white focus:outline-none focus:bg-[#FFFDE6]"></textarea>
-      </div>
 
-      <!-- Action Button -->
-      <div class="mb-8">
-        <button id="convert-btn" class="w-full bg-[#F8D000] text-black font-black brand-font text-sm uppercase px-6 py-3.5 border-[1.5px] border-black rounded-xl brutal-box brutal-btn tracking-wider">
-          Convert to Dual-Column AV Layout →
-        </button>
-      </div>
-
-      <!-- Two-Column Output Table -->
-      <div class="border-[1.5px] border-black rounded-2xl bg-white brutal-box overflow-hidden">
-        <div class="bg-black text-white p-3 flex justify-between items-center font-mono text-xs uppercase font-bold">
-          <span>Dual-Column Production View</span>
-          <span id="row-count">0 Rows Generated</span>
+        <div class="av-editor-panel">
+          <div class="av-panel-head">
+            <div><span class="av-panel-number">01</span><label for="script-input">Voiceover script</label></div>
+            <div class="av-toolbar">
+              <button id="sample-btn" type="button" class="av-text-button">Try an example <span aria-hidden="true">↗</span></button>
+              <button id="copy-table-btn" type="button" class="av-text-button">Copy AV script <span aria-hidden="true">▣</span></button>
+            </div>
+          </div>
+          <textarea id="script-input" rows="7" placeholder="Paste your script here. Use a new line or paragraph for each beat or visual moment..." class="av-script-input"></textarea>
+          <div class="av-editor-foot"><span>Tip: separate each new scene, beat, or idea with a line break.</span><span>TEXT → PRODUCTION SHEET</span></div>
         </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs font-medium">
-            <thead class="bg-[#F0F2F5] text-black font-mono uppercase border-b-2 border-black">
-              <tr>
-                <th class="p-3 border-r-2 border-black w-1/2">Visual Cue & Camera Direction (Left Column)</th>
-                <th class="p-3 w-1/2">Spoken Audio & Voiceover (Right Column)</th>
-              </tr>
-            </thead>
-            <tbody id="av-tbody" class="divide-y-2 divide-black">
-              <tr>
-                <td class="p-4 border-r-2 border-black text-gray-500 font-mono italic">Awaiting script input above...</td>
-                <td class="p-4 text-gray-500 font-mono italic">Click 'Convert' or 'Try an Example' to build your layout.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
 
-    <!-- AV Format Architecture Reference Card -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-white p-6 md:p-8 brutal-box mb-8 space-y-6">
-      <div class="border-b-2 border-black pb-3">
-        <span class="bg-[#F8D000] text-black border border-black px-2 py-0.5 text-xs font-bold brand-font uppercase">Production Standards</span>
-        <h2 class="text-2xl md:text-3xl font-black brand-font mt-2">Why Digital Video Uses Dual-Column Formatting</h2>
-      </div>
+        <button id="convert-btn" class="av-convert-button" type="button"><span>Convert to dual-column AV layout</span><span aria-hidden="true">→</span></button>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed font-medium">
-        <div>
-          <h3 class="font-black brand-font text-base text-black mb-1">Standard Screenplay vs. AV Format</h3>
-          <p>
-            Standard Courier 12pt format is designed for actors on a soundstage. But for YouTube, video essays, and commercials, the editor needs to know what visual corresponds to every exact spoken phrase. Dual-column eliminates guesswork by anchoring voiceover lines directly opposite B-roll instructions.
-          </p>
-        </div>
-        <div>
-          <h3 class="font-black brand-font text-base text-black mb-1">Syncing Sound and Sight</h3>
-          <p>
-            When an editor receives a dual-column sheet, they can read down the left side to compile stock assets, 3D renders, and text pop-ups before voiceover recordings even finish. It cuts editing turnaround time by up to 50%.
-          </p>
-        </div>
-      </div>
-    </div>
+        <section class="av-output-panel" aria-labelledby="av-output-title">
+          <div class="av-output-head">
+            <div><span class="av-panel-number av-panel-number-dark">02</span><h3 id="av-output-title">Production sheet</h3></div>
+            <span id="row-count" class="av-row-count">0 rows generated</span>
+          </div>
+          <div class="av-table-scroll">
+            <table class="av-output-table">
+              <thead><tr><th scope="col">Visual cue &amp; camera direction</th><th scope="col">Spoken audio &amp; voiceover</th></tr></thead>
+              <tbody id="av-tbody">
+                <tr class="av-empty-row"><td>Visual direction will appear here.</td><td>Your voiceover lines will appear here. Choose “Try an example” or paste your own script and convert it.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="av-output-foot"><span>EDITOR HANDOFF / TWO-COLUMN FORMAT</span><span>Use “Copy AV Script” to copy the generated sheet.</span></div>
+        </section>
 
-    <!-- Related Creator Tools (Interlinking Matrix) -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 brutal-box mb-8 space-y-4">
-      <div class="flex items-center justify-between border-b-2 border-black pb-2">
-        <h3 class="font-black brand-font text-sm uppercase tracking-wider text-black">Related Production Tools</h3>
-        <span class="font-mono text-xs font-bold bg-black text-white px-2 py-0.5">STUDIO DESK</span>
-      </div>
-      <p class="text-xs font-medium text-gray-800 leading-relaxed">
-        Complete your video pre-production workflow with our client-side utilities:
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-        <a href="/tools/title-checker" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>🔍 YouTube Title Checker</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Check title character lengths & mobile cut-offs →</span>
-        </a>
-        <a href="/tools/script-timer" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>⏱ Script Pacing Timer</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Calculate total spoken duration & WPM rhythm →</span>
-        </a>
-        <a href="/script-editor" class="p-3 bg-white border-[1.5px] border-black rounded-xl hover:bg-[#F8D000] transition-colors font-bold text-black flex flex-col justify-between">
-          <span>📝 Online Script Editor</span>
-          <span class="text-[10px] text-gray-600 mt-1 font-sans">Draft screenplays & convert plain text stories →</span>
-        </a>
-      </div>
-    </div>
+        <section class="av-info-section" aria-labelledby="av-standards-title">
+          <div class="av-info-heading"><span class="av-section-kicker">WHY THIS FORMAT WORKS</span><h2 id="av-standards-title">One script. Two clear tracks.</h2></div>
+          <div class="av-info-grid">
+            <article><span class="av-info-index">A / VISUALS</span><h3>Plan the picture</h3><p>Use the visual column to note B-roll, screen recordings, camera moves, archive footage, graphics, and on-screen text.</p></article>
+            <article><span class="av-info-index">B / AUDIO</span><h3>Keep the words in sync</h3><p>Place each voiceover beat beside its visual direction so writers, editors, and producers can follow the same sequence.</p></article>
+          </div>
+        </section>
 
-    <!-- Commercial CTA Strip -->
-    <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-6 md:p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">From Draft to Shooting Floor</span>
-        <h2 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Need Production AV Scripts Written?</h2>
-        <p class="text-sm font-medium text-black max-w-xl">
-          We write research-backed video essays and short-form scripts with calculated pacing, exact camera cutaways, and B-roll notes.
-        </p>
-      </div>
-      <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn whitespace-nowrap text-sm uppercase">
-        Explore Script Packs →
-      </a>
-    </div>
+        <section class="av-related-section" aria-labelledby="av-related-title">
+          <div class="av-related-heading"><div><span class="av-section-kicker">KEEP YOUR WORKFLOW MOVING</span><h2 id="av-related-title">Related production tools</h2></div><span class="av-related-stamp">DRAFTSRUSH STUDIO</span></div>
+          <div class="av-related-grid">
+            <a href="/tools/title-checker"><span class="av-related-number">01</span><strong>YouTube Title Checker</strong><span>Check title length and mobile cut-offs.</span><b aria-hidden="true">↗</b></a>
+            <a href="/tools/script-timer"><span class="av-related-number">02</span><strong>Script Pacing Timer</strong><span>Estimate runtime from your spoken words.</span><b aria-hidden="true">↗</b></a>
+            <a href="/script-editor"><span class="av-related-number">03</span><strong>Online Script Editor</strong><span>Draft and organise your next screenplay.</span><b aria-hidden="true">↗</b></a>
+          </div>
+        </section>
 
-    <!-- Bottom Return Button -->
-    <div class="mt-12">
-      <a href="/tools" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase tracking-wider">
-        ← Back to Free Tools
-      </a>
-    </div>
-  </div>
-  </main>
+        <section class="av-service-cta">
+          <div><span class="av-section-kicker">FROM DRAFT TO SHOOTING FLOOR</span><h2>Need a production-ready script?</h2><p>Explore writing support for video essays, branded content, and short-form videos.</p></div>
+          <a href="/scripts">Explore script packs <span aria-hidden="true">→</span></a>
+        </section>
+        <div class="av-back-link"><a href="/tools">← Browse all free tools</a></div>
+      </div>
+    </section>
+</main>
 
   <!-- Universal Footer -->
   <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317">
