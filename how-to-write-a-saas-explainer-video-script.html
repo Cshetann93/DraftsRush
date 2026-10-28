@@ -28,50 +28,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: #E2E4E9; color: #111317; }
     h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .brutal-box { box-shadow: 4px 4px 0px #111317; }
     .brutal-box-lg { box-shadow: 8px 8px 0px #111317; }
     .brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #111317; }
     .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111317; }
-  </style>
 
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "How to Write a SaaS Explainer Video Script (With Template)",
-    "description": "A tactical scriptwriting guide breaking down 60-to-90-second B2B software explainer videos, dual-column AV scripting, UI motion cues, and conversion audits.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "DraftsRush",
-      "url": "https://www.draftsrush.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.draftsrush.com/drlogo.png"
-      }
-    },
-    "mainEntityOfPage": "https://www.draftsrush.com/how-to-write-a-saas-explainer-video-script"
-  }
-  </script>
-  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
-<!-- Studio Core Classes & Sitewide Styles -->
-  <style>
-    :root {
-      --bg-base: #E2E4E9;
-      --ink: #111317;
-      --brand-yellow: #F8D000;
-      --cta-yellow: #FFE600;
-      --surface-light: #F0F2F5;
-      --surface-blue: #D6E4EE;
-      --surface-cream: #FFF6CF;
-      --surface-mint: #E1F5E3;
-      --section-slate: #D4D7E1;
-      --section-steel: #CCD0DC;
-    }
-    .brand-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.028em; }
+    /* Studio Header & Navigation */
     .studio-header {
       background-color: rgba(248, 208, 0, 0.94);
       backdrop-filter: blur(14px);
@@ -110,12 +75,205 @@
       box-shadow: 0 12px 22px -6px rgba(17, 19, 23, 0.22);
     }
     .studio-btn:active { transform: translateY(0); }
-    .bg-surface-light { background-color: #F0F2F5 !important; }
-    .bg-surface-blue { background-color: #D6E4EE !important; }
-    .bg-brand-yellow { background-color: #F8D000 !important; }
-    .bg-cta-yellow { background-color: #FFE600 !important; }
-    .bg-ink { background-color: #111317 !important; }
+    .studio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      border: 1.5px solid #111317;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Shared Shot List Hero System */
+    .shot-hero {
+      width: 100%;
+      padding: clamp(42px, 6vw, 82px) 24px 28px;
+      background: #D6E0E8;
+      border-bottom: 1px solid #B6C4D0;
+    }
+    .shot-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
+      gap: clamp(32px, 6vw, 84px);
+      align-items: center;
+    }
+    .shot-eyebrow, .shot-meta, .shot-art-label, .shot-hero-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #526273;
+    }
+    .shot-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+    .shot-eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #B79B00;
+      box-shadow: 0 0 0 5px rgba(183, 155, 0, .14);
+    }
+    .shot-hero h1 {
+      margin: 0;
+      color: #15191F;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 900;
+    }
+    .shot-hero h1 em {
+      display: block;
+      margin-top: .08em;
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.06em;
+    }
+    .shot-lede {
+      max-width: 650px;
+      margin: 24px 0;
+      color: #465362;
+      font-size: clamp(16px, 1.6vw, 21px);
+      line-height: 1.6;
+    }
+    .shot-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      font-size: 9px;
+    }
+    .shot-meta i {
+      height: 1px;
+      width: 20px;
+      background: #9AA9B7;
+    }
+    .shot-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 15px 22px;
+      border-radius: 9999px;
+      background: #F8D000;
+      color: #15191F;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(20, 24, 30, .1);
+      transition: transform .2s;
+    }
+    .shot-cta:hover { transform: translateY(-2px); }
+    .shot-art {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #252B33, #111317 68%, #343C49);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      color: #F2F1EC;
+      box-shadow: 0 24px 60px rgba(20, 24, 30, .18);
+    }
+    .shot-art:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent 0, transparent 39px, rgba(255, 255, 255, .045) 40px), linear-gradient(115deg, transparent 45%, rgba(248, 208, 0, .1) 45.2%, transparent 46%);
+      pointer-events: none;
+    }
+    .shot-art-label, .shot-art-title, .shot-art-bottom {
+      position: relative;
+      z-index: 1;
+    }
+    .shot-art-label {
+      color: #D3D8DE;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .shot-clapper {
+      align-self: center;
+      position: relative;
+      z-index: 1;
+      width: min(80%, 320px);
+      padding: 16px;
+      border: 2px solid #E7E8E8;
+      border-radius: 8px;
+      background: #D6E4EE;
+      color: #15191F;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, .35);
+      transform: rotate(-4deg);
+    }
+    .shot-clapper-top {
+      height: 24px;
+      margin: -16px -16px 15px;
+      background: repeating-linear-gradient(135deg, #F8D000 0, #F8D000 18px, #17191D 18px, #17191D 36px);
+      border-bottom: 2px solid #E7E8E8;
+    }
+    .shot-clapper-title {
+      font: 900 clamp(18px, 2.6vw, 26px) 'Space Grotesk', sans-serif;
+      letter-spacing: -.04em;
+      text-align: center;
+    }
+    .shot-clapper-lines {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .shot-clapper-lines span {
+      height: 5px;
+      background: #8A98A7;
+      flex: 1;
+    }
+    .shot-art-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font: 700 9px 'JetBrains Mono', monospace;
+      letter-spacing: .12em;
+      color: #D3D8DE;
+    }
+    .shot-hero-footer {
+      max-width: 1240px;
+      margin: 28px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9px;
+    }
+
+    /* Content Shell */
+    .tool-content-shell {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) 22px clamp(56px, 7vw, 96px);
+      box-sizing: border-box;
+    }
+    @media(max-width: 760px) {
+      .shot-hero-inner { grid-template-columns: 1fr; }
+      .shot-art { min-height: 270px; }
+      .shot-hero-footer { flex-direction: column; gap: 7px; }
+      .shot-hero h1 { font-size: clamp(40px, 11vw, 58px); }
+    }
+    @media(max-width: 640px) {
+      .tool-content-shell { padding: 30px 16px 56px; }
+    }
   </style>
+  <link rel="stylesheet" href="/assets/draftsrush-sitewide.css">
 </head>
 <body class="bg-[#E2E4E9] text-[#111317] min-h-screen flex flex-col antialiased selection:bg-[#F8D000] selection:text-black">
   <!-- Google Tag Manager (noscript) -->
@@ -146,7 +304,7 @@
           <span class="status-dot w-2 h-2 rounded-full bg-black transition-colors"></span>
           <span>SCRIPT EDITOR</span>
         </a>
-        <a href="/writers-room" class="nav-pill uppercase">
+        <a href="/writers-room" class="nav-pill uppercase" style="background-color: #111317; color: #F0F2F5;">
           WRITER'S ROOM
         </a>
         <a href="/tools" class="nav-pill uppercase">
@@ -234,13 +392,40 @@
         if (menu && !menu.classList.contains('hidden')) toggleMobileNav(false);
       }
     });
-  </script><!-- Main Article Body -->
-  <main class="flex-grow">
-    <div class="max-w-4xl mx-auto px-6 pt-10 pb-20">
+  </script>
+
+  <!-- Main Article Body -->
+  <main class="flex-grow w-full">
+    <!-- Hero Banner -->
+    <section class="shot-hero" aria-labelledby="saas-hero-title">
+      <div class="shot-hero-inner">
+        <div>
+          <div class="shot-eyebrow"><span></span> B2B SCRIPTWRITING / BLUEPRINT</div>
+          <h1 id="saas-hero-title">How to Write a SaaS<br><em>Explainer Video Script</em></h1>
+          <p class="shot-lede">Stop writing feature laundry lists. Learn how to script a high-converting 60-to-90-second B2B software explainer with dual-column AV tables, UI motion cues, and zero-drop pacing.</p>
+          <div class="shot-meta"><span>60–90 SEC TARGET</span><i></i><span>AV SCRIPT TEMPLATE</span><i></i><span>100% FREE GUIDE</span></div>
+          <a class="shot-cta" href="#saas-guide-content">Read the guide <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="shot-art" role="img" aria-label="Editorial clapperboard illustration for SAAS EXPLAINER SCRIPT">
+          <div class="shot-art-label"><span>WRITER'S ROOM / 08</span><span>PRODUCT CONVERSION</span></div>
+          <div class="shot-clapper" aria-hidden="true">
+            <div class="shot-clapper-top"></div>
+            <div class="shot-clapper-title">SAAS EXPLAINER</div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
+            <div class="shot-clapper-lines"><span></span><span></span><span></span></div>
+          </div>
+          <div class="shot-art-bottom"><span>PAIN → HERO UI → TRIAL</span><span>60-SEC RUNTIME</span></div>
+        </div>
+      </div>
+      <div class="shot-hero-footer"><span>08 — B2B CONVERSION SYSTEM</span><span>PROBLEM → WORKFLOW → CONVERSION</span></div>
+    </section>
+
+    <!-- Content Shell -->
+    <div class="tool-content-shell" id="saas-guide-content">
       
-      <!-- Top Back Button -->
+      <!-- Top Return Link -->
       <div class="mb-8">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
+        <a href="/writers-room" class="inline-flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn uppercase tracking-wider">
           ← Return to the Writer's Room
         </a>
       </div>
@@ -250,8 +435,8 @@
         <!-- TL;DR Executive Summary Box -->
         <section class="border-[1.5px] border-black rounded-2xl bg-[#FFF6CF] p-6 md:p-8 brutal-box">
           <div class="flex items-center gap-2 mb-3">
-            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">TL;DR</span>
-            <h2 class="text-xl font-black brand-font">The SaaS Explainer in 60 Seconds</h2>
+            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase rounded">TL;DR</span>
+            <h2 class="text-xl font-black brand-font text-black">The SaaS Explainer in 60 Seconds</h2>
           </div>
           <p class="text-sm font-medium text-gray-800 leading-relaxed mb-4">
             A software explainer is not a product walkthrough; it is a 90-second conversion pitch built around a specific workflow pain:
@@ -267,8 +452,8 @@
         <!-- Topic Explanation Section -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6 text-gray-800 text-base leading-relaxed font-medium">
           <div class="border-b-2 border-black pb-4">
-            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">The Mechanics</span>
-            <h2 class="text-3xl font-black brand-font">The Difference Between a Demo and an Explainer</h2>
+            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font rounded">The Mechanics</span>
+            <h2 class="text-3xl font-black brand-font text-black">The Difference Between a Demo and an Explainer</h2>
           </div>
 
           <p>
@@ -277,7 +462,7 @@
           <p>
             A product demo shows an existing prospect which buttons to click to configure an API or export a CSV. An explainer video lives at the top of your marketing funnel. Its sole job is to convince a skeptical visitor that your tool replaces their messy spreadsheets, manual email follow-ups, or expensive point solutions.
           </p>
-      <p>
+          <p>
             If you spend thirty seconds showing drop-down menus and onboarding screens, you lose the buyer's emotional buy-in. An effective script attacks the user's current manual friction, introduces the software as the natural bridge to relief, and finishes with a zero-friction trial call to action. To verify your spoken duration fits neatly inside a 60-to-90-second window, test your word count using our free browser <a href="/tools/script-timer" class="text-black font-bold bg-[#F8D000] px-1 hover:underline">script pacing timer</a>.
           </p>
         </section>
@@ -285,20 +470,20 @@
         <!-- Main Content Breakdown Section -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-8">
           <div class="border-b-2 border-black pb-4">
-            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">Structure</span>
-            <h2 class="text-3xl font-black brand-font">The 5-Part SaaS Script Structure</h2>
+            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font rounded">Structure</span>
+            <h2 class="text-3xl font-black brand-font text-black">The 5-Part SaaS Script Structure</h2>
           </div>
 
           <!-- Part 1 -->
           <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-6 brutal-box">
             <div class="flex items-center justify-between gap-2 border-b border-gray-300 pb-2 mb-3">
-              <h3 class="text-xl font-black brand-font uppercase">1. The Concrete Pain Point</h3>
-              <span class="text-xs font-mono font-bold bg-[#F8D000] border border-black px-2 py-0.5">0:00 - 0:15 (25–35 Words)</span>
+              <h3 class="text-xl font-black brand-font uppercase text-black">1. The Concrete Pain Point</h3>
+              <span class="text-xs font-mono font-bold bg-[#F8D000] border border-black px-2 py-0.5 rounded text-black">0:00 - 0:15 (25–35 Words)</span>
             </div>
             <p class="text-sm font-medium text-gray-800 leading-relaxed mb-3">
               Name the exact bottleneck. Do not open with broad fluff like "In today's fast-paced digital world." Describe the specific task wasting five hours every Friday.
             </p>
-            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3">
+            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3 rounded">
               <strong>Script Example:</strong> "Your sales team spends four hours every Monday copying lead data from LinkedIn into five different spreadsheets—and half those emails bounce anyway."
             </div>
           </div>
@@ -306,13 +491,13 @@
           <!-- Part 2 -->
           <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-6 brutal-box">
             <div class="flex items-center justify-between gap-2 border-b border-gray-300 pb-2 mb-3">
-              <h3 class="text-xl font-black brand-font uppercase">2. The Solution & Value Proposition</h3>
-              <span class="text-xs font-mono font-bold bg-[#D6E4EE] border border-black px-2 py-0.5">0:15 - 0:30 (30–40 Words)</span>
+              <h3 class="text-xl font-black brand-font uppercase text-black">2. The Solution & Value Proposition</h3>
+              <span class="text-xs font-mono font-bold bg-[#D6E4EE] border border-black px-2 py-0.5 rounded text-black">0:15 - 0:30 (30–40 Words)</span>
             </div>
             <p class="text-sm font-medium text-gray-800 leading-relaxed mb-3">
               Introduce the software product by name along with its singular positioning statement. State the core benefit, not the engineering stack.
             </p>
-            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3">
+            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3 rounded">
               <strong>Script Example:</strong> "Meet DataPilot: the verified lead pipeline that enriches contact lists, cleans duplicates, and pushes ready accounts straight into your CRM automatically."
             </div>
           </div>
@@ -320,13 +505,13 @@
           <!-- Part 3 -->
           <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-6 brutal-box">
             <div class="flex items-center justify-between gap-2 border-b border-gray-300 pb-2 mb-3">
-              <h3 class="text-xl font-black brand-font uppercase">3. The 3-Step Hero Workflow</h3>
-              <span class="text-xs font-mono font-bold bg-[#FFF6CF] border border-black px-2 py-0.5">0:30 - 1:05 (60–80 Words)</span>
+              <h3 class="text-xl font-black brand-font uppercase text-black">3. The 3-Step Hero Workflow</h3>
+              <span class="text-xs font-mono font-bold bg-[#FFF6CF] border border-black px-2 py-0.5 rounded text-black">0:30 - 1:05 (60–80 Words)</span>
             </div>
             <p class="text-sm font-medium text-gray-800 leading-relaxed mb-3">
               Walk through three clean sequential actions: Input, Automation, Output. Avoid deep feature detours. Show the product doing the heavy lifting while the user clicks once.
             </p>
-            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3">
+            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3 rounded">
               <strong>Script Example:</strong> "Just connect your domain, select your target buyer title, and click Enrich. DataPilot scrubs corporate registries in seconds, delivers verified mobile numbers, and drops qualified deals into your team's inbox."
             </div>
           </div>
@@ -334,13 +519,13 @@
           <!-- Part 4 -->
           <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-6 brutal-box">
             <div class="flex items-center justify-between gap-2 border-b border-gray-300 pb-2 mb-3">
-              <h3 class="text-xl font-black brand-font uppercase">4. Social Proof & Quantitative Win</h3>
-              <span class="text-xs font-mono font-bold bg-[#DDE8DF] border border-black px-2 py-0.5">1:05 - 1:15 (20–25 Words)</span>
+              <h3 class="text-xl font-black brand-font uppercase text-black">4. Social Proof & Quantitative Win</h3>
+              <span class="text-xs font-mono font-bold bg-[#DDE8DF] border border-black px-2 py-0.5 rounded text-black">1:05 - 1:15 (20–25 Words)</span>
             </div>
             <p class="text-sm font-medium text-gray-800 leading-relaxed mb-3">
               Give buyers a logical reason to justify their decision. Include a concrete metric: hours saved, revenue recovered, or company trust indicators.
             </p>
-            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3">
+            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3 rounded">
               <strong>Script Example:</strong> "Over 4,000 outbound agencies use DataPilot to cut prospecting time by 70% while booking 3x more discovery calls."
             </div>
           </div>
@@ -348,13 +533,13 @@
           <!-- Part 5 -->
           <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-6 brutal-box">
             <div class="flex items-center justify-between gap-2 border-b border-gray-300 pb-2 mb-3">
-              <h3 class="text-xl font-black brand-font uppercase">5. The Low-Friction Call to Action</h3>
-              <span class="text-xs font-mono font-bold bg-[#F8D000] border border-black px-2 py-0.5">1:15 - 1:25 (15–20 Words)</span>
+              <h3 class="text-xl font-black brand-font uppercase text-black">5. The Low-Friction Call to Action</h3>
+              <span class="text-xs font-mono font-bold bg-[#F8D000] border border-black px-2 py-0.5 rounded text-black">1:15 - 1:25 (15–20 Words)</span>
             </div>
             <p class="text-sm font-medium text-gray-800 leading-relaxed mb-3">
               State the exact next step. Remove friction by highlighting what is not required (no credit card, no sales demo call required).
             </p>
-            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3">
+            <div class="font-mono text-xs text-gray-700 bg-white border border-black p-3 rounded">
               <strong>Script Example:</strong> "Start your free 14-day trial at DataPilot.io. No credit card required. Clean your pipeline today."
             </div>
           </div>
@@ -363,8 +548,8 @@
         <!-- Media References Section (Videos, Movies, Books) -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6">
           <div class="border-b-2 border-black pb-4">
-            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">Storytelling References</span>
-            <h2 class="text-3xl font-black brand-font">Cross-Disciplinary Benchmarks</h2>
+            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font rounded">Storytelling References</span>
+            <h2 class="text-3xl font-black brand-font text-black">Cross-Disciplinary Benchmarks</h2>
           </div>
 
           <p class="font-medium text-gray-800 text-base leading-relaxed">
@@ -373,10 +558,10 @@
 
           <div class="space-y-4">
             <!-- Video Example -->
-            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5">
+            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 shadow-sm">
               <div class="flex items-center gap-2 mb-2">
-                <span class="bg-black text-white text-xs font-mono font-bold px-2 py-0.5 uppercase">Video Benchmark</span>
-                <strong class="text-base font-black brand-font">Crazy Egg: The Original 2-Minute SaaS Teardown</strong>
+                <span class="bg-black text-white text-xs font-mono font-bold px-2 py-0.5 uppercase rounded">Video Benchmark</span>
+                <strong class="text-base font-black brand-font text-black">Crazy Egg: The Original 2-Minute SaaS Teardown</strong>
               </div>
               <p class="text-sm font-medium text-gray-700 leading-relaxed">
                 Scripted by legendary copywriter Neil Patel, Crazy Egg's original animated explainer converted at over 60% because it started with a single visceral image: a website owner watching dollar bills fly out an open window. It spent 45 seconds validating that specific panic before showing a single heatmap screen.
@@ -384,10 +569,10 @@
             </div>
 
             <!-- Movie Example -->
-            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5">
+            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 shadow-sm">
               <div class="flex items-center gap-2 mb-2">
-                <span class="bg-[#F8D000] border border-black text-black text-xs font-mono font-bold px-2 py-0.5 uppercase">Cinema Benchmark</span>
-                <strong class="text-base font-black brand-font"><em>Moneyball</em> (Screenplay by Steven Zaillian & Aaron Sorkin)</strong>
+                <span class="bg-[#F8D000] border border-black text-black text-xs font-mono font-bold px-2 py-0.5 uppercase rounded">Cinema Benchmark</span>
+                <strong class="text-base font-black brand-font text-black"><em>Moneyball</em> (Screenplay by Steven Zaillian & Aaron Sorkin)</strong>
               </div>
               <p class="text-sm font-medium text-gray-700 leading-relaxed">
                 Notice how the film introduces algorithmic baseball analytics. It does not lecture the audience on linear regressions; it sets up an unfair problem (the Oakland Athletics cannot compete financially with the Yankees) and presents the math spreadsheet as a disruptive rebellion against entrenched tradition.
@@ -395,10 +580,10 @@
             </div>
 
             <!-- Book Example -->
-            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5">
+            <div class="border-[1.5px] border-black rounded-xl bg-[#F0F2F5] p-5 shadow-sm">
               <div class="flex items-center gap-2 mb-2">
-                <span class="bg-[#34D399] border border-black text-black text-xs font-mono font-bold px-2 py-0.5 uppercase">Book Benchmark</span>
-                <strong class="text-base font-black brand-font"><em>Building a StoryBrand</em> by Donald Miller</strong>
+                <span class="bg-[#34D399] border border-black text-black text-xs font-mono font-bold px-2 py-0.5 uppercase rounded">Book Benchmark</span>
+                <strong class="text-base font-black brand-font text-black"><em>Building a StoryBrand</em> by Donald Miller</strong>
               </div>
               <p class="text-sm font-medium text-gray-700 leading-relaxed">
                 Miller lays down the golden law of B2B messaging: your customer is the hero, and your software is the guide. The moment you make your software the hero of the video, the viewer disconnects. Keep the focus locked on the customer's relief and newfound capability.
@@ -410,13 +595,13 @@
         <!-- Mid-Article Action Banner -->
         <div class="border-[1.5px] border-black rounded-2xl bg-[#F8D000] p-8 brutal-box flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span class="bg-black text-white px-2 py-0.5 text-xs font-bold brand-font uppercase">Conversion Writing</span>
-            <h3 class="text-2xl font-black brand-font mt-2 mb-1">Launching a B2B Software Explainer?</h3>
-            <p class="text-sm font-medium text-black max-w-xl">
+            <span class="bg-black text-white px-2.5 py-1 text-xs font-bold brand-font uppercase rounded">Conversion Writing</span>
+            <h3 class="text-2xl font-black brand-font mt-2 mb-1 text-black">Launching a B2B Software Explainer?</h3>
+            <p class="text-sm font-medium text-black max-w-xl leading-relaxed">
               We write dual-column AV scripts with exact UI motion notes, kinetic typography cues, and strict 60-to-90-second pacing so your motion designers execute without confusion.
             </p>
           </div>
-          <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn uppercase text-xs whitespace-nowrap">
+          <a href="/scripts" class="bg-black text-white font-black brand-font px-6 py-3 border-[1.5px] border-black rounded-xl studio-btn uppercase text-xs whitespace-nowrap hover:bg-white hover:text-black">
             Explore Script Packs →
           </a>
         </div>
@@ -424,14 +609,14 @@
         <!-- Section: Do's and Don'ts -->
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6">
           <div class="border-b-2 border-black pb-4">
-            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">Script Guidelines</span>
-            <h2 class="text-3xl font-black brand-font">Do's and Don'ts of Explainer Writing</h2>
+            <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font rounded">Script Guidelines</span>
+            <h2 class="text-3xl font-black brand-font text-black">Do's and Don'ts of Explainer Writing</h2>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 font-mono text-xs">
             <!-- Do's -->
             <div class="border-[1.5px] border-black rounded-xl bg-[#E2F0D9] p-5 space-y-3">
-              <span class="bg-[#111317] text-white px-2 py-0.5 font-bold uppercase block w-fit">THE DO'S</span>
+              <span class="bg-[#111317] text-white px-2 py-0.5 font-bold uppercase block w-fit rounded">THE DO'S</span>
               <ul class="space-y-2 text-gray-900 font-semibold">
                 <li>✓ <strong>Format in dual-column AV tables:</strong> Align visual UI zoom cues directly across from the spoken line.</li>
                 <li>✓ <strong>Cap total word count at 140 words per minute:</strong> Leave room for audio sound effects, mouse clicks, and visual transitions.</li>
@@ -442,7 +627,7 @@
 
             <!-- Don'ts -->
             <div class="border-[1.5px] border-black rounded-xl bg-[#FCE8E6] p-5 space-y-3">
-              <span class="bg-[#111317] text-white px-2 py-0.5 font-bold uppercase">THE DON'TS</span>
+              <span class="bg-[#111317] text-white px-2 py-0.5 font-bold uppercase block w-fit rounded">THE DON'TS</span>
               <ul class="space-y-2 text-gray-900 font-semibold">
                 <li>✗ <strong>Don't start with company history:</strong> Never say "founded in 2024 to revolutionize industry paradigms."</li>
                 <li>✗ <strong>Don't list settings menus:</strong> Viewers do not care about your settings tab or password reset workflows.</li>
@@ -457,10 +642,10 @@
         <section class="border-[1.5px] border-black rounded-2xl bg-white p-8 md:p-10 brutal-box space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-black pb-4">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font">Dual-Column Anatomy</span>
-              <h2 class="text-2xl md:text-3xl font-black brand-font">60-Second Explainer Script Blueprint</h2>
+              <span class="text-xs font-bold uppercase tracking-wider bg-[#F8D000] border border-black px-2 py-0.5 inline-block mb-1 brand-font rounded">Dual-Column Anatomy</span>
+              <h2 class="text-2xl md:text-3xl font-black brand-font text-black">60-Second Explainer Script Blueprint</h2>
             </div>
-            <span class="text-xs font-mono font-bold bg-black text-white px-2.5 py-1 w-fit">PRODUCTION FORMAT</span>
+            <span class="text-xs font-mono font-bold bg-black text-white px-2.5 py-1 rounded w-fit">PRODUCTION FORMAT</span>
           </div>
 
           <p class="font-medium text-gray-800 text-base leading-relaxed">
@@ -477,25 +662,25 @@
                 </tr>
               </thead>
               <tbody class="divide-y-2 divide-black font-semibold text-gray-900 bg-white">
-                <tr class="hover:bg-[#FFF6CF]">
+                <tr class="hover:bg-[#FFF6CF] transition-colors">
                   <td class="p-3 border-r-2 border-black font-mono">0:00 - 0:12<br><span class="text-[10px] text-gray-600 uppercase font-bold">The Frustration</span></td>
                   <td class="p-3 border-r-2 border-black">"Managing remote team permissions shouldn't feel like hacking a mainframe."</td>
-                  <td class="p-3 font-mono text-[11px]">Chaotic split-screen: 12 open browser tabs flickering. Red "Access Denied" errors popping over a frustrated user profile. [SFX: Error buzz]</td>
+                  <td class="p-3 font-mono text-[11px] text-gray-700">Chaotic split-screen: 12 open browser tabs flickering. Red "Access Denied" errors popping over a frustrated user profile. [SFX: Error buzz]</td>
                 </tr>
-                <tr class="hover:bg-[#FFF6CF]">
+                <tr class="hover:bg-[#FFF6CF] transition-colors">
                   <td class="p-3 border-r-2 border-black font-mono">0:12 - 0:28<br><span class="text-[10px] text-gray-600 uppercase font-bold">The Solution</span></td>
                   <td class="p-3 border-r-2 border-black">"KeyGate unifies workspace access across your entire SaaS stack in one dashboard."</td>
-                  <td class="p-3 font-mono text-[11px]">Screen wipe to clean minimalist KeyGate UI. Single centralized toggle button illuminates green. [SFX: Clean interface chime]</td>
+                  <td class="p-3 font-mono text-[11px] text-gray-700">Screen wipe to clean minimalist KeyGate UI. Single centralized toggle button illuminates green. [SFX: Clean interface chime]</td>
                 </tr>
-                <tr class="hover:bg-[#FFF6CF]">
+                <tr class="hover:bg-[#FFF6CF] transition-colors">
                   <td class="p-3 border-r-2 border-black font-mono">0:28 - 0:48<br><span class="text-[10px] text-gray-600 uppercase font-bold">The Workflow</span></td>
                   <td class="p-3 border-r-2 border-black">"Select a new hire, assign their role, and provision instant access to Slack, GitHub, and Figma with one click."</td>
-                  <td class="p-3 font-mono text-[11px]">Cursor smoothly hovers over "Assign Role". Dropdown selects "Senior Designer". Three brand icons pulse green simultaneously. [SFX: Rapid click-confirmations]</td>
+                  <td class="p-3 font-mono text-[11px] text-gray-700">Cursor smoothly hovers over "Assign Role". Dropdown selects "Senior Designer". Three brand icons pulse green simultaneously. [SFX: Rapid click-confirmations]</td>
                 </tr>
-                <tr class="hover:bg-[#FFF6CF]">
+                <tr class="hover:bg-[#FFF6CF] transition-colors">
                   <td class="p-3 border-r-2 border-black font-mono">0:48 - 1:00<br><span class="text-[10px] text-gray-600 uppercase font-bold">The Result & CTA</span></td>
                   <td class="p-3 border-r-2 border-black">"Zero onboarding lag. Zero security leaks. Try KeyGate free for 14 days."</td>
-                  <td class="p-3 font-mono text-[11px]">Dashboard fades to bold yellow end card with product logo. High-contrast button reads: "Start Free Trial • No Credit Card Required". [MUSIC SWELL OUT]</td>
+                  <td class="p-3 font-mono text-[11px] text-gray-700">Dashboard fades to bold yellow end card with product logo. High-contrast button reads: "Start Free Trial • No Credit Card Required". [MUSIC SWELL OUT]</td>
                 </tr>
               </tbody>
             </table>
@@ -504,7 +689,7 @@
 
         <!-- Section: Point Audit Checklist -->
         <section class="border-[1.5px] border-black rounded-2xl bg-[#F0F2F5] p-8 md:p-10 brutal-box space-y-6">
-          <h2 class="text-2xl md:text-3xl font-black brand-font">
+          <h2 class="text-2xl md:text-3xl font-black brand-font text-black">
             The 5-Point Explainer Script Audit
           </h2>
           <p class="font-medium text-gray-800 text-base leading-relaxed">
@@ -512,28 +697,28 @@
           </p>
 
           <div class="space-y-3 font-mono text-xs text-gray-900">
-            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3">
-              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase">AUDIT 01</span>
+            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3 shadow-sm">
+              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase rounded">AUDIT 01</span>
               <div><strong>Is the core pain stated in the first 20 words?</strong> If your voiceover does not mention a recognizable business headache before second 10, cut the intro.</div>
             </div>
 
-            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3">
-              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase">AUDIT 02</span>
+            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3 shadow-sm">
+              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase rounded">AUDIT 02</span>
               <div><strong>Is the word count strictly under 200 words?</strong> For a 90-second video, any draft over 210 words will sound rushed and cause the viewer anxiety.</div>
             </div>
 
-            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3">
-              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase">AUDIT 03</span>
+            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3 shadow-sm">
+              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase rounded">AUDIT 03</span>
               <div><strong>Are visual cues concrete and actionable?</strong> Confirm the right-hand column specifies actual graphic animations, cursor paths, and screen mockups rather than vague notes.</div>
             </div>
 
-            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3">
-              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase">AUDIT 04</span>
+            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3 shadow-sm">
+              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase rounded">AUDIT 04</span>
               <div><strong>Did you limit the product to three sequential clicks?</strong> Showing complex setup steps confuses prospects. Highlight the simplest path to value.</div>
             </div>
 
-           <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3">
-              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase">AUDIT 05</span>
+            <div class="bg-white border-[1.5px] border-black rounded-xl p-4 flex items-start gap-3 shadow-sm">
+              <span class="bg-[#F8D000] border border-black px-2 py-0.5 font-bold text-black uppercase rounded">AUDIT 05</span>
               <div><strong>Is the call to action singular and friction-free?</strong> Direct viewers toward one clear action: a free trial signup, demo schedule, or instant app access. Evaluate whether your first sentence hooks prospects under three seconds using our <a href="/tools/hook-analyzer" class="text-black font-bold bg-[#F8D000] px-1 hover:underline">5-second hook analyzer</a>.</div>
             </div>
           </div>
@@ -541,22 +726,22 @@
 
       </article>
 
-      <!-- Bottom Back Button -->
+      <!-- Bottom Return Button -->
       <div class="mt-12">
-        <a href="/writers-room" class="inline-block bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-4 py-2 border-[1.5px] border-black rounded-xl studio-btn rounded-xl uppercase tracking-wider">
+        <a href="/writers-room" class="inline-flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs md:text-sm px-5 py-3 border-[1.5px] border-black rounded-xl studio-btn uppercase tracking-wider">
           ← Return to the Writer's Room
         </a>
       </div>
 
-    </div>
+    </div><!-- /.tool-content-shell -->
   </main>
 
   <!-- Universal Footer -->
-  <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317; background-color: #D6E4EE !important;">
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Top Branding & Value Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -566,36 +751,31 @@
               height="50" 
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
               class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
             />
           </a>
           <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
-            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools.
+            The dual-engine screenplay studio and creator laboratory. Commission retention-tested video scripts or draft your own using our free browser tools[cite: 8].
           </p>
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
-            ⚡ 100% Free Client-Side Tools
+          <span class="studio-badge bg-[#F8D000] text-black font-bold uppercase" style="background-color: #F8D000 !important; color: #111317 !important;">
+            ⚡ 100% Free Client-Side Tools[cite: 8]
           </span>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <!-- X -->
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
-              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-[#F8D000] transition-colors shadow-sm" style="background-color: #F0F2F5 !important;">
+              <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
         </div>
@@ -603,85 +783,84 @@
 
       <!-- 4-Column Structured Link Directory -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
-        
-        <!-- Col 1: Interactive Tools & Apps -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] font-mono">NEW</span></a></li>
-            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
-            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
-            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
-            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All 12 Free Tools →</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>[cite: 8]
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono" style="background-color: #F8D000;">NEW</span>[cite: 8]
+              </a>
+            </li>
+            <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>[cite: 8]
+            <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>[cite: 8]
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>[cite: 8]
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>[cite: 8]
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>[cite: 8]
           </ul>
         </div>
 
-        <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
-            <li><a href="/how-to-write-a-saas-explainer-video-script" class="hover:underline font-bold text-black">SaaS Explainer Scripting</a></li>
-            <li><a href="/how-to-write-a-faceless-youtube-channel-script" class="hover:underline">Faceless YouTube Scripting</a></li>
-            <li><a href="/how-many-acts-are-in-a-movie-three-act-structure" class="hover:underline">Three-Act Structure</a></li>
-            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>[cite: 8]
+            <li><a href="/how-to-write-a-saas-explainer-video-script" class="hover:underline font-bold text-black">SaaS Explainer Scripting</a></li>[cite: 17]
+            <li><a href="/how-to-write-a-faceless-youtube-channel-script" class="hover:underline">Faceless YouTube Scripting</a></li>[cite: 17]
+            <li><a href="/how-many-acts-are-in-a-movie-three-act-structure" class="hover:underline">Three-Act Structure</a></li>[cite: 12]
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>[cite: 8]
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>[cite: 8]
           </ul>
         </div>
 
-        <!-- Col 3: Commission Services & Templates -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
-            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
-            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
-            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>
-            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>
-            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>[cite: 8]
+            <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>[cite: 8]
+            <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>[cite: 8]
+            <li><a href="/partner" class="hover:underline">Agency Overflow & NDAs</a></li>[cite: 8]
+            <li><a href="/retention-teardowns" class="hover:underline">Retention Teardowns</a></li>[cite: 8]
+            <li><a href="/contact" class="hover:underline font-bold text-black">Order A Custom Draft →</a></li>[cite: 8]
           </ul>
         </div>
 
-        <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm text-black" style="background-color: #F0F2F5 !important;">
               ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
-              <li><a href="/about" class="hover:underline">About & Methodology</a></li>
-              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>
+              <li><a href="/about" class="hover:underline">About & Methodology</a></li>[cite: 8]
+              <li><a href="/contact" class="hover:underline">Intake Desk / Custom Scope</a></li>[cite: 8]
             </ul>
           </div>
         </div>
-
       </div>
 
       <!-- Bottom Legal & Copyright Bar -->
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
-        <p>© 2026 DraftsRush. All rights reserved.</p>
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+        <p>© 2026 DraftsRush. All rights reserved.</p>[cite: 8]
         <div class="flex flex-wrap gap-6">
-          <a href="/sitemap" class="hover:underline">Sitemap</a>
-          <a href="/privacy" class="hover:underline">Privacy Policy</a>
-          <a href="/terms" class="hover:underline">Terms of Service</a>
-          <a href="/contact" class="hover:underline">Support Desk</a>
+          <a href="/sitemap" class="hover:underline">Sitemap</a>[cite: 8]
+          <a href="/privacy" class="hover:underline">Privacy Policy</a>[cite: 8]
+          <a href="/terms" class="hover:underline">Terms of Service</a>[cite: 8]
+          <a href="/contact" class="hover:underline">Support Desk</a>[cite: 8]
         </div>
       </div>
 
@@ -691,12 +870,11 @@
   <!-- Floating Contact Widget -->
   <a href="/contact" 
      aria-label="Contact Desk"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-4 py-3 border-[1.5px] border-black rounded-xl brutal-box brutal-btn transition-transform select-none">
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#F8D000] text-black font-black brand-font text-xs uppercase px-5 py-3.5 rounded-full studio-btn select-none">
     <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>
     <span>Contact Desk</span>
   </a>
-
 </body>
 </html>
