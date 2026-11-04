@@ -1,409 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- =================================================== -->
-  <!-- 1. CORE STUDIO, APPS & COMMERCIAL HUBS               -->
-  <!-- =================================================== -->
-  <url>
-       <loc>https://www.draftsrush.com/</loc>
-       <priority>1.0000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/script-editor</loc>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/writers-room</loc>
-       <lastmod>2026-10-08</lastmod>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/scene-analysis-library</loc>
-       <lastmod>2026-10-08</lastmod>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools</loc>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/scripts</loc>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/templates</loc>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/free-filmmaking-templates</loc>
-       <lastmod>2026-10-07</lastmod>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/retention-teardowns</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/about</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/contact</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/partner</loc>
-       <priority>0.8000</priority>
-  </url>
-
-  <!-- =================================================== -->
-  <!-- 2. COMPREHENSIVE CURATED CINEMA PILLARS (HIGH SEARCH)-->
-  <!-- =================================================== -->
-  <url>
-       <loc>https://www.draftsrush.com/20-best-plot-twist-movies-of-all-time</loc>
-       <priority>0.9000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/best-psychological-thriller-movies</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/most-disturbing-movies-ever-made-ranked</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/best-horror-movies-based-on-true-stories</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/movies-like-the-substance-and-obsession</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/10-most-underrated-horror-movies</loc>
-       <priority>0.8500</priority>
-  </url>
-
-  <!-- =================================================== -->
-  <!-- 3. MOVIE ENDINGS & SCENE BREAKDOWN DEEP DIVES       -->
-  <!-- =================================================== -->
-  <url>
-       <loc>https://www.draftsrush.com/inception-ending-spinning-top-breakdown</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/shutter-island-ending-explained</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/no-country-for-old-men-ending-explained</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/american-psycho-ending-explained</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/interstellar-ending-tesseract-breakdown</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/zodiac-basement-scene-breakdown</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/no-country-for-old-men-coin-toss-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/the-dark-knight-bank-heist-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/inglourious-basterds-opening-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/whiplash-final-drum-solo-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/parasite-peach-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/sicario-border-crossing-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/goodfellas-funny-how-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/the-conjuring-hide-and-clap-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/alien-chestburster-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/scream-opening-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/the-silence-of-the-lambs-first-meeting-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/se7en-whats-in-the-box-scene-breakdown</loc>
-       <priority>0.6400</priority>
-  </url>
-
-  <!-- =================================================== -->
-  <!-- 4. INTERACTIVE CREATOR & SCREENWRITING TOOLS        -->
-  <!-- =================================================== -->
-  <url>
-       <loc>https://www.draftsrush.com/tools/script-timer</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/hook-generator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/hook-analyzer</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/dialogue-pruner</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/format-converter</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/broll-generator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/photography-lab</loc>
-       <lastmod>2026-10-17</lastmod>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/cinematography-lab</loc>
-       <lastmod>2026-10-17</lastmod>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/thumbnail-preview</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/av-teleprompter</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/retention-simulator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/cta-checker</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/shorts-splitter</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/title-checker</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/screenplay-calculator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/speech-trainer</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/timestamp-maker</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/character-name-generator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/youtube-tag-generator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/video-script-generator</loc>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/tools/script-breakdown-sheet</loc>
-       <priority>0.8500</priority>
-  </url>
-
-  <!-- =================================================== -->
-  <!-- 5. CRAFT MANUALS, FORMAT GUIDES & ARTICLES         -->
-  <!-- =================================================== -->
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-script</loc>
-       <lastmod>2026-10-08</lastmod>
-       <priority>0.8500</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/screenplay-format-guide</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-end-a-story</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/narrative-techniques</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-villain</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/storytelling-blueprints</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/parts-of-a-story-freytags-pyramid</loc>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/50-video-hook-formulas-cheatsheet</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/30-visual-pattern-interrupts-for-video-editors</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/40-script-open-loops-and-curiosity-gap-formulas</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-faceless-youtube-channel-script</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-saas-explainer-video-script</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-true-crime-video-essay-script</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-tiktok-short-drama-script</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-crowdfunding-video-script</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/how-many-acts-are-in-a-movie-three-act-structure</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/shot-list-template</loc>
-       <lastmod>2026-10-26</lastmod>
-       <priority>0.7800</priority>
-  </url>
+  <!-- 1. CORE STUDIO, APPS & COMMERCIAL HUBS -->
 
   <url>
-       <loc>https://www.draftsrush.com/script-breakdown-sheet</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-scary-story-with-examples</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/script-editor</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/how-to-write-a-podcast-script</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/writers-room</loc>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/visual-comparisons</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/scene-analysis-library</loc>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/best-free-screenwriting-software</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/tools</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/ai-tools-for-screenwriters</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/scripts</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/video-hook-formulas</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/templates</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/write-realistic-dialogue</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/free-filmmaking-templates</loc>
+    <lastmod>2026-10-07</lastmod>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/story-structure-frameworks</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/retention-teardowns</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/screenplay-formatting-mistakes</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/about</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/best-screenwriting-books</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/contact</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/brainstorming-techniques-for-writers</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/best-cinematography-books</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/best-filmmaking-and-screenwriting-podcasts</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/best-websites-to-read-movie-scripts</loc>
-       <priority>0.6400</priority>
-  </url>
-  <url>
-       <loc>https://www.draftsrush.com/screenwriting-competitions-worth-it</loc>
-       <priority>0.6400</priority>
+    <loc>https://www.draftsrush.com/partner</loc>
   </url>
 
-  <!-- =================================================== -->
-  <!-- 6. LEGAL & UTILITY POLICIES                         -->
-  <!-- =================================================== -->
+  <!-- 2. CURATED CINEMA PILLARS -->
+
   <url>
-       <loc>https://www.draftsrush.com/sitemap</loc>
-       <priority>0.5000</priority>
+    <loc>https://www.draftsrush.com/20-best-plot-twist-movies-of-all-time</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/privacy</loc>
-       <priority>0.5000</priority>
+    <loc>https://www.draftsrush.com/best-psychological-thriller-movies</loc>
   </url>
   <url>
-       <loc>https://www.draftsrush.com/terms</loc>
-       <priority>0.5000</priority>
+    <loc>https://www.draftsrush.com/most-disturbing-movies-ever-made-ranked</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-horror-movies-based-on-true-stories</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/movies-like-the-substance-and-obsession</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/10-most-underrated-horror-movies</loc>
+  </url>
+
+  <!-- 3. MOVIE ENDINGS & SCENE BREAKDOWNS -->
+
+  <url>
+    <loc>https://www.draftsrush.com/inception-ending-spinning-top-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/shutter-island-ending-explained</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/no-country-for-old-men-ending-explained</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/american-psycho-ending-explained</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/interstellar-ending-tesseract-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/zodiac-basement-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/no-country-for-old-men-coin-toss-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/the-dark-knight-bank-heist-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/inglourious-basterds-opening-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/whiplash-final-drum-solo-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/parasite-peach-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/sicario-border-crossing-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/goodfellas-funny-how-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/the-conjuring-hide-and-clap-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/alien-chestburster-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/scream-opening-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/the-silence-of-the-lambs-first-meeting-scene-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/se7en-whats-in-the-box-scene-breakdown</loc>
+  </url>
+
+  <!-- 4. INTERACTIVE CREATOR & SCREENWRITING TOOLS -->
+
+  <url>
+    <loc>https://www.draftsrush.com/tools/script-timer</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/hook-generator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/hook-analyzer</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/dialogue-pruner</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/format-converter</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/broll-generator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/photography-lab</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/cinematography-lab</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/thumbnail-preview</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/av-teleprompter</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/retention-simulator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/cta-checker</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/shorts-splitter</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/title-checker</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/screenplay-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/speech-trainer</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/timestamp-maker</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/character-name-generator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/youtube-tag-generator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/video-script-generator</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/tools/script-breakdown-sheet</loc>
+  </url>
+
+  <!-- 5. CRAFT MANUALS, FORMAT GUIDES & ARTICLES -->
+
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-script</loc>
+    <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/screenplay-format-guide</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-end-a-story</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/narrative-techniques</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-villain</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/storytelling-blueprints</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/parts-of-a-story-freytags-pyramid</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/50-video-hook-formulas-cheatsheet</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/30-visual-pattern-interrupts-for-video-editors</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/40-script-open-loops-and-curiosity-gap-formulas</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-faceless-youtube-channel-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-saas-explainer-video-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-true-crime-video-essay-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-tiktok-short-drama-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-crowdfunding-video-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-many-acts-are-in-a-movie-three-act-structure</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/shot-list-template</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/script-breakdown-sheet</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-scary-story-with-examples</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/how-to-write-a-podcast-script</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/visual-comparisons</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-free-screenwriting-software</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/ai-tools-for-screenwriters</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/video-hook-formulas</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/write-realistic-dialogue</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/story-structure-frameworks</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/screenplay-formatting-mistakes</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-screenwriting-books</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/brainstorming-techniques-for-writers</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-cinematography-books</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-filmmaking-and-screenwriting-podcasts</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/best-websites-to-read-movie-scripts</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/screenwriting-competitions-worth-it</loc>
+  </url>
+
+  <!-- 6. LEGAL & UTILITY PAGES -->
+
+  <url>
+    <loc>https://www.draftsrush.com/sitemap</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://www.draftsrush.com/terms</loc>
   </url>
 
 </urlset>
