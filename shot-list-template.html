@@ -25,63 +25,44 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=4">
   <link rel="apple-touch-icon" href="/favicon.png?v=4">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg-base:#E2E4E9;--ink:#111317;--brand-yellow:#F8D000;--surface-light:#F0F2F5;--surface-blue:#D6E4EE;--surface-cream:#FFF6CF;--surface-mint:#E1F5E3}
+
+    :root{--bg-base:#E2E4E9;--ink:#111317;--brand-yellow:#F8D000;--cta-yellow:#FFE600;--surface-light:#F0F2F5;--surface-blue:#D6E4EE;--surface-cream:#FFF6CF;--surface-mint:#E1F5E3;--section-slate:#D4D7E1;--section-steel:#CCD0DC}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
-    body{font-family:Inter,sans-serif;background:var(--bg-base);color:var(--ink)}
-    h1,h2,h3,h4,.brand-font{font-family:"Space Grotesk",sans-serif;letter-spacing:-.028em}
-    .font-mono{font-family:"JetBrains Mono",monospace}
-
-    body{font-family:'Inter',sans-serif} h1,h2,h3,h4,.brand-font{font-family:'Space Grotesk',sans-serif}.font-mono{font-family:'JetBrains Mono',monospace}
-    .studio-header{background:rgba(248,208,0,.96);backdrop-filter:blur(14px);border-bottom:1px solid #111317}
-    .nav-pill{background:#F0F2F5;color:#111317;border:1.5px solid #111317;border-radius:10px;padding:.45rem .9rem;font-size:.75rem;font-weight:700;letter-spacing:.04em;transition:all .2s;box-shadow:0 2px 4px #11131710}
-    .nav-pill:hover{background:#111317;color:#F0F2F5}
-    .bg-cta-yellow{background-color:#F8D000}.bg-surface-light{background-color:#F0F2F5}.bg-brand-yellow{background-color:#F8D000}.bg-ink{background-color:#111317}
-    .studio-btn{border:1.5px solid #111317;border-radius:8px;box-shadow:4px 4px 0 #111317;transition:all .2s}.studio-btn:hover{box-shadow:2px 2px 0 #111317;transform:translate(2px,2px)}
-
-    .nav-pill{background:#F0F2F5;color:#111317;border:1.5px solid #111317;border-radius:10px;padding:.45rem .9rem;font-size:.75rem;font-weight:700;letter-spacing:.04em;transition:all .2s;box-shadow:0 2px 4px #11131710}
-    .nav-pill:hover{background:#111317;color:#F0F2F5}
-    .brutal-box{box-shadow:4px 4px 0 #111317}.brutal-box-lg{box-shadow:8px 8px 0 #111317}
-    .brutal-btn{transition:transform .2s,box-shadow .2s}.brutal-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111317}.brutal-btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 #111317}
-    .field{width:100%;border:1.5px solid #9CA3AF;border-radius:7px;background:white;padding:.55rem .6rem;font:inherit;font-size:.82rem;color:#111317}
-    .field:focus{outline:2px solid #F8D000;outline-offset:1px;border-color:#111317}
-    .shot-table{width:100%;border-collapse:collapse;min-width:1050px}.shot-table th{background:#111317;color:white;text-align:left;font:700 10px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.05em;padding:10px 8px}.shot-table td{padding:6px;border:1px solid #D1D5DB;vertical-align:top}.shot-table tr:nth-child(even) td{background:#F7F8FA}.shot-table input,.shot-table select,.shot-table textarea{width:100%;min-width:90px;border:1px solid #D1D5DB;border-radius:4px;background:#fff;padding:6px;font:12px Inter,sans-serif}.shot-table textarea{min-height:48px;resize:vertical}
-    .section-kicker{font:700 11px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--bg-base);color:var(--ink);letter-spacing:-.011em}
+    h1,h2,h3,h4,.brand-font{font-family:'Space Grotesk',sans-serif;letter-spacing:-.028em}
+    .font-mono{font-family:'JetBrains Mono',monospace}
+    .bg-base{background-color:#E2E4E9}.bg-brand-yellow{background-color:#F8D000}.bg-cta-yellow{background-color:#FFE600}.bg-surface-light{background-color:#F0F2F5}.bg-surface-blue{background-color:#D6E4EE}.bg-surface-cream{background-color:#FFF6CF}.bg-surface-mint{background-color:#E1F5E3}.bg-section-slate{background-color:#D4D7E1}.bg-section-steel{background-color:#CCD0DC}.bg-ink{background-color:#111317}
+    .studio-header{background-color:rgba(248,208,0,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #111317;box-shadow:0 4px 20px -4px rgba(17,19,23,.06)}
+    .nav-pill{background-color:#F0F2F5;color:#111317;border:1.5px solid rgba(17,19,23,.85);border-radius:10px;padding:.45rem .9rem;font-size:.75rem;font-weight:700;letter-spacing:.04em;transition:all .2s;box-shadow:0 2px 4px rgba(17,19,23,.06)}
+    .nav-pill:hover{background-color:#111317;color:#F0F2F5;transform:translateY(-1px);box-shadow:0 6px 12px rgba(17,19,23,.14)}.nav-pill:hover .status-dot{background-color:#F8D000}
+    .studio-btn{border:1.5px solid #111317;border-radius:12px;font-weight:700;transition:all .22s;box-shadow:0 4px 10px -2px rgba(17,19,23,.1)}.studio-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px -6px rgba(17,19,23,.22)}.studio-btn:active{transform:translateY(0)}
+    .studio-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .8rem;border-radius:9999px;border:1.5px solid #111317;font-size:.72rem;font-weight:700;letter-spacing:.05em}
+    .studio-hero-box{background-color:#F8D000;border:1.5px solid #111317;border-radius:24px;box-shadow:0 24px 48px -12px rgba(17,19,23,.14),0 4px 12px -2px rgba(17,19,23,.08);background-image:radial-gradient(circle at 85% 15%,rgba(255,255,255,.35),transparent 45%)}
+    .studio-feature-box{border:1.5px solid #111317;border-radius:22px;box-shadow:0 20px 40px -14px rgba(17,19,23,.1)}
+    .studio-card{border:1.5px solid rgba(17,19,23,.85);border-radius:18px;box-shadow:0 6px 16px -4px rgba(17,19,23,.06);transition:transform .25s,box-shadow .25s,border-color .2s}
+    .studio-card:hover{transform:translateY(-4px);border-color:#111317;box-shadow:0 18px 34px -10px rgba(17,19,23,.14)}
+    .brutal-box{box-shadow:4px 4px 0 #111317}.brutal-box-lg{box-shadow:8px 8px 0 #111317}.brutal-btn{transition:transform .2s,box-shadow .2s}.brutal-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111317}.brutal-btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 #111317}
+    .field{width:100%;border:1.5px solid #9CA3AF;border-radius:7px;background:white;padding:.55rem .6rem;font:inherit;font-size:.82rem;color:#111317}.field:focus{outline:2px solid #F8D000;outline-offset:1px;border-color:#111317}
+    .shot-table{width:100%;border-collapse:collapse;min-width:1050px}.shot-table th{background:#111317;color:white;text-align:left;font:700 10px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;padding:10px 8px}.shot-table td{padding:6px;border:1px solid #D1D5DB;vertical-align:top}.shot-table tr:nth-child(even) td{background:#F7F8FA}.shot-table input,.shot-table select,.shot-table textarea{width:100%;min-width:90px;border:1px solid #D1D5DB;border-radius:4px;background:#fff;padding:6px;font:12px Inter,sans-serif}.shot-table textarea{min-height:48px;resize:vertical}
+    .section-kicker{font:700 11px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+    /* Match the homepage's yellow hero panel and neutral editorial sections. */
+    .shot-hero{width:100%;padding:clamp(42px,6vw,82px) 24px 28px;background:#E2E4E9;border-bottom:1px solid #CCD0DC}
+    .shot-hero-inner{max-width:1152px;margin:0 auto;padding:clamp(28px,4vw,54px);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);gap:clamp(28px,5vw,64px);align-items:center;background-color:#F8D000;border:1.5px solid #111317;border-radius:24px;box-shadow:0 24px 48px -12px rgba(17,19,23,.14),0 4px 12px -2px rgba(17,19,23,.08);background-image:radial-gradient(circle at 85% 15%,rgba(255,255,255,.35),transparent 45%)}
+    .shot-eyebrow,.shot-meta,.shot-art-label,.shot-hero-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#526273}
+    .shot-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.shot-eyebrow span{width:8px;height:8px;border-radius:50%;background:#111317;box-shadow:0 0 0 5px rgba(17,19,23,.1)}
+    .shot-hero h1{margin:0;color:#111317;font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.065em;font-weight:900}.shot-hero h1 em{font-family:'Space Grotesk',sans-serif;font-style:normal;font-weight:600;letter-spacing:-.06em}
+    .shot-lede{max-width:650px;margin:24px 0;color:#343943;font-size:clamp(16px,1.6vw,20px);line-height:1.6}.shot-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 28px;font-size:9px}.shot-meta i{height:1px;width:20px;background:#9AA0AA}
+    .shot-cta{display:inline-flex;align-items:center;gap:18px;padding:14px 22px;border:1.5px solid #111317;border-radius:12px;background:#FFE600;color:#111317;text-decoration:none;font-weight:800;box-shadow:4px 4px 0 #111317;transition:transform .2s,box-shadow .2s}.shot-cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111317}
+    .shot-art{padding:24px;border:1.5px solid #111317;border-radius:18px;background:#F0F2F5;box-shadow:8px 8px 0 #111317}.shot-clapper{border:1.5px solid #111317;border-radius:10px;overflow:hidden;background:#D6E4EE}.shot-clapper-top{height:34px;background:repeating-linear-gradient(135deg,#111317 0 18px,#F8D000 18px 36px);border-bottom:1.5px solid #111317}.shot-clapper-title{padding:22px 12px;text-align:center;font:900 clamp(24px,3vw,36px) 'Space Grotesk',sans-serif;letter-spacing:-.04em}.shot-clapper-lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 14px 12px}.shot-clapper-lines span{height:24px;border:1px solid #9CA3AF;border-radius:4px;background:#F0F2F5}
+    .shot-art-bottom{display:flex;justify-content:space-between;gap:8px;margin-top:14px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.08em;color:#526273}.shot-hero-footer{max-width:1152px;margin:22px auto 0;display:flex;justify-content:space-between;gap:16px;color:#6B7280}
+    .template-shell{background:#F0F2F5;border:1.5px solid #111317;border-radius:22px;box-shadow:0 20px 40px -14px rgba(17,19,23,.1)}
+    .guide-content section,.template-shell{scroll-margin-top:100px}
+    @media(max-width:800px){.shot-hero-inner{grid-template-columns:1fr;padding:26px}.shot-art{max-width:520px;width:100%;margin:0 auto}.shot-hero-footer{font-size:9px}}
+    @media(max-width:480px){.shot-hero{padding:28px 14px 18px}.shot-hero-inner{padding:22px 18px;border-radius:18px}.shot-hero h1{font-size:clamp(38px,11vw,52px)}.shot-meta{gap:8px}.shot-hero-footer{flex-direction:column;gap:6px}}
     @media print{body{background:white!important}.studio-header,.no-print,.floating-contact,footer,.page-intro,.guide-content{display:none!important}main{padding:0!important}.max-w-6xl{max-width:none!important;padding:0!important}.print-only{display:block!important}.shot-table{min-width:0;width:100%;table-layout:fixed}.shot-table th{font-size:7px;padding:4px}.shot-table td{padding:3px}.shot-table input,.shot-table select,.shot-table textarea{border:0;padding:2px;font-size:8px;min-width:0;background:transparent}.shot-table textarea{min-height:24px}.template-shell{border:0!important;box-shadow:none!important;padding:0!important}.shot-table-wrap{overflow:visible!important}}
 
-    /* Shared DraftsRush editorial article system — matched to the No Country for Old Men reference page */
-    .shot-hero{width:100%;padding:clamp(42px,6vw,82px) 24px 28px;background:#D6E0E8;border-bottom:1px solid #B6C4D0}
-    .shot-hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.78fr);gap:clamp(32px,6vw,84px);align-items:center}
-    .shot-eyebrow,.shot-meta,.shot-art-label,.shot-hero-footer{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#526273}
-    .shot-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:22px}.shot-eyebrow span{width:8px;height:8px;border-radius:50%;background:#B79B00;box-shadow:0 0 0 5px rgba(183,155,0,.14)}
-    .shot-hero h1{margin:0;color:#15191F;font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:900}.shot-hero h1 em{font-family:Georgia,serif;font-weight:500;letter-spacing:-.06em}
-    .shot-lede{max-width:650px;margin:24px 0;color:#465362;font-size:clamp(16px,1.6vw,21px);line-height:1.6}.shot-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 28px;font-size:9px}.shot-meta i{height:1px;width:20px;background:#9AA9B7}
-    .shot-cta{display:inline-flex;align-items:center;gap:18px;padding:15px 22px;border-radius:999px;background:#F8D000;color:#15191F;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(20,24,30,.1);transition:transform .2s}.shot-cta:hover{transform:translateY(-2px)}
-    .shot-art{position:relative;min-height:340px;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#252B33,#111317 68%,#343C49);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#F2F1EC;box-shadow:0 24px 60px rgba(20,24,30,.18)}
-    .shot-art:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(255,255,255,.045) 40px),linear-gradient(115deg,transparent 45%,rgba(248,208,0,.1) 45.2%,transparent 46%);pointer-events:none}
-    .shot-art-label,.shot-art-title,.shot-art-bottom{position:relative;z-index:1}.shot-art-label{color:#D3D8DE;display:flex;justify-content:space-between;gap:10px}
-    .shot-clapper{align-self:center;position:relative;z-index:1;width:min(80%,320px);padding:16px;border:2px solid #E7E8E8;border-radius:8px;background:#D6E4EE;color:#15191F;box-shadow:0 18px 35px rgba(0,0,0,.35);transform:rotate(-5deg)}
-    .shot-clapper-top{height:24px;margin:-16px -16px 15px;background:repeating-linear-gradient(135deg,#F8D000 0,#F8D000 18px,#17191D 18px,#17191D 36px);border-bottom:2px solid #E7E8E8}
-    .shot-clapper-title{font:900 clamp(18px,2.6vw,26px) 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-align:center}.shot-clapper-lines{display:flex;gap:8px;margin-top:12px}.shot-clapper-lines span{height:5px;background:#8A98A7;flex:1}
-    .shot-art-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#D3D8DE}
-    .shot-hero-footer{max-width:1240px;margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;font-size:9px}
-    main > .max-w-6xl{max-width:1120px!important;padding-top:clamp(32px,5vw,64px)!important;padding-bottom:clamp(56px,7vw,96px)!important}
-    .guide-content{max-width:1120px!important;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,36px)}
-    .guide-content>section{border:1.5px solid #111317!important;border-radius:16px!important;box-shadow:4px 4px 0 #111317!important;padding:clamp(24px,3.5vw,40px)!important;margin:0!important;background:#fff}
-    .guide-content>section:nth-child(3n+2){background:#FFF6CF}.guide-content>section:nth-child(3n){background:#D6E4EE}
-    .guide-content h2{line-height:1.1!important;letter-spacing:-.04em!important}.guide-content p{line-height:1.8!important}
-    .template-shell{border-radius:16px!important;box-shadow:4px 4px 0 #111317!important}
-    .template-shell h2{line-height:1.1;letter-spacing:-.04em}
-    @media(max-width:760px){.shot-hero-inner{grid-template-columns:1fr}.shot-art{min-height:270px}.shot-hero-footer{flex-direction:column;gap:7px}.shot-hero h1{font-size:clamp(42px,12vw,64px)}main > .max-w-6xl{padding-left:22px!important;padding-right:22px!important}.guide-content{gap:22px!important}.guide-content>section{padding:22px!important}}
-
-    /* Spacing and footer social controls */
-    main > .max-w-6xl > .no-print.bg-\\[\\#F8D000\\]{margin-top:clamp(28px,4vw,48px)!important}
-    footer .footer-social-links{display:flex!important;align-items:center!important;gap:12px!important;flex-shrink:0!important}
-    footer .footer-social-links a{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;min-width:44px!important;border:2px solid #111317!important;border-radius:16px!important;background:#F0F2F5!important;color:#111317!important;font-family:Inter,sans-serif!important;font-size:22px!important;font-weight:500!important;line-height:1!important;text-decoration:none!important;box-shadow:5px 5px 0 #111317!important;visibility:visible!important;opacity:1!important}
-    footer .footer-social-links a:hover{background:#F8D000!important}
-    footer .footer-top-right{display:flex!important;align-items:center!important;gap:24px!important;flex-wrap:wrap!important}
-    @media(max-width:640px){footer .footer-top-right{align-items:flex-start!important;gap:16px!important}footer .footer-social-links{gap:10px!important}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Free Shot List Template for Film and Video","url":"https://www.draftsrush.com/shot-list-template","description":"An editable shot list template and practical guide to planning camera coverage for film and video productions.","publisher":{"@type":"Organization","name":"DraftsRush","url":"https://www.draftsrush.com","logo":{"@type":"ImageObject","url":"https://www.draftsrush.com/drlogo.png"}},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.draftsrush.com/"},{"@type":"ListItem","position":2,"name":"Free Filmmaking Templates","item":"https://www.draftsrush.com/free-filmmaking-templates"},{"@type":"ListItem","position":3,"name":"Shot List Template","item":"https://www.draftsrush.com/shot-list-template"}]}}
@@ -255,10 +236,11 @@
       </section>
     </div>
   </main>
-  <footer class="border-t-4 border-black py-14 mt-auto" style="background-color: #D6E4EE !important;">
+  <footer class="bg-surface-blue border-t border-black py-14 mt-auto" style="border-top:1px solid #111317">
     <div class="max-w-6xl mx-auto px-6">
       
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b-2 border-black gap-6">
+      <!-- Top Branding & Value Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-10 border-b border-black gap-6">
         <div>
           <a href="/" class="inline-block mb-3" aria-label="DraftsRush Home">
             <img 
@@ -268,7 +250,8 @@
               height="50" 
               loading="lazy"
               decoding="async"
-              class="h-8 sm:h-9 w-auto object-contain rounded-xl transition-transform hover:scale-[1.02]" 
+              fetchpriority="low"
+              class="h-8 sm:h-9 w-auto object-contain" 
             />
           </a>
           <p class="font-medium text-sm text-gray-800 max-w-md leading-relaxed">
@@ -277,21 +260,24 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <span class="inline-block bg-[#F8D000] border-2 border-black px-3 py-1.5 text-xs font-black brand-font uppercase">
-            ⚡ 100% Free Client-Side Tools
+          <span class="studio-badge bg-brand-yellow brand-font uppercase">
+            <span>⚡ 100% Free Client-Side Tools</span>
           </span>
-          <div class="flex items-center gap-1.5">
-            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+          <div class="flex items-center gap-2">
+            <!-- X -->
+            <a href="https://x.com/DraftsRush" target="_blank" rel="noopener noreferrer" aria-label="X" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
-            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/draftsrush" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="background-color: #F0F2F5;" class="inline-flex items-center justify-center w-8 h-8 border-[1.5px] border-black rounded-xl brutal-box hover:bg-[#F8D000] transition-colors">
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCEQ4hAWrJyFXdDgesf2U03Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="bg-surface-light inline-flex items-center justify-center w-9 h-9 rounded-lg border border-black hover:bg-brand-yellow transition-colors shadow-sm">
               <svg class="w-3.5 h-3.5 fill-black" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
@@ -300,43 +286,53 @@
         </div>
       </div>
 
+      <!-- 4-Column Structured Link Directory -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
+        
+        <!-- Col 1: Interactive Tools & Apps -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Tools</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
-            <li><a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1">Online Script Editor <span class="bg-[#F8D000] border border-black text-[9px] px-1 font-mono">NEW</span></a></li>
-            <li><a href="/tools/thumbnail-preview" class="hover:underline font-bold text-black">Thumbnail Preview Studio</a></li>
-            <li><a href="/tools/av-teleprompter" class="hover:underline font-bold text-black">AV Teleprompter Runner</a></li>
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
+            <li>
+              <a href="/script-editor" class="hover:underline font-bold text-black flex items-center gap-1.5">
+                <span>Online Script Editor</span>
+                <span class="bg-brand-yellow border border-black rounded text-[9px] px-1.5 py-0.5 font-mono">NEW</span>
+              </a>
+            </li>
             <li><a href="/tools/script-timer" class="hover:underline">Script Pacing Timer</a></li>
             <li><a href="/tools/hook-analyzer" class="hover:underline">5-Sec Hook Analyzer</a></li>
-            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-600">All Tools Directory →</a></li>
+            <li><a href="/tools/format-converter" class="hover:underline">Dual-Column AV Converter</a></li>
+            <li><a href="/tools/dialogue-pruner" class="hover:underline">Dialogue Word Pruner</a></li>
+            <li><a href="/tools" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">All 12 Free Tools →</a></li>
           </ul>
         </div>
 
+        <!-- Col 2: Writer's Room & Craft Guides -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Writer's Room</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/screenplay-format-guide" class="hover:underline">Screenplay Format Spec</a></li>
-            <li><a href="/zodiac-basement-scene-breakdown" class="hover:underline font-bold text-black">Zodiac Basement Breakdown</a></li>
-            <li><a href="/50-video-hook-formulas-cheatsheet" class="hover:underline">50 Hook Formulas</a></li>
-            <li><a href="/30-visual-pattern-interrupts-for-video-editors" class="hover:underline">Pattern Interrupts Guide</a></li>
-            <li><a href="/how-to-write-a-faceless-youtube-channel-script" class="hover:underline">Faceless YouTube Scripting</a></li>
-            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-600">Full Knowledge Base →</a></li>
+            <li><a href="/how-to-end-a-story" class="hover:underline">How to End a Story</a></li>
+            <li><a href="/how-to-write-a-villain" class="hover:underline">Antagonist Archetypes</a></li>
+            <li><a href="/narrative-techniques" class="hover:underline">Narrative Mechanics</a></li>
+            <li><a href="/storytelling-blueprints" class="hover:underline">Visual Blueprints</a></li>
+            <li><a href="/writers-room" class="hover:underline font-mono text-[11px] text-gray-700 font-bold">Full Knowledge Base →</a></li>
           </ul>
         </div>
 
+        <!-- Col 3: Commission Services & Templates -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Script Services</h4>
           </div>
-          <ul class="space-y-2 text-xs font-semibold text-gray-800">
+          <ul class="space-y-2.5 text-xs font-semibold text-gray-800">
             <li><a href="/scripts" class="hover:underline">Short-Form Script Packs</a></li>
             <li><a href="/scripts" class="hover:underline">Video Essay Screenplays</a></li>
             <li><a href="/templates" class="hover:underline">Production Script Templates</a></li>
@@ -346,16 +342,17 @@
           </ul>
         </div>
 
+        <!-- Col 4: Studio Desk & Direct Contact -->
         <div>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-2 h-2 bg-black"></span>
+          <div class="flex items-center gap-2 mb-3.5">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
             <h4 class="font-black brand-font text-xs uppercase tracking-wider text-black">Studio Desk</h4>
           </div>
           <div class="space-y-3">
-            <a href="mailto:care@draftsrush.com" style="background-color: #F0F2F5;" class="inline-block font-mono text-xs font-bold border-2 border-black px-2.5 py-1.5 brutal-box hover:bg-[#F8D000] transition-colors">
+            <a href="mailto:care@draftsrush.com" class="bg-surface-light inline-block font-mono text-xs font-bold border border-black rounded-lg px-3 py-2 hover:bg-brand-yellow transition-colors shadow-sm">
               ✉ care@draftsrush.com
             </a>
-            <p class="text-[11px] font-medium text-gray-700 leading-tight">
+            <p class="text-[11px] font-medium text-gray-700 leading-relaxed">
               Direct response desk for creator briefs, custom quotes, and agency inquiries.
             </p>
             <ul class="space-y-1.5 text-xs font-semibold text-gray-800 pt-1">
@@ -367,7 +364,8 @@
 
       </div>
 
-      <div class="border-t-2 border-black pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
+      <!-- Bottom Legal & Copyright Bar -->
+      <div class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-700">
         <p>© 2026 DraftsRush. All rights reserved.</p>
         <div class="flex flex-wrap gap-6">
           <a href="/sitemap" class="hover:underline">Sitemap</a>
