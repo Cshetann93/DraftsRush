@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "build:css": "tailwindcss -i assets/tailwind-input.css -o assets/tailwind-generated.css --minify",
-    "audit:css": "node scripts/audit-sitewide-css.cjs"
+    "audit:css": "node scripts/audit-sitewide-css.cjs",
+    "audit:seo": "node scripts/technical-seo-audit.cjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"
